@@ -1,0 +1,154 @@
+	.boardlist{
+	position: relative;
+	vertical-align: top;
+	width: 313px;
+	height: 40px;
+	margin-top:10px;
+	padding: 0;
+	font-size: 16px;
+	color: white;
+	text-align: center;
+	text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+	background: #fab700;
+	border: 0;
+	border-radius: 5px;
+	cursor: pointer;
+	-webkit-box-shadow: inset 0 -2px #fab700;
+	box-shadow: inset 0 -2px #fab700;
+	}
+	
+	.boardbutton{
+	position: relative;
+	vertical-align: top;
+	width: 150px;
+	height: 40px;
+	margin-top:10px;
+	padding: 0;
+	font-size: 16px;
+	color: white;
+	text-align: center;
+	text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+	background: #343A40;
+	border: 0;
+	border-radius: 5px;
+	cursor: pointer;
+	-webkit-box-shadow: inset 0 -2px #343A40;
+	box-shadow: inset 0 -2px #343A40;
+	}
+	
+.tr1{
+	height:70px;	
+}
+
+.tr2{
+	height:50px;
+}
+
+.td1{
+	width:100px;
+	text-align:center;
+	border-top:1px solid #b4b4b4;
+	border-right:1px solid #b4b4b4;
+	border-left:1px solid #b4b4b4;
+
+}
+
+.td2{
+	width:500px;
+	border-top:1px solid #b4b4b4;
+	border-right:1px solid #b4b4b4;
+	border-left:1px solid #b4b4b4;
+}
+
+.td1_1{
+	width:100px;
+	text-align:center;
+}
+
+.td2_1{
+	width:500px;
+}
+
+.td3{
+	border-bottom:1px solid #b4b4b4;
+	border-top:1px solid #b4b4b4;
+	border-right:1px solid #b4b4b4;
+	border-left:1px solid #b4b4b4;
+	height:70px;
+}
+
+.td3_1{
+	border-bottom:1px solid #b4b4b4;
+	border-top:1px solid #b4b4b4;
+	border-right:1px solid #b4b4b4;
+	border-left:1px solid #b4b4b4;
+	height:150px;
+}
+
+
+.td3_2{
+	border-bottom:1px solid #b4b4b4;
+	border-top:1px solid #b4b4b4;
+	border-right:1px solid #b4b4b4;
+	border-left:1px solid #b4b4b4;
+	height:500px;
+}
+
+.td3_3{
+	border-bottom:1px solid #b4b4b4;
+	border-top:1px solid #b4b4b4;
+	border-right:1px solid #b4b4b4;
+	border-left:1px solid #b4b4b4;
+}
+
+.content_table{
+	width:1200px;
+}
+	
+.td1_b1{
+	color:#000;
+	font-weight:bold;
+}
+
+.td1_b1_1{
+	color:#000;
+	font-weight:bold;
+	border:none;
+}
+
+.td1_b3_1{
+	color:#000;
+	margin-left:10px;
+	font-weight:400;
+	font-size:13px;
+}
+
+.td1_b2{
+	color:#000;
+	font-weight:bold;
+	font-size:13px;
+}
+
+.td1_b3{
+	color:#000;
+	margin-left:15px;
+	font-weight:400;
+	font-size:13px;
+}
+
+.td1_b4{
+	color:#000;
+	margin-left:15px;
+	font-weight:bold;
+	font-size:17px;
+}
+
+.td1_b5{
+	color:#F00;
+	margin-left:15px;
+	font-weight:bold;
+	font-size:17px;
+}
+
+
+	

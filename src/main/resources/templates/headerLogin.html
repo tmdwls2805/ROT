@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<meta charset="UTF-8">
+<head>
+<title>카풀피풀</title>
+</head>
+<body>
+	<header id="header" class="home" th:fragment="headerLogin">
+			<div class="container header-top" >
+			<div class="row">
+				<div class="col-6 top-head-left">
+					<li><a href="https://blog.naver.com/carpoolpeo20182a_01/"><i class="fa fa-rss"></i></a></li>
+				</div>
+				<div class="col-6 top-head-right">
+					<ul>
+						<li><a href="/login/loginForm.html" th:href="@{/loginForm}">로그인</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+				<hr>
+		<div class="container">
+			<div class="row align-items-center justify-content-between d-flex">
+				<div id="logo">
+					<a href="index.html" th:href="@{/}"> <!-- @타임리프 이용해서 a태그 이동 -->
+					<img src="../static/img/logo4.png" th:src="@{/img/logo4.png}" alt="CPPE" width="130" height="60"></a>
+				</div>
+				<nav id="nav-menu-container">
+					<ul class="nav-menu">
+						<li class="menu-has-children"><a href="#" class="sf-with-ul">소개</a>
+							<ul>
+								<li><a href="CPPE_companyproduce.jsp">회사 소개</a></li>
+								<li><a href="CPPE_companyCI.jsp">회사 CI</a></li>
+								<li><a href="CPPE_serviceproduce.jsp">서비스 소개</a></li>
+							</ul></li>
+						<li><a href="CPPE_passenger.jsp?car_kind=all">차량 대여</a></li>
+						<li><a href="CPPE_operator.jsp">카풀</a></li>
+						<li class="menu-has-children"><a href="#">커뮤니티</a>
+							<ul>
+								<li><a href="CPPE_freeboard.jsp">자유게시판</a></li>
+								<li><a href="CPPE_carpoolreviews.jsp">카풀 후기</a></li>
+							</ul></li>
+						<li class="menu-has-children"><a href="#">고객센터</a>
+							<ul>
+								<li><a href="CPPE_notice.jsp">공지사항</a></li>
+								<li><a href="CPPE_suggestions.jsp">건의사항</a></li>
+								<li><a href="CPPE_q&a.jsp">Q&A</a></li>
+								<li><a href="CPPE_faq.jsp">FAQ</a></li>
+							</ul></li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+	</header>
+</body>
+</html>

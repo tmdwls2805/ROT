@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<meta charset="UTF-8">
+<title>카풀피풀</title>
+<link rel="stylesheet" href="../static/css/linearicons.css" th:href="@{/css/linearicons.css}">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="../static/css/bootstrap.css" th:href="@{/css/bootstrap.css}">
+<link rel="stylesheet" href="../static/css/magnific-popup.css" th:href="@{/css/magnific-popup.css}">
+<link rel="stylesheet" href="../static/css/nice-select.css" th:href="@{/css/nice-select.css}">
+<link rel="stylesheet" href="../static/css/animate.min.css" th:href="@{/css/animate.min.css}">
+<link rel="stylesheet" href="../static/css/owl.carousel.css" th:href="@{/css/owl.carousel.css}">
+<link rel="stylesheet" href="../static/css/main.css" th:href="@{/css/main.css}">
+<link rel="stylesheet" href="../static/css/signup2.css" th:href="@{/css/signup2.css}">
+<link rel="stylesheet" href="../static/css/find.css" th:href="@{/css/find.css}">
+<script src="../static/css/js/signUp2.js" th:src="@{/css/js/signUp2.js}"></script>
+<script src="../static/js/vendor/jquery-2.2.4.min.js" th:src="@{/js/vendor/jquery-2.2.4.min.js}"></script>
+<script src="../static/js/vendor/bootstrap.min.js" th:src="@{/js/vendor/bootstrap.min.js}"></script>
+<script src="../static/js/easing.min.js" th:src="@{/js/easing.min.js}"></script>
+<script src="../static/js/hoverIntent.js" th:src="@{/js/hoverIntent.js}"></script>
+<script src="../static/js/superfish.min.js" th:src="@{/js/superfish.min.js}"></script>
+<script src="../static/js/jquery.ajaxchimp.min.js" th:src="@{/js/jquery.ajaxchimp.min.js}"></script>
+<script src="../static/js/jquery.magnific-popup.min.js" th:src="@{/js/jquery.magnific-popup.min.js}"></script>
+<script src="../static/js/owl.carousel.min.js" th:src="@{/js/owl.carousel.min.js}"></script>
+<script src="../static/js/jquery.sticky.js" th:src="@{/js/jquery.sticky.js}"></script>
+<script src="../static/js/jquery.nice-select.min.js" th:src="@{/js/jquery.nice-select.min.js}"></script>
+<script src="../static/js/waypoints.min.js" th:src="@{/js/waypoints.min.js}"></script>
+<script src="../static/js/jquery.counterup.min.js" th:src="@{/js/jquery.counterup.min.js}"></script>
+<script src="../static/js/parallax.min.js" th:src="@{/js/parallax.min.js}"></script>
+<script src="../static/js/mail-script.js" th:src="@{/js/mail-script.js}"></script>
+<script src="../static/js/main.js" th:src="@{/js/main.js}"></script>
+</head>
+<body>
+	<div th:replace="~{headerBeforeLogin :: headerBeforeLogin}"></div> <!-- 비 로그인 -->
+	<!--<div th:replace="~{headerLoginAdmin :: headerLoginAdmin}"></div> 관리자 로그인 -->
+	<!--<div th:replace="~{headerLoginUser :: headerLoginUser}"></div> 사용자 로그인 -->
+		<!-- start banner Area -->
+	<section class="banner-area relative" id="home">
+		<div class="overlay overlay-bg"></div>
+		<div class="container">
+			<div class="row d-flex align-items-center justify-content-center">
+				<div class="about-content col-lg-12"></div>
+			</div>
+		</div>
+	</section>
+	<!-- End banner Area -->
+	<!-- Start blog-posts Area -->
+	<br>
+	<br>
+	<br>
+	<section>
+		<div class="container">
+			<h2>회원가입</h2>
+			<hr class="hr" color="black">
+			<br>
+			<form action="CPPE_signupProc.jsp" name="form" method="post">
+				<table>
+					<tr>
+						<td class="td1">ID</td>
+						<td class="td2"><input type="text" size="30" maxlength="15"
+							name="id" required>
+							<button onclick="idChk()" align="middle">중복확인</button></td>
+					</tr>
+
+					<tr>
+						<td class="td1">비밀번호</td>
+						<td class="td2"><input type="password" size="30"
+							maxlength="20" name="password" required></td>
+					</tr>
+
+					<tr>
+						<td class="td1">비밀번호 확인</td>
+						<td class="td2"><input type="password" size="30"
+							maxlength="20" name="passwordcheck" onblur="pwChk()" required>
+							&nbsp; <input type="text" class="danger1"
+							style="border-width: 0px" size="20" name="chk"
+							value="비밀번호를 입력하세요" readonly="readonly">
+						</td>
+					</tr>
+
+					<tr>
+						<td class="td1">이름</td>
+						<td class="td2"><input type="text" size="30" maxlength="12"
+							name="name" required></td>
+					</tr>
+
+					<tr>
+						<td class="td1">이메일</td>
+						<td><input type="text" size="15" name="email1" required>@<input
+							type="text" size="15" name="email2" required></td>
+					</tr>
+
+					<tr>
+						<td class="td1">이메일 수신여부</td>
+						<td><input type="radio" name="sent" value="수신동의"
+							checked="checked"> 수신동의&nbsp;&nbsp; <input type="radio"
+							name="sent" value="수신거부"> 수신거부</td>
+					</tr>
+
+					<tr>
+						<td class="td1">휴대폰</td>
+						<td class="td2"><select name="ph1">
+								<option value="010">010</option>
+								<option value="011">011</option>
+								<option value="016">016</option>
+								<option value="017">017</option>
+								<option value="019">019</option>
+						</select> - <input type="text" name="ph2" size="5" maxlength="4" required>
+							- <input type="text" name="ph3" size="5" maxlength="4" required>
+						</td>
+					</tr>
+
+					<tr>
+						<td class="td1">성별</td>
+						<td class="td2"><input type="radio" name="gender" value="남자"
+							checked="checked"> 남자&nbsp;&nbsp; <input type="radio"
+							name="gender" value="여자"> 여자</td>
+					</tr>
+
+					<tr>
+						<td class="td1">생년월일</td>
+						<td class="td2"><select name="birth1">
+								<option value="1997">1997</option>
+						</select>년&nbsp; <select name="birth2">
+								<option value="11">11</option>
+						</select>월&nbsp; <select name="birth3">
+								<option value="06">06</option>
+						</select>일</td>
+					</tr>
+
+					<tr>
+						<td class="td1">흡연여부</td>
+						<td class="td2"><input type="radio" name="smoking" value="흡연"
+							checked="checked"> 흡연&nbsp;&nbsp; <input type="radio"
+							name="smoking" value="비흡연"> 비흡연</td>
+					</tr>
+
+					<tr>
+						<td class="td1">차량제공여부</td>
+						<td class="td2"><input type="radio" name="vehicle" value="제공"
+							checked="checked"> 제공&nbsp;&nbsp; <input type="radio"
+							name="vehicle" value="비제공"> 비제공</td>
+					</tr>
+
+					<tr>
+						<td class="td1">주소</td>
+						<td class="td2"><input type="text" class="zipcode" name="zipcode" size="10" id="sample6_postcode" readonly>&nbsp;<input type="button" onclick="sample6_execDaumPostcode()" value="우편번호 찾기">
+						<br>
+						<input type="text" class="addr" name="addr1" id="sample6_address"  readonly/>
+						<br> 
+   						<input type="text" class="addr" name="addr2" id="sample6_address2"/>
+						</td>
+					</tr>
+					
+					<tr>
+						<td>만 19세 이상 회원가입 동의</td>
+						<td>
+						<input type="checkbox" id="scales" name="scales"
+               value="true" required/>
+               <label for="scales" style="margin-top:7px;">만 19세 이상인분들만 가입하실 수 있습니다.</label>
+						</td>
+					</tr>
+
+					<tr>
+						<td align="center" colspan="2">
+							<hr> <br> <input class="input" type="submit" value="가입신청"
+							onclick="regChk()">&nbsp; <input class="input" type="reset"
+							value="다시입력"
+							onclick="javascript:location.href='signUp2'">&nbsp;
+							<input class="input" type="button" value="취소" onclick="regCancel()">
+						</td>
+					</tr>
+				</table>
+			</form>
+		</div>
+	</section>
+	<br>
+	<br>
+	<br>
+	<div th:replace="~{footer :: footer}"></div>
+			<div id="wrap" style="display:none;border:1px solid;width:500px;height:300px;margin:5px 0;position:relative">
+							<img src="//t1.daumcdn.net/localimg/localimages/07/postcode/320/close.png" id="btnFoldWrap" style="cursor:pointer;position:absolute;right:0px;top:-1px;z-index:1" onclick="foldDaumPostcode()" alt="접기 버튼">
+						</div>
+
+
+<script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
+<script>
+    function sample6_execDaumPostcode() {
+        new daum.Postcode({
+            oncomplete: function(data) {
+                // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
+
+                // 각 주소의 노출 규칙에 따라 주소를 조합한다.
+                // 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
+                var fullAddr = ''; // 최종 주소 변수
+                var extraAddr = ''; // 조합형 주소 변수
+
+                // 사용자가 선택한 주소 타입에 따라 해당 주소 값을 가져온다.
+                if (data.userSelectedType === 'R') { // 사용자가 도로명 주소를 선택했을 경우
+                    fullAddr = data.roadAddress;
+
+                } else { // 사용자가 지번 주소를 선택했을 경우(J)
+                    fullAddr = data.jibunAddress;
+                }
+
+                // 사용자가 선택한 주소가 도로명 타입일때 조합한다.
+                if(data.userSelectedType === 'R'){
+                    //법정동명이 있을 경우 추가한다.
+                    if(data.bname !== ''){
+                        extraAddr += data.bname;
+                    }
+                    // 건물명이 있을 경우 추가한다.
+                    if(data.buildingName !== ''){
+                        extraAddr += (extraAddr !== '' ? ', ' + data.buildingName : data.buildingName);
+                    }
+                    // 조합형주소의 유무에 따라 양쪽에 괄호를 추가하여 최종 주소를 만든다.
+                    fullAddr += (extraAddr !== '' ? ' ('+ extraAddr +')' : '');
+                }
+
+                // 우편번호와 주소 정보를 해당 필드에 넣는다.
+                document.getElementById('sample6_postcode').value = data.zonecode; //5자리 새우편번호 사용
+                document.getElementById('sample6_address').value = fullAddr;
+
+                // 커서를 상세주소 필드로 이동한다.
+                document.getElementById('sample6_address2').focus();
+            }
+        }).open();
+    }
+</script>
+</body>
+</html>

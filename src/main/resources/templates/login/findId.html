@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<meta charset="UTF-8">
+<title>카풀피풀</title>
+<script src="../static/js/vendor/jquery-2.2.4.min.js" th:src="@{/js/vendor/jquery-2.2.4.min.js}"></script>
+<script src="../static/js/vendor/bootstrap.min.js" th:src="@{/js/vendor/bootstrap.min.js}"></script>
+<script src="../static/js/easing.min.js" th:src="@{/js/easing.min.js}"></script>
+<script src="../static/js/hoverIntent.js" th:src="@{/js/hoverIntent.js}"></script>
+<script src="../static/js/superfish.min.js" th:src="@{/js/superfish.min.js}"></script>
+<script src="../static/js/jquery.ajaxchimp.min.js" th:src="@{/js/jquery.ajaxchimp.min.js}"></script>
+<script src="../static/js/jquery.magnific-popup.min.js" th:src="@{/js/jquery.magnific-popup.min.js}"></script>
+<script src="../static/js/owl.carousel.min.js" th:src="@{/js/owl.carousel.min.js}"></script>
+<script src="../static/js/jquery.sticky.js" th:src="@{/js/jquery.sticky.js}"></script>
+<script src="../static/js/jquery.nice-select.min.js" th:src="@{/js/jquery.nice-select.min.js}"></script>
+<script src="../static/js/waypoints.min.js" th:src="@{/js/waypoints.min.js}"></script>
+<script src="../static/js/jquery.counterup.min.js" th:src="@{/js/jquery.counterup.min.js}"></script>
+<script src="../static/js/parallax.min.js" th:src="@{/js/parallax.min.js}"></script>
+<script src="../static/js/mail-script.js" th:src="@{/js/mail-script.js}"></script>
+<script src="../static/js/main.js" th:src="@{/js/main.js}"></script>
+<link rel="stylesheet" href="../static/css/linearicons.css" th:href="@{/css/linearicons.css}">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="../static/css/bootstrap.css" th:href="@{/css/bootstrap.css}">
+<link rel="stylesheet" href="../static/css/magnific-popup.css" th:href="@{/css/magnific-popup.css}">
+<link rel="stylesheet" href="../static/css/nice-select.css" th:href="@{/css/nice-select.css}">
+<link rel="stylesheet" href="../static/css/animate.min.css" th:href="@{/css/animate.min.css}">
+<link rel="stylesheet" href="../static/css/owl.carousel.css" th:href="@{/css/owl.carousel.css}">
+<link rel="stylesheet" href="../static/css/main.css" th:href="@{/css/main.css}">
+<link rel="stylesheet" href="../static/css/login.css" th:href="@{/css/login.css}">
+<link rel="stylesheet" href="../static/css/find.css" th:href="@{/css/find.css}">
+<script src="../static/css/js/CPPE_findId.js" th:src="@{/css/js/CPPE_findId.js}"></script>
+</head>
+<body>
+	<div th:replace="~{headerBeforeLogin :: headerBeforeLogin}"></div> <!-- 비 로그인 -->
+	<!--<div th:replace="~{headerLoginAdmin :: headerLoginAdmin}"></div> 관리자 로그인 -->
+	<!--<div th:replace="~{headerLoginUser :: headerLoginUser}"></div> 사용자 로그인 -->
+		<!-- start banner Area -->
+	<section class="banner-area relative" id="home">
+		<div class="overlay overlay-bg"></div>
+		<div class="container">
+			<div class="row d-flex align-items-center justify-content-center">
+				<div class="about-content col-lg-12"></div>
+			</div>
+		</div>
+	</section>
+	<!-- End banner Area -->
+
+	<!-- Start blog-posts Area -->
+	<section>
+		<br>
+		<br>
+		<br>
+
+		<div class="container">
+			<h2>아이디를 잊어버리셨습니까?</h2>
+			<hr class="hr" color="black">
+			<br>
+			<form action="findIdProc.html" method="post" name="form">
+				<center>
+					<table>
+						<tr class="tr">
+
+							<td class="find2"><input class="name" type="text"
+								name="name" placeholder="이름" size="15" maxlength="5" required></td>
+						</tr>
+						<tr class="tr">
+
+							<td class="find2"><input class="email" type="text" size="15"
+								name="email1" placeholder="이메일" required>@<input
+								class="email" type="text" size="15" name="email2" required>
+							</td>
+						</tr>
+						<tr class="tr">
+
+							<td class="find2"><select name="ph1" class="select">
+									<option value="010">010</option>
+									<option value="011">011</option>
+									<option value="016">016</option>
+									<option value="017">017</option>
+									<option value="019">019</option>
+							</select> - <input class="select" type="text" size="4" maxlength="4"
+								name="ph2" required> - <input class="select" type="text"
+								size="4" maxlength="4" name="ph3" required> </select></td>
+						</tr>
+						<tr>
+					</table>
+					<br> <input class="findIdButton" type="submit" value="아이디 찾기"
+						onclick="findid()">
+				</center>
+			</form>
+
+		</div>
+
+	</section>
+	<br>
+	<br>
+	<br>
+	<div th:replace="~{footer :: footer}"></div>
+</body>
+</html>

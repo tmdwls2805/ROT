@@ -1,0 +1,5 @@
+package itc.hoseo.cppe.rentals;
+
+public class BuyService {
+
+}

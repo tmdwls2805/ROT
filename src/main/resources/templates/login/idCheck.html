@@ -1,0 +1,50 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+
+<%@ page import="CPPE_member.CPPE_memberDao"%>
+<%
+	int rst = 0;
+	String id = (String) request.getParameter("id");
+	
+	CPPE_memberDao dao = CPPE_memberDao.getInstance();
+	rst = dao.idCheck(id);
+%>
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>카풀피풀</title>
+
+</head>
+<body>
+	<%
+		if (rst == 1) {
+	%>
+	<center>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br> 이미 존재하는 아이디입니다. <br>
+		<br>
+		<br>
+		<button onclick="window.close()">확인</button>
+	</center>
+	<!-- 아이디가 이미 존재할때 이미지 -->
+	<%
+		} else {
+	%>
+	<center>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br> 입력하신 <span><strong><%=id%></strong></span>는 사용 가능한 아이디입니다.
+		<br>
+		<br>
+		<br>
+		<button onClick="window.close()">확인</button>
+	</center>
+	<!-- 아이디가 존재하지 않을 때 이미지 -->
+	<%} %>

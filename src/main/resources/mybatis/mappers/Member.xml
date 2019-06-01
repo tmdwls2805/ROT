@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="itc.hoseo.cppe.member.MemberRepository">
+
+	<select id="getMember" resultType="Member"   parameterType="Member">
+		SELECT num,
+		id,
+		password,
+		name,
+		email1,
+		email2,
+		sent,
+		ph1,
+		ph2,
+		ph3,
+		gender,
+		birth1,
+		birth2,
+		birth3,
+		smoking,
+		vehicle,
+		zipcode,
+		addr1,
+		addr2,
+		regdate
+		FROM member
+		WHERE
+			id = #{id}
+			<if test="@org.springframework.util.StringUtils@isEmpty(password) == false">
+			and password = #{password}
+			</if>
+	</select>
+	
+	<select id="getName" resultType="String">
+		SELECT name FROM member WHERE id = #{id}
+	</select>
+	<select id="getCount" resultType="int">
+		select count(*) from member
+	</select>
+	
+	<select id="getAllMemebers" resultType="Member">
+		SELECT num,
+		id,
+		password,
+		name,
+		email1,
+		email2,
+		sent,
+		ph1,
+		ph2,
+		ph3,
+		gender,
+		birth1,
+		birth2,
+		birth3,
+		smoking,
+		vehicle,
+		zipcode,
+		addr1,
+		addr2,
+		regdate
+		FROM member
+	</select>
+	
+	<insert id="addMemeber" parameterType="Member">
+		INSERT INTO member VALUES
+		(#{num},
+		#{id},
+		#{password},
+		#{name},
+		#{email1},
+		#{email2},
+		#{sent},
+		#{ph1},
+		#{ph2},
+		#{ph3},
+		#{gender},
+		#{birth1},
+		#{birth2},
+		#{birth3},
+		#{smoking},
+		#{vehicle},
+		#{zipcode},
+		#{addr1},
+		#{addr2},
+		#{regdate});
+	</insert>
+	
+	<delete id="deleteMemeber" parameterType="String">
+		DELETE FROM member WHERE id = #{id}
+	</delete>
+	
+	<update id="updateMemeber" parameterType="Member">
+		UPDATE member
+		SET
+		num = #{num},
+		password = #{password},
+		name = #{name},
+		email1 = #{email1},
+		email2 = #{email2},
+		sent = #{sent},
+		ph1 = #{ph1},
+		ph2 = #{ph2},
+		ph3 = #{ph3},
+		gender = #{gender},
+		birth1 = #{birth1},
+		birth2 = #{birth2},
+		birth3 = #{birth3},
+		smoking = #{smoking},
+		vehicle = #{vehicle},
+		zipcode = #{zipcode},
+		addr1 = #{addr1},
+		addr2 = #{addr2},
+		regdate = #{regdate}
+		WHERE id = #{id};	
+	</update>
+
+
+</mapper>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<meta charset="UTF-8">
+<title>카풀피풀</title>
+<script src="../static/js/vendor/jquery-2.2.4.min.js" th:src="@{/js/vendor/jquery-2.2.4.min.js}"></script>
+<script src="../static/js/vendor/bootstrap.min.js" th:src="@{/js/vendor/bootstrap.min.js}"></script>
+<script src="../static/js/easing.min.js" th:src="@{/js/easing.min.js}"></script>
+<script src="../static/js/hoverIntent.js" th:src="@{/js/hoverIntent.js}"></script>
+<script src="../static/js/superfish.min.js" th:src="@{/js/superfish.min.js}"></script>
+<script src="../static/js/jquery.ajaxchimp.min.js" th:src="@{/js/jquery.ajaxchimp.min.js}"></script>
+<script src="../static/js/jquery.magnific-popup.min.js" th:src="@{/js/jquery.magnific-popup.min.js}"></script>
+<script src="../static/js/owl.carousel.min.js" th:src="@{/js/owl.carousel.min.js}"></script>
+<script src="../static/js/jquery.sticky.js" th:src="@{/js/jquery.sticky.js}"></script>
+<script src="../static/js/jquery.nice-select.min.js" th:src="@{/js/jquery.nice-select.min.js}"></script>
+<script src="../static/js/waypoints.min.js" th:src="@{/js/waypoints.min.js}"></script>
+<script src="../static/js/jquery.counterup.min.js" th:src="@{/js/jquery.counterup.min.js}"></script>
+<script src="../static/js/parallax.min.js" th:src="@{/js/parallax.min.js}"></script>
+<script src="../static/js/mail-script.js" th:src="@{/js/mail-script.js}"></script>
+<script src="../static/js/main.js" th:src="@{/js/main.js}"></script>
+<link rel="stylesheet" href="../static/css/linearicons.css" th:href="@{/css/linearicons.css}">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="../static/css/bootstrap.css" th:href="@{/css/bootstrap.css}">
+<link rel="stylesheet" href="../static/css/magnific-popup.css" th:href="@{/css/magnific-popup.css}">
+<link rel="stylesheet" href="../static/css/nice-select.css" th:href="@{/css/nice-select.css}">
+<link rel="stylesheet" href="../static/css/animate.min.css" th:href="@{/css/animate.min.css}">
+<link rel="stylesheet" href="../static/css/owl.carousel.css" th:href="@{/css/owl.carousel.css}">
+<link rel="stylesheet" href="../static/css/main.css" th:href="@{/css/main.css}">
+<script src="../static/css/js/findId.js" th:src="@{/css/js/findId.js}"></script>
+<link rel="stylesheet" href="../static/css/findIdPw.css" th:href="@{/css/findIdPw.css}">
+<script type="text/javascript">
+	function loginchk() {
+		var regx = /^[a-zA-Z0-9]*$/;
+		var id = document.form.id.value;
+		var pass = document.form.pass.value;
+		if (id.length == 0 || id == null) {
+			alert("아이디를 입력하시오");
+			document.form.id.focus();
+			return;
+		}
+		if (!regx.test(id)) {
+			alert("아이디는 영어, 숫자만 입력가능합니다.");
+			document.form.id.focus();
+			return false;
+		}
+		if (pass.length < 6 || pass == null) {
+			alert("비밀번호는 6글자이상입니다^^");
+			document.form.pass.focus();
+			return;
+		}
+		if (!regx.test(pass)) {
+			alert("비밀번호는 영어, 숫자만 입력가능합니다.");
+			document.form.pass.focus();
+			return false;
+		}
+		document.form.submit();
+	}
+</script>
+</head>
+<body>
+	<div th:replace="~{headerBeforeLogin :: headerBeforeLogin}"></div> <!-- 비 로그인 -->
+	<!--<div th:replace="~{headerLoginAdmin :: headerLoginAdmin}"></div> 관리자 로그인 -->
+	<!--<div th:replace="~{headerLoginUser :: headerLoginUser}"></div> 사용자 로그인 -->
+		<!-- start banner Area -->
+	<section class="banner-area relative" id="home">
+		<div class="overlay overlay-bg"></div>
+		<div class="container">
+			<div class="row d-flex align-items-center justify-content-center">
+				<div class="about-content col-lg-12"></div>
+			</div>
+		</div>
+	</section>
+	<!-- End banner Area -->
+
+	<!-- Start blog-posts Area -->
+
+	<section class="section-bg">
+		<br>
+		<br>
+		<br>
+		<div class="container">
+			<h2>아이디 찾기/비밀번호 재설정</h2>
+			<hr class="hr" color="black">
+			<br>
+			<center>
+				<table>
+					<tr>
+						<td class="td1">
+							<center>
+								<img src="../static/img/login/findid1.PNG" th:src="@{/img/login/findid1.PNG}" class="findimg"> <br> <strong
+									class="findtext">아이디 찾기</strong> <span class="spantext">
+									회원님의 기본 정보 입력 후<br> 본인 확인 절자를 거치시면 <strong>아이디 찾기</strong>가
+									가능합니다.
+								</span> <br>
+								<br>
+								<br> <a class="btn btn-primary" href="findId.html" th:href="@{/findId}">아이디
+									찾기</a>
+							</center>
+						</td>
+
+						<td class="td_blank"></td>
+
+						<td class="td1">
+							<center>
+								<img src="../static/img/login/findpassword1.PNG" th:src="@{/img/login/findpassword1.PNG}" class="findimg"> <br>
+								<strong class="findtext">비밀번호 재설정하기</strong> <span
+									class="spantext"> 회원님의 아이디 및 기본 정보 입력 후<br> 본인 확인
+									절자를 거치시면 <strong>비밀번호 재설정</strong>이 가능합니다.
+								</span> <br>
+								<br>
+								<br> <a class="btn btn-primary"
+									href="findPassword.html" th:href="@{/findPassword}">비밀번호 재설정하기</a>
+							</center>
+						</td>
+					</tr>
+				</table>
+			</center>
+		</div>
+		<br>
+		<br>
+		<br>
+	</section>
+	<div th:replace="~{footer :: footer}"></div>
+</body>
+</html>
