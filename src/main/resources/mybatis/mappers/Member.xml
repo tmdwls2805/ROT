@@ -4,7 +4,8 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="itc.hoseo.cppe.member.MemberRepository">
 
-	<select id="getMember" resultType="Member"   parameterType="Member">
+	<select id="getMember" resultType="Member"
+		parameterType="Member">
 		SELECT num,
 		id,
 		password,
@@ -25,21 +26,26 @@
 		addr1,
 		addr2,
 		regdate
-		FROM member
+		FROM
+		member
 		WHERE
-			id = #{id}
-			<if test="@org.springframework.util.StringUtils@isEmpty(password) == false">
+		id = #{id}
+		<if
+			test="@org.springframework.util.StringUtils@isEmpty(password) == false">
 			and password = #{password}
-			</if>
+		</if>
 	</select>
-	
+
 	<select id="getName" resultType="String">
-		SELECT name FROM member WHERE id = #{id}
+		SELECT name 
+		FROM member 
+		WHERE id = #{id}
 	</select>
+
 	<select id="getCount" resultType="int">
 		select count(*) from member
 	</select>
-	
+
 	<select id="getAllMemebers" resultType="Member">
 		SELECT num,
 		id,
@@ -63,7 +69,7 @@
 		regdate
 		FROM member
 	</select>
-	
+
 	<insert id="addMemeber" parameterType="Member">
 		INSERT INTO member VALUES
 		(#{num},
@@ -87,15 +93,17 @@
 		#{addr2},
 		#{regdate});
 	</insert>
-	
+
 	<delete id="deleteMemeber" parameterType="String">
-		DELETE FROM member WHERE id = #{id}
+		DELETE FROM member
+		WHERE id = #{id}
 	</delete>
-	
+
 	<update id="updateMemeber" parameterType="Member">
 		UPDATE member
 		SET
-		num = #{num},
+		num =
+		#{num},
 		password = #{password},
 		name = #{name},
 		email1 = #{email1},
@@ -103,19 +111,51 @@
 		sent = #{sent},
 		ph1 = #{ph1},
 		ph2 = #{ph2},
-		ph3 = #{ph3},
+		ph3 =
+		#{ph3},
 		gender = #{gender},
 		birth1 = #{birth1},
 		birth2 = #{birth2},
 		birth3 = #{birth3},
 		smoking = #{smoking},
 		vehicle = #{vehicle},
-		zipcode = #{zipcode},
+		zipcode =
+		#{zipcode},
 		addr1 = #{addr1},
 		addr2 = #{addr2},
 		regdate = #{regdate}
-		WHERE id = #{id};	
+		WHERE id = #{id};
 	</update>
 
-
+	<select id="getFindId" parameterType="Member">
+		SELECT id
+		FROM member
+		WHERE
+		name = #{name}
+		and email1 = #{email1}
+		and email2 = #{email2}
+		and ph1 = #{ph1}
+		and ph2 = #{ph2}
+		and ph3 = #{ph3}
+	</select>
+	
+	<select id="getFindPassword" parameterType="Member">
+		SELECT id
+		FROM member
+		WHERE 
+		id = #{id}
+		and name = #{name}
+	</select>
+	
+	<update id="lostPasswordUpdate" parameterType="Member">
+		UPDATE member
+		SET password = #{password}
+		WHERE id = #{id}
+	</update>
+	
+	<select id="idCheck" parameterType="String" resultType="int">
+		SELECT count(id)
+		FROM MEMBER
+		WHERE id = #{id}
+	</select>
 </mapper>

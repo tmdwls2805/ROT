@@ -16,12 +16,13 @@ public class MemberService {
     public boolean addMember(Member member) { 
         return memberRepository.addMemeber(member) == 1;
     }
+    
+    public Member getMember(Member member) { 
+        return memberRepository.getMember(member);
+    }
 
 
-    public boolean isValidUser(String id, String passwd) {
-    	Member m = new Member();
-    	m.setId(id);
-    	m.setPassword(passwd);
+    public boolean isValidUser(Member m) {
     	return memberRepository.getMember(m) != null;
     }
     
@@ -30,9 +31,21 @@ public class MemberService {
     	return memberRepository.getAllMemebers();
     }
     
-    
-    
+    /*아이디에 맞는 이름찾아오기*/
     public String getName(String id) {
     	return memberRepository.getName(id);  
+    }
+    
+    /*아이디 찾기*/
+    public boolean getFindId(Member member) {
+    	return memberRepository.getFindId(member) != null;
+    }
+    
+    public boolean getFindPassword(Member member) {
+    	return memberRepository.getFindPassword(member) != null;
+    }
+    
+    public int idCheck(String id) {
+    	return memberRepository.idCheck(id);
     }
 }

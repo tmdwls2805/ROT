@@ -12,8 +12,24 @@
 					<li><a href="https://blog.naver.com/carpoolpeo20182a_01/"><i class="fa fa-rss"></i></a></li>
 				</div>
 				<div class="col-6 top-head-right">
-					<ul>
-						<li><a href="/login/loginForm.html" th:href="@{/loginForm}">로그인</a></li>
+					<ul class="nav-menu-1">
+						<!-- 로그인전 -->
+						<li th:if="${session.member == null}"><a th:href="@{/loginForm}">로그인</a></li>
+						<!-- 관리자 로그인 -->
+						<li th:if="${session.member != null && session.member.id=='admin'}" class="menu-has-children-1"><a href="#">관리자</a>
+							<ul>
+								<li><a href="CPPE_mypage.jsp">회원관리</a></li>
+								<li><a th:href="${session.member != null} ? @{/logout}">로그아웃</a></li>
+							</ul>
+						</li>
+						<!-- 사용자 로그인 -->
+						<li class="menu-has-children-1">
+							<a th:text="${session.member != null && session.member.id!='admin'} ? |${session.member.name}님|" href="#"></a>
+							<ul>
+								<li><a href="CPPE_mypage.jsp">마이페이지</a></li>
+								<li><a th:href="${session.member != null} ? @{/logout}">로그아웃</a></li>
+							</ul>
+						</li>
 					</ul>
 				</div>
 			</div>

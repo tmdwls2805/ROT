@@ -29,7 +29,7 @@
 <script src="../static/css/js/login.js" th:src="@{/css/js/login.js}"></script>
 </head>
 <body>
-		<div th:replace="~{headerBeforeLogin :: headerBeforeLogin}"></div> <!-- 비 로그인 -->
+		<div th:replace="~{headerLogin :: headerLogin}"></div> <!-- 비 로그인 -->
 		<!--<div th:replace="~{headerLoginAdmin :: headerLoginAdmin}"></div> 관리자 로그인 -->
 		<!--<div th:replace="~{headerLoginUser :: headerLoginUser}"></div> 사용자 로그인 -->
 	<section class="banner-area relative" id="home">
@@ -46,7 +46,7 @@
 	<section>
 		<div class="container">
 
-			<form action="CPPE_loginProc.jsp" method="post" class="signUp"
+			<form action="" method="post" class="signUp"
 				id="signupForm">
 				<h1 class="signUpTitle">로그인 하시겠습니까?</h1>
 				<input name="id" type="text" class="signUpInput" placeholder="아이디"

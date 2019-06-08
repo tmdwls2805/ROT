@@ -1,10 +1,10 @@
-CREATE TABLE `bank` (
+CREATE TABLE IF NOT EXISTS `bank` (
   `account` varchar(30) NOT NULL,
   `bank` varchar(10) NOT NULL,
   `name` varchar(10) NOT NULL
 );
 
-CREATE TABLE `member` (
+CREATE TABLE IF NOT EXISTS `member` (
   `num` int(11) NOT NULL AUTO_INCREMENT,
   `id` varchar(15) NOT NULL,
   `password` varchar(30) NOT NULL,
@@ -30,7 +30,7 @@ CREATE TABLE `member` (
   UNIQUE KEY `email1` (`email1`)
 );
 
-CREATE TABLE `cart` (
+CREATE TABLE IF NOT EXISTS `cart` (
   `cartId` int(11) NOT NULL AUTO_INCREMENT,
   `buyer` varchar(50) NOT NULL,
   `carId` int(11) NOT NULL,
@@ -43,7 +43,7 @@ CREATE TABLE `cart` (
   CONSTRAINT `cart_ibfk_1` FOREIGN KEY (`buyer`) REFERENCES `member` (`id`) ON DELETE CASCADE
 );
 
-CREATE TABLE `buy` (
+CREATE TABLE IF NOT EXISTS `buy` (
   `buyId` bigint(20) NOT NULL,
   `buyer` varchar(50) PRIMARY KEY,
   `carId` varchar(12) NOT NULL,
@@ -68,7 +68,7 @@ CREATE TABLE `buy` (
   CONSTRAINT `buy_ibfk_1` FOREIGN KEY (`buyer`) REFERENCES `member` (`id`) ON DELETE CASCADE
 );
 
-CREATE TABLE `freeBoard` (
+CREATE TABLE IF NOT EXISTS `freeBoard` (
   `num` int(11) NOT NULL AUTO_INCREMENT,
   `writer` varchar(15) NOT NULL,
   `subject` varchar(2048) NOT NULL,
@@ -87,7 +87,7 @@ CREATE TABLE `freeBoard` (
   CONSTRAINT `freeBoard_ibfk_1` FOREIGN KEY (`writer`) REFERENCES `member` (`id`) ON DELETE CASCADE
 );
 
-CREATE TABLE `rentals` (
+CREATE TABLE IF NOT EXISTS `rentals` (
   `carId` int(11) NOT NULL AUTO_INCREMENT,
   `carKind` varchar(50) NOT NULL,
   `carTitle` varchar(100) NOT NULL,
@@ -102,7 +102,7 @@ CREATE TABLE `rentals` (
   PRIMARY KEY (`carId`)
 );
 
-CREATE TABLE `reBoard` (
+CREATE TABLE IF NOT EXISTS `reBoard` (
   `reNum` int(11) NOT NULL AUTO_INCREMENT,
   `reName` varchar(20) NOT NULL,
   `reContent` varchar(4000) NOT NULL,

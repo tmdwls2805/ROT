@@ -8,8 +8,8 @@ function idChk() {
     return false;
   }
 
-  var url = "idCheck.html?id=" + id;
-  window.open(url, "get", "height = 300, width = 500");
+  var url = "/idCheck/" + id;
+  window.open(url, "height = 30px", "width = 50px");
 }
 
 
