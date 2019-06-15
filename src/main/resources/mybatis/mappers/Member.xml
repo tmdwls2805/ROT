@@ -6,7 +6,7 @@
 
 	<select id="getMember" resultType="Member"
 		parameterType="Member">
-		SELECT num,
+		SELECT
 		id,
 		password,
 		name,
@@ -47,7 +47,7 @@
 	</select>
 
 	<select id="getAllMemebers" resultType="Member">
-		SELECT num,
+		SELECT
 		id,
 		password,
 		name,
@@ -72,7 +72,7 @@
 
 	<insert id="addMemeber" parameterType="Member">
 		INSERT INTO member VALUES
-		(#{num},
+		(
 		#{id},
 		#{password},
 		#{name},
@@ -91,7 +91,7 @@
 		#{zipcode},
 		#{addr1},
 		#{addr2},
-		#{regdate});
+		now());
 	</insert>
 
 	<delete id="deleteMemeber" parameterType="String">
@@ -102,8 +102,6 @@
 	<update id="updateMemeber" parameterType="Member">
 		UPDATE member
 		SET
-		num =
-		#{num},
 		password = #{password},
 		name = #{name},
 		email1 = #{email1},
@@ -122,12 +120,11 @@
 		zipcode =
 		#{zipcode},
 		addr1 = #{addr1},
-		addr2 = #{addr2},
-		regdate = #{regdate}
+		addr2 = #{addr2}
 		WHERE id = #{id};
 	</update>
 
-	<select id="getFindId" parameterType="Member">
+	<select id="getFindId" parameterType="Member" resultType="Member">
 		SELECT id
 		FROM member
 		WHERE
@@ -139,13 +136,14 @@
 		and ph3 = #{ph3}
 	</select>
 	
-	<select id="getFindPassword" parameterType="Member">
+	<select id="getFindPassword" parameterType="Member" resultType="Member">
 		SELECT id
 		FROM member
 		WHERE 
 		id = #{id}
 		and name = #{name}
 	</select>
+
 	
 	<update id="lostPasswordUpdate" parameterType="Member">
 		UPDATE member
@@ -158,4 +156,33 @@
 		FROM MEMBER
 		WHERE id = #{id}
 	</select>
+	
+		<select id="getUser" resultType="Member"
+		parameterType="Member">
+		SELECT
+		id,
+		password,
+		name,
+		email1,
+		email2,
+		sent,
+		ph1,
+		ph2,
+		ph3,
+		gender,
+		birth1,
+		birth2,
+		birth3,
+		smoking,
+		vehicle,
+		zipcode,
+		addr1,
+		addr2,
+		regdate
+		FROM
+		member
+		WHERE
+		id = #{id}
+		</select>
+	
 </mapper>

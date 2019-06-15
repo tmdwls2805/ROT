@@ -23,8 +23,12 @@ public interface MemberRepository {
 	public Member getFindId(Member m);
 
 	public Member getFindPassword(Member m);
-
-	public Member lostPasswordUpdate(Member m);
+	
+	public Member getUpdatePassword(Member m);
+	
+	public Member getUser(String id);
+	
+	public int lostPasswordUpdate(Member m);
 	
 	public int idCheck(String id);
 }

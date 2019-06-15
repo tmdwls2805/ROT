@@ -6,7 +6,7 @@ function findid(){
 	 }
 
 	 var email1 = document.form.email1.value;
-	 var email2 = document.form.email1.value;
+	 var email2 = document.form.email2.value;
 	 if(email1.length==0 || email1==null){
 	  alert("이메일을 입력하십시오");
 	  return false;

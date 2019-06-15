@@ -1,2 +1,2 @@
-insert into member values(null,'tmdwls2805', 'tmdwls12', '박승진', 'qkrtmdwls280','gmail.com', '수신동의', '010', '4070', '2805', '남', '1997','11','06','비흡연','없음', '213','경기','안산',sysdate());
-insert into member values(null,'admin', 'admin', '박승진', 'admin','gmail.com', '수신동의', '010', '1111', '1111', '남', '1997','11','06','비흡연','없음', '213','경기','안산',sysdate());
+insert into member values('tmdwls2805', 'tmdwls12', '박승진', 'qkrtmdwls280','gmail.com', '수신동의', '010', '4070', '2805', '남', '1997','11','06','비흡연','없음', '213','경기','안산',sysdate());
+insert into member values('admin', 'admin', '박승진', 'admin','gmail.com', '수신동의', '010', '1111', '1111', '남', '1997','11','06','비흡연','없음', '213','경기','안산',sysdate());

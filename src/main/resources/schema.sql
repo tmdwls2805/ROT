@@ -5,8 +5,7 @@ CREATE TABLE IF NOT EXISTS `bank` (
 );
 
 CREATE TABLE IF NOT EXISTS `member` (
-  `num` int(11) NOT NULL AUTO_INCREMENT,
-  `id` varchar(15) NOT NULL,
+  `id` varchar(15) NOT NULL PRIMARY KEY,
   `password` varchar(30) NOT NULL,
   `name` varchar(14) NOT NULL,
   `email1` varchar(20) NOT NULL,
@@ -25,8 +24,6 @@ CREATE TABLE IF NOT EXISTS `member` (
   `addr1` varchar(2048) NOT NULL,
   `addr2` varchar(2048) DEFAULT NULL,
   `regdate` datetime,
-  PRIMARY KEY (`num`),
-  UNIQUE KEY `id` (`id`),
   UNIQUE KEY `email1` (`email1`)
 );
 

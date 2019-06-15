@@ -17,6 +17,7 @@
 <script src="../static/js/parallax.min.js" th:src="@{/js/parallax.min.js}"></script>
 <script src="../static/js/mail-script.js" th:src="@{/js/mail-script.js}"></script>
 <script src="../static/js/main.js" th:src="@{/js/main.js}"></script>
+<script src="../static/css/js/findId.js" th:src="@{/css/js/findId.js}"></script>
 <link rel="stylesheet" href="../static/css/linearicons.css" th:href="@{/css/linearicons.css}">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="../static/css/bootstrap.css" th:href="@{/css/bootstrap.css}">
@@ -27,7 +28,7 @@
 <link rel="stylesheet" href="../static/css/main.css" th:href="@{/css/main.css}">
 <link rel="stylesheet" href="../static/css/login.css" th:href="@{/css/login.css}">
 <link rel="stylesheet" href="../static/css/find.css" th:href="@{/css/find.css}">
-<script src="../static/css/js/CPPE_findId.js" th:src="@{/css/js/CPPE_findId.js}"></script>
+
 </head>
 <body>
 	<div th:replace="~{headerLogin :: headerLogin}"></div> <!-- 비 로그인 -->
@@ -54,7 +55,7 @@
 			<h2>아이디를 잊어버리셨습니까?</h2>
 			<hr class="hr" color="black">
 			<br>
-			<form action="findIdProc.html" method="post" name="form">
+			<form action="/findIdProc" th:action="@{/findIdProc}" method="post" name="form">
 				<center>
 					<table>
 						<tr class="tr">

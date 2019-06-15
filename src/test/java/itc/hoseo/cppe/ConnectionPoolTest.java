@@ -38,5 +38,5 @@ public class ConnectionPoolTest {
 		log.info("Hikari : {} ms / DriverManager {} ms",hikariTime, driverManagerTime);
 		
 	}
-	
+
 }

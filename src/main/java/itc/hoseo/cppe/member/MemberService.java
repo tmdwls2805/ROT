@@ -13,8 +13,8 @@ public class MemberService {
 	private MemberRepository memberRepository;
 	
 	/*회원가입*/
-    public boolean addMember(Member member) { 
-        return memberRepository.addMemeber(member) == 1;
+    public int addMember(Member member) { 
+        return memberRepository.addMemeber(member);
     }
     
     public Member getMember(Member member) { 
@@ -31,21 +31,27 @@ public class MemberService {
     	return memberRepository.getAllMemebers();
     }
     
-    /*아이디에 맞는 이름찾아오기*/
-    public String getName(String id) {
-    	return memberRepository.getName(id);  
-    }
-    
     /*아이디 찾기*/
-    public boolean getFindId(Member member) {
-    	return memberRepository.getFindId(member) != null;
+    public Member getFindId(Member member) {
+    	return memberRepository.getFindId(member);
     }
     
-    public boolean getFindPassword(Member member) {
-    	return memberRepository.getFindPassword(member) != null;
+    public Member getFindPassword(Member member) {
+    	return memberRepository.getFindPassword(member);
     }
     
+    public int lostPasswordUpdate(Member member) {
+    	return memberRepository.lostPasswordUpdate(member);
+    }
+    
+    public String getName(String id) {
+    	return memberRepository.getName(id);
+    }
     public int idCheck(String id) {
     	return memberRepository.idCheck(id);
+    }
+    
+    public Member getUser(String id) {
+    	return memberRepository.getUser(id);
     }
 }
