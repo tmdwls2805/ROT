@@ -40,7 +40,7 @@ public class MypageController {
 		String id = (String) session.getAttribute("id");
 		member.setId(id);
 		if (memberService.updateUser(member)==1) {
-			return "redirect:/";
+			return "redirect:/mypage";
 		} else {
 			return "mypage/mypageEdit";
 		}
