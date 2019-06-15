@@ -54,4 +54,8 @@ public class MemberService {
     public Member getUser(String id) {
     	return memberRepository.getUser(id);
     }
+    
+    public int updateUser(String id, Member member) {
+    	return memberRepository.updateUser(id,member);
+    }
 }

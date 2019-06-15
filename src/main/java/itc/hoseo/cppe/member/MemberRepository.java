@@ -31,4 +31,6 @@ public interface MemberRepository {
 	public int lostPasswordUpdate(Member m);
 	
 	public int idCheck(String id);
+	
+	public int updateUser(String id, Member member);
 }

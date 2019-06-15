@@ -37,7 +37,9 @@ public class LoginController {
 		if (memberService.isValidUser(m) == false) {
 			return "login/loginForm";
 		}
-		session.setAttribute("member", memberService.getMember(m));
+		Member member = memberService.getMember(m);
+		session.setAttribute("member", member);
+		session.setAttribute("id", member.getId());
 		return "redirect:index";
 	}
 
@@ -120,6 +122,7 @@ public class LoginController {
 		}
 	}
 	
+// 비밀번호 변경 완료
 	@RequestMapping(value = "/findPasswordProc/update", method = { RequestMethod.GET, RequestMethod.POST })
 	public String findPasswordProc1(Member m) {
 		if (memberService.lostPasswordUpdate(m)==1) {
