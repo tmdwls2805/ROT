@@ -37,10 +37,10 @@ public class MypageController {
 	
 	@RequestMapping(value = "/mypageEdit/update", method = { RequestMethod.GET, RequestMethod.POST })
 	public String mypageEdit1(ModelMap model, HttpSession session, Member member) {
-		Member m =  (Member) session.getAttribute("member");
 		String id = (String) session.getAttribute("id");
-		if (memberService.updateUser(id,member)==1) {
-			return "redirect:mypage/mypage";
+		member.setId(id);
+		if (memberService.updateUser(member)==1) {
+			return "redirect:/";
 		} else {
 			return "mypage/mypageEdit";
 		}

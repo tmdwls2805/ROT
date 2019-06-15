@@ -55,7 +55,7 @@ public class MemberService {
     	return memberRepository.getUser(id);
     }
     
-    public int updateUser(String id, Member member) {
-    	return memberRepository.updateUser(id,member);
+    public int updateUser(Member member) {
+    	return memberRepository.updateUser(member);
     }
 }

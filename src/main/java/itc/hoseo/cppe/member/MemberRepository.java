@@ -32,5 +32,5 @@ public interface MemberRepository {
 	
 	public int idCheck(String id);
 	
-	public int updateUser(String id, Member member);
+	public int updateUser(Member member);
 }
