@@ -1,10 +1,10 @@
-package itc.hoseo.cppe.mapper;
+package com.hoseo.rot.mapper;
 
 import java.util.List;
 
 import org.apache.ibatis.annotations.Select;
 
-import itc.hoseo.cppe.member.Member;
+import com.hoseo.rot.member.Member;
 
 
 public interface XMLConfigMapper {

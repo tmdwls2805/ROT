@@ -1,4 +1,4 @@
-package itc.hoseo.cppe;
+package com.hoseo.rot;
 
 import static org.junit.Assert.assertEquals;
 
@@ -22,8 +22,8 @@ import org.junit.Test;
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
 
-import itc.hoseo.cppe.mapper.JavaConfigMapper;
-import itc.hoseo.cppe.member.Member;
+import com.hoseo.rot.mapper.JavaConfigMapper;
+import com.hoseo.rot.member.Member;
 
 
 public class MybatisJavaConfigTest {

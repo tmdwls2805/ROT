@@ -8,7 +8,7 @@
 	</settings>
 	
 	<typeAliases>
-		<typeAlias type="itc.hoseo.cppe.member.Member" alias="Member"/>
+		<typeAlias type="com.hoseo.rot.member.Member" alias="Member"/>
 	</typeAliases>
 	
 	<mappers>

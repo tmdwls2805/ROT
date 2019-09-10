@@ -1,4 +1,4 @@
-package itc.hoseo.cppe;
+package com.hoseo.rot;
 
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -14,8 +14,8 @@ import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import org.junit.Before;
 import org.junit.Test;
 
-import itc.hoseo.cppe.mapper.XMLConfigMapper;
-import itc.hoseo.cppe.member.Member;
+import com.hoseo.rot.mapper.XMLConfigMapper;
+import com.hoseo.rot.member.Member;
 
 
 public class MybatisXMLConfigTest {

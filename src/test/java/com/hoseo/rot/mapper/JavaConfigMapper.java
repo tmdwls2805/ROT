@@ -1,4 +1,4 @@
-package itc.hoseo.cppe.mapper;
+package com.hoseo.rot.mapper;
 
 import java.util.List;
 

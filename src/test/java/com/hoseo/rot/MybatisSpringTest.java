@@ -1,4 +1,4 @@
-package itc.hoseo.cppe;
+package com.hoseo.rot;
 
 import static org.junit.Assert.assertEquals;
 
@@ -8,9 +8,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import itc.hoseo.cppe.member.Member;
-import itc.hoseo.cppe.member.MemberRepository;
-import itc.hoseo.cppe.member.MemberService;
+import com.hoseo.rot.member.Member;
+import com.hoseo.rot.member.MemberRepository;
+import com.hoseo.rot.member.MemberService;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
@@ -25,13 +25,6 @@ public class MybatisSpringTest {
 	
 	@Test
 	public void test2() {
-		Member mem=new Member();
-		mem.setName("박승진");
-		mem.setEmail1("qkrtmdwls280");
-		mem.setEmail2("gmail.com");
-		mem.setPh1(10);
-		mem.setPh2(4070);
-		mem.setPh3(2805);
-		log.debug(memberService.getFindId(mem).getId());
+
 	}
 }

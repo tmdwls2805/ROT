@@ -1,4 +1,4 @@
-package itc.hoseo.cppe;
+package com.hoseo.rot;
 
 import org.apache.ibatis.datasource.unpooled.UnpooledDataSourceFactory;
 

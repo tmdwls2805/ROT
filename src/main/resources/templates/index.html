@@ -1,547 +1,89 @@
-<!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-<meta charset="UTF-8">
-<head>
-<title>카풀피풀</title>
-<script src="../static/js/vendor/jquery-2.2.4.min.js" th:src="@{/js/vendor/jquery-2.2.4.min.js}"></script>
-<script src="../static/js/vendor/bootstrap.min.js" th:src="@{/js/vendor/bootstrap.min.js}"></script>
-<script src="../static/js/easing.min.js" th:src="@{/js/easing.min.js}"></script>
-<script src="../static/js/hoverIntent.js" th:src="@{/js/hoverIntent.js}"></script>
-<script src="../static/js/superfish.min.js" th:src="@{/js/superfish.min.js}"></script>
-<script src="../static/js/jquery.ajaxchimp.min.js" th:src="@{/js/jquery.ajaxchimp.min.js}"></script>
-<script src="../static/js/jquery.magnific-popup.min.js" th:src="@{/js/jquery.magnific-popup.min.js}"></script>
-<script src="../static/js/owl.carousel.min.js" th:src="@{/js/owl.carousel.min.js}"></script>
-<script src="../static/js/jquery.sticky.js" th:src="@{/js/jquery.sticky.js}"></script>
-<script src="../static/js/jquery.nice-select.min.js" th:src="@{/js/jquery.nice-select.min.js}"></script>
-<script src="../static/js/waypoints.min.js" th:src="@{/js/waypoints.min.js}"></script>
-<script src="../static/js/jquery.counterup.min.js" th:src="@{/js/jquery.counterup.min.js}"></script>
-<script src="../static/js/parallax.min.js" th:src="@{/js/parallax.min.js}"></script>
-<script src="../static/js/mail-script.js" th:src="@{/js/mail-script.js}"></script>
-<script src="../static/js/main.js" th:src="@{/js/main.js}"></script>
-<link rel="stylesheet" href="../static/css/header_button.css" th:href="@{/css/header_button.css}" />
-<link rel="stylesheet" href="../static/css/linearicons.css" th:href="@{/css/linearicons.css}">
-<link rel="stylesheet" href="../static/css/font-awesome.min.css" th:href="@{/css/font-awesome.min.css}">
-<link rel="stylesheet" href="../static/css/bootstrap.css" th:href="@{/css/bootstrap.css}">
-<link rel="stylesheet" href="../static/css/magnific-popup.css" th:href="@{/css/magnific-popup.css}">
-<link rel="stylesheet" href="../static/css/nice-select.css" th:href="@{/css/nice-select.css}">
-<link rel="stylesheet" href="../static/css/animate.min.css" th:href="@{/css/animate.min.css}">
-<link rel="stylesheet" href="../static/css/owl.carousel.css" th:href="@{/css/owl.carousel.css}">
-<link rel="stylesheet" href="../static/css/main.css" th:href="@{/css/main.css}">
-</head>
-<body>
-		<div th:replace="~{headerLogin :: headerLogin}"></div> 
+	<!DOCTYPE html>
+	<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<!-- Mobile Specific Meta -->
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<!-- Favicon-->
+		<link rel="shortcut icon" href="img/logo1.png">
+		<!-- Author Meta -->
+		<meta name="author" content="colorlib">
+		<!-- Meta Description -->
+		<meta name="description" content="">
+		<!-- Meta Keyword -->
+		<meta name="keywords" content="">
+		<!-- meta character set -->
+		<meta charset="UTF-8">
+		<!-- Site Title -->
+		<title>내일의 레시피</title>
+		<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet"> 
+			<!-- CSS ============================================= -->
+			<link rel="stylesheet" href="../static/css/linearicons.css" th:href="@{/css/linearicons.css}">
+			<link rel="stylesheet" href="../static/css/font-awesome.min.css" th:href="@{/css/font-awesome.min.css}">
+			<link rel="stylesheet" href="../static/css/bootstrap.css" th:href="@{/css/bootstrap.css}">
+			<link rel="stylesheet" href="../static/css/magnific-popup.css" th:href="@{/css/magnific-popup.css}">
+			<link rel="stylesheet" href="../static/css/jquery-ui.css" th:href="@{/css/jquery-ui.css}">				
+			<link rel="stylesheet" href="../static/css/nice-select.css" th:href="@{/css/nice-select.css}">							
+			<link rel="stylesheet" href="../static/css/animate.min.css" th:href="@{/css/animate.min.css}">
+			<link rel="stylesheet" href="../static/css/owl.carousel.css" th:href="@{/css/owl.carousel.css}">				
+			<link rel="stylesheet" href="../static/css/main.css" th:href="@{/css/main.css}">	   
+			<script src="../static/js/vendor/jquery-2.2.4.min.js" th:src="@{/js/vendor/jquery-2.2.4.min.js}"></script>
+			<script src="../static/js/popper.min.js" th:src="@{/js/popper.min.js}"></script>
+			<script src="../static/js/vendor/bootstrap.min.js" th:src="@{/js/vendor/bootstrap.min.js}"></script>			
+			<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhOdIF3Y9382fqJYt5I_sswSrEw5eihAA"></script>		
+ 			<script src="../static/js/jquery-ui.js" th:src="@{/js/jquery-ui.js}"></script>					
+  			<script src="../static/js/easing.min.js" th:src="@{/js/easing.min.js}"></script>			
+			<script src="../static/js/hoverIntent.js" th:src="@{/js/hoverIntent.js}"></script>
+			<script src="../static/js/superfish.min.js" th:src="@{/js/superfish.min.js}"></script>	
+			<script src="../static/js/jquery.ajaxchimp.min.js" th:src="@{/js/jquery.ajaxchimp.min.js}"></script>
+			<script src="../static/js/jquery.magnific-popup.min.js" th:src="@{/js/jquery.magnific-popup.min.js}"></script>						
+			<script src="../static/js/jquery.nice-select.min.js" th:src="@{/js/jquery.nice-select.min.js}"></script>					
+			<script src="../static/js/owl.carousel.min.js" th:src="@{/js/owl.carousel.min.js}"></script>			
+            <script src="../static/js/isotope.pkgd.min.js" th:src="@{/js/isotope.pkgd.min.js}"></script>								
+			<script src="../static/js/mail-script.js" th:src="@{/js/mail-script.js}"></script>	
+			<script src="../static/js/main.js" th:src="@{/js/main.js}"></script>
+		</head>
+		<body>	
+		<div th:replace="~{header :: header}"></div>
+<!-- #header -->
+			
+			<!-- start banner Area -->
+			<section class="banner-area">		
+				<div class="container">
+					<div class="row fullscreen align-items-center justify-content-between">
+						<div class="col-lg-12 banner-content">
+							<h1 class="text-white">내일의 레시피</h1>
+							<p class="text-white">
+								혼자 요리하지말고, 같이하자!
+							</p>
+							<a href="#" class="primary-btn text-uppercase">레시피 보러가기</a>
+						</div>
+					</div>
+				</div>					
+			</section>
+			<!-- End banner Area -->
 
-
-	<section class="banner-area relative" id="home">
-		<div class="overlay overlay-bg"></div>
-		<div class="container">
-			<div
-				class="row fullscreen d-flex align-items-center justify-content-start">
-				<div class="banner-content col-lg-9">
-					<h6 class="text-white">내 차처럼 편안하게, 매너있게</h6>
-					<h1 class="text-white">카풀피풀, 타세요 탑니다!</h1>
-					<p class="pt-20 pb-20 text-white">
-						커피 주시고, 편하게 타시고!<br> 차량이 없으면 대여하시고!
-					</p>
-					<a href="CPPE_operator.jsp" class="primary-btn text-uppercase">해봅시다!</a>
-				</div>
-			</div>
-		</div>
-	</section>
-	<section class="feature-area section-gap" id="feature">
-		<div class="container">
-			<div class="row d-flex justify-content-center">
-				<div class="col-md-8 pb-40 header-text">
-					<h1>카풀피풀 이용 매너</h1>
-					<p>카풀피풀, 안심하고 타세요</p>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-lg-4">
-					<div class="single-service">
-						<div class="thumb" align="center">
-							<img src="../static/img/index/smoking.PNG" th:src="@{/img/index/smoking.PNG}"
-								style="width: 125px; height: 125px;" alt="">
+			<!-- Start home-about Area -->
+			<section class="home-about-area section-gap">
+				<div class="container">
+					<div class="row align-items-center">
+						<div class="col-lg-6 home-about-left">
+							<h1>우리의 이야기</h1>
+							<p>
+								내일의 레시피는 자신만의 레시피를 공유하고,<br>
+								다른 사람들의 레시피를 배우며,<br>
+								레시피에 맞는 재료들을 한 눈에 보고,<br> 
+								구입할 수 있도록 하기 위해 제작된 사이트입니다.
+							</p>
 						</div>
-						<center>
-							<div class="detail">
-								<a href="#"><h4>카풀피풀은 금연 구역</h4></a>
-								<p>
-									흡연회원은 회원자격 재심사, <br> 신고하면 CPP를 드려요.
-								</p>
-							</div>
-						</center>
-					</div>
-				</div>
-				<div class="col-lg-4">
-					<div class="single-service">
-						<div class="thumb" align="center">
-							<img src="../static/img/index/star.PNG" th:src="@{/img/index/star.PNG}"
-								style="width: 125px; height: 125px;" alt="">
+						<div class="col-lg-6 home-about-right">
+							<img class="img-fluid" src="img/about-img.jpg" alt="">
 						</div>
-						<center>
-							<div class="detail">
-								<a href="#"><h4>매너 평가 시스템 운영</h4></a>
-								<p>
-									카풀피풀만의 평가 제도로<br> 매너 회원에게 리워드가 있어요.
-								</p>
-							</div>
-						</center>
 					</div>
-				</div>
-				<div class="col-lg-4">
-					<div class="single-service">
-						<div class="thumb" align="center">
-							<img src="../static/img/index/smile.PNG" th:src="@{/img/index/smile.PNG}"
-								style="width: 125px; height: 125px;" alt="">
-						</div>
-						<center>
-							<div class="detail">
-								<a href="#"><h4>매너 카풀피풀을 부탁해</h4></a>
-								<p>
-									카풀피풀X회원이 함께하는<br> 매너개선 캠페인을 운영해요.
-								</p>
-							</div>
-						</center>
-					</div>
-				</div>
-				<br>
-				<div class="col-lg-4">
-					<div class="single-service">
-						<div class="thumb" align="center"> 
-									<img src="../static/img/index/money.PNG" th:src="@{/img/index/money.PNG}"
-									style="width:125px; height:125px;" alt="">
-						</div>
-						<center>
-							<div class="detail">
-								<a href="#"><h4>에티켓 용품 비치</h4></a>
-								<p>
-									깨끗한 카풀피풀을 위해<br> 차량에 물티슈와 쓰레기봉투를 채워요.
-								</p>
-							</div>
-						</center>
-					</div>
-				</div>
-				<div class="col-lg-4">
-					<div class="single-service">
-						<div class="thumb" align="center">
-									<img src="../static/img/index/sweep.PNG" th:src="@{/img/index/sweep.PNG}"
-									style="width:125px; height:125px;" alt="">
-						</div>
-						<center>
-							<div class="detail">
-								<a href="#"><h4>주기적 내외부 세차</h4></a>
-								<p>
-									청결하고 위생적인 카풀피풀을 위해<br> 안팎으로 꼼꼼히 청소해요.
-								</p>
-							</div>
-						</center>
-					</div>
-				</div>
-				<div class="col-lg-4">
-					<div class="single-service">
-						<div class="thumb" align="center">
-							<img src="../static/img/index/headset.PNG" th:src="@{/img/index/headset.PNG}"
-								style="width: 125px; height: 125px;" alt="">
-						</div>
-						<center>
-							<div class="detail">
-								<a href="#"><h4>휴일 없는 고객센터</h4></a>
-								<p>
-									24시간 카풀피풀과<br> 신속한 문제 해결을 위해 대기하고 있어요.
-								</p>
-							</div>
-						</center>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<section class="service-area section-gap" id="service">
-		<div class="container">
-			<div class="row d-flex justify-content-center">
-				<div class="menu-content pb-70 col-lg-8">
-					<div class="title text-center">
-						<h1 class="mb-10">카풀피풀 차량 대여</h1>
-						<p>차가 없으신 회원님에게는 차량을 대여해 드립니다.</p>
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-lg-4">
-					<div class="single-service">
-						<div class="thumb" align="center">
-							<img src="../static/img/index/service.PNG" th:src="@{/img/index/service.PNG}" style="" alt="">
-						</div>
-						<center>
-							<div class="detail">
-								<a href="#"><h4>필요한 시간에 딱 맞추어</h4></a>
-								<p>
-									원하는 시간에 이용할 수 있습니다.<br> 이용 가능한 카풀피풀를 가까운 곳에서 <br>가져다
-									드립니다.
-								</p>
-							</div>
-						</center>
-					</div>
-				</div>
-				<div class="col-lg-4">
-					<div class="single-service">
-						<div class="thumb" align="center">
-							<img src="../static/img/index/service2.jpg" th:src="@{/img/index/service2.jpg}" style="" alt="">
-						</div>
-						<center>
-							<div class="detail">
-								<h4>원하는 차를 골라</h4>
-								</a>
-								<p>
-									카풀피풀의 모든 차종을 선택할 수 있습니다. <br> 원하는 차량이 가까운 카풀피풀존에 없거나 <br>
-									다른 예약이 있어도 걱정 없습니다.
-								</p>
-							</div>
-						</center>
-					</div>
-				</div>
-				<div class="col-lg-4">
-					<div class="single-service">
-						<div class="thumb" align="center">
-							<img src="../static/img/index/service3.jpg" th:src="@{img/index/service3.jpg}" style="" alt="">
-						</div>
-						<center>
-							<div class="detail">
-								<a href="#"><h4>원하는 곳에서 바로 출발</h4></a>
-								<p>
-									집 앞, 회사 주차장에서 바로 출발하세요.<br> 짐이 많고, 비가오고, 아이와 함께라<br>
-									이동이 어려운 날 부름이면 세상 편해집니다.
-								</p>
-							</div>
-						</center>
-					</div>
-				</div>
-				<br>
-
-			</div>
-		</div>
-	</section>
-	<section class="feature-area section-gap" id="feature">
-		<div class="container">
-			<div class="row d-flex justify-content-center">
-				<div class="menu-content pb-70 col-lg-8">
-					<div class="title text-center">
-						<h1 class="mb-10">카풀피풀 다양한 차종</h1>
-						<p>오늘 하루 기분에 따라 마음껏 골라 타보세요.</p>
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-lg-3 col-md-6 single-blog">
-					<div class="thumb">
-						<img class="img-fluid" src="../static/img/index/K5.png" th:src="@{/img/index/K5.png}" alt="">
-					</div>
-					<p class="date">38,000원~</p>
-					<a href="CPPE_passenger_content.jsp?car_id=12&car_kind=all"><h4>The
-							New K5</h4></a>
-					<p>
-						새로운 스포티세단의 시작, <br> The New K5 탄생
-					</p>
-				</div>
-				<div class="col-lg-3 col-md-6 single-blog">
-					<div class="thumb">
-						<img class="img-fluid" src="../static/img/index/K5하이브리드.png" th:src="@{/img/index/K5하이브리드.png}"
-							alt="">
-					</div>
-					<p class="date">48,000원~</p>
-					<a href="CPPE_passenger_content.jsp?car_id=8&car_kind=all"><h4>K5하이브리드</h4></a>
-					<p>
-						Sporty Hybrid Sedan의 새로운 기준,<br> The New K5 hybrid 탄생
-					</p>
-				</div>
-				<div class="col-lg-3 col-md-6 single-blog">
-					<div class="thumb">
-						<img class="img-fluid" src="../static/img/index/더뉴레이.png" th:src="@{/img/index/더뉴레이.png}" alt="">
-					</div>
-					<p class="date">25,000원~</p>
-					<a href="CPPE_passenger_content.jsp?car_id=9&car_kind=all"><h4>더
-							뉴 레이</h4></a>
-					<p>
-						모던하고 산뜻한 새로운 얼굴과 <br> 넓은 공간으로 돌아온 더 뉴 레이
-					</p>
-				</div>
-				<div class="col-lg-3 col-md-6 single-blog">
-					<div class="thumb">
-						<img class="img-fluid" src="../static/img/index/스포티지.png" th:src="@{/img/index/스포티지.png}" alt="">
-					</div>
-					<p class="date">63,000원~</p>
-					<a href="CPPE_passenger_content.jsp?car_id=14&car_kind=all"><h4>스포티지</h4></a>
-					<p>
-						강력한 엔진과 파워풀한 모습으로 <br> 다시 태어난 스포티지 더 볼드
-					</p>
-				</div>
-				<div class="col-lg-3 col-md-6 single-blog">
-					<div class="thumb">
-						<img class="img-fluid" src="../static/img/index/니로EV.png" th:src="@{/img/index/니로EV.png}" alt="">
-					</div>
-					<p class="date">60,000원~</p>
-					<a href="CPPE_passenger_content.jsp?car_id=11&car_kind=all"><h4>니로
-							EV</h4></a>
-					<p>
-						니로가 이룬 또 한번의 혁신. <br> 니로 EV가 스마트하게 앞서갑니다
-					</p>
-				</div>
-				<div class="col-lg-3 col-md-6 single-blog">
-					<div class="thumb">
-						<img class="img-fluid"
-							src="../static/../static/img/index/올 뉴 모닝.png" th:src="@{/img/index/올 뉴 모닝.png}" alt="">
-					</div>
-					<p class="date">24,000원~</p>
-					<a href="CPPE_passenger_content.jsp?car_id=10&car_kind=all"><h4>올
-							뉴 모닝</h4></a>
-					<p>
-						경차 최고의 휠베이스 및 <br> 우수한 패키지 기술, 넓고 스마트한 공간
-					</p>
-				</div>
-				<div class="col-lg-3 col-md-6 single-blog">
-					<div class="thumb">
-						<img class="img-fluid" src="../static/img/index/쏘렌토.png" th:src="@{/img/index/쏘렌토.png}" alt="">
-					</div>
-					<p class="date">63,000원~</p>
-					<a href="CPPE_passenger_content.jsp?car_id=15&car_kind=all"><h4>쏘렌토</h4></a>
-					<p>쏘렌토 THE MASTER 탄생</p>
-				</div>
-				<div class="col-lg-3 col-md-6 single-blog">
-					<div class="thumb">
-						<img class="img-fluid" src="../static/img/index/K7.png" th:src="@{/img/index/K7.png}" alt="">
-					</div>
-					<p class="date">60,000원~</p>
-					<a href="CPPE_passenger_content.jsp?car_id=13&car_kind=all"><h4>K7</h4></a>
-					<p>
-						Soft Charisma<br> 2018 K7 탄생
-					</p>
-				</div>
-
-			</div>
-		</div>
-	</section>
-	<section class="service-area section-gap" id="service">
-		<div class="container">
-			<div class="row d-flex justify-content-center">
-				<div class="menu-content pb-70 col-lg-8">
-					<div class="title text-center">
-						<h1 class="mb-10">카풀피풀 차량 대여 요금안내</h1>
-						<p>다양한 대여 요금을 알아보세요.</p>
-					</div>
-				</div>
-			</div>
-			<center>
-				<table border="0" bordercolor="#777777">
-
-					<tr>
-						<td align="center"
-							style="color: black; font-weight: bold; width: 120px; background: white; border: #777777 solid; border-width: 1px 1px 1px 0px"
-							rowspan="2">차종</td>
-						<td align="center"
-							style="color: black; font-weight: bold; width: 150px; background: white; border: #777777 solid; border-width: 1px 1px 1px 1px"
-							rowspan="2">모델</td>
-						<td align="center"
-							style="color: black; font-weight: bold; width: 150px; background: white; border: #777777 solid; border-width: 1px 1px 1px 1px"
-							rowspan="2">유종</td>
-						<td align="center"
-							style="color: black; font-weight: bold; width: 150px; background: white; border: #777777 solid; border-width: 1px 1px 1px 1px"
-							rowspan="2">전국<br>일일기준요금
-						</td>
-						<td align="center"
-							style="color: black; font-weight: bold; width: 300px; background: white; border: #777777 solid; border-width: 1px 0px 1px 1px"
-							colspan="2">카풀피풀 전용<br>일일대여요금
-						</td>
-					</tr>
-					<tr>
-						<td align="center"
-							style="color: black; font-weight: bold; background: white; border: #777777 solid; border-width: 1px 1px 1px 1px">주중</td>
-						<td align="center"
-							style="color: black; font-weight: bold; background: white; border: #777777 solid; border-width: 1px 0px 1px 1px">주말</td>
-					</tr>
-					<tr>
-						<td align="center"
-							style="border: #777777 solid; border-width: 1px 1px 1px 0px">경형</td>
-						<td align="center"
-							style="border: #777777 solid; border-width: 1px 1px 1px 1px">올
-							뉴 모닝</td>
-						<td align="center"
-							style="border: #777777 solid; border-width: 1px 1px 1px 1px">휘발유</td>
-						<td align="right"
-							style="border: #777777 solid; border-width: 1px 1px 1px 1px">72,000</td>
-						<td align="right"
-							style="background: #eff4fa; border: #777777 solid; border-width: 1px 1px 1px 1px">24,000~</td>
-						<td align="right" height="40"
-							style="border: #777777 solid; border-width: 1px 0px 1px 1px">36,000~</td>
-					</tr>
-					<tr>
-						<td align="center"
-							style="border: #777777 solid; border-width: 1px 1px 1px 0px">소형</td>
-						<td align="center"
-							style="border: #777777 solid; border-width: 1px 1px 1px 1px">더
-							뉴 레이</td>
-						<td align="center"
-							style="border: #777777 solid; border-width: 1px 1px 1px 1px">휘발유</td>
-						<td align="right"
-							style="border: #777777 solid; border-width: 1px 1px 1px 1px">75,000</td>
-						<td align="right"
-							style="background: #eff4fa; border: #777777 solid; border-width: 1px 1px 1px 1px">25,000~</td>
-						<td align="right" height="40"
-							style="border: #777777 solid; border-width: 1px 0px 1px 1px">37,000~</td>
-					</tr>
-					<tr>
-						<td align="center"
-							style="border: #777777 solid; border-width: 1px 1px 1px 0px">EV</td>
-						<td align="center"
-							style="border: #777777 solid; border-width: 1px 1px 1px 1px">니로
-							EV</td>
-						<td align="center"
-							style="border: #777777 solid; border-width: 1px 1px 1px 1px">전기</td>
-						<td align="right"
-							style="border: #777777 solid; border-width: 1px 1px 1px 1px">200,000</td>
-						<td align="right"
-							style="background: #eff4fa; border: #777777 solid; border-width: 1px 1px 1px 1px">60,000~</td>
-						<td align="right" height="40"
-							style="border: #777777 solid; border-width: 1px 0px 1px 1px">100,000~</td>
-					</tr>
-					<tr>
-						<td align="center"
-							style="border: #777777 solid; border-width: 1px 1px 1px 0px">하이브리드</td>
-						<td align="center"
-							style="border: #777777 solid; border-width: 1px 1px 1px 1px">K5
-							하이브리드</td>
-						<td align="center"
-							style="border: #777777 solid; border-width: 1px 1px 1px 1px">전기,
-							휘발유</td>
-						<td align="right"
-							style="border: #777777 solid; border-width: 1px 1px 1px 1px">180,000</td>
-						<td align="right"
-							style="background: #eff4fa; border: #777777 solid; border-width: 1px 1px 1px 1px">48,000~</td>
-						<td align="right" height="40"
-							style="border: #777777 solid; border-width: 1px 0px 1px 1px">90,000~</td>
-					</tr>
-					<tr>
-						<td align="center" rowspan="2"
-							style="border: #777777 solid; border-width: 1px 1px 1px 0px">중형</td>
-						<td align="center"
-							style="border: #777777 solid; border-width: 1px 1px 1px 1px">The
-							New K5</td>
-						<td align="center"
-							style="border: #777777 solid; border-width: 1px 1px 1px 1px">휘발유</td>
-						<td align="right"
-							style="border: #777777 solid; border-width: 1px 1px 1px 1px">130,000</td>
-						<td align="right"
-							style="background: #eff4fa; border: #777777 solid; border-width: 1px 1px 1px 1px">38,000~</td>
-						<td align="right" height="40"
-							style="border: #777777 solid; border-width: 1px 0px 1px 1px">65,000~</td>
-					</tr>
-					<tr>
-
-						<td align="center"
-							style="border: #777777 solid; border-width: 1px 1px 1px 1px">The
-							New K5</td>
-						<td align="center"
-							style="border: #777777 solid; border-width: 1px 1px 1px 1px">휘발유</td>
-						<td align="right"
-							style="border: #777777 solid; border-width: 1px 1px 1px 1px">130,000</td>
-						<td align="right"
-							style="background: #eff4fa; border: #777777 solid; border-width: 1px 1px 1px 1px">38,000~</td>
-						<td align="right" height="40"
-							style="border: #777777 solid; border-width: 1px 0px 1px 1px">65,000~</td>
-					</tr>
-					<tr>
-						<td align="center"
-							style="border: #777777 solid; border-width: 1px 1px 1px 0px">준대형</td>
-						<td align="center"
-							style="border: #777777 solid; border-width: 1px 1px 1px 1px">K7</td>
-						<td align="center"
-							style="border: #777777 solid; border-width: 1px 1px 1px 1px">LPG</td>
-						<td align="right"
-							style="border: #777777 solid; border-width: 1px 1px 1px 1px">250,000</td>
-						<td align="right"
-							style="background: #eff4fa; border: #777777 solid; border-width: 1px 1px 1px 1px">60,000~</td>
-						<td align="right" height="40"
-							style="border: #777777 solid; border-width: 1px 0px 1px 1px">100,000~</td>
-					</tr>
-					<tr>
-						<td align="center"
-							style="border: #777777 solid; border-width: 1px 1px 1px 0px">준중형
-							SUV</td>
-						<td align="center"
-							style="border: #777777 solid; border-width: 1px 1px 1px 1px">스포티지</td>
-						<td align="center"
-							style="border: #777777 solid; border-width: 1px 1px 1px 1px">경유</td>
-						<td align="right"
-							style="border: #777777 solid; border-width: 1px 1px 1px 1px">180,000</td>
-						<td align="right"
-							style="background: #eff4fa; border: #777777 solid; border-width: 1px 1px 1px 1px">63,000~</td>
-						<td align="right" height="40"
-							style="border: #777777 solid; border-width: 1px 0px 1px 1px">105,000~</td>
-					</tr>
-					<tr>
-						<td align="center"
-							style="border: #777777 solid; border-width: 1px 1px 1px 0px">중형
-							SUV</td>
-						<td align="center"
-							style="border: #777777 solid; border-width: 1px 1px 1px 1px">쏘렌토</td>
-						<td align="center"
-							style="border: #777777 solid; border-width: 1px 1px 1px 1px">휘발유</td>
-						<td align="right"
-							style="border: #777777 solid; border-width: 1px 1px 1px 1px">210,000</td>
-						<td align="right"
-							style="background: #eff4fa; border: #777777 solid; border-width: 1px 1px 1px 1px">63,000~</td>
-						<td align="right" height="40"
-							style="border: #777777 solid; border-width: 1px 0px 1px 1px">105,000~</td>
-					</tr>
-				</table>
-				<table>
-					<tr>
-						<td height="30"></td>
-					</tr>
-					<tr>
-						<td width="870" style="font-size: 14px;">※주중/주말 기준<br> ·
-							주중: 일 19:00 ~ 금 19:00 / 주중 심야: 00:00 ~ 06:00<br> · 주말: 금
-							19:00 ~ 일 19:00 (공휴일 및 당사 지정 성수기 포함)
-						</td>
-					</tr>
-					<tr>
-						<td><br> · 대여요금은 당사 내부정책/유가변동에 따라 변경될 수 있습니다.<br> ·
-							대여요금은 차종, 지역, 시간대, 내륙/제주 등의 조건에 따라 탄력요금제로 운영하므로,<br>&nbsp;&nbsp;예약 조건에
-							따라 서비스요금은 달라질 수 있습니다.<br> · 1일 기준 대여요금은 20시간을 기준으로 책정됩니다.<br>
-							· 연장 요금은 대여요금과 별도로 적용됩니다.</td>
-					</tr>
-				</table>
-				<br>
-				<hr width="870">
-			</center>
-		</div>
-	</section>
-	<section class="facts-area section-gap" id="facts-area">
-		<div class="container">
-			<div class="row">
-				<div class="col single-fact">
-					<h1 class="counter">2536</h1>
-					<p>카풀피풀 회원 수</p>
-				</div>
-				<div class="col single-fact">
-					<h1 class="counter">6784</h1>
-					<p>카풀피풀 탑승 고객 수</p>
-				</div>
-				<div class="col single-fact">
-					<h1 class="counter">1059</h1>
-					<p>카풀피풀 운전 고객 수</p>
-				</div>
-				<div class="col single-fact">
-					<h1 class="counter">4,694,431</h1>
-					<p>카풀피풀 운전자의 수익</p>
-				</div>
-				<div class="col single-fact">
-					<h1 class="counter">0</h1>
-					<p>카풀피풀 운영자의 통장 잔고</p>
-				</div>
-			</div>
-		</div>
-	</section>
-	<div th:replace="~{footer :: footer}"></div>
-</body>
-</html>
+				</div>	
+			</section>
+			<!-- End home-about Area -->			
+			<!-- start footer Area -->		
+			<div th:replace="~{footer :: footer}"></div>
+			<!-- End footer Area -->		
+		</body>
+	</html>

@@ -1,4 +1,4 @@
-package itc.hoseo.cppe;
+package com.hoseo.rot;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

@@ -2,25 +2,57 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <meta charset="UTF-8">
 <head>
-<title>카풀피풀</title>
+<title>내일의 레시피</title>
 </head>
 <body>
-	<footer class="footer-area section-gap" th:fragment="footer">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-5 col-md-6 col-sm-6">
-					<div class="single-footer-widget">
-						<h6>CarPoolPeopool</h6>
-						<p>
-							서울호서직업전문학교 ICT보안융합계열 컴퓨터공학과<br>2학년 A반 JSP Team Project 1조
-							(지도교수 : 김종언)
-						</p>
-						<p class="footer-text">Copyright 2018. CarPoolPeopool. All
-							rights reserved.</p>
+			<footer class="footer-area" th:fragment="footer">
+				<div class="footer-widget-wrap">
+					<div class="container">
+						<div class="row section-gap">
+							<div class="col-lg-4  col-md-6 col-sm-6">
+								<div class="single-footer-widget">
+									<h4>오픈 시간</h4>
+									<ul class="hr-list">
+										<li class="d-flex justify-content-between">
+											<span>월요일 - 금요일</span> <span>08.00 am - 10.00 pm</span>
+										</li>
+										<li class="d-flex justify-content-between">
+											<span>토요일</span> <span>08.00 am - 10.00 pm</span>
+										</li>
+										<li class="d-flex justify-content-between">
+											<span>일요일</span> <span>08.00 am - 10.00 pm</span>
+										</li>																				
+									</ul>
+								</div>
+							</div>
+							<div class="col-lg-4  col-md-6 col-sm-6">
+								<div class="single-footer-widget">
+									<h4>연락처</h4>
+									<p>
+										서울특별시 강서구 강서로 420 서울호서직업전문학교<br>
+										서울특별시 강서구 등촌동 680-1
+									</p>
+									<p class="number">
+										02-3660-0200<br>
+										010-4070-2805
+									</p>
+								</div>
+							</div>												
+						</div>					
+					</div>					
+				</div>
+				<div class="footer-bottom-wrap">
+					<div class="container">
+						<div class="row footer-bottom d-flex justify-content-between align-items-center">
+							<p class="col-lg-8 col-mdcol-sm-6 -6 footer-text m-0"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright ROT &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This Site is made with Park SeungJin (Spring Project)
+							<ul class="col-lg-4 col-mdcol-sm-6 -6 social-icons text-right">
+	                            <li><a href="https://github.com/tmdwls2805/ROT"><i class="fa fa-github"></i></a></li>
+	                            <li><a href="https://blog.naver.com/tmdwls2805"><i class="fa fa-dribbble"></i></a></li>       
+	                        </ul>
+						</div>						
 					</div>
 				</div>
-			</div>
-		</div>
-	</footer>
+			</footer>
 </body>
 </html>
