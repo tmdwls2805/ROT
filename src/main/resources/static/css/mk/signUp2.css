@@ -243,3 +243,14 @@ em{
   box-sizing: border-box;
   font-size: 14px;
 }
+
+.error-next-box{
+	display: block;
+    margin: 9px 0 -2px;
+    font-size: 12px;
+    line-height: 14px;
+    color: #f42f2c;
+    border:#f8f8f8;
+    background:#f8f8f8;
+    width:100%;
+}
