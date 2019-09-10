@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<!-- Mobile Specific Meta -->
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!-- Favicon-->
+<link rel="shortcut icon" href="img/logo1.png">
+<!-- Author Meta -->
+<meta name="author" content="colorlib">
+<!-- Meta Description -->
+<meta name="description" content="">
+<!-- Meta Keyword -->
+<meta name="keywords" content="">
+<!-- meta character set -->
+<meta charset="UTF-8">
+<!-- Site Title -->
+<title>내일의 레시피</title>
+<link rel="stylesheet" href="../static/css/mk/login.css" th:href="@{/css/mk/login.css}">
+</head>
+<body>
+	<!----------- 헤더 ------------->
+		<header>
+			<div id="logo">
+				<a href="index.html" th:href="@{/}"><img src="img/logo1.png" alt="" title="" /></a>
+			</div>
+		</header><br>
+		<!----------- 로그인 폼 시작 ------------->
+		<div class="form">
+			<form class="login-form">
+				<input type="text" placeholder="아이디" /> 
+				<input type="password" placeholder="비밀번호" />
+				<div class="checks" align="left">
+  					<input type="checkbox" id="ex_chk"> 
+  					<label for="ex_chk">로그인 상태 유지</label> 
+  					&nbsp;&nbsp;&nbsp;
+  					<input type="checkbox" id="ex_chk2"> 
+  					<label for="ex_chk2">아이디 저장</label> 
+				</div><br>
+				<input type="button" class="button-font" value="로그인" />
+				<p class="message">
+					<a href="#">아이디 찾기</a>
+					&nbsp;&nbsp;|&nbsp;&nbsp;
+					<a href="#">비밀번호 찾기</a>
+					&nbsp;&nbsp;|&nbsp;&nbsp;
+					<a href="signUp.html" th:href="@{/signUp}">회원가입</a>
+				</p>
+			</form>
+		</div>
+		<!----------- 로그인 폼 끝 ------------->
+</body>
+</html>

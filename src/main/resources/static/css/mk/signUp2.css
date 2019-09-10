@@ -1,0 +1,149 @@
+html, body {
+	height: 100%;
+}
+
+body {
+	display: table;
+	margin: 0 auto;
+	background-color: #f8f8f8;
+}
+
+header{
+	text-align:center;
+	margin-top:20px;
+	margin-bottom:20px;
+}
+
+footer{
+    bottom:0;
+    margin-top:30px;
+    margin-bottom:15px;
+    width:466px;
+}
+address{
+	font-style:normal;
+}
+.footer{
+	text-align:center;
+}
+
+em{
+	font-style:normal;
+	color:#333;
+}
+
+#footer_em{
+	font-size:9px;
+	color:#333;
+}
+
+#footer_em2{
+	font-size:9px;
+	color:#666;
+	font-weight:700;
+}
+
+.join-content{
+	width:466.4px;
+}
+
+input[type=text] {
+  font-family: "Roboto", sans-serif;
+  outline: 0;
+  background: #fff;
+  width: 100%;
+  border: #dadada 1px solid;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+input[type=text]:focus {
+  font-family: "Roboto", sans-serif;
+  outline: 0;
+  background: #fff;
+  width: 100%;
+  border:#f42f2c 1px solid;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+input[type=password] {
+  font-family: "Roboto", sans-serif;
+  outline: 0;
+  background: #fff;
+  width: 100%;
+  border: #dadada 1px solid;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+input[type=password]:focus {
+  font-family: "Roboto", sans-serif;
+  outline: 0;
+  background: #fff;
+  width: 100%;
+  border:#f42f2c 1px solid;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+input[type=button] {
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  outline: 0;
+  background: #f42f2c;
+  width: 100%;
+  border: 0;
+  padding: 15px;
+  color: #FFFFFF;
+  font-size: 20px;
+  font-weight:600;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+  margin-top:30px;
+}
+input[type=button]:hover, input[type=button]:active, input[type=button]:focus {
+  background: #e62e2b;
+}
+
+.select-gender {
+  font-family: "Roboto", sans-serif;
+  outline: 0;
+  background: #fff;
+  width: 100%;
+  border: #dadada 1px solid;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+.select-gender:focus {
+  font-family: "Roboto", sans-serif;
+  outline: 0;
+  background: #fff;
+  width: 100%;
+  border:#f42f2c 1px solid;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+
+
+.join-title{
+	margin:16px 0px 8px;
+}
+
+.join-title .font{
+	font-size: 14px;
+    font-weight: 700;
+}
+
+.email-font{
+	
+}
