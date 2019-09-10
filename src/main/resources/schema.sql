@@ -2,7 +2,7 @@ CREATE TABLE IF NOT EXISTS `member` (
   `id` varchar(2048) NOT NULL PRIMARY KEY,
   `password` varchar(2048) NOT NULL,
   `name` varchar(2048) NOT NULL,
-  `email` varchar(2048) NOT NULL,
+  `email` varchar(2048),
   `gender` varchar(2048) NOT NULL,
   `year` varchar(2048) NOT NULL,
   `month` varchar(2048) NOT NULL,
@@ -11,7 +11,7 @@ CREATE TABLE IF NOT EXISTS `member` (
   `zipcode` int(11) NOT NULL,
   `addr1` varchar(2048) NOT NULL,
   `addr2` varchar(2048) DEFAULT NULL,
-  `point` int(11) NOT NULL,
+  `point` int(11) default 0,
   `regdate` datetime
 );
 
