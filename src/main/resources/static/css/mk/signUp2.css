@@ -142,10 +142,16 @@ em{
     font-weight: 700;
 }
 
-.email-font{
+.selection-font{
 	font-size: 12px;
     font-weight: 400;
     color: #8e8e8e;
+}
+
+.necessary-font{
+	font-size:12px;
+	font-weight:400;
+	color:#f42f2c;
 }
 
 

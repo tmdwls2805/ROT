@@ -1,1 +1,1 @@
-insert into member values('tmdwls2805', 'tmdwls12','박승진','qkrtmdwls280@gmail.com','남자','1997','11','06','01040702805','14512','경기','중앙','0',sysdate());
+insert into member values('tmdwls2805', 'tmdwls12','박승진','qkrtmdwls280@gmail.com','01040702805','14512','경기','중앙','0',sysdate());

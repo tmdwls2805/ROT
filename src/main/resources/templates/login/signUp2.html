@@ -18,7 +18,7 @@
 <title>내일의 레시피</title>
 <link rel="stylesheet" href="../static/css/mk/signUp2.css" th:href="@{/css/mk/signUp2.css?after}">
 <script src="../static/js/mk/signUp2.js" th:src="@{/js/mk/signUp2.js}"></script>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
 </head>
 <body>
@@ -27,9 +27,9 @@
 				<a href="index.html" th:href="@{/}"><img src="img/logo1.png" alt="" title="" /></a>
 			</div>
 		</header><br>
-		<!----------- 회원가입 폼 시작 ------------->
+<!----------------------------------------------------- 회원가입 폼 시작 ------------------------------------------------------------>	
 		<div class="join-content">
-			<form class="login-form" name="form" action="signUp2.html" th:action="@{/signUp2}">
+			<form class="login-form" name="form" action="signUp2.html" method="post" th:action="@{/signUp2}">
 				<div class="checks" align="left">
 				
 					<div class="row-group">
@@ -38,35 +38,39 @@
 							<div  class="join-title">
 								<label for="id" class="font">아이디</label>
 							</div>
-							<input type="text" id="id" name="id" maxlength="20" class="index-text-100" onblur="idChk()"/> 
-							<input type="text" class="error-next-box" name="chk" value="" readonly="readonly">
+							<input type="text" id="id" name="id" maxlength="20" class="index-text-100" required /> 
+							<div class="error-next-box" id="chkID"></div>
 						</div>
 							
 						<div class="row-password">
 							<div  class="join-title">
 								<label for="password" class="font">비밀번호</label>
 							</div>
-							<input type="password" id="password" name="password" maxlength="20" class="index-text-100" />
+							<input type="password" id="password" name="password" maxlength="20" class="index-text-100" required />
+							<div class="error-next-box" id="chkPassword"></div>
 						</div>
 						
 						<div class="row-password">
 							<div  class="join-title">
 								<label for="passwordCheck" class="font">비밀번호 재확인</label>
 							</div>
-							<input type="password" id="passwordCheck"  class="index-text-100"  name="passwordCheck" maxlength="20" onblur="pwChk()" required />
+							<input type="password" id="passwordCheck"  class="index-text-100"  name="passwordCheck" maxlength="20" onblur="passwordCheckChk()" required />
+							<div class="error-next-box" id="chkPasswordCheck"></div>
 						</div>
 					</div>
 					<div class="row-name">
 						<div  class="join-title">
 							<label for="name" class="font">이름</label>
 						</div>
-						<input type="text" id="name" name="name" class="index-text-100"  maxlength="20" /> 
+						<input type="text" id="name" name="name" class="index-text-100" maxlength="6" required /> 
+						<div class="error-next-box" id="chkName"></div>
+					
 					</div>
-					<div class="row-gender">
+<!-- 					<div class="row-gender">
 						<div  class="join-title">
 							<label for="gender" class="font">성별</label>
 						</div>
-						<select class="select-gender" id="gender" name="gender">
+						<select class="select-gender" id="gender" name="gender" required >
 							<option value selected>성별</option>
 							<option value="M">남자</option>
 							<option value="F">여자</option>
@@ -76,39 +80,41 @@
 						<div  class="join-title">
 							<label for="year" class="font">생년월일</label>
 						</div>
-						<input type="text" class="index-text-3" id="year" name="year" maxlength="4" placeholder="년(4자)" />
-						<select class="index-select-3" id="month" name="month">
-							<option value selected>월</option>
-						</select> 
-						<input type="text" class="index-text-3" id="year" name="day" maxlength="2" placeholder="일" />
-					</div>
+						<input type="text" class="index-text-3" id="year" name="year" maxlength="4" placeholder="년(4자)" required />
+						<select class="index-select-3" id="month" name="month" required ></select> 
+						<input type="text" class="index-text-3" id="year" name="day" maxlength="2" placeholder="일" required />
+					</div> -->
 					
 					<div class="row-email">
 						<div  class="join-title">
-							<label for="email" class="font">본인 확인 이메일<strong class="email-font">(선택)</strong></label>
+							<label for="email" class="font">본인 확인 이메일</label>
 						</div>
-						<input type="text" id="email" name="email" maxlength="20"  class="index-text-100"  placeholder="선택 입력"/> 
+						<input type="text" id="email" name="email" class="index-text-100"  placeholder="직접 입력" required /> 
+						<div class="error-next-box" id="chkEmail"></div>
 					</div>
 					<div class="row-phone">
 						<div  class="join-title">
 							<label for="phone" class="font">휴대전화</label>
 						</div>
-						<input type="text" id="phone" name="phone" maxlength="20"  class="index-text-100"  placeholder="'-' 없이 입력" /> 
+						<input type="text" id="phone" name="phone" maxlength="11"  class="index-text-100"  placeholder="'-' 없이 입력"  required />
+						<div class="error-next-box" id="chkPhone"></div> 
 					</div>
 					<div class="row-address">
 						<div  class="join-title">
 							<label for="zipcode" class="font">주소</label>
 						</div>
-						<input type="text" class="index-text-65" name="zipcode" size="10" id="sample6_postcode" readonly><input type="button" class="index-button-32" onclick="sample6_execDaumPostcode()" value="우편번호 찾기">
-						<input type="text" class="index-text-1001" name="addr1" id="sample6_address" readonly/>
-   						<input type="text" class="index-text-1002" name="addr2" id="sample6_address2" placeholder="상세주소 입력"/>
+						<input type="text" class="index-text-65" name="zipcode" size="10" id="sample6_postcode" readonly  required/><input type="button" class="index-button-32" onclick="sample6_execDaumPostcode()" value="우편번호 찾기">
+						<input type="text" class="index-text-1001" name="addr1" id="sample6_address" readonly  required />
+   						<input type="text" class="index-text-1002" name="addr2" id="addr2" placeholder="상세주소 입력"  required />
+   						<div class="error-next-box" id="chkAddr"></div>
 					</div>
 				</div>	
 				<input type="button" class="index-button-100" value="가입하기" />
 			</form>
 		</div>
-		<!----------- 회원가입 폼 끝 ------------->
+<!----------------------------------------------------- 회원가입 폼 끝 ------------------------------------------------------------>	
 		
+<!----------------------------------------------------- 우편번호 검색 시작 ------------------------------------------------------------>		
 		<script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
 <script>
     function sample6_execDaumPostcode() {
@@ -153,6 +159,129 @@
         }).open();
     }
 </script>
+<!----------------------------------------------------- 우편번호 검색 끝 ------------------------------------------------------------>
+<!----------------------------------------------------- 회원가입 유효성 검사 시작 ------------------------------------------------------------>
+<script>
+var idJ = /^[a-zA-Z0-9~!@#$%^&*()_+|<>?:{}]{6,20}$/;
+var passwordJ = /^[a-zA-Z0-9~!@#$%^&*()_+|<>?:{}]{8,20}$/; 
+var nameJ = /^[가-힣]{2,6}$/; 
+var phoneJ = /^01([0|1|6|7|8|9]?)?([0-9]{3,4})?([0-9]{4})$/;
+var emailJ = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
+var addrJ = /^[a-zA-z0-9ㄱ-ㅎㅏ-ㅣ가-힣~!@#$%^&*()_+|<>?:{}]{1,40}$/;
+var empJ = /^[]{0}$/
+
+$('#id').blur(function(){
+	if (empJ.test($('#id').val())){
+		console.log('false');
+		$('#chkID').text('필수 정보입니다.');
+
+	} else if (!idJ.test($('#id').val())){
+		console.log('false');
+		$('#chkID').text('6~20자 영문 대 소문자, 숫자, 특수문자를 사용하세요.');
+		
+	} else if (idJ.test($('#id').val())){
+		console.log('true');
+		$('#chkID').text('사용가능한 아이디 입니다.');
+		$('#chkID').css('color', 'blue');
+	}
+});
+
+
+$('#password').blur(function(){
+	if (empJ.test($('#password').val())){
+		console.log('false');
+		$('#chkPassword').text('필수 정보입니다.');
+		
+	} else if (!passwordJ.test($('#password').val())){
+		console.log('false');
+		$('#chkPassword').text('8~20자 영문 대 소문자, 숫자, 특수문자를 사용하세요.');
+		
+	} else if (passwordJ.test($('#password').val())) {
+		console.log('true');
+		$('#chkPassword').text('');
+	}
+});
+
+
+$('#passwordCheck').blur(function(){
+	if (empJ.test($('#passwordCheck').val())){
+		console.log('false');
+		$('#chkPasswordCheck').text('필수 정보입니다');
+		
+	} else if ($('#password').val() == $(this).val()) {
+		console.log('true');
+		$('#chkPasswordCheck').text('');
+		
+	} else if  ($('#password').val() != $(this).val()) {
+		console.log('false');
+		$('#chkPasswordCheck').text('비밀번호가 일치하지 않습니다.');
+	}
+});
+
+
+$('#name').blur(function(){
+	if(empJ.test($('#name').val())){
+		console.log('false');
+		$('#chkName').text('필수 정보입니다.');
+		
+	}else if (!nameJ.test($('#name').val())){
+		console.log('false');
+		$('#chkName').text('2~6자 한글을 사용하세요.');
+		
+	}else if (nameJ.test($('#name').val())){
+		console.log('true');
+		$('#chkName').text('');
+	}
+});
+
+$('#email').blur(function(){
+	if(empJ.test($('#email').val())){
+		console.log('false');
+		$('#chkEmail').text('필수 정보입니다.');
+		
+	}else if (!emailJ.test($('#email').val())){
+		console.log('false');
+		$('#chkEmail').text('이메일 형식을 확인해주세요.');
+		
+	}else if (emailJ.test($('#email').val())){
+		console.log('true');
+		$('#chkEmail').text('');
+	}
+});
+
+$('#phone').blur(function(){
+	if(empJ.test($('#phone').val())){
+		console.log('false');
+		$('#chkPhone').text('필수 정보입니다.');
+		
+	}else if (!phoneJ.test($('#phone').val())){
+		console.log('false');
+		$('#chkPhone').text('휴대폰번호를 확인해주세요.');
+		
+	}else if (phoneJ.test($('#phone').val())){
+		console.log('true');
+		$('#chkPhone').text('');
+	}
+});
+
+$('#addr2').blur(function(){
+	if(empJ.test($('#addr2').val())){
+		console.log('false');
+		$('#chkAddr').text('필수 정보입니다.');
+		
+	}else if (!addrJ.test($('#addr2').val())){
+		console.log('false');
+		$('#chkAddr').text('주소를 확인해주세요.');
+		
+	}else if (addrJ.test($('#addr2').val())){
+		console.log('true');
+		$('#chkAddr').text('');
+	}
+});
+
+
+</script>
+<!----------------------------------------------------- 회원가입 유효성 검사 끝 ------------------------------------------------------------>
 
 		<footer>
 			<div class="footer">

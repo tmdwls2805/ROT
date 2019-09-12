@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<!-- Mobile Specific Meta -->
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!-- Favicon-->
+<link rel="shortcut icon" href="img/logo1.png">
+<!-- Author Meta -->
+<meta name="author" content="colorlib">
+<!-- Meta Description -->
+<meta name="description" content="">
+<!-- Meta Keyword -->
+<meta name="keywords" content="">
+<!-- meta character set -->
+<meta charset="UTF-8">
+<!-- Site Title -->
+<title>내일의 레시피</title>
+
+<link rel="stylesheet" href="../static/css/mk/signUp2.css" th:href="@{/css/mk/signUp2.css?after}">
+
+
+</head>
+<body>
+				<div class="form-group">
+				<label for="user_pw">비밀번호</label>
+					<input type="password" class="form-control" id="user_pw" name="user_pw" placeholder="PASSWORD" required>
+				<div class="check_font" id="pw_check"></div>
+				<div id="wdw">ddd</div>
+			</div>
+
+
+
+
+
+</body>
+<script type="text/javascript">
+/* jQuery(function() {
+	  $("#wdw").css("color", "red");//내용
+	});  */
+/* $(document).ready(function() {
+	$("#wdw").css("color", "red");
+	}); */
+
+s  $(function() {
+        $("#wdw").css("color", "red"); //<p>태그의 글자색을 빨간색으로 변경
+    }); 
+</script>	  
+<script src="../static/js/mk/signUp2.js" th:src="@{/js/mk/signUp2.js}"></script>
+</html>
