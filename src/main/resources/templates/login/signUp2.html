@@ -29,7 +29,7 @@
 		</header><br>
 <!----------------------------------------------------- 회원가입 폼 시작 ------------------------------------------------------------>	
 		<div class="join-content">
-			<form class="login-form" name="form" action="signUp2.html" method="post" th:action="@{/signUp2}">
+			<form class="login-form" name="form" action="/signUp2/sign" th:action="@{/signUp2/sign}" method="post">
 				<div class="checks" align="left">
 				
 					<div class="row-group">
@@ -109,7 +109,7 @@
    						<div class="error-next-box" id="chkAddr"></div>
 					</div>
 				</div>	
-				<input type="button" class="index-button-100" value="가입하기" />
+				<button id="signUpBtn" name="signUpBtn" class="index-button-100" disabled="disabled">가입하기</button>
 			</form>
 		</div>
 <!----------------------------------------------------- 회원가입 폼 끝 ------------------------------------------------------------>	
@@ -154,7 +154,7 @@
                 document.getElementById('sample6_address').value = fullAddr;
 
                 // 커서를 상세주소 필드로 이동한다.
-                document.getElementById('sample6_address2').focus();
+                document.getElementById('addr2').focus();
             }
         }).open();
     }
@@ -163,123 +163,196 @@
 <!----------------------------------------------------- 회원가입 유효성 검사 시작 ------------------------------------------------------------>
 <script>
 var idJ = /^[a-zA-Z0-9~!@#$%^&*()_+|<>?:{}]{6,20}$/;
+var id = $('#id').val();
+$("#id").blur(function(){
+	$(ajax({
+		url : '${pageContext.request.contextPath}/signUp2/idCheck?id='+id,
+		type : 'get',
+		success : function(data){
+			console.log('1 = 중복o / 0 = 중복x : '+ data);
+			
+			if(data == 1){
+				$("#chkID").text("사용중인 아이디입니다.");
+				$("#chkID").css("color", "red");
+				$("#signUpBtn").attr("disabled", true);
+			}else{
+				
+				if(idJ.test(id)){
+					// 0 : 아이디 길이 / 문자열 검사
+					$("#chkID").text("");
+					$("#signUpBtn").attr("disabled", false);
+		
+				} else if(empJ.test($('#id').val())){
+					
+					$('#chkID').text('아이디를 입력해주세요 :)');
+					$('#chkID').css('color', 'red');
+					$("#signUpBtn").attr("disabled", true);				
+					
+				} else {
+					
+					$('#chkID').text("아이디는 소문자와 숫자 4~12자리만 가능합니다 :) :)");
+					$('#chkID').css('color', 'red');
+					$("#signUpBtn").attr("disabled", true);
+				}
+				
+			}
+		}
+
+	});
+});
+</script>
+<script>
+var idJ = /^[a-zA-Z0-9~!@#$%^&*()_+|<>?:{}]{6,20}$/;
 var passwordJ = /^[a-zA-Z0-9~!@#$%^&*()_+|<>?:{}]{8,20}$/; 
 var nameJ = /^[가-힣]{2,6}$/; 
+var zipcodeJ = /^[0-9]{1,10}$/;
 var phoneJ = /^01([0|1|6|7|8|9]?)?([0-9]{3,4})?([0-9]{4})$/;
 var emailJ = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
 var addrJ = /^[a-zA-z0-9ㄱ-ㅎㅏ-ㅣ가-힣~!@#$%^&*()_+|<>?:{}]{1,40}$/;
 var empJ = /^[]{0}$/
 
-$('#id').blur(function(){
+/* $('#id').blur(function(){
 	if (empJ.test($('#id').val())){
-		console.log('false');
 		$('#chkID').text('필수 정보입니다.');
+		$('#chkID').css('color', 'red');
+		$("#signUpBtn").attr("disabled", true);
 
 	} else if (!idJ.test($('#id').val())){
-		console.log('false');
 		$('#chkID').text('6~20자 영문 대 소문자, 숫자, 특수문자를 사용하세요.');
+		$('#chkID').css('color', 'red');
+		$("#signUpBtn").attr("disabled", true);
 		
 	} else if (idJ.test($('#id').val())){
-		console.log('true');
 		$('#chkID').text('사용가능한 아이디 입니다.');
 		$('#chkID').css('color', 'blue');
+		$("#signUpBtn").attr("disabled", false);
 	}
-});
+}); */
 
 
 $('#password').blur(function(){
 	if (empJ.test($('#password').val())){
-		console.log('false');
 		$('#chkPassword').text('필수 정보입니다.');
+		$('#chkID').css('color', 'red');
+		$("#signUpBtn").attr("disabled", true);
 		
 	} else if (!passwordJ.test($('#password').val())){
-		console.log('false');
 		$('#chkPassword').text('8~20자 영문 대 소문자, 숫자, 특수문자를 사용하세요.');
+		$('#chkID').css('color', 'red');
+		$("#signUpBtn").attr("disabled", true);
 		
 	} else if (passwordJ.test($('#password').val())) {
-		console.log('true');
 		$('#chkPassword').text('');
+		$("#signUpBtn").attr("disabled", false);
 	}
 });
 
 
 $('#passwordCheck').blur(function(){
 	if (empJ.test($('#passwordCheck').val())){
-		console.log('false');
 		$('#chkPasswordCheck').text('필수 정보입니다');
+		$('#chkID').css('color', 'red');
+		$("#signUpBtn").attr("disabled", true);
 		
 	} else if ($('#password').val() == $(this).val()) {
-		console.log('true');
 		$('#chkPasswordCheck').text('');
+		$("#signUpBtn").attr("disabled", false);
 		
 	} else if  ($('#password').val() != $(this).val()) {
-		console.log('false');
 		$('#chkPasswordCheck').text('비밀번호가 일치하지 않습니다.');
+		$('#chkID').css('color', 'red');
+		$("#signUpBtn").attr("disabled", true);
 	}
 });
 
 
 $('#name').blur(function(){
 	if(empJ.test($('#name').val())){
-		console.log('false');
+		$("#signUpBtn").attr("disabled", true);
 		$('#chkName').text('필수 정보입니다.');
+		$('#chkID').css('color', 'red');
 		
 	}else if (!nameJ.test($('#name').val())){
-		console.log('false');
 		$('#chkName').text('2~6자 한글을 사용하세요.');
+		$('#chkID').css('color', 'red');
+		$("#signUpBtn").attr("disabled", true);
 		
 	}else if (nameJ.test($('#name').val())){
-		console.log('true');
 		$('#chkName').text('');
+		$("#signUpBtn").attr("disabled", false);
 	}
 });
 
 $('#email').blur(function(){
 	if(empJ.test($('#email').val())){
-		console.log('false');
 		$('#chkEmail').text('필수 정보입니다.');
+		$('#chkID').css('color', 'red');
+		$("#signUpBtn").attr("disabled", true);
 		
 	}else if (!emailJ.test($('#email').val())){
-		console.log('false');
 		$('#chkEmail').text('이메일 형식을 확인해주세요.');
+		$('#chkID').css('color', 'red');
+		$("#signUpBtn").attr("disabled", true);
 		
 	}else if (emailJ.test($('#email').val())){
-		console.log('true');
 		$('#chkEmail').text('');
+		$("#signUpBtn").attr("disabled", false);
 	}
 });
 
 $('#phone').blur(function(){
 	if(empJ.test($('#phone').val())){
-		console.log('false');
 		$('#chkPhone').text('필수 정보입니다.');
+		$('#chkID').css('color', 'red');
+		$("#signUpBtn").attr("disabled", true);
 		
 	}else if (!phoneJ.test($('#phone').val())){
-		console.log('false');
 		$('#chkPhone').text('휴대폰번호를 확인해주세요.');
+		$('#chkID').css('color', 'red');
+		$("#signUpBtn").attr("disabled", true);
 		
 	}else if (phoneJ.test($('#phone').val())){
-		console.log('true');
 		$('#chkPhone').text('');
+		$("#signUpBtn").attr("disabled", false);
+	}
+});
+
+$('#zipcode').blur(function(){
+	if(empJ.test($('#zipcode').val())){
+		$("#signUpBtn").attr("disabled", true);
+	}else if (!zipcodeJ.test($('#zipcode').val())){
+		$("#signUpBtn").attr("disabled", true);
+	}else if (zipcodeJ.test($('#zipcode').val())){
+		$("#signUpBtn").attr("disabled", false);
+	}
+});
+
+$('#addr1').blur(function(){
+	if(empJ.test($('#addr1').val())){
+		$("#signUpBtn").attr("disabled", true);
+	}else if (!addrJ.test($('#addr1').val())){
+		$("#signUpBtn").attr("disabled", true);
+	}else if (addrJ.test($('#addr1').val())){
+		$("#signUpBtn").attr("disabled", false);
 	}
 });
 
 $('#addr2').blur(function(){
 	if(empJ.test($('#addr2').val())){
-		console.log('false');
 		$('#chkAddr').text('필수 정보입니다.');
+		$('#chkID').css('color', 'red');
+		$("#signUpBtn").attr("disabled", true);
 		
 	}else if (!addrJ.test($('#addr2').val())){
-		console.log('false');
 		$('#chkAddr').text('주소를 확인해주세요.');
+		$('#chkID').css('color', 'red');
+		$("#signUpBtn").attr("disabled", true);
 		
 	}else if (addrJ.test($('#addr2').val())){
-		console.log('true');
 		$('#chkAddr').text('');
+		$("#signUpBtn").attr("disabled", false);
 	}
 });
-
-
 </script>
 <!----------------------------------------------------- 회원가입 유효성 검사 끝 ------------------------------------------------------------>
 

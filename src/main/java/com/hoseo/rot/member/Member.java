@@ -16,4 +16,5 @@ public class Member {
 	private String addr2;
 	private int point;
 	private Timestamp regDate;
+
 }

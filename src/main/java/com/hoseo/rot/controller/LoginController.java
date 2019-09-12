@@ -1,33 +1,62 @@
 package com.hoseo.rot.controller;
 
+import java.io.IOException;
+
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.hoseo.rot.member.MemberService;
+import com.hoseo.rot.member.Member;
+
 
 @Controller
 public class LoginController {
 
 	@Autowired
-	MemberService memberService;
+	private MemberService memberService;
 	
+	// 로그인
 	@GetMapping("/login")
 	public String login() {
 		return "login/login";
 	}
 	
+	// 약관동의
 	@GetMapping("/signUp")
 	public String signUp() {
 		return "login/signUp";
 	}
 	
+	// 회원가입
 	@RequestMapping(value = "signUp2", method = { RequestMethod.GET, RequestMethod.POST })
 	public String signUp2() {
 		return "login/signUp2";
+	}
+	
+	
+	@RequestMapping(value = "/signUp2/sign", method = { RequestMethod.GET, RequestMethod.POST })
+	public String sign(Member m) {
+		if (memberService.addMember(m) == 1) {
+			return "redirect:/";
+		} else {
+			return "login/signup2";
+		}
+	}
+	
+	@RequestMapping(value="/signUp2/idCheck", method= {RequestMethod.GET, RequestMethod.POST})
+	@ResponseBody
+	public int idCheck(@RequestParam("id") String id) {
+		return memberService.idCheck(id);
 	}
 	
 	@GetMapping("/test")

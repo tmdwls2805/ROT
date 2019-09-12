@@ -8,6 +8,7 @@ CREATE TABLE IF NOT EXISTS `member` (
   `addr1` varchar(2048) NOT NULL,
   `addr2` varchar(2048) DEFAULT NULL,
   `point` int(11) default 0,
-  `regdate` datetime
+  `regdate` datetime,
+   UNIQUE KEY `email` (`email`)
 );
 
