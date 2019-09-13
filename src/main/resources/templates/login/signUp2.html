@@ -163,46 +163,6 @@
 <!----------------------------------------------------- 회원가입 유효성 검사 시작 ------------------------------------------------------------>
 <script>
 var idJ = /^[a-zA-Z0-9~!@#$%^&*()_+|<>?:{}]{6,20}$/;
-var id = $('#id').val();
-$("#id").blur(function(){
-	$(ajax({
-		url : '${pageContext.request.contextPath}/signUp2/idCheck?id='+id,
-		type : 'get',
-		success : function(data){
-			console.log('1 = 중복o / 0 = 중복x : '+ data);
-			
-			if(data == 1){
-				$("#chkID").text("사용중인 아이디입니다.");
-				$("#chkID").css("color", "red");
-				$("#signUpBtn").attr("disabled", true);
-			}else{
-				
-				if(idJ.test(id)){
-					// 0 : 아이디 길이 / 문자열 검사
-					$("#chkID").text("");
-					$("#signUpBtn").attr("disabled", false);
-		
-				} else if(empJ.test($('#id').val())){
-					
-					$('#chkID').text('아이디를 입력해주세요 :)');
-					$('#chkID').css('color', 'red');
-					$("#signUpBtn").attr("disabled", true);				
-					
-				} else {
-					
-					$('#chkID').text("아이디는 소문자와 숫자 4~12자리만 가능합니다 :) :)");
-					$('#chkID').css('color', 'red');
-					$("#signUpBtn").attr("disabled", true);
-				}
-				
-			}
-		}
-
-	});
-});
-</script>
-<script>
-var idJ = /^[a-zA-Z0-9~!@#$%^&*()_+|<>?:{}]{6,20}$/;
 var passwordJ = /^[a-zA-Z0-9~!@#$%^&*()_+|<>?:{}]{8,20}$/; 
 var nameJ = /^[가-힣]{2,6}$/; 
 var zipcodeJ = /^[0-9]{1,10}$/;
@@ -211,7 +171,7 @@ var emailJ = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[
 var addrJ = /^[a-zA-z0-9ㄱ-ㅎㅏ-ㅣ가-힣~!@#$%^&*()_+|<>?:{}]{1,40}$/;
 var empJ = /^[]{0}$/
 
-/* $('#id').blur(function(){
+$('#id').blur(function(){
 	if (empJ.test($('#id').val())){
 		$('#chkID').text('필수 정보입니다.');
 		$('#chkID').css('color', 'red');
@@ -227,7 +187,7 @@ var empJ = /^[]{0}$/
 		$('#chkID').css('color', 'blue');
 		$("#signUpBtn").attr("disabled", false);
 	}
-}); */
+});
 
 
 $('#password').blur(function(){

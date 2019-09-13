@@ -3,7 +3,7 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.hoseo.rot.member.MemberRepository">
-	<insert id="addMemeber" parameterType="Member">
+	<insert id="addMember" parameterType="Member">
 		INSERT INTO member VALUES
 		(
 		#{id},
@@ -24,5 +24,46 @@
 		FROM MEMBER
 		WHERE id = #{id}
 	</select>
+	
+	<select id="getMember" parameterType="Member" resultType="Member">
+		SELECT
+		id,
+		password,
+		name,
+		email,
+		phone,
+		zipcode,
+		addr1,
+		addr2,
+		point,
+		regdate
+		FROM
+		member
+		WHERE
+		id = #{id}
+			<if
+			test="@org.springframework.util.StringUtils@isEmpty(password) == false">
+			and password = #{password}
+		</if>
+	</select>
+	
+		<select id="getUser" parameterType="Member" resultType="Member">
+		SELECT
+		id,
+		password,
+		name,
+		email,
+		phone,
+		zipcode,
+		addr1,
+		addr2,
+		point,
+		regdate
+		FROM
+		member
+		WHERE
+		id = #{id}
+	</select>
+
 
 </mapper>
