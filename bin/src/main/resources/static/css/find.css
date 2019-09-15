@@ -1,0 +1,253 @@
+<style rel="stylesheet">
+.hr{
+ border-color: #000000;
+ border-width: 4px;
+ padding-left: 160px;
+ width:1000px;
+}
+
+.tr{
+height:60px;
+}
+.find1{
+width:80px;
+}
+.find2{
+width:320px;
+}
+.danger1{
+ color: red;
+ font-size:11px;
+ padding-left: 20px;
+ background:#f1f1f1;
+
+}
+.name {
+    width: 315px;
+	height: 40px;
+	padding: 0 15px 2px;
+	font-size: 17px;
+	background: white;
+	border: 2px solid #EBEBEB;
+	border-radius: 4px;
+	-webkit-box-shadow: inset 0 -2px #EBEBEB;
+	box-shadow: inset 0 -2px #EBEBEB;
+}
+
+.email {
+    width: 150px;
+	height: 40px;
+	
+	padding: 0 15px 2px;
+	font-size: 17px;
+	background: white;
+	border: 2px solid #EBEBEB;
+	border-radius: 4px;
+	-webkit-box-shadow: inset 0 -2px #EBEBEB;
+	box-shadow: inset 0 -2px #EBEBEB;
+}
+.select {
+    width: 95px;
+	height: 40px;
+	
+	padding: 0 15px 2px;
+	font-size: 17px;
+	background: white;
+	border: 2px solid #EBEBEB;
+	border-radius: 4px;
+	-webkit-box-shadow: inset 0 -2px #EBEBEB;
+	box-shadow: inset 0 -2px #EBEBEB;
+}
+
+.findIdButton{
+	position: relative;
+	vertical-align: top;
+	width: 315px;
+	height: 40px;
+	margin-top:10px;
+	padding: 0;
+	font-size: 16px;
+	color: white;
+	text-align: center;
+	text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+	background: #343A40;
+	border: 0;
+	border-radius: 5px;
+	cursor: pointer;
+	-webkit-box-shadow: inset 0 -2px #343A40;
+	box-shadow: inset 0 -2px #343A40;
+	}
+	
+.findPasswordButton{
+	position: relative;
+	vertical-align: top;
+	width: 315px;
+	height: 40px;
+	margin-top:30px;
+	margin-bottom:10px;
+	padding: 0;
+	font-size: 16px;
+	color: white;
+	text-align: center;
+	text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+	background: #343A40;
+	border: 0;
+	border-radius: 5px;
+	cursor: pointer;
+	-webkit-box-shadow: inset 0 -2px #343A40;
+	box-shadow: inset 0 -2px #343A40;
+	}
+	
+	
+.comlo{
+	position: relative;
+	vertical-align: top;
+	width: 160px;
+	height: 40px;
+	margin-bottom:10px;
+	padding: 0;
+	font-size: 16px;
+	color: white;
+	text-align: center;
+	text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+	background: #343A40;
+	border: 0;
+	border-radius: 5px;
+	cursor: pointer;
+	-webkit-box-shadow: inset 0 -2px #343A40;
+	box-shadow: inset 0 -2px #343A40;
+	}
+	
+.compw{
+	position: relative;
+	vertical-align: top;
+	width: 160px;
+	height: 40px;
+	margin-bottom:10px;
+	padding: 0;
+	font-size: 16px;
+	color: white;
+	text-align: center;
+	text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+	background: primary;
+	border: 0;
+	border-radius: 5px;
+	cursor: pointer;
+	-webkit-box-shadow: inset 0 -2px primary;
+	box-shadow: inset 0 -2px primary;
+	}
+	
+.span{
+	padding-right:75px;
+	font-size:13px;
+}
+
+.comex{
+	padding-right:135px;
+	font-size:13px;
+}
+
+.zipcode {
+    width: 150px;
+	height: 40px;
+	
+	padding: 0 15px 2px;
+	font-size: 17px;
+	background: white;
+	border: 2px solid #EBEBEB;
+	border-radius: 4px;
+	-webkit-box-shadow: inset 0 -2px #EBEBEB;
+	box-shadow: inset 0 -2px #EBEBEB;
+}
+
+.addr {
+    width: 600px;
+	height: 40px;
+	
+	padding: 0 15px 2px;
+	font-size: 17px;
+	background: white;
+	border: 2px solid #EBEBEB;
+	border-radius: 4px;
+	-webkit-box-shadow: inset 0 -2px #EBEBEB;
+	box-shadow: inset 0 -2px #EBEBEB;
+}
+
+.findIdButton{
+	position: relative;
+	vertical-align: top;
+	width: 315px;
+	height: 40px;
+	margin-top:10px;
+	padding: 0;
+	font-size: 16px;
+	color: white;
+	text-align: center;
+	text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+	background: #343A40;
+	border: 0;
+	border-radius: 5px;
+	cursor: pointer;
+	-webkit-box-shadow: inset 0 -2px #343A40;
+	box-shadow: inset 0 -2px #343A40;
+	}
+	
+	.boardbutton{
+	position: relative;
+	vertical-align: top;
+	width: 150px;
+	height: 40px;
+	margin-top:10px;
+	padding: 0;
+	font-size: 16px;
+	color: white;
+	text-align: center;
+	text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+	background: #343A40;
+	border: 0;
+	border-radius: 5px;
+	cursor: pointer;
+	-webkit-box-shadow: inset 0 -2px #343A40;
+	box-shadow: inset 0 -2px #343A40;
+	}
+	
+		.boardbutton2{
+	position: relative;
+	vertical-align: top;
+	width: 150px;
+	height: 40px;
+	margin-top:10px;
+	padding: 0;
+	font-size: 16px;
+	color: white;
+	text-align: center;
+	text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+	background:#ff6a66;
+	border: 0;
+	border-radius: 5px;
+	cursor: pointer;
+	-webkit-box-shadow: inset 0 -2px #ff6a66;
+	box-shadow: inset 0 -2px #ff6a66;
+	}
+
+	.boardlist{
+	position: relative;
+	vertical-align: top;
+	width: 313px;
+	height: 40px;
+	margin-top:10px;
+	padding: 0;
+	font-size: 16px;
+	color: white;
+	text-align: center;
+	text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+	background: #fab700;
+	border: 0;
+	border-radius: 5px;
+	cursor: pointer;
+	-webkit-box-shadow: inset 0 -2px #fab700;
+	box-shadow: inset 0 -2px #fab700;
+	}
+
+
+</style>

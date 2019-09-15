@@ -24,7 +24,7 @@ body {
 	background-color: #fff;
 }
 
-<!-- 로그인 폼 시작 -->
+<!-- 濡쒓렇�씤 �뤌 �떆�옉 -->
 .login-page {
   width: 466.4px;
   padding: 8% 0 0;
@@ -124,6 +124,25 @@ body {
 .form button:hover,.form button:active,.form button:focus {
   background: #e62e2b;
 }
+
+.form input[type=submit] {
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  outline: 0;
+  background: #f42f2c;
+  width: 100%;
+  border: 0;
+  padding: 15px;
+  color: #FFFFFF;
+  font-size: 20px;
+  font-weight:600;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+}
+.form input[type=submit]:hover,.form input[type=submit]:active,.form input[type=submit]:focus {
+  background: #e62e2b;
+}
 .form .message {
   margin: 15px 0 0;
   color: #666;
@@ -162,8 +181,8 @@ body {
   font-weight: 300;
   color: #1a1a1a;
 }
-<!-- 로그인 폼 끝 -->
-<!-- 로그인 체크박스 버튼 시작 -->
+<!-- 濡쒓렇�씤 �뤌 �걹 -->
+<!-- 濡쒓렇�씤 泥댄겕諛뺤뒪 踰꾪듉 �떆�옉 -->
 color: #000;
   text-decoration: none;
   font-family: verdana;
@@ -172,7 +191,7 @@ color: #000;
 
 .checks {position: relative;}
 
-.checks input[type="checkbox"] {  /* 실제 체크박스는 화면에서 숨김 */
+.checks input[type="checkbox"] {  /* �떎�젣 泥댄겕諛뺤뒪�뒗 �솕硫댁뿉�꽌 �닲源� */
   position: absolute;
   width: 1px;
   height: 1px;
@@ -192,12 +211,12 @@ color: #000;
   font-size:13px;
   color:#666;
 }
-.checks input[type="checkbox"] + label:before {  /* 가짜 체크박스 */
+.checks input[type="checkbox"] + label:before {  /* 媛�吏� 泥댄겕諛뺤뒪 */
   content: ' ';
   display: inline-block;
-  width: 18px;  /* 체크박스의 너비를 지정 */
-  height: 18px;  /* 체크박스의 높이를 지정 */
-  line-height: 21px; /* 세로정렬을 위해 높이값과 일치 */
+  width: 18px;  /* 泥댄겕諛뺤뒪�쓽 �꼫鍮꾨�� 吏��젙 */
+  height: 18px;  /* 泥댄겕諛뺤뒪�쓽 �넂�씠瑜� 吏��젙 */
+  line-height: 21px; /* �꽭濡쒖젙�젹�쓣 �쐞�빐 �넂�씠媛믨낵 �씪移� */
   margin: -2px 8px 0 0;
   text-align: center; 
   vertical-align: middle;
@@ -210,8 +229,8 @@ color: #000;
   box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px 1px 3px rgba(0,0,0,0.1);
 }
 
-.checks input[type="checkbox"]:checked + label:before {  /* 체크박스를 체크했을때 */ 
-    content: "\2713";  /* 체크모양 */
+.checks input[type="checkbox"]:checked + label:before {  /* 泥댄겕諛뺤뒪瑜� 泥댄겕�뻽�쓣�븣 */ 
+    content: "\2713";  /* 泥댄겕紐⑥뼇 */
     text-shadow: 1px 1px 1px rgba(0, 0, 0, .2);  
     font-size: 14px; 
     font-weight:800; 
@@ -228,5 +247,5 @@ header{
 	margin-top:20px;
 	margin-bottom:59px;
 }
-<!-- 로그인 체크박스 버튼 끝
+<!-- 濡쒓렇�씤 泥댄겕諛뺤뒪 踰꾪듉 �걹
  -->

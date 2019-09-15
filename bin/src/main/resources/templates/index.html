@@ -1,0 +1,89 @@
+	<!DOCTYPE html>
+	<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<!-- Mobile Specific Meta -->
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<!-- Favicon-->
+		<link rel="shortcut icon" href="img/logo1.png">
+		<!-- Author Meta -->
+		<meta name="author" content="colorlib">
+		<!-- Meta Description -->
+		<meta name="description" content="">
+		<!-- Meta Keyword -->
+		<meta name="keywords" content="">
+		<!-- meta character set -->
+		<meta charset="UTF-8">
+		<!-- Site Title -->
+		<title>내일의 레시피</title>
+		<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet"> 
+			<!-- CSS ============================================= -->
+			<link rel="stylesheet" href="../static/css/linearicons.css" th:href="@{/css/linearicons.css}">
+			<link rel="stylesheet" href="../static/css/font-awesome.min.css" th:href="@{/css/font-awesome.min.css}">
+			<link rel="stylesheet" href="../static/css/bootstrap.css" th:href="@{/css/bootstrap.css}">
+			<link rel="stylesheet" href="../static/css/magnific-popup.css" th:href="@{/css/magnific-popup.css}">
+			<link rel="stylesheet" href="../static/css/jquery-ui.css" th:href="@{/css/jquery-ui.css}">				
+			<link rel="stylesheet" href="../static/css/nice-select.css" th:href="@{/css/nice-select.css}">							
+			<link rel="stylesheet" href="../static/css/animate.min.css" th:href="@{/css/animate.min.css}">
+			<link rel="stylesheet" href="../static/css/owl.carousel.css" th:href="@{/css/owl.carousel.css}">				
+			<link rel="stylesheet" href="../static/css/main.css" th:href="@{/css/main.css}">	   
+			<script src="../static/js/vendor/jquery-2.2.4.min.js" th:src="@{/js/vendor/jquery-2.2.4.min.js}"></script>
+			<script src="../static/js/popper.min.js" th:src="@{/js/popper.min.js}"></script>
+			<script src="../static/js/vendor/bootstrap.min.js" th:src="@{/js/vendor/bootstrap.min.js}"></script>			
+			<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhOdIF3Y9382fqJYt5I_sswSrEw5eihAA"></script>		
+ 			<script src="../static/js/jquery-ui.js" th:src="@{/js/jquery-ui.js}"></script>					
+  			<script src="../static/js/easing.min.js" th:src="@{/js/easing.min.js}"></script>			
+			<script src="../static/js/hoverIntent.js" th:src="@{/js/hoverIntent.js}"></script>
+			<script src="../static/js/superfish.min.js" th:src="@{/js/superfish.min.js}"></script>	
+			<script src="../static/js/jquery.ajaxchimp.min.js" th:src="@{/js/jquery.ajaxchimp.min.js}"></script>
+			<script src="../static/js/jquery.magnific-popup.min.js" th:src="@{/js/jquery.magnific-popup.min.js}"></script>						
+			<script src="../static/js/jquery.nice-select.min.js" th:src="@{/js/jquery.nice-select.min.js}"></script>					
+			<script src="../static/js/owl.carousel.min.js" th:src="@{/js/owl.carousel.min.js}"></script>			
+            <script src="../static/js/isotope.pkgd.min.js" th:src="@{/js/isotope.pkgd.min.js}"></script>								
+			<script src="../static/js/mail-script.js" th:src="@{/js/mail-script.js}"></script>	
+			<script src="../static/js/main.js" th:src="@{/js/main.js}"></script>
+		</head>
+		<body>	
+		<div th:replace="~{header :: header}"></div>
+<!-- #header -->
+			
+			<!-- start banner Area -->
+			<section class="banner-area">		
+				<div class="container">
+					<div class="row fullscreen align-items-center justify-content-between">
+						<div class="col-lg-12 banner-content">
+							<h1 class="text-white">내일의 레시피</h1>
+							<p class="text-white">
+								혼자 요리하지말고, 같이하자!
+							</p>
+							<a href="#" class="primary-btn text-uppercase">레시피 보러가기</a>
+						</div>
+					</div>
+				</div>					
+			</section>
+			<!-- End banner Area -->
+
+			<!-- Start home-about Area -->
+			<section class="home-about-area section-gap">
+				<div class="container">
+					<div class="row align-items-center">
+						<div class="col-lg-6 home-about-left">
+							<h1>우리의 이야기</h1>
+							<p>
+								내일의 레시피는 자신만의 레시피를 공유하고,<br>
+								다른 사람들의 레시피를 배우며,<br>
+								레시피에 맞는 재료들을 한 눈에 보고,<br> 
+								구입할 수 있도록 하기 위해 제작된 사이트입니다.
+							</p>
+						</div>
+						<div class="col-lg-6 home-about-right">
+							<img class="img-fluid" src="img/about-img.jpg" alt="">
+						</div>
+					</div>
+				</div>	
+			</section>
+			<!-- End home-about Area -->			
+			<!-- start footer Area -->		
+			<div th:replace="~{footer :: footer}"></div>
+			<!-- End footer Area -->		
+		</body>
+	</html>

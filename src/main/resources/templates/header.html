@@ -36,7 +36,7 @@
 				        	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 				        	&nbsp;&nbsp;&nbsp;
 				        	</li>
-							<li><a id="nav-a2" href="/login/login.html" th:href="@{/login}">로그인</a></li>
+							<li><a id="nav-a2" href="/login/loginForm.html" th:href="@{/loginForm}">로그인</a></li>
 							<li><a id="nav-a2" href="signUp.html" th:href="@{/signUp}">회원가입</a></li>
 				        </ul>
 				        <!-- 관리자 로그인 -->
@@ -78,7 +78,7 @@
 				        	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 				        	&nbsp;&nbsp;&nbsp;
 				        	</li>
-							<li><a id="nav-a2" href="/login/login.html" th:href="@{/login}" th:text="${session.member.name}님"></a></li>
+							<li><a id="nav-a2" href="/login/loginForm.html" th:href="@{/loginForm}" th:text="${session.member.name}님"></a></li>
 							<li><a id="nav-a2" th:href="${session.member != null} ? @{/logout}">로그아웃</a></li>
 				        </ul>
 				      </nav><!-- #nav-menu-container -->					      		  

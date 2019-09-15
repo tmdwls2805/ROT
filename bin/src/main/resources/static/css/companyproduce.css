@@ -1,0 +1,114 @@
+<style rel ="stylesheet">
+body {
+    width: 100%;
+    color: #28323c;
+    font-family: Spoqa Han Sans,Apple SD Gothic Neo,"\B9D1\C740 \ACE0\B515",Malgun Gothic,Helvetica Neue,Helvetica,Arial,Dotum,Trebuchet MS,sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.42857143;
+    background-color: #fff;
+    overflow-y: scroll;
+    
+}
+body, html {
+    position: relative;
+}
+body {
+    margin: 0;
+}
+*, :after, :before {
+    box-sizing: border-box;
+}
+user agent stylesheet
+body {
+    display: block;
+    margin: 8px;
+}
+html {
+    min-height: 100%;
+    font-size: 10px;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+}
+html {
+    line-height: 1.15;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+*, :after, :before {
+    box-sizing: border-box;
+}
+*, :after, :before {
+    box-sizing: border-box;
+}
+
+.card-guide {
+  width: 82%;
+  margin: 0 auto 30px;
+  *zoom: 1;
+}
+.card-guide:before, .card-guide:after {
+    content: ' ';
+    display: table;
+}
+.card-guide:after {
+    clear: both;
+}
+.card-guide .card-item {
+    position: relative;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+@media (min-width: 768px) {
+.card-guide .card-item {
+        float: left;
+        width: 33.33333%;
+}
+}
+.card-guide .card-item img {
+      width: auto;
+      height: auto;
+      display: -moz-inline-stack;
+      display: inline-block;
+      zoom: 1;
+      *display: inline;
+}
+.card-guide .card-item h3 {
+      font-size: 20px;
+      font-size: 2rem;
+      line-height: 32px;
+      line-height: 1.6;
+}
+.card-guide .card-item p {
+      font-size: 16px;
+      font-size: 1.6rem;
+      line-height: 24px;
+      line-height: 1.5;
+}
+@media (max-width: 767px) {
+.card-guide {
+      width: 100%;
+}
+.card-guide .card-item {
+        margin-bottom: 35px;
+}
+.card-guide .card-item:last-child {
+          margin-bottom: -20px;
+}
+.card-guide .card-item img {
+          width: 50px;
+}
+.card-guide .card-item h3 {
+          font-size: 16px;
+          font-size: 1.6rem;
+          line-height: 24px;
+          line-height: 1.5;
+          margin: 10px 0;
+}
+.card-guide .card-item p {
+          font-size: 14px;
+          font-size: 1.4rem;
+          line-height: 22px;
+          line-height: 1.57143;
+}
+</style>

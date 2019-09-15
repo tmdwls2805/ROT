@@ -1,0 +1,66 @@
+.point_td
+{
+	background:#CCCCCC;
+}
+
+.point_td1
+{
+	background:#f1f1f1;
+	width:500px;
+	border-left:1px solid #dee2e6;
+}
+
+.point_td2
+{
+	background:#f1f1f1;
+	width:300px;
+	border-right:1px solid #dee2e6;
+}
+
+.point_td3
+{
+	background:#f1f1f1;
+	width:500px;
+	border-left:1px solid #dee2e6;
+	border-bottom:1px solid #dee2e6;
+}
+
+.point_td4
+{
+	background:#f1f1f1;
+	width:300px;
+	border-right:1px solid #dee2e6;
+	border-bottom:1px solid #dee2e6;
+}
+
+.point_td5
+{
+	border-left:1px solid #dee2e6;
+	border-right:1px solid #dee2e6;
+}
+
+
+.point_font
+{
+	color:#ffffff;
+	font-weight:800;
+	font-size:20px;
+}
+
+.point_font1
+{
+	color:#000000;
+	font-weight:800;
+	font-size:23px;
+}
+
+.point_font2
+{
+	font-weight:800;
+	font-size:65px;
+}
+
+.point_table
+{
+	
+}

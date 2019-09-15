@@ -1,20 +1,13 @@
 package com.hoseo.rot.controller;
 
-import java.io.IOException;
 
-import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.servlet.ModelAndView;
 
 import com.hoseo.rot.member.MemberService;
 import com.hoseo.rot.member.Member;
@@ -25,17 +18,17 @@ public class LoginController {
 
 	@Autowired
 	private MemberService memberService;
-	private Member member;
+
 	// 로그인
-	@GetMapping("/login")
+	@GetMapping("/loginForm")
 	public String login() {
-		return "login/login";
+		return "login/loginForm";
 	}
-	
-	@RequestMapping(value = "/login/login", method = { RequestMethod.GET, RequestMethod.POST })
+
+	@PostMapping("/loginForm")
 	public String login(Member m, HttpSession session) {
 		if (memberService.isValidUser(m) == false) {
-			return "login/login";
+			return "login/loginForm";
 		}
 		Member member = memberService.getMember(m);
 		session.setAttribute("member", member);
@@ -66,7 +59,7 @@ public class LoginController {
 	@RequestMapping(value = "/signUp2/sign", method = { RequestMethod.GET, RequestMethod.POST })
 	public String sign(Member m) {
 		if (memberService.addMember(m) == 1) {
-			return "redirect:/";
+			return "redirect:/loginForm";
 		} else {
 			return "login/signup2";
 		}

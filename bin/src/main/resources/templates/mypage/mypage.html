@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<meta charset="UTF-8">
+<title>카풀피풀</title>
+<link rel="stylesheet" href="../static/css/linearicons.css"
+	th:href="@{/css/linearicons.css}">
+<link rel="stylesheet" href="../static/css/font-awesome.min.css"
+	th:href="@{/css/font-awesome.min.css}">
+<link rel="stylesheet" href="../static/css/bootstrap.css"
+	th:href="@{/css/bootstrap.css}">
+<link rel="stylesheet" href="../static/css/magnific-popup.css"
+	th:href="@{/css/magnific-popup.css}">
+<link rel="stylesheet" href="../static/css/nice-select.css"
+	th:href="@{/css/nice-select.css}">
+<link rel="stylesheet" href="../static/css/animate.min.css"
+	th:href="@{/css/animate.min.css}">
+<link rel="stylesheet" href="../static/css/owl.carousel.css"
+	th:href="@{/css/owl.carousel.css}">
+<link rel="stylesheet" href="../static/css/main.css"
+	th:href="@{/css/main.css}">
+<link rel="stylesheet" href="../static/css/mypage.css"
+	th:href="@{/css/mypage.css}">	
+    <style rel="stylesheet">
+        a:visited{
+            color:#fab700;
+            text-decoration:underline;
+        }
+
+    </style>
+</head>
+<body>
+	<div th:replace="~{headerLogin :: headerLogin}"></div>
+	<section class="banner-area relative" id="home">
+		<div class="overlay overlay-bg"></div>
+		<div class="container">
+			<div class="row d-flex align-items-center justify-content-center">
+				<div class="about-content col-lg-12"></div>
+			</div>
+		</div>
+	</section>
+	<!-- End banner Area -->
+
+	<!-- Start blog-posts Area -->
+	<br>
+	<br>
+	<br>
+	<section>
+		<div class="container">
+			<!-- Content Row -->
+			<div class="row">
+				<!-- Sidebar Column -->
+				<div class="col-lg-3 mb-4">
+					<div th:replace="mypage/mypageSideMenu :: sideMenu"></div>
+				</div>
+
+				<!-- Content Column -->
+				<!-- Content Column -->
+				<div class="col-lg-9 mb-4">
+					<center>
+						<h2>내 프로필</h2>
+						<p>자신의 프로필을 확인하시고, 수정도 해보세요</p>
+						<form action="" method="post" name="form">
+							<table border="1">
+								<tr class="mypage_tr">
+									<td class="mypage_td1">이름</td>
+									<td class="mypage_td2"><span th:text="${user.name}"></span></td>
+								</tr>
+
+								<tr class="mypage_tr">
+									<td class="mypage_td1">이메일</td>
+									<td class="mypage_td2">
+									<span th:text="${user.email1}"></span>@<span th:text="${user.email2}"></span>
+									</td>
+								</tr>
+
+								<tr class="mypage_tr">
+									<td class="mypage_td1">수신 여부</td>
+									<td class="mypage_td2"><span th:text="${user.sent}"></span></td>
+								</tr>
+
+								<tr class="mypage_tr">
+									<td class="mypage_td1">전화번호</td>
+									<td class="mypage_td2">0<span th:text="${user.ph1}"></span>-<span th:text="${user.ph2}"></span>-<span th:text="${user.ph3}"></span></td>
+								</tr>
+
+								<tr class="mypage_tr">
+									<td class="mypage_td1">성별</td>
+									<td class="mypage_td2"><span th:text="${user.gender}"></span></td>
+								</tr>
+
+								<tr class="mypage_tr">
+									<td class="mypage_td1">생년월일</td>
+									<td class="mypage_td2"><span th:text="${user.birth1}"></span>년&nbsp;<span th:text="${user.birth2}"></span>월&nbsp;<span th:text="${user.birth3}"></span>일</td>
+								</tr>
+
+								<tr class="mypage_tr">
+									<td class="mypage_td1">흡연여부</td>
+									<td class="mypage_td2"><span th:text="${user.smoking}"></span></td>
+								</tr>
+
+								<tr class="mypage_tr">
+									<td class="mypage_td1">차량 제공 여부</td>
+									<td class="mypage_td2"><span th:text="${user.vehicle}"></span></td>
+								</tr>
+
+								<tr class="mypage_tr">
+									<td class="mypage_td1">우편번호</td>
+									<td class="mypage_td2"><span th:text="${user.zipcode}"></span></td>
+								</tr>
+
+								<tr class="mypage_tr">
+									<td class="mypage_td1" rowspan="2">주소</td>
+									<td class="mypage_td2"><span th:text="${user.addr1}"></span></td>
+								</tr>
+								<tr class="mypage_tr">
+									<td class="mypage_td2"><span th:text="${user.addr2}"></span></td>
+								</tr>
+								</tr>
+							</table>
+							<br> <input class="findIdButton" type="button" value="수정"
+								onclick="javascript:location.href='mypageEdit'">
+						</form>
+					</center>
+				</div>
+			</div>
+			<!-- /.row -->
+
+		</div>
+	</section>
+	<br>
+	<br>
+	<br>
+
+
+	<div th:replace="~{footer :: footer}"></div>
+	<script src="../static/js/vendor/jquery-2.2.4.min.js"
+		th:src="@{/js/vendor/jquery-2.2.4.min.js}"></script>
+	<script src="../static/js/vendor/bootstrap.min.js"
+		th:src="@{/js/vendor/bootstrap.min.js}"></script>
+	<script src="../static/js/easing.min.js" th:src="@{/js/easing.min.js}"></script>
+	<script src="../static/js/hoverIntent.js"
+		th:src="@{/js/hoverIntent.js}"></script>
+	<script src="../static/js/superfish.min.js"
+		th:src="@{/js/superfish.min.js}"></script>
+	<script src="../static/js/jquery.ajaxchimp.min.js"
+		th:src="@{/js/jquery.ajaxchimp.min.js}"></script>
+	<script src="../static/js/jquery.magnific-popup.min.js"
+		th:src="@{/js/jquery.magnific-popup.min.js}"></script>
+	<script src="../static/js/owl.carousel.min.js"
+		th:src="@{/js/owl.carousel.min.js}"></script>
+	<script src="../static/js/jquery.sticky.js"
+		th:src="@{/js/jquery.sticky.js}"></script>
+	<script src="../static/js/jquery.nice-select.min.js"
+		th:src="@{/js/jquery.nice-select.min.js}"></script>
+	<script src="../static/js/waypoints.min.js"
+		th:src="@{/js/waypoints.min.js}"></script>
+	<script src="../static/js/jquery.counterup.min.js"
+		th:src="@{/js/jquery.counterup.min.js}"></script>
+	<script src="../static/js/parallax.min.js"
+		th:src="@{/js/parallax.min.js}"></script>
+	<script src="../static/js/mail-script.js"
+		th:src="@{/js/mail-script.js}"></script>
+	<script src="../static/js/main.js" th:src="@{/js/main.js}"></script>
+</body>
+</html>
+
+
+
