@@ -59,13 +59,16 @@ public class LoginController {
 	@RequestMapping(value = "/signUp2/sign", method = { RequestMethod.GET, RequestMethod.POST })
 	public String sign(Member m) {
 		if (memberService.addMember(m) == 1) {
-			return "redirect:/loginForm";
+			return "redirect:/signUpComplete";
 		} else {
 			return "login/signup2";
 		}
 	}
 	
-
+	@GetMapping("/signUpComplete")
+	public String signUpComplete() {
+		return"login/signUpComplete";
+	}
 	
 	@GetMapping("/test")
 	public String test() {
