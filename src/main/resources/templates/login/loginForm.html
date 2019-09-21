@@ -25,11 +25,15 @@
 				<a href="index.html" th:href="@{/}"><img src="img/logo1.png" alt="" title="" /></a>
 			</div>
 		</header><br>
+		<!----------- 헤더 ------------->
 		<!----------- 로그인 폼 시작 ------------->
 		<div class="form">
 			<form class="login-form" method="POST">
-				<input type="text" placeholder="아이디"  name="id" required /> 
-				<input type="password" placeholder="비밀번호" name="password" required />
+				<div class="row-login">
+					<input type="text" placeholder="아이디"  name="id" required /> 
+					<input type="password" placeholder="비밀번호" name="password" required />
+					<div class="error-next-box" id="chkLogin"></div>
+				</div>
 				<div class="checks" align="left">
   					<input type="checkbox" id="ex_chk"> 
   					<label for="ex_chk">로그인 상태 유지</label> 

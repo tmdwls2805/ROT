@@ -47,7 +47,7 @@
 		</if>
 	</select>
 	
-		<select id="getUser" parameterType="Member" resultType="Member">
+	<select id="getUser" parameterType="Member" resultType="Member">
 		SELECT
 		id,
 		password,
@@ -59,6 +59,16 @@
 		addr2,
 		point,
 		regdate
+		FROM
+		member
+		WHERE
+		id = #{id}
+	</select>
+	
+	<select id="getSignUpComplete" parameterType="Member" resultType="Member">
+		SELECT
+		id,
+		name
 		FROM
 		member
 		WHERE

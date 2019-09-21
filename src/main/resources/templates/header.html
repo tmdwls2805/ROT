@@ -57,8 +57,8 @@
 				        	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 				        	&nbsp;&nbsp;&nbsp;
 				        	</li>
-							<li><a id="nav-a2" href="#" th:href="#">관리자</a></li>
 							<li><a id="nav-a2" th:href="${session.member != null} ? @{/logout}">로그아웃</a></li>
+							<li><a id="nav-a2" href="#">관리자</a></li>
 				        </ul>
 				        <!-- 사용자 로그인 -->
 				        <ul class="nav-menu" th:if="${session.member != null && session.member.id!='admin'}">
@@ -76,10 +76,12 @@
 				        	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 				        	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 				        	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-				        	&nbsp;&nbsp;&nbsp;
+				        	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				        	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 				        	</li>
-							<li><a id="nav-a2" href="/login/loginForm.html" th:href="@{/loginForm}" th:text="${session.member != null && session.member.id!='admin'} ? |${session.member.name}님|"></a></li>
 							<li><a id="nav-a2" th:href="${session.member != null} ? @{/logout}">로그아웃</a></li>
+							<li><a id="nav-a2" href="#" th:text="${session.member != null && session.member.id!='admin'} ? |${session.member.name}님|"></a></li>
+							<li><a id="nav-a2" href="#">마이페이지</a></li>							
 				        </ul>
 				      </nav><!-- #nav-menu-container -->					      		  
 					</div>
