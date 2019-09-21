@@ -64,16 +64,4 @@
 		WHERE
 		id = #{id}
 	</select>
-	
-	<select id="getSignUpComplete" parameterType="Member" resultType="Member">
-		SELECT
-		id,
-		name
-		FROM
-		member
-		WHERE
-		id = #{id}
-	</select>
-
-
 </mapper>

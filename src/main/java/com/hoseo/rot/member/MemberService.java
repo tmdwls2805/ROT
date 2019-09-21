@@ -32,8 +32,8 @@ public class MemberService{
         return memberRepository.getMember(member);
     }
     
-    public Member getUser(String id) {
-    	return memberRepository.getUser(id);
+    public Member getUser(Member m) {
+    	return memberRepository.getUser(m);
     }
     
 }

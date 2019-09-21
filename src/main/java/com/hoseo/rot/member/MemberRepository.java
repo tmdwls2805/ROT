@@ -12,8 +12,6 @@ public interface MemberRepository {
 	
 	public Member getMember(Member m); // 회원 불러오기
     
-    public Member getUser(String id);
-    
-    public Member getSignUpComplete(String id); // 회원가입 완료 후 보여주기
-	
+    public Member getUser(Member m);
+   
 }

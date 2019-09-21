@@ -17,32 +17,31 @@
 <!-- Site Title -->
 <title>내일의 레시피</title>
 <link rel="stylesheet" href="../static/css/mk/signUpComplete.css" th:href="@{/css/mk/signUpComplete.css?after}">
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
 </head>
 <body>
 		<header>
 			<div id="logo">
-				<a href="index.html" th:href="@{/}"><img src="img/logo1.png" alt="" title="" /></a>
+				<a href="index.html" th:href="@{/logout}"><img src="img/logo1.png" alt="" title="" /></a>
 			</div>
 		</header><br>
 <!----------------------------------------------------- 회원가입 폼 시작 ------------------------------------------------------------>	
+		<form th:action="@{/logout2}">
 		<div class="content">
 			<p class="complete_h">환영합니다!</p>
-			<p class="complete_font">{}님 , 회원가입을 축하합니다.</p>
-			<p class="complete_font">내일의 레시피의 새로운 아이디는 <strong>{}</strong>입니다.</p>
-			
-			<button onclick = "location.href='loginForm'">시작하기</button>
-			
+			<p class="complete_font" th:text="${session.member != null} ? |${session.member.name}님, 회원가입을 축하합니다.|"></p>
+			<p class="complete_font">내일의 레시피의 새로운 아이디는 <strong th:text="${session.member != null} ? |${session.member.id}|"></strong>입니다.</p>
+			<button>시작하기</button>
 		</div>
+		</form>
 			
 
 
 		<footer>
 			<div class="footer">
 				<address>
-					<a href="index.html" th:href="@{/}">
+					<a href="index.html" th:href="@{/logout}">
 						<img src="img/logo1.png" width="26px" height="21px" alt="" title="" />
 					</a>
 					<em id="footer_em">Copyright</em> <em id="footer_em2">ROT</em> <em id="footer_em">&copy;<script>document.write(new Date().getFullYear());</script> All rights reserved.</em>
