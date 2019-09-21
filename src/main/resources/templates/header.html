@@ -78,7 +78,7 @@
 				        	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 				        	&nbsp;&nbsp;&nbsp;
 				        	</li>
-							<li><a id="nav-a2" href="/login/loginForm.html" th:href="@{/loginForm}" th:text="${session.member.name}님"></a></li>
+							<li><a id="nav-a2" href="/login/loginForm.html" th:href="@{/loginForm}" th:text="${session.member != null && session.member.id!='admin'} ? |${session.member.name}님|"></a></li>
 							<li><a id="nav-a2" th:href="${session.member != null} ? @{/logout}">로그아웃</a></li>
 				        </ul>
 				      </nav><!-- #nav-menu-container -->					      		  

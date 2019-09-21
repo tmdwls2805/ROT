@@ -17,7 +17,6 @@
 <!-- Site Title -->
 <title>내일의 레시피</title>
 <link rel="stylesheet" href="../static/css/mk/login.css" th:href="@{/css/mk/login.css}">
-<script src="../static/css/js/login.js" th:src="@{/css/js/login.js}"></script>
 </head>
 <body>
 	<!----------- 헤더 ------------->
@@ -29,8 +28,8 @@
 		<!----------- 로그인 폼 시작 ------------->
 		<div class="form">
 			<form class="login-form" method="POST">
-				<input type="text" placeholder="아이디"  required /> 
-				<input type="password" placeholder="비밀번호" required />
+				<input type="text" placeholder="아이디"  name="id" required /> 
+				<input type="password" placeholder="비밀번호" name="password" required />
 				<div class="checks" align="left">
   					<input type="checkbox" id="ex_chk"> 
   					<label for="ex_chk">로그인 상태 유지</label> 
