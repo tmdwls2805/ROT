@@ -7,7 +7,7 @@
 		INSERT INTO member VALUES
 		(
 		#{id},
-		#{password},
+		PASSWORD(#{password}),
 		#{name},
 		#{email},
 		#{phone},
@@ -23,6 +23,13 @@
 		count(id)
 		FROM MEMBER
 		WHERE id = #{id}
+	</select>
+	
+	<select id="emailCheck" parameterType="String" resultType="int">
+		SELECT
+		count(email)
+		FROM MEMBER
+		WHERE email = #{email}
 	</select>
 	
 	<select id="getMember" parameterType="Member" resultType="Member">

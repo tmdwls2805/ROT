@@ -1,11 +1,18 @@
 package com.hoseo.rot.controller;
 
 
+import java.util.HashMap;
+import java.util.Map;
+
 import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.hoseo.rot.member.MemberService;
 import com.hoseo.rot.member.Member;
@@ -17,11 +24,46 @@ public class LoginController {
 	@Autowired
 	private MemberService memberService;
 	
+	// 약관동의
+	@GetMapping("/signUp")
+	public String signUp() {
+		return "login/signUp";
+	}
+
+	
 	// 회원가입 페이지로 이동
 	@PostMapping("/signUp2")
 	public String signUp2() {
 		return "login/signUp2";
 	}
+	
+	// 아이디 중복 확인 	
+	@RequestMapping("/signUp2/idCheck")
+    @ResponseBody
+    public Map<Object, Object> idCheck(@RequestBody String id) {
+        
+        int count = 0;
+        Map<Object, Object> map = new HashMap<Object, Object>();
+ 
+        count = memberService.idCheck(id);
+        map.put("cnt", count);
+ 
+        return map;
+    }
+	
+	// 아이디 중복 확인 	
+	@RequestMapping("/signUp2/emailCheck")
+    @ResponseBody
+    public Map<Object, Object> emailCheck(@RequestBody String email) {
+        
+        int count = 0;
+        Map<Object, Object> map = new HashMap<Object, Object>();
+ 
+        count = memberService.emailCheck(email);
+        map.put("cnt", count);
+ 
+        return map;
+    }
 	
 	// 회원가입 완료
 	@PostMapping("/signUp2/sign")
@@ -34,6 +76,12 @@ public class LoginController {
 		} else {
 			return "login/signup2";
 		}
+	}
+	
+	// 회원가입 완료
+	@GetMapping("/signUpComplete")
+	public String signUpComplete() {
+		return"login/signUpComplete";
 	}
 	
 	// 로그인
@@ -67,22 +115,5 @@ public class LoginController {
 		session.invalidate();
 		return "redirect:/loginForm";
 	}
-	
-	// 약관동의
-	@GetMapping("/signUp")
-	public String signUp() {
-		return "login/signUp";
-	}
 
-	// 회원가입 완료
-	@GetMapping("/signUpComplete")
-	public String signUpComplete() {
-		return"login/signUpComplete";
-	}
-	
-	
-	@GetMapping("/test")
-	public String test() {
-		return"/test";
-	}
 }

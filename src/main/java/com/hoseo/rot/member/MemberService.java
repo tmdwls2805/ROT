@@ -12,7 +12,6 @@ import com.hoseo.rot.member.Member;
 public class MemberService{
 	@Autowired
 	private MemberRepository memberRepository;
-
 	
 	/*회원가입*/
     public int addMember(Member member) { 
@@ -21,7 +20,11 @@ public class MemberService{
 
     /*아이디 중복 체크*/
     public int idCheck(String id) {
-    		return memberRepository.idCheck(id);
+    	return memberRepository.idCheck(id);
+    }
+    
+    public int emailCheck(String email) {
+    	return memberRepository.emailCheck(email);
     }
     
     public boolean isValidUser(Member m) {
