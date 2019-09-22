@@ -7,7 +7,7 @@
 		INSERT INTO member VALUES
 		(
 		#{id},
-		PASSWORD(#{password}),
+		#{password},
 		#{name},
 		#{email},
 		#{phone},
