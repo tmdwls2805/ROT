@@ -133,5 +133,23 @@ public class LoginController {
 		session.invalidate();
 		return "redirect:/loginForm";
 	}
+	
+	// 아이디 비밀번호 고르기 페이지
+	@GetMapping("/findIdPw")
+	public String findIdPw() {
+		return "login/findIdPw";
+	}
+	
+	// 아이디 찾기 
+	@GetMapping("/findId")
+	public String findId() {
+		return "login/findId";
+	}
+	
+	// 비밀번호 페이지
+	@GetMapping("/findPassword")
+	public String findPassword() {
+		return "login/findPassword";
+	}
 
 }

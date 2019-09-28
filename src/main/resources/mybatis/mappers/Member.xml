@@ -36,4 +36,8 @@
 	<select id="getUser" parameterType="Member" resultType="Member">
 		SELECT * FROM member WHERE id = #{id}
 	</select>
+	
+	<select id="findId" parameterType="Member" resultType="Member">
+		SELECT id FROM member WHERE name = #{name} and email = #{email}
+	</select>
 </mapper>

@@ -45,22 +45,28 @@ public class MemberService{
     	return memberRepository.idCheck(id);
     }
     
+    /*이메일 중복 체크*/
     public int emailCheck(String email) {
     	return memberRepository.emailCheck(email);
     }
     
+    /*로그인*/
     public boolean isValidUser(Member m) {
     	return memberRepository.getMember(m) != null;
     }
     
+    
+    /*회원정보 가져오기*/
     public Member getMember(Member member) { 
         return memberRepository.getMember(member);
     }
     
+    /*회원가입완료한 회원 정보 가져오기*/
     public Member getUser(Member m) {
     	return memberRepository.getUser(m);
     }
     
+    /*비밀번호 암호화*/
 	public Member encryp(Member member) {
 		MessageDigest digest;
 		
@@ -80,6 +86,11 @@ public class MemberService{
 		
 		return member; 
 	}
+	
+	/* 아이디 찾기 */
+    public Member findId(Member m) {
+    	return memberRepository.findId(m);
+    }
     
 }
 

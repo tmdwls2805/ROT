@@ -20,10 +20,10 @@
 <!-- CSS ============================================= -->
 <link rel="stylesheet" href="../static/css/linearicons.css"
 	th:href="@{/css/linearicons.css}">
-<link rel="stylesheet" href="../static/css/font-awesome.min.css"
+<link rel="stylesheet" href="../static/css/font-awesome.min.css?after"
 	th:href="@{/css/font-awesome.min.css}">
 <link rel="stylesheet" href="../static/css/bootstrap.css"
-	th:href="@{/css/bootstrap.css}">
+	th:href="@{/css/bootstrap.css?after}">
 <link rel="stylesheet" href="../static/css/magnific-popup.css"
 	th:href="@{/css/magnific-popup.css}">
 <link rel="stylesheet" href="../static/css/jquery-ui.css"
@@ -62,25 +62,8 @@
 <script src="../static/js/mail-script.js" th:src="@{/js/mail-script.js}"></script>
 <script src="../static/js/main.js" th:src="@{/js/main.js}"></script>
 <script src="http://maps.googleapis.com/maps/api/js"></script>
-
-<script>
-function initialize() {
-  var LatLng = new google.maps.LatLng(37.5625732,126.8400189);
-  var mapProp = {
-    center: LatLng, // 위치
-    zoom:18, // 어느정도까지 세세하게 볼 것인지.
-    mapTypeId:google.maps.MapTypeId.ROADMAP
-  };
-  var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
-
-  var marker = new google.maps.Marker({
-	position: LatLng,
-	map: map,
-  });
-
-}
-google.maps.event.addDomListener(window, 'load', initialize);
-</script>
+<link rel="stylesheet" href="../static/css/mk/findId.css?after" th:href="@{/css/mk/findId.css?after}">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
 <body>
 	<div th:replace="~{header :: header}"></div>
@@ -90,7 +73,7 @@ google.maps.event.addDomListener(window, 'load', initialize);
 		<div class="container">
 			<div class="row d-flex align-items-center justify-content-center">
 				<div class="about-content col-lg-12">
-					<h1 class="text-white">오시는 길</h1>
+					<h1 class="text-white">아이디 찾기</h1>
 				</div>
 			</div>
 		</div>
@@ -100,15 +83,84 @@ google.maps.event.addDomListener(window, 'load', initialize);
 	<!-- Start contact-page Area -->
 	<section class="contact-page-area section-gap">
 		<div class="container">
-			<div class="row">
-
+			<center>
+				<div class="form">
+					<form name="form" class="login-form" method="POST" action="">
+						<table border="0">
+<!-- 							<tr class="tr2">
+								<td><span class="span-head">아이디 찾기</span></td>
+							</tr> -->
+							<tr class="tr1">
+								<td class="td2">
+									<input type="text" placeholder="이름" class="input1" id="name" name="name" />
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<div class="error-next-box" id="chkName"></div>
+								</td>
+							</tr>
+							<tr class="tr1">
+								<td class="td2">
+									<input type="text" placeholder="이메일" class="input2" id="email" name="email" />
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<div class="error-next-box" id="chkEmail"></div>
+								</td>
+							</tr>
+						</table><br>
+						<input type="submit" class="button-font" value="아이디 찾기" disabled="disabled"/>
+					</form>
 			</div>
+			</center>
 		</div>
 	</section>
+
 	<!-- End contact-page Area -->
 	<!-- End home-about Area -->
 	<!-- start footer Area -->
 	<div th:replace="~{footer :: footer}"></div>
 	<!-- End footer Area -->
+	<script>
+	var empJ = /^[]{0}$/
+	var emailJ = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
+	var nameJ = /^[가-힣]{2,6}$/; 
+	
+	$('#name').blur(function(){
+		if(empJ.test($('#name').val())){
+			$("#signUpBtn").attr("disabled", true);
+			$('#chkName').text('필수 정보입니다.');
+			$('#chkName').css('color', 'red');
+			
+		}else if (!nameJ.test($('#name').val())){
+			$('#chkName').text('2~6자 한글을 사용하세요.');
+			$('#chkName').css('color', 'red');
+			$("#signUpBtn").attr("disabled", true);
+			
+		}else if (nameJ.test($('#name').val())){
+			$('#chkName').text('');
+			$("#signUpBtn").attr("disabled", false);
+		}
+	});
+
+	$('#email').blur(function(){
+		if(empJ.test($('#email').val())){
+			$('#chkEmail').text('필수 정보입니다.');
+			$('#chkEmail').css('color', 'red');
+			$("#signUpBtn").attr("disabled", true);
+			
+		}else if (!emailJ.test($('#email').val())){
+			$('#chkEmail').text('이메일 형식을 확인해주세요.');
+			$('#chkEmail').css('color', 'red');
+			$("#signUpBtn").attr("disabled", true);
+			
+		}else if (emailJ.test($('#email').val())){
+			$('#chkEmail').text('');
+			$("#signUpBtn").attr("disabled", false);
+		}
+	});
+	</script>
 </body>
 </html>

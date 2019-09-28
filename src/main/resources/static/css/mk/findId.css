@@ -1,0 +1,120 @@
+.container{
+	width:100%;
+	text-align:center;
+}
+
+table{
+	width:460px;
+}
+
+
+.td2{
+	text-align:right;
+}
+
+.span1{
+	color:#333;
+	font-weight:700;
+}
+
+.td1-1{
+	text-color:#333;
+	text-align:left;
+}
+
+.td1-2{
+	text-color:#333;
+	text-align:left;
+	padding:15px 0px 0px 0px;
+}
+
+.form .input1[type=text] {
+  font-family: "Roboto", sans-serif;
+  outline: 0;
+  background: #fff;
+  width: 460px;
+  border: #f2f2f2 1px solid;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
+  border-color:#d5d5d5;
+}
+
+.form .input1[type=text]:focus {
+  font-family: "Roboto", sans-serif;
+  outline: 0;
+  background: #fff;
+  width: 460px;
+  border:#f42f2c 1px solid;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+.form .input2[type=text] {
+  font-family: "Roboto", sans-serif;
+  outline: 0;
+  background: #fff;
+  width: 460px;
+  border: #f2f2f2 1px solid;
+  margin: 15px 0 0;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
+  border-color:#d5d5d5;
+}
+
+.form .input2[type=text]:focus {
+  font-family: "Roboto", sans-serif;
+  outline: 0;
+  background: #fff;
+  width: 460px;
+  border:#f42f2c 1px solid;
+  margin: 15px 0 0;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+.form input[type=submit] {
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  outline: 0;
+  background: #f42f2c;
+  width: 460px;
+  border: 0;
+  padding: 15px;
+  color: #FFFFFF;
+  font-size: 20px;
+  font-weight:600;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+  margin-top:10px;
+}
+.form input[type=submit]:hover,.form input[type=submit]:active,.form input[type=submit]:focus {
+  background: #e62e2b;
+}
+
+.error-next-box{
+	display: block;
+    margin: 9px 0 -2px;
+    font-size: 12px;
+    line-height: 14px;
+    color: #f42f2c;
+    border:#f8f8f8;
+    background:#f8f8f8;
+    
+}
+
+.span-head{
+	font-size:35px;
+	color:#000;
+	font-weight:700;
+}
+
+.tr2{
+	text-align:center;
+	vertical-align:top;
+	height:100px;
+}
