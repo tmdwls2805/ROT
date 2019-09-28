@@ -21,8 +21,23 @@ public class MemberService{
 	Logger log = LoggerFactory.getLogger(MemberService.class);
 	
 	/*회원가입*/
-    public int addMember(Member member) { 
-        return memberRepository.addMember(member);
+    public boolean addMember(Member member) { 
+		MessageDigest digest;
+		
+		try {
+			digest = MessageDigest.getInstance("SHA-256");
+		}catch(NoSuchAlgorithmException nae) {
+			log.error("암호화 알고리즘 초기화 에러",nae);
+			throw new RuntimeException(nae);
+		}
+		
+		digest.update(member.getPassword().getBytes());
+		StringBuilder sb = new StringBuilder();
+		for(byte b: digest.digest()) {
+			sb.append(Integer.toString((b & 0xff) + 0x100, 16).substring(1));
+		}		
+		member.setPassword(sb.toString());		
+		return memberRepository.addMember(member)==1;
     }
 
     /*아이디 중복 체크*/

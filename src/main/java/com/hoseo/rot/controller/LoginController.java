@@ -68,7 +68,7 @@ public class LoginController {
 	// 회원가입 완료
 	@PostMapping("/signUp2/sign")
 	public String sign(Member m, HttpSession session) {
-		if (memberService.addMember(m) == 1) {
+		if (memberService.addMember(m) == true) {
 			Member member = memberService.getUser(m);
 			session.setAttribute("member", member);
 			session.setAttribute("id", member.getId());
@@ -109,6 +109,7 @@ public class LoginController {
 	// 로그인 완료
 	@PostMapping("/loginForm")
 	public String login(Member m, HttpSession session) {
+		m = memberService.encryp(m);
 		if (memberService.isValidUser(m) == false) {
 			return "login/loginForm";
 		}
