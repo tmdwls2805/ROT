@@ -41,7 +41,7 @@ public class LoginController {
 	@RequestMapping("/signUp2/idCheck")
     @ResponseBody
     public Map<Object, Object> idCheck(@RequestBody String id) {
-        
+      
         int count = 0;
         Map<Object, Object> map = new HashMap<Object, Object>();
  
@@ -51,7 +51,7 @@ public class LoginController {
         return map;
     }
 	
-	// 아이디 중복 확인 	
+	// 이메일 중복 확인 	
 	@RequestMapping("/signUp2/emailCheck")
     @ResponseBody
     public Map<Object, Object> emailCheck(@RequestBody String email) {
@@ -90,6 +90,22 @@ public class LoginController {
 		return "login/loginForm";
 	}
 	
+	// 로그인 유효성 검사
+	@PostMapping("/validIdPw")
+	@ResponseBody
+    public Map<Object, Object> vaildIdPw(@RequestBody Member member) {
+		boolean isValid = false;
+        Map<Object, Object> map = new HashMap<Object, Object>();
+        member = memberService.encryp(member);	
+        if(memberService.isValidUser(member)) {
+        	isValid = true;
+        	map.put("valid", isValid);
+        } else {
+        	map.put("valid", isValid);
+        }
+        return map;
+    }
+	
 	// 로그인 완료
 	@PostMapping("/loginForm")
 	public String login(Member m, HttpSession session) {
@@ -101,6 +117,7 @@ public class LoginController {
 		session.setAttribute("id", member.getId());
 		return "redirect:index";
 	}
+	
 	
 	// 로그아웃
 	@GetMapping("/logout")

@@ -15,5 +15,6 @@ public interface MemberRepository {
 	public Member getMember(Member m); // 회원 불러오기
     
     public Member getUser(Member m);
+    
    
 }

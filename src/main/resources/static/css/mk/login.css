@@ -242,6 +242,28 @@ color: #000;
 
 }
 
+.error-next-box{
+	display: block;
+    margin: 0px 0px 15px 0px;
+    font-size: 12px;
+    line-height: 14px;
+    color: #f42f2c;
+    border:#f8f8f8;
+    background:#fff;
+    width:374px;
+}
+
+.error-next-box2{
+	display: block;
+    font-size: 12px;
+    line-height: 14px;
+    color: #f42f2c;
+    border:#f8f8f8;
+    background:#fff;
+	width:260px;
+}
+
+
 header{
 	text-align:center;
 	margin-top:20px;

@@ -16,7 +16,8 @@
 <meta charset="UTF-8">
 <!-- Site Title -->
 <title>내일의 레시피</title>
-<link rel="stylesheet" href="../static/css/mk/login.css" th:href="@{/css/mk/login.css}">
+<link rel="stylesheet" href="../static/css/mk/login.css?after" th:href="@{/css/mk/login.css?after}">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
 <body>
 	<!----------- 헤더 ------------->
@@ -28,20 +29,15 @@
 		<!----------- 헤더 ------------->
 		<!----------- 로그인 폼 시작 ------------->
 		<div class="form">
-			<form class="login-form" method="POST">
+			<form name="form" class="login-form" method="POST" action="/loginForm">
 				<div class="row-login">
-					<input type="text" placeholder="아이디"  name="id" required /> 
-					<input type="password" placeholder="비밀번호" name="password" required />
-					<div class="error-next-box" id="chkLogin"></div>
+					<input type="text" placeholder="아이디"  id="id" name="id" /> 
+					<div class="error-next-box" id="chkID" align="left"></div>
+					<input type="password" placeholder="비밀번호" id="password" name="password" />
 				</div>
-				<div class="checks" align="left">
-  					<input type="checkbox" id="ex_chk"> 
-  					<label for="ex_chk">로그인 상태 유지</label> 
-  					&nbsp;&nbsp;&nbsp;
-  					<input type="checkbox" id="ex_chk2"> 
-  					<label for="ex_chk2">아이디 저장</label> 
+				<div class="error-next-box2" id="chkPassword" align="left">
 				</div><br>
-				<input type="submit" class="button-font" onclick="loginchk()" value="로그인"/>
+				<input type="submit" class="button-font" value="로그인"/>
 				<p class="message">
 					<a href="#">아이디 찾기</a>
 					&nbsp;&nbsp;|&nbsp;&nbsp;
@@ -52,5 +48,57 @@
 			</form>
 		</div>
 		<!----------- 로그인 폼 끝 ------------->
+		<!----------- 로그인 유효성 검사 시작 ------------->
+<script>
+$("form").submit(function(e){
+	var loginId = document.form.id.value;
+	var loginPw = document.form.password.value;
+	e.preventDefault();
+	
+
+	if (loginId!="" && loginPw!=""){
+		$.ajax({
+			async: true,
+		    type : 'POST',
+		    data : JSON.stringify({"id": loginId, "password": loginPw}),
+		    url : "validIdPw",
+		    dataType : "json",
+		    contentType: "application/json; charset=UTF-8",
+		    success : function(data) {
+		        if (data.valid) {                			            
+		        	$("form").unbind("submit").submit();
+		        } else {			
+		        	$('#chkID').text('');
+		        	$('#chkPassword').text('내일의 레시피에 등록되지 않은 아이디이거나, 아이디 또는 비밀번호를 잘못 입력하셨습니다.');
+		        }
+		    },
+		    error : function(error) {
+		        alert("error : " + error);
+		    }
+		});								
+	}else{
+		
+		if (loginId=="" && loginPw==""){						
+			$('#chkID').text('아이디를 입력해주세요	.');
+			$('#chkPassword').text('');
+			$('#chkID').css('color', 'red');
+			e.preventDefault();
+			
+		}else if (loginId=="" && loginPw != "") {		
+			$('#chkID').text('아이디를 입력해주세요	.');
+			$('#chkPassword').text('');
+			$('#chkID').css('color', 'red');
+			e.preventDefault();
+		
+		}else if (loginPw=="" && loginId != "") {		
+			$('#chkID').text('');
+			$('#chkPassword').text('비밀번호를 입력해주세요.');
+			$('#chkPassword').css('color', 'red');
+			e.preventDefault();
+		}
+	}	   			
+});
+</script>
+		<!----------- 로그인 유효성 검사 끝 ------------->
 </body>
 </html>

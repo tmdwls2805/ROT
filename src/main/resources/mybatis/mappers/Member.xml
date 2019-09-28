@@ -19,56 +19,21 @@
 	</insert>
 	
 	<select id="idCheck" parameterType="String" resultType="int">
-		SELECT
-		count(id)
-		FROM MEMBER
-		WHERE id = #{id}
+		SELECT count(id) FROM MEMBER WHERE id = #{id}
 	</select>
 	
 	<select id="emailCheck" parameterType="String" resultType="int">
-		SELECT
-		count(email)
-		FROM MEMBER
-		WHERE email = #{email}
+		SELECT count(email) FROM MEMBER WHERE email = #{email}
 	</select>
 	
 	<select id="getMember" parameterType="Member" resultType="Member">
-		SELECT
-		id,
-		password,
-		name,
-		email,
-		phone,
-		zipcode,
-		addr1,
-		addr2,
-		point,
-		regdate
-		FROM
-		member
-		WHERE
-		id = #{id}
-			<if
-			test="@org.springframework.util.StringUtils@isEmpty(password) == false">
+		SELECT * FROM member WHERE id = #{id}
+			<if test="@org.springframework.util.StringUtils@isEmpty(password) == false">
 			and password = #{password}
 		</if>
 	</select>
 	
 	<select id="getUser" parameterType="Member" resultType="Member">
-		SELECT
-		id,
-		password,
-		name,
-		email,
-		phone,
-		zipcode,
-		addr1,
-		addr2,
-		point,
-		regdate
-		FROM
-		member
-		WHERE
-		id = #{id}
+		SELECT * FROM member WHERE id = #{id}
 	</select>
 </mapper>
