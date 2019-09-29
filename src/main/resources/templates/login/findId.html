@@ -85,14 +85,38 @@
 		<div class="container">
 			<center>
 				<div class="form">
-					<form name="form" class="login-form" method="POST" action="">
+					<table name="com-table" id="com-table" class="com-table">
+						<tr>
+							<td style="text-align:center;">		
+									<h4>			
+									<strong id="findName" class="com-strong"></strong>
+									님의 아이디는
+									<strong id="findId" class="com-strong2"></strong>
+									 입니다.
+									 </h4>	
+							</td>
+						</tr>
+						<tr>
+							<td class="com-td2">
+								<input type="submit" value="로그인하기" onclick="javascript:location.href='loginForm'"/>
+							</td>
+						</tr>
+						<tr>
+							<td class="com-td3">
+								<span class="com-span">비밀번호가 기억나지 않으십니까?</span>&nbsp;&nbsp;
+								<a class="com-a" th:href="@{findPassword}">비밀번호 찾기</a>
+							</td>
+						</tr>
+					</table>
+
+					<form name="form" id="form" class="login-form" method="POST" action="">
 						<table border="0">
 <!-- 							<tr class="tr2">
 								<td><span class="span-head">아이디 찾기</span></td>
 							</tr> -->
 							<tr class="tr1">
 								<td class="td2">
-									<input type="text" placeholder="이름" class="input1" id="name" name="name" />
+									<input type="text" placeholder="이름" class="input1" id="name" name="name" required/>
 								</td>
 							</tr>
 							<tr>
@@ -102,7 +126,7 @@
 							</tr>
 							<tr class="tr1">
 								<td class="td2">
-									<input type="text" placeholder="이메일" class="input2" id="email" name="email" />
+									<input type="text" placeholder="이메일" class="input2" id="email" name="email" required//>
 								</td>
 							</tr>
 							<tr>
@@ -111,7 +135,7 @@
 								</td>
 							</tr>
 						</table><br>
-						<input type="submit" class="button-font" value="아이디 찾기" disabled="disabled"/>
+						<input type="submit" class="button-font" value="아이디 찾기"/>
 					</form>
 			</div>
 			</center>
@@ -128,20 +152,17 @@
 	var emailJ = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
 	var nameJ = /^[가-힣]{2,6}$/; 
 	
-	$('#name').blur(function(){
+ 	$('#name').blur(function(){
 		if(empJ.test($('#name').val())){
-			$("#signUpBtn").attr("disabled", true);
 			$('#chkName').text('필수 정보입니다.');
 			$('#chkName').css('color', 'red');
 			
 		}else if (!nameJ.test($('#name').val())){
 			$('#chkName').text('2~6자 한글을 사용하세요.');
 			$('#chkName').css('color', 'red');
-			$("#signUpBtn").attr("disabled", true);
 			
 		}else if (nameJ.test($('#name').val())){
 			$('#chkName').text('');
-			$("#signUpBtn").attr("disabled", false);
 		}
 	});
 
@@ -149,18 +170,45 @@
 		if(empJ.test($('#email').val())){
 			$('#chkEmail').text('필수 정보입니다.');
 			$('#chkEmail').css('color', 'red');
-			$("#signUpBtn").attr("disabled", true);
 			
 		}else if (!emailJ.test($('#email').val())){
 			$('#chkEmail').text('이메일 형식을 확인해주세요.');
 			$('#chkEmail').css('color', 'red');
-			$("#signUpBtn").attr("disabled", true);
 			
 		}else if (emailJ.test($('#email').val())){
 			$('#chkEmail').text('');
-			$("#signUpBtn").attr("disabled", false);
 		}
 	});
+	 
+		$("form").submit(function(e){
+			var name = document.form.name.value;
+			var email = document.form.email.value;
+			e.preventDefault();
+			
+			if (name!="" && email!=""){
+				$.ajax({
+					async: true,
+				    type : 'POST',
+				    data : JSON.stringify({"name": name, "email": email}),
+				    url : "findId",
+				    dataType : "json",
+				    contentType: "application/json; charset=UTF-8",
+				    success : function(data) {
+				        if (data.id!="" && data.name!="") {
+ 				        	$("#form").hide();
+				        	$("#com-table").show();
+				        	$("#findName").text(data.name);
+				        	$("#findId").text(data.id);
+				        } else {
+							alert("입력하신 정보에 해당하는 아이디가 없습니다.")
+				        }
+				    },
+				    error : function(error) {
+				        alert("error : " + error);
+				    }
+				});								
+			}	   			
+		});
 	</script>
 </body>
 </html>

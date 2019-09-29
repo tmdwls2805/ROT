@@ -146,6 +146,21 @@ public class LoginController {
 		return "login/findId";
 	}
 	
+	@PostMapping("/findId")
+	@ResponseBody
+    public Map<Object, Object> findId(@RequestBody Member m) {
+        Map<Object, Object> map = new HashMap<Object, Object>();
+        if(memberService.findId(m)!=null) {
+        	m = memberService.findId(m);
+        	map.put("id", m.getId());
+        	map.put("name", m.getName());
+        } else {
+        	map.put("id", "");
+        	map.put("name", "");
+        }
+        return map;
+    }
+	
 	// 비밀번호 페이지
 	@GetMapping("/findPassword")
 	public String findPassword() {

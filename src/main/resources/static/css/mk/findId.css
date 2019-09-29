@@ -96,6 +96,11 @@ table{
   background: #e62e2b;
 }
 
+
+
+
+
+
 .error-next-box{
 	display: block;
     margin: 9px 0 -2px;
@@ -117,4 +122,46 @@ table{
 	text-align:center;
 	vertical-align:top;
 	height:100px;
+}
+
+.com-td2{
+	height:52.4px;
+	text-align:center;
+}
+
+.com-td3{
+	height:30px;
+	padding-left:70px;
+}
+
+.com-table{
+	height:229.6px;
+	display:none;
+	width:600px;
+}
+
+.com-span{
+	font-size:13px;
+	color:#929292;
+}
+
+.com-a:hover{
+	font-size:13px;
+	color:#929292;
+	text-decoration:underline;
+}
+
+.com-a{
+	font-size:13px;
+	color:#929292;
+	text-decoration:underline;
+}
+
+.com-strong{
+	font-size:20px;
+}
+
+.com-strong2{
+	color:#f42f2c;
+	font-size:20px;
 }

@@ -26,7 +26,6 @@ body {
 
 <!-- 濡쒓렇�씤 �뤌 �떆�옉 -->
 .login-page {
-  width: 466.4px;
   padding: 8% 0 0;
   margin: auto;
 }
@@ -68,12 +67,12 @@ body {
   font-family: "Roboto", sans-serif;
   outline: 0;
   background: #f2f2f2;
-  width: 100%;
   border: #f2f2f2 1px solid;
   margin: 0 0 15px;
   padding: 15px;
   box-sizing: border-box;
   font-size: 14px;
+  width:460px;
 }
 
 .form input[type=password]:focus {
