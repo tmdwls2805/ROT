@@ -84,54 +84,72 @@
 	<!-- Start contact-page Area -->
 	<section class="section-center">
 		<div class="container">
-			<form class="form" name="form" method="post" action="">
+			<form class="form" name="form" method="post" action="recipeEnroll">
+			<input type="text" name="reciId" th:value="${session.member.id}" hidden="hidden"/>
+			<input type="text" name="reciName" th:value="${session.member.name}" hidden="hidden"/>
+						
 				<table class="reciTable" border="1">
-
+						
 					<tr>
 						<th colspan="3">레시피 등록</th>
 					</tr>
-
 					<tr>
 						<td>레시피 제목</td>
-						<td><input type="text" class="input-reciSub" name="reciSub"
-							placeholder="예) 소고기 미역국 끓이기" /></td>
-						<td rowspan="4"><img name="reciMainPic" onClick=""
-							th:src="@{img/mk/mainPic.gif}"
-							style="width: 250px; height: 250px; cursor: pointer"></td>
+						<td>
+							<input type="text" class="input-reciSub" name="reciSub" placeholder="예) 소고기 미역국 끓이기" />
+						</td>
+						<td rowspan="4">
+							<img name="reciMainPic" onclick="" th:src="@{img/mk/mainPic.gif}" style="width: 250px; height: 250px; cursor: pointer">
+						</td>
 					</tr>
 
 					<tr>
 						<td>요리 소개</td>
-						<td><textarea class="input-reciIntro" name="reciIntro"
-								placeholder="이 레시피의 탄생 배경을 적어주세요."></textarea></td>
+						<td>
+							<textarea class="input-reciIntro" name="reciIntro" placeholder="이 레시피의 탄생 배경을 적어주세요."></textarea>
+						</td>
 					</tr>
 
 					<tr>
 						<td>카테고리</td>
-						<td><select name="reciFind">
-								<option value="" selected>종류별</option>
-								<option value="밑반찬">밑반찬</option>
-						</select> <select name="reciSit">
-								<option value="" selected>상황별</option>
-								<option value="일상">일상</option>
-						</select> <select name="reciWay">
-								<option value="" selected>방법별</option>
-								<option value="볶음">볶음</option>
-						</select> <select name="reciMat">
-								<option value="" selected>재료별</option>
-								<option value="소고기">소고기</option>
-						</select></td>
+						<td>
+							<select name="reciFind">
+									<option value="" selected>종류별</option>
+									<option value="밑반찬">밑반찬</option>
+							</select> 
+							
+							<select name="reciSit">
+									<option value="" selected>상황별</option>
+									<option value="일상">일상</option>
+							</select> 
+							
+							<select name="reciWay">
+									<option value="" selected>방법별</option>
+									<option value="볶음">볶음</option>
+							</select> 
+							
+							<select name="reciMat">
+									<option value="" selected>재료별</option>
+									<option value="소고기">소고기</option>
+							</select>
+						</td>
 					</tr>
 
 					<tr>
 						<td>요리정보</td>
-						<td>인원 <select name="reciPer">
+						<td>
+						인원 
+						<select name="reciPer">
 								<option value="" selected>인원</option>
 								<option value="밑반찬">밑반찬</option>
-						</select> 시간 <select name="reciTim">
+						</select> 
+						시간 
+						<select name="reciTim">
 								<option value="" selected>시간</option>
 								<option value="일상">일상</option>
-						</select> 난이도 <select name="reciLev">
+						</select> 
+						난이도 
+						<select name="reciLev">
 								<option value="" selected>난이도</option>
 								<option value="볶음">볶음</option>
 						</select>
@@ -151,12 +169,14 @@
 								<td class="matName-sit"><input type="text"
 									class="input-matName" name="matName" placeholder="예) 미역국" /><br>
 									<button type="button">묶음삭제</button></td>
+
 								<td class="matName-sit2">
-									<ul>
-										<li><input type="text" class="input-mat2Find"
-											name="mat2Find" placeholder="예) 미역" /> <input type="text"
-											class="input-mat2Vol" name="mat2Vol" placeholder="예) 100g" />
-											<button type="button" onclick="">삭제</button></li>
+									<ul class="input-mat">
+										<li>
+											<input type="text" class="input-mat2Find" name="mat2Find" placeholder="예) 미역" /> 
+											<input type="text" class="input-mat2Vol" name="mat2Vol" placeholder="예) 100g" />
+											<button type="button" onclick="">삭제</button>
+										</li>
 									</ul>
 								</td>
 							</tr>
@@ -219,8 +239,7 @@
 							레시피 팁
 						</td>
 						<td>
-							<textarea class="input-reciIntro" name="reciTip"
-								placeholder="이 레시피의 탄생 배경을 적어주세요."></textarea>
+							<textarea class="input-reciIntro" name="reciTip" placeholder="이 레시피의 탄생 배경을 적어주세요."></textarea>
 						</td>
 					</tr>
 					<tr>
@@ -228,15 +247,22 @@
 					</tr>
 					<tr>
 						<td colspan="2">
-							<input class="recipe-submit" type="submit" value="저장"/>&nbsp;&nbsp;
+							<input class="recipe-submit" type="button" value="저장"/>&nbsp;&nbsp;
 							<input class="recipe-submit" type="submit" value="저장후 등록하기"/>&nbsp;&nbsp;
-							<input class="recipe-button" type="button" value="취소"/>
+							<input class="recipe-button" type="button" value="취소" onclick="goBack()" />
 						</td>
 					</tr>
 				</table>
 			</form>
 		</div>
 	</section>
+	
+	<script>
+	function goBack() {
+		window.history.back();
+	}
+	</script>
+	
 	<!-- End contact-page Area -->
 	<!-- End home-about Area -->
 	<!-- start footer Area -->

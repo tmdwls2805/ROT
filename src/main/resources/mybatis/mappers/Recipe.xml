@@ -1,14 +1,32 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<!DOCTYPE mapper
-  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
-  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.hoseo.rot.recipe.RecipeRepository">
+
 	<insert id="addRecipe" parameterType="Recipe">
-		INSERT INTO recipe VALUES
+		INSERT INTO recipe
+		(
+		reciId, 
+		reciName, 
+		reciSub, 
+		reciIntro, 
+		reciMainPic, 
+		reciFind, 
+		reciSit, 
+		reciWay, 
+		reciMat, 
+		reciPer, 
+		reciTim, 
+		reciLev, 
+		reciTip,
+		reciComPic1,
+		reciComPic2,
+		reciComPic3,
+		reciComPic4,
+		reciRegdate
+		) 
+		VALUES
 		(
 		#{reciId},
 		#{reciName},
-		#{reciNum},
 		#{reciSub},
 		#{reciIntro},
 		#{reciMainPic},
@@ -28,31 +46,28 @@
 		);
 	</insert>
 	
-	<insert id="addMetrial" parameterType="Metrial">
-		INSERT INTO recipe VALUES
+	<insert id="addMaterial" parameterType="Material">
+		INSERT INTO material VALUES
 		(
 		#{reciNum},
-		#{matNum},
 		#{matName}
 		);
 	</insert>
 	
-	<insert id="addMetrial2" parameterType="Metrial2">
-		INSERT INTO recipe VALUES
+	<insert id="addMaterial2" parameterType="Material2">
+		INSERT INTO material2 VALUES
 		(
 		#{reciNum},
 		#{matNum},
-		#{mat2Num},
 		#{mat2Find},
 		#{mat2Vol}
 		);
 	</insert>
 	
 	<insert id="addRecipeOrder" parameterType="RecipeOrder">
-		INSERT INTO recipe VALUES
+		INSERT INTO recipeOrder VALUES
 		(
 		#{reciNum},
-		#{orderNum},
 		#{orderContent},
 		#{orderPic}
 		);

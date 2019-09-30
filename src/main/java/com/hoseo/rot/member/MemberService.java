@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.hoseo.rot.member.MemberRepository;
+import com.hoseo.rot.recipe.Recipe;
 import com.hoseo.rot.member.Member;
 
 
@@ -19,6 +20,12 @@ public class MemberService{
 	@Autowired
 	private MemberRepository memberRepository;
 	Logger log = LoggerFactory.getLogger(MemberService.class);
+	
+	
+	public boolean addRecipe(Member m) {
+		return memberRepository.addRecipe(m)==1;
+	}
+	
 	
 	/*회원가입*/
     public boolean addMember(Member member) { 

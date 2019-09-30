@@ -7,9 +7,9 @@ import com.hoseo.rot.recipe.Recipe;
 @Mapper
 public interface RecipeRepository {
 
-	public int addRecipe(Recipe r); 
-	public int addRecipe(RecipeOrder ro);
-	public int addRecipe(Material m);
-	public int addRecipe(Material2 m2);
+	public int addRecipe(Recipe r);
+	public int addRecipeOrder(RecipeOrder ro);
+	public int addMaterial(Material m);
+	public int addMaterial2(Material2 m2);
 	
 }

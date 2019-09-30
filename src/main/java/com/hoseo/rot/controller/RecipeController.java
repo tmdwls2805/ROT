@@ -1,6 +1,5 @@
 package com.hoseo.rot.controller;
 
-
 import java.util.HashMap;
 import java.util.Map;
 
@@ -16,20 +15,21 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.hoseo.rot.recipe.RecipeService;
 import com.hoseo.rot.recipe.Recipe;
-
+import com.hoseo.rot.recipe.RecipeOrder;
 
 @Controller
 public class RecipeController {
 
 	@Autowired
 	private RecipeService recipeService;
-	
 
-	// 회원가입 완료
-	@GetMapping("/recipeEnroll")
-	public String recipeEnroll() {
-		return"recipe/recipeEnroll";
-	}
-
-
+	/*
+	 * @GetMapping("/recipeEnroll") public String recipeEnroll() { return
+	 * "recipe/recipeEnroll"; }
+	 * 
+	 * @PostMapping("/recipeEnroll") public String enroll(Recipe r) {
+	 * if(recipeService.addRecipe(r)){ return "/";
+	 * 
+	 * } return "recipe/recipeEnroll"; }
+	 */
 }

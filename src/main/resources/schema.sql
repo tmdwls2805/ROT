@@ -12,44 +12,63 @@ CREATE TABLE IF NOT EXISTS `member` (
   UNIQUE KEY (`email`),
   PRIMARY KEY (`id`));
 
+-- CREATE TABLE IF NOT EXISTS `recipe` (
+--   `reciId` VARCHAR(2048) NOT NULL,
+--   `reciName` VARCHAR(2048) NOT NULL,
+--   `reciNum` INT AUTO_INCREMENT,
+--   `reciSub` VARCHAR(2048) NOT NULL,
+--   `reciIntro` VARCHAR(2048),
+--   `reciMainPic` VARCHAR(2048),
+--   `reciFInd` VARCHAR(2048),
+--   `reciSit` VARCHAR(2048) ,
+--   `reciWay` VARCHAR(2048),
+--   `reciMat` VARCHAR(2048),
+--   `reciPer` VARCHAR(2048),
+--   `reciTim` VARCHAR(2048),
+--   `reciLev` VARCHAR(2048),
+--   `reciTip` VARCHAR(2048),
+--   `reciComPic1` VARCHAR(2048) ,
+--   `reciComPic2` VARCHAR(2048),
+--   `reciComPic3` VARCHAR(2048),
+--   `reciComPic4` VARCHAR(2048),
+--   `reciRegdate` DATETIME NOT NULL,
+--   PRIMARY KEY (`reciNum`),
+--   FOREIGN KEY (`reciId`) REFERENCES member (`id`)
+--   );
+
 CREATE TABLE IF NOT EXISTS `recipe` (
   `reciId` VARCHAR(2048) NOT NULL,
   `reciName` VARCHAR(2048) NOT NULL,
-  `reciNum` INT NOT NULL AUTO_INCREMENT,
+  `reciNum` INT AUTO_INCREMENT,
   `reciSub` VARCHAR(2048) NOT NULL,
-  `reciIntro` VARCHAR(2048) NULL,
-  `reciMainPic` VARCHAR(2048) NULL,
-  `reciFInd` VARCHAR(2048) NULL,
-  `reciSit` VARCHAR(2048) NULL,
-  `reciWay` VARCHAR(2048) NULL,
-  `reciMat` VARCHAR(2048) NULL,
-  `reciPer` VARCHAR(2048) NULL,
-  `reciTim` VARCHAR(2048) NULL,
-  `reciLev` VARCHAR(2048) NULL,
-  `reciTip` VARCHAR(2048) NULL,
-  `reciComPic1` VARCHAR(2048) NULL,
-  `reciComPic2` VARCHAR(2048) NULL,
-  `reciComPic3` VARCHAR(2048) NULL,
-  `reciComPic4` VARCHAR(2048) NULL,
+  `reciIntro` VARCHAR(2048),
+  `reciFInd` VARCHAR(2048),
+  `reciSit` VARCHAR(2048) ,
+  `reciWay` VARCHAR(2048),
+  `reciMat` VARCHAR(2048),
+  `reciPer` VARCHAR(2048),
+  `reciTim` VARCHAR(2048),
+  `reciLev` VARCHAR(2048),
+  `reciTip` VARCHAR(2048),
   `reciRegdate` DATETIME NOT NULL,
   PRIMARY KEY (`reciNum`),
   FOREIGN KEY (`reciId`) REFERENCES member (`id`)
   );
 
 CREATE TABLE IF NOT EXISTS `material` (
-  `reciNum` INT NULL,
-  `matNum` INT NULL AUTO_INCREMENT,
-  `matName` VARCHAR(2048) NULL,
+  `reciNum` INT,
+  `matNum` INT AUTO_INCREMENT,
+  `matName` VARCHAR(2048),
   PRIMARY KEY (`matNum`),
   FOREIGN KEY (`reciNum`) REFERENCES recipe (`reciNum`)
   );
 
 CREATE TABLE IF NOT EXISTS `material2` (
-  `reciNum` INT NULL,
-  `matNum` INT NULL,
-  `mat2Num` INT NULL,
-  `mat2Find` VARCHAR(2048) NULL,
-  `mat2Vol` VARCHAR(2048) NULL,
+  `reciNum` INT,
+  `matNum` INT,
+  `mat2Num` INT AUTO_INCREMENT,
+  `mat2Find` VARCHAR(2048),
+  `mat2Vol` VARCHAR(2048),
   PRIMARY KEY (`mat2Num`),
   FOREIGN KEY (`reciNum`) REFERENCES recipe (`reciNum`),
   FOREIGN KEY (`matNum`) REFERENCES material (`matNum`)
@@ -58,26 +77,8 @@ CREATE TABLE IF NOT EXISTS `material2` (
 CREATE TABLE IF NOT EXISTS `recipeOrder` (
   `reciNum` INT NULL,
   `orderNum` int NULL AUTO_INCREMENT,
-  `orderContent` VARCHAR(2048) NULL,
-  `orderPic` VARCHAR(2048) NULL,
+  `orderContent` VARCHAR(2048),
+  `orderPic` VARCHAR(2048),
   PRIMARY KEY (`orderNum`),
   FOREIGN KEY (`reciNum`) REFERENCES recipe (`reciNum`)
   );
-  
---   CREATE TABLE IF NOT EXISTS `recipe` (
---   `id` VARCHAR(2048) NOT NULL,
---   `name` VARCHAR(2048) NOT NULL,
---   `subject` VARCHAR(2048) NOT NULL,
---   `introduce` VARCHAR(2048) NOT NULL,
---   `cate` VARCHAR(2048) NOT NULL,
---   `infoPer` VARCHAR(2048) NOT NULL,
---   `infoTim` VARCHAR(2048) NOT NULL,
---   `infoLev` VARCHAR(2048) NOT NULL,
--- `mat` VARCHAR(2048) NOT NULL,
--- `matVol` VARCHAR(2048) NOT NULL,
--- 	`order` VARCHAR(2048) NOT NULL,
--- 	`orPic` VARCHAR(2048) NOT NULL,
--- 		`orComPic` VARCHAR(2048) NOT NULL,
---         		`orTip` VARCHAR(2048) NOT NULL,
---   `regdate` VARCHAR(2048) NOT NULL);
-

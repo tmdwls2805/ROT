@@ -40,4 +40,49 @@
 	<select id="findId" parameterType="Member" resultType="Member">
 		SELECT id, name FROM member WHERE name = #{name} and email = #{email}
 	</select>
+	
+		<insert id="addRecipe" parameterType="Member">
+		INSERT INTO recipe
+		(
+		reciId, 
+		reciName, 
+		reciSub, 
+		reciIntro, 
+		reciMainPic, 
+		reciFind, 
+		reciSit, 
+		reciWay, 
+		reciMat, 
+		reciPer, 
+		reciTim, 
+		reciLev, 
+		reciTip,
+		reciComPic1,
+		reciComPic2,
+		reciComPic3,
+		reciComPic4,
+		reciRegdate
+		) 
+		VALUES
+		(
+		#{reciId},
+		#{reciName},
+		#{reciSub},
+		#{reciIntro},
+		#{reciMainPic},
+		#{reciFind},
+		#{reciSit},
+		#{reciWay},
+		#{reciMat},
+		#{reciPer},
+		#{reciTim},
+		#{reciLev},
+		#{reciTip},
+		#{reciComPic1},
+		#{reciComPic2},
+		#{reciComPic3},
+		#{reciComPic4},
+		now()
+		);
+	</insert>
 </mapper>

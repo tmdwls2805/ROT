@@ -24,6 +24,20 @@ public class LoginController {
 	@Autowired
 	private MemberService memberService;
 	
+	@GetMapping("/recipeEnroll")
+	public String recipeEnroll() {
+		return "recipe/recipeEnroll";
+	}
+
+	@PostMapping("/recipeEnroll")
+	public String enroll(Member m) {
+		if(memberService.addRecipe(m)){
+			return "/";
+			
+		}
+		return "recipe/recipeEnroll";
+	}
+	
 	// 약관동의
 	@GetMapping("/signUp")
 	public String signUp() {
