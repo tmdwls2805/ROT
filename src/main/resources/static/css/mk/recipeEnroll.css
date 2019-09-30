@@ -1,0 +1,167 @@
+.section-center{
+	background:#f8f8f8;
+	padding:120px 0;
+	text-align:center;
+	display:block;
+}
+
+.container{
+	width:100%;
+	align:center;
+}
+
+.form .input-reciSub {
+  font-family: "Roboto", sans-serif;
+  outline: 0;
+  background: #fff;
+  width: 610px;
+  border: #f2f2f2 1px solid;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
+  border-color:#d5d5d5;
+}
+
+.form .input-reciSub:focus {
+  font-family: "Roboto", sans-serif;
+  outline: 0;
+  background: #fff;
+  width: 610px;
+  border:#f42f2c 1px solid;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+.form .input-reciIntro{
+  font-family: "Roboto", sans-serif;
+  outline: 0;
+  background: #fff;
+  width: 610px;
+  height:100px;
+  border: #f2f2f2 1px solid;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
+  border-color:#d5d5d5;
+}
+
+.form .input-reciIntro:focus {
+  font-family: "Roboto", sans-serif;
+  outline: 0;
+  background: #fff;
+  width: 610px;
+  height:100px;
+  border:#f42f2c 1px solid;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+.form .input-mat2Find {
+  font-family: "Roboto", sans-serif;
+  outline: 0;
+  background: #fff;
+  width: 330px;
+  border: #f2f2f2 1px solid;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
+  border-color:#d5d5d5;
+}
+
+.form .input-mat2Find:focus {
+  font-family: "Roboto", sans-serif;
+  outline: 0;
+  background: #fff;
+  width: 330px;
+  border:#f42f2c 1px solid;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+
+.form .input-mat2Vol {
+  font-family: "Roboto", sans-serif;
+  outline: 0;
+  background: #fff;
+  width: 280px;
+  border: #f2f2f2 1px solid;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
+  border-color:#d5d5d5;
+}
+
+.form .input-mat2Vol:focus {
+  font-family: "Roboto", sans-serif;
+  outline: 0;
+  background: #fff;
+  width: 280px;
+  border:#f42f2c 1px solid;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+.form .input-matName {
+  font-family: "Roboto", sans-serif;
+  outline: 0;
+  background: #fff;
+  width: 210px;
+  border: #f2f2f2 1px solid;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
+  border-color:#d5d5d5;
+}
+
+.form .input-matName:focus {
+  font-family: "Roboto", sans-serif;
+  outline: 0;
+  background: #fff;
+  width: 210px;
+  border:#f42f2c 1px solid;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+
+.form input[type=submit] {
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  outline: 0;
+  background: #f42f2c;
+  width: 460px;
+  border: 0;
+  padding: 15px;
+  color: #FFFFFF;
+  font-size: 20px;
+  font-weight:600;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+  margin-top:10px;
+}
+
+
+.form input[type=submit]:hover,.form input[type=submit]:active,.form input[type=submit]:focus {
+  background: #e62e2b;
+}
+
+.error-next-box{
+	display: block;
+    margin: 9px 0 -2px;
+    font-size: 12px;
+    line-height: 14px;
+    color: #f42f2c;
+    border:#f8f8f8;
+    background:#f8f8f8;
+    
+}
+
+.reciTable{
+	width:1082.4px;
+}

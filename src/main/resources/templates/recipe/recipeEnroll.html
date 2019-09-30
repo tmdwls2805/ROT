@@ -20,10 +20,10 @@
 <!-- CSS ============================================= -->
 <link rel="stylesheet" href="../static/css/linearicons.css"
 	th:href="@{/css/linearicons.css}">
-<link rel="stylesheet" href="../static/css/font-awesome.min.css?after"
+<link rel="stylesheet" href="../static/css/font-awesome.min.css"
 	th:href="@{/css/font-awesome.min.css}">
 <link rel="stylesheet" href="../static/css/bootstrap.css"
-	th:href="@{/css/bootstrap.css?after}">
+	th:href="@{/css/bootstrap.css}">
 <link rel="stylesheet" href="../static/css/magnific-popup.css"
 	th:href="@{/css/magnific-popup.css}">
 <link rel="stylesheet" href="../static/css/jquery-ui.css"
@@ -34,8 +34,8 @@
 	th:href="@{/css/animate.min.css}">
 <link rel="stylesheet" href="../static/css/owl.carousel.css"
 	th:href="@{/css/owl.carousel.css}">
-<link rel="stylesheet" href="../static/css/main.css"
-	th:href="@{/css/main.css}">
+<link rel="stylesheet" href="../static/css/main-select.css"
+	th:href="@{/css/main-select.css}">
 <link rel="stylesheet" href="../static/css/mk/contact.css"
 	th:href="@{/css/mk/contact.css}">
 <script src="../static/js/vendor/jquery-2.2.4.min.js"
@@ -43,7 +43,6 @@
 <script src="../static/js/popper.min.js" th:src="@{/js/popper.min.js}"></script>
 <script src="../static/js/vendor/bootstrap.min.js"
 	th:src="@{/js/vendor/bootstrap.min.js}"></script>
-
 <script src="../static/js/jquery-ui.js" th:src="@{/js/jquery-ui.js}"></script>
 <script src="../static/js/easing.min.js" th:src="@{/js/easing.min.js}"></script>
 <script src="../static/js/hoverIntent.js" th:src="@{/js/hoverIntent.js}"></script>
@@ -61,8 +60,8 @@
 	th:src="@{/js/isotope.pkgd.min.js}"></script>
 <script src="../static/js/mail-script.js" th:src="@{/js/mail-script.js}"></script>
 <script src="../static/js/main.js" th:src="@{/js/main.js}"></script>
-<script src="http://maps.googleapis.com/maps/api/js"></script>
-<link rel="stylesheet" href="../static/css/mk/findIdPw.css?after" th:href="@{/css/mk/findIdPw.css?after}">
+<link rel="stylesheet" href="../static/css/mk/recipeEnroll.css"
+	th:href="@{/css/mk/recipeEnroll.css}">
 </head>
 <body>
 	<div th:replace="~{header :: header}"></div>
@@ -72,7 +71,7 @@
 		<div class="container">
 			<div class="row d-flex align-items-center justify-content-center">
 				<div class="about-content col-lg-12">
-					<h1 class="text-white">아이디 · 비밀번호 찾기</h1>
+					<h1 class="text-white"></h1>
 				</div>
 			</div>
 		</div>
@@ -80,36 +79,114 @@
 	<!-- End banner Area -->
 
 	<!-- Start contact-page Area -->
-	<section class="contact-page-area section-gap">
+	<section class="section-center">
 		<div class="container">
-			<div class="row">
-				<table align="center">
+			<form class="form" name="form" method="post" action="">
+				<table class="reciTable" border="1">
+
 					<tr>
-						<td class="td1" align="center">
-								<img src="../static/img/login/findid1.PNG" th:src="@{/img/login/findid1.PNG}" class="findimg"> <br> <strong
-									class="findtext">아이디 찾기</strong> <span class="spantext">
-									회원님의 기본 정보 입력 후<br> 본인 확인 절자를 거치시면 <strong>아이디 찾기</strong>가
-									가능합니다.
-								</span> <br>
-								<br>
-								<br> <a class="btn btn-primary" href="findId.html" th:href="@{/findId}">아이디 찾기</a>
+						<th colspan="3">레시피 등록</th>
+					</tr>
+
+					<tr>
+						<td>레시피 제목</td>
+						<td>
+							<input type="text" class="input-reciSub" name="reciSub" placeholder="예) 소고기 미역국 끓이기" />
 						</td>
+						<td rowspan="4">
+							<img name="reciMainPic" onClick="" th:src="@{img/mk/mainPic.gif}" style="width: 250px; height: 250px; cursor: pointer">
+						</td>
+					</tr>
 
-						<td class="td_blank"></td>
+					<tr>
+						<td>요리 소개</td>
+						<td><input type="text" class="input-reciIntro"
+							name="reciIntro" placeholder="이 레시피의 탄생 배경을 적어주세요." /></td>
+					</tr>
 
-						<td class="td1" align="center">
-								<img src="../static/img/login/findpassword1.PNG" th:src="@{/img/login/findpassword1.PNG}" class="findimg"> <br>
-								<strong class="findtext">비밀번호 찾기</strong> <span
-									class="spantext"> 회원님의 아이디 및 기본 정보 입력 후<br> 본인 확인
-									절자를 거치시면 <strong>비밀번호 찾기</strong>가 가능합니다.
-								</span> <br>
-								<br>
-								<br> <a class="btn btn-primary"
-									href="findPassword.html" th:href="@{/findPassword}">비밀번호 재설정하기</a>
+					<tr>
+						<td>카테고리</td>
+						<td>
+							<select name="reciFind">
+									<option value="" selected>종류별</option>
+									<option value="밑반찬">밑반찬</option>
+							</select> <select name="reciSit">
+									<option value="" selected>상황별</option>
+									<option value="일상">일상</option>
+							</select> <select name="reciWay">
+									<option value="" selected>방법별</option>
+									<option value="볶음">볶음</option>
+							</select> <select name="reciMat">
+									<option value="" selected>재료별</option>
+									<option value="소고기">소고기</option>
+							</select>
+						</td>
+					</tr>
+
+					<tr>
+						<td>요리정보</td>
+						<td>
+						
+							인원
+							<select name="reciPer">
+									<option value="" selected>인원</option>
+									<option value="밑반찬">밑반찬</option>
+							</select> 
+							
+							시간 
+							<select name="reciTim">
+									<option value="" selected>시간</option>
+									<option value="일상">일상</option>
+							</select> 
+							
+							난이도 
+							<select name="reciLev">
+									<option value="" selected>난이도</option>
+									<option value="볶음">볶음</option>
+							</select>
+							
+						</td>
+					</tr>
+
+					<tr>
+						<td style="height: 10px;" colspan="3"></td>
+					</tr>
+				</table>
+				
+				<ul>
+					<li>
+						<table  class="reciTable" border="1">
+							<tr>
+								<td>
+									<input type="text" class="input-matName" name="matName" placeholder="예) 미역국" />
+								</td>
+								<td>
+									<ul>
+										<li>
+											<input type="text" class="input-mat2Find" name="mat2Find" placeholder="예) 미역" /> 
+											<input type="text" class="input-mat2Vol" name="mat2Vol" placeholder="예) 100g" />
+										</li>
+									</ul>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="3">
+									<button type="button" onclick="">추가</button>
+								</td>
+							</tr>
+						</table>
+					</li>
+				</ul>
+				<table border="1" class="reciTable">
+					<tr>
+						<td>
+							<button type="button" onclick="">묶음 추가</button>
 						</td>
 					</tr>
 				</table>
-			</div>
+
+				
+			</form>
 		</div>
 	</section>
 	<!-- End contact-page Area -->
