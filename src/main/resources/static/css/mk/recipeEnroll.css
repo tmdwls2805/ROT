@@ -31,6 +31,7 @@
   padding: 15px;
   box-sizing: border-box;
   font-size: 14px;
+  resize: none;
 }
 
 .form .input-reciIntro{
@@ -44,6 +45,7 @@
   box-sizing: border-box;
   font-size: 14px;
   border-color:#d5d5d5;
+  resize: none;
 }
 
 .form .input-reciIntro:focus {
@@ -128,29 +130,6 @@
   font-size: 14px;
 }
 
-
-.form input[type=submit] {
-  font-family: "Roboto", sans-serif;
-  text-transform: uppercase;
-  outline: 0;
-  background: #f42f2c;
-  width: 460px;
-  border: 0;
-  padding: 15px;
-  color: #FFFFFF;
-  font-size: 20px;
-  font-weight:600;
-  -webkit-transition: all 0.3 ease;
-  transition: all 0.3 ease;
-  cursor: pointer;
-  margin-top:10px;
-}
-
-
-.form input[type=submit]:hover,.form input[type=submit]:active,.form input[type=submit]:focus {
-  background: #e62e2b;
-}
-
 .error-next-box{
 	display: block;
     margin: 9px 0 -2px;
@@ -164,4 +143,86 @@
 
 .reciTable{
 	width:1082.4px;
+}
+
+.matName-sit{
+	vertical-align:top;
+}
+
+.matName-sit2{
+	text-align:left;
+	vertical-align:top;
+}
+
+.orderContent{
+	width:430px;
+	height:160px;
+	resize:none;
+}
+
+.orderContent-td{
+  font-family: "Roboto", sans-serif;
+  outline: 0;
+  background: #fff;
+  width: 280px;
+  border: #f2f2f2 1px solid;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
+  border-color:#d5d5d5;
+}
+
+.orderContent-td:focus{
+  font-family: "Roboto", sans-serif;
+  outline: 0;
+  background: #fff;
+  width: 280px;
+  border: #f2f2f2 1px solid;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
+  border-color:#d5d5d5;
+}
+
+.recipe-submit{
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  outline: 0;
+  background: #f42f2c;
+  width: 310px;
+  border: 0;
+  padding: 15px;
+  color: #FFFFFF;
+  font-size: 20px;
+  font-weight:600;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+  margin-top:10px;
+}
+
+
+.recipe-submit:hover, .recipe-submit:active, .recipe-submit:focus {
+  background: #e62e2b;
+}
+
+.recipe-button{
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  outline: 0;
+  background: #d4d4d4;
+  width: 310px;
+  border: 0;
+  padding: 15px;
+  color: #FFFFFF;
+  font-size: 20px;
+  font-weight:600;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+  margin-top:10px;
+}
+
+.recipe-button:hover, .recipe-button:active, .recipe-buttonfocus {
+  background: #c1c1c1;
 }
