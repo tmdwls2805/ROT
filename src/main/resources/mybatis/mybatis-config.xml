@@ -9,9 +9,14 @@
 	
 	<typeAliases>
 		<typeAlias type="com.hoseo.rot.member.Member" alias="Member"/>
+		<typeAlias type="com.hoseo.rot.recipe.Recipe" alias="Recipe"/>
+		<typeAlias type="com.hoseo.rot.recipe.RecipeOrder" alias="RecipeOrder"/>
+		<typeAlias type="com.hoseo.rot.recipe.Material" alias="Material"/>
+		<typeAlias type="com.hoseo.rot.recipe.Material2" alias="Material2"/>
 	</typeAliases>
 	
 	<mappers>
 		<mapper resource="mybatis/mappers/Member.xml" />
+		<mapper resource="mybatis/mappers/Recipe.xml" />
 	</mappers>
 </configuration>

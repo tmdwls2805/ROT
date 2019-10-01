@@ -1,6 +1,7 @@
 package com.hoseo.rot.recipe;
 
 import java.sql.Timestamp;
+
 import lombok.Data;
 
 @Data
@@ -25,4 +26,3 @@ public class Recipe {
 	private String reciComPic4;
 	private Timestamp reciregdate;
 }
-

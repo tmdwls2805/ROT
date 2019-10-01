@@ -12,48 +12,30 @@ CREATE TABLE IF NOT EXISTS `member` (
   UNIQUE KEY (`email`),
   PRIMARY KEY (`id`));
 
--- CREATE TABLE IF NOT EXISTS `recipe` (
---   `reciId` VARCHAR(2048) NOT NULL,
---   `reciName` VARCHAR(2048) NOT NULL,
---   `reciNum` INT AUTO_INCREMENT,
---   `reciSub` VARCHAR(2048) NOT NULL,
---   `reciIntro` VARCHAR(2048),
---   `reciMainPic` VARCHAR(2048),
---   `reciFInd` VARCHAR(2048),
---   `reciSit` VARCHAR(2048) ,
---   `reciWay` VARCHAR(2048),
---   `reciMat` VARCHAR(2048),
---   `reciPer` VARCHAR(2048),
---   `reciTim` VARCHAR(2048),
---   `reciLev` VARCHAR(2048),
---   `reciTip` VARCHAR(2048),
---   `reciComPic1` VARCHAR(2048) ,
---   `reciComPic2` VARCHAR(2048),
---   `reciComPic3` VARCHAR(2048),
---   `reciComPic4` VARCHAR(2048),
---   `reciRegdate` DATETIME NOT NULL,
---   PRIMARY KEY (`reciNum`),
---   FOREIGN KEY (`reciId`) REFERENCES member (`id`)
---   );
-
-CREATE TABLE IF NOT EXISTS `recipe` (
-  `reciId` VARCHAR(2048) NOT NULL,
-  `reciName` VARCHAR(2048) NOT NULL,
-  `reciNum` INT AUTO_INCREMENT,
-  `reciSub` VARCHAR(2048) NOT NULL,
-  `reciIntro` VARCHAR(2048),
-  `reciFInd` VARCHAR(2048),
-  `reciSit` VARCHAR(2048) ,
-  `reciWay` VARCHAR(2048),
+ CREATE TABLE IF NOT EXISTS `recipe` (
+   `reciId` VARCHAR(2048) NOT NULL,
+   `reciName` VARCHAR(2048) NOT NULL,
+   `reciNum` INT AUTO_INCREMENT,
+   `reciSub` VARCHAR(2048) NOT NULL,
+   `reciIntro` VARCHAR(2048),
+   `reciMainPic` VARCHAR(2048),
+   `reciFInd` VARCHAR(2048),
+   `reciSit` VARCHAR(2048) ,
+   `reciWay` VARCHAR(2048),
   `reciMat` VARCHAR(2048),
-  `reciPer` VARCHAR(2048),
+   `reciPer` VARCHAR(2048),
   `reciTim` VARCHAR(2048),
   `reciLev` VARCHAR(2048),
-  `reciTip` VARCHAR(2048),
-  `reciRegdate` DATETIME NOT NULL,
+   `reciTip` VARCHAR(2048),
+   `reciComPic1` VARCHAR(2048) ,
+   `reciComPic2` VARCHAR(2048),
+   `reciComPic3` VARCHAR(2048),
+  `reciComPic4` VARCHAR(2048),
+   `reciRegdate` DATETIME NOT NULL,
   PRIMARY KEY (`reciNum`),
-  FOREIGN KEY (`reciId`) REFERENCES member (`id`)
-  );
+   FOREIGN KEY (`reciId`) REFERENCES member (`id`)
+   );
+
 
 CREATE TABLE IF NOT EXISTS `material` (
   `reciNum` INT,
