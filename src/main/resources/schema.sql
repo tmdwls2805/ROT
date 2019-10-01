@@ -27,40 +27,37 @@ CREATE TABLE IF NOT EXISTS `member` (
   `reciTim` VARCHAR(2048),
   `reciLev` VARCHAR(2048),
    `reciTip` VARCHAR(2048),
-   `reciComPic1` VARCHAR(2048) ,
-   `reciComPic2` VARCHAR(2048),
-   `reciComPic3` VARCHAR(2048),
-  `reciComPic4` VARCHAR(2048),
+	`reciStatus` VARCHAR(2048),
    `reciRegdate` DATETIME NOT NULL,
   PRIMARY KEY (`reciNum`),
-   FOREIGN KEY (`reciId`) REFERENCES member (`id`)
+   FOREIGN KEY (`reciId`) REFERENCES member (`id`) ON DELETE CASCADE 
    );
 
 
 CREATE TABLE IF NOT EXISTS `material` (
-  `reciNum` INT,
+  `reciInputNum` INT,
   `matNum` INT AUTO_INCREMENT,
   `matName` VARCHAR(2048),
   PRIMARY KEY (`matNum`),
-  FOREIGN KEY (`reciNum`) REFERENCES recipe (`reciNum`)
+  FOREIGN KEY (`reciInputNum`) REFERENCES recipe (`reciNum`) ON DELETE CASCADE 
   );
 
 CREATE TABLE IF NOT EXISTS `material2` (
-  `reciNum` INT,
-  `matNum` INT,
+  `reciInputNum` INT,
+  `matInputNum` INT,
   `mat2Num` INT AUTO_INCREMENT,
   `mat2Find` VARCHAR(2048),
   `mat2Vol` VARCHAR(2048),
   PRIMARY KEY (`mat2Num`),
-  FOREIGN KEY (`reciNum`) REFERENCES recipe (`reciNum`),
-  FOREIGN KEY (`matNum`) REFERENCES material (`matNum`)
+  FOREIGN KEY (`reciInputNum`) REFERENCES recipe (`reciNum`) ON DELETE CASCADE ,
+  FOREIGN KEY (`matInputNum`) REFERENCES material (`matNum`)
 );
 
 CREATE TABLE IF NOT EXISTS `recipeOrder` (
-  `reciNum` INT NULL,
+  `reciInputNum` INT NULL,
   `orderNum` int NULL AUTO_INCREMENT,
   `orderContent` VARCHAR(2048),
   `orderPic` VARCHAR(2048),
   PRIMARY KEY (`orderNum`),
-  FOREIGN KEY (`reciNum`) REFERENCES recipe (`reciNum`)
+  FOREIGN KEY (`reciInputNum`) REFERENCES recipe (`reciNum`) ON DELETE CASCADE 
   );

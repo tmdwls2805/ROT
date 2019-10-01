@@ -5,7 +5,7 @@ import lombok.Data;
 
 @Data
 public class RecipeOrder {
-	private int reciNum;
+	private int reciInputNum;
 	private int orderNum;
 	private String orderContent;
 	private String orderPic;

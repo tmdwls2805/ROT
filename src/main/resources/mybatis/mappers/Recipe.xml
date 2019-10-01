@@ -5,75 +5,23 @@
 <mapper	namespace="com.hoseo.rot.recipe.RecipeRepository">
 
 	<insert id="addRecipe" parameterType="Recipe">
-		INSERT INTO recipe
-		(
-		reciId, 
-		reciName, 
-		reciSub, 
-		reciIntro, 
-		reciMainPic, 
-		reciFind, 
-		reciSit, 
-		reciWay, 
-		reciMat, 
-		reciPer, 
-		reciTim, 
-		reciLev, 
-		reciTip,
-		reciComPic1,
-		reciComPic2,
-		reciComPic3,
-		reciComPic4,
-		reciRegdate
-		) 
-		VALUES
-		(
-		#{reciId},
-		#{reciName},
-		#{reciSub},
-		#{reciIntro},
-		#{reciMainPic},
-		#{reciFind},
-		#{reciSit},
-		#{reciWay},
-		#{reciMat},
-		#{reciPer},
-		#{reciTim},
-		#{reciLev},
-		#{reciTip},
-		#{reciComPic1},
-		#{reciComPic2},
-		#{reciComPic3},
-		#{reciComPic4},
-		now()
-		);
+		INSERT INTO recipe(reciId, reciName, reciSub, reciIntro, reciMainPic, reciFind,reciSit,reciWay,reciMat,reciPer,reciTim,reciLev,reciTip,reciStatus,reciRegdate)
+		VALUES (#{reciId}, #{reciName}, #{reciSub}, #{reciIntro}, #{reciMainPic}, #{reciFind}, #{reciSit}, #{reciWay}, #{reciMat}, #{reciPer}, #{reciTim}, #{reciLev}, #{reciTip}, #{reciStatus}, now());
 	</insert>
 	
  	<insert id="addMaterial" parameterType="Material">
-		INSERT INTO material VALUES
-		(
-		#{reciNum},
-		#{matName}
-		);
+		INSERT INTO material 
+		VALUES (#{reciInputNum},m#{matName});
 	</insert>
 	
 	<insert id="addMaterial2" parameterType="Material2">
-		INSERT INTO material2 VALUES
-		(
-		#{reciNum},
-		#{matNum},
-		#{mat2Find},
-		#{mat2Vol}
-		);
+		INSERT INTO material2(reciInputNum, matInputNum, mat2Find, mat2Vol) 
+		VALUES(#{reciInputNum}, #{matInputNum}, #{mat2Find}, #{mat2Vol});
 	</insert>
 	
 	<insert id="addRecipeOrder" parameterType="RecipeOrder">
-		INSERT INTO recipeOrder VALUES
-		(
-		#{reciNum},
-		#{orderContent},
-		#{orderPic}
-		);
+		INSERT INTO recipeOrder(reciInputNum, orderContent, orderPic) 
+		VALUES (#{reciInputNum}, #{orderContent}, #{orderPic});
 	</insert>
 
 </mapper>

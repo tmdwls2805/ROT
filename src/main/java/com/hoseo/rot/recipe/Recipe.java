@@ -20,9 +20,6 @@ public class Recipe {
 	private String reciTim;
 	private String reciLev;
 	private String reciTip;
-	private String reciComPic1;
-	private String reciComPic2;
-	private String reciComPic3;
-	private String reciComPic4;
+	private String reciStatus;
 	private Timestamp reciregdate;
 }
