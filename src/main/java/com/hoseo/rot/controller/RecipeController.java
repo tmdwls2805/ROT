@@ -17,10 +17,15 @@ public class RecipeController {
 	private RecipeService recipeService;
 
 	
-	  @GetMapping("/recipeEnroll") public String recipeEnroll() { 
-		  return "recipe/recipeEnroll"; }
+	  @GetMapping("/recipeEnroll") 
+	  public String recipeEnroll() 
+	  { 
+		  return "recipe/recipeEnroll"; 
+		  }
 	  
-	  @PostMapping("/recipeEnroll") public String enroll(Recipe r) {
+	  @PostMapping("/recipeEnroll") 
+	  public String enroll(Recipe r) 
+	  {
 	  if(recipeService.addRecipe(r)){
 		  return "redirect:/";
 	  } 

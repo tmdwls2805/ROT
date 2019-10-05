@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="shortcut icon" href="img/logo1.png">
+
+  <title>내일의 레시피</title>
+
+  <script src="../static/vendor/jquery/jquery.min.js" th:src="@{/vendor/jquery/jquery.min.js}"></script>
+  <script src="../static/vendor/bootstrap/js/bootstrap.bundle.min.js" th:src="@{/vendor/bootstrap/js/bootstrap.bundle.min.js}"></script>
+  <script src="../static/vendor/jquery-easing/jquery.easing.min.js" th:src="@{/vendor/jquery-easing/jquery.easing.min.js}"></script>
+  <script src="../static/vendor/chart.js/Chart.min.js" th:src="@{/vendor/chart.js/Chart.min.js}"></script>
+  <script src="../static/vendor/datatables/jquery.dataTables.js" th:src="@{/vendor/datatables/jquery.dataTables.js}"></script>
+  <script src="../static/vendor/datatables/dataTables.bootstrap4.js" th:src="@{/vendor/datatables/dataTables.bootstrap4.js}"></script>
+  <script src="../static//js/sb-admin.min.js" th:src="@{/js/sb-admin.min.js}"></script>
+  <script src="../static/js/demo/datatables-demo.js" th:src="@{/js/demo/datatables-demo.js}"></script>
+  <script src="../static/js/demo/chart-area-demo.js" th:src="@{/js/demo/chart-area-demo.js}"></script>
+  <link href="../static/vendor/fontawesome-free/css/all.min.css" th:href="@{/vendor/fontawesome-free/css/all.min.css}" rel="stylesheet" type="text/css">
+  <link href="../static/vendor/datatables/dataTables.bootstrap4.css" th:href="@{/vendor/datatables/dataTables.bootstrap4.css}" rel="stylesheet">
+  <link href="../static/css/sb-admin.css" rel="stylesheet" th:href="@{/css/sb-admin.css}">
+
+</head>
+
+<body id="page-top"  th:if="${session.member != null && session.member.id=='admin'}">
+
+	<div th:replace="~{admin/replace/nav :: nav}"></div>
+
+  <div id="wrapper">
+
+    <!-- Sidebar -->
+	<div th:replace="~{admin/replace/sidebar :: sidebar}"></div>
+
+    <div id="content-wrapper">
+
+      <div class="container-fluid">
+
+        <!-- Breadcrumbs-->
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item">
+            <a href="index.html">Dashboard</a>
+          </li>
+          <li class="breadcrumb-item active">Blank Page</li>
+        </ol>
+
+        <!-- Page Content -->
+        <h1>Blank Page</h1>
+        <hr>
+        <p>This is a great starting point for new custom pages.</p>
+
+      </div>
+      <!-- /.container-fluid -->
+
+      <!-- Sticky Footer -->
+    <div th:replace="~{admin/replace/footer :: footer}"></div>
+
+    </div>
+    <!-- /.content-wrapper -->
+
+  </div>
+  <!-- /#wrapper -->
+
+  <!-- Scroll to Top Button-->
+  <a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+  </a>
+
+  <!-- Logout Modal-->
+<div th:replace="~{admin/replace/logout :: logout}"></div>
+
+</body>
+
+</html>

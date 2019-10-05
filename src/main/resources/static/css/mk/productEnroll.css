@@ -1,0 +1,119 @@
+.container-main{
+	display: table;
+	margin: 0 auto;
+	width:466.4px;
+}
+
+select {
+  font-family: "Roboto", sans-serif;
+  outline: 0;
+  background: #fff;
+  width: 100%;
+  border: #dadada 1px solid;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+select:focus {
+  font-family: "Roboto", sans-serif;
+  outline: 0;
+  background: #fff;
+  width: 100%;
+  border:#f42f2c 1px solid;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+input[type=text] {
+  font-family: "Roboto", sans-serif;
+  outline: 0;
+  background: #fff;
+  width: 100%;
+  border: #dadada 1px solid;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+input[type=text]:focus {
+  font-family: "Roboto", sans-serif;
+  outline: 0;
+  background: #fff;
+  width: 100%;
+  border:#f42f2c 1px solid;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+input[type=number] {
+  font-family: "Roboto", sans-serif;
+  outline: 0;
+  background: #fff;
+  width: 100%;
+  border: #dadada 1px solid;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+input[type=number]:focus {
+  font-family: "Roboto", sans-serif;
+  outline: 0;
+  background: #fff;
+  width: 100%;
+  border:#f42f2c 1px solid;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+input[type=file] {
+  font-family: "Roboto", sans-serif;
+  outline: 0;
+  background: #fff;
+  width: 100%;
+  border: #dadada 1px solid;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+input[type=file]:focus {
+  font-family: "Roboto", sans-serif;
+  outline: 0;
+  background: #fff;
+  width: 100%;
+  border:#f42f2c 1px solid;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+input[type=submit] {
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  outline: 0;
+  background: #f42f2c;
+  width: 460px;
+  border: 0;
+  padding: 15px;
+  color: #FFFFFF;
+  font-size: 20px;
+  font-weight:600;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+  margin:20px 0px 40px 0px;
+}
+input[type=submit]:hover, input[type=submit]:active, input[type=submit]:focus {
+  background: #e62e2b;
+}
+
+label{
+	margin: 20px 0px 0px 0px;
+	font-size: 14px;
+    font-weight: 700;
+}

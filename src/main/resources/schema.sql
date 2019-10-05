@@ -61,3 +61,16 @@ CREATE TABLE IF NOT EXISTS `recipeOrder` (
   PRIMARY KEY (`orderNum`),
   FOREIGN KEY (`reciInputNum`) REFERENCES recipe (`reciNum`) ON DELETE CASCADE 
   );
+  
+  
+CREATE TABLE IF NOT EXISTS `product` (
+  `productNum` int  AUTO_INCREMENT,
+  `productKind` VARCHAR(2048) not null,
+  `productName` VARCHAR(2048) not null,
+  `productOrigin` VARCHAR(2048) not null,
+  `productPrice` VARCHAR(2048) not null,
+  `productVolume` VARCHAR(2048) not null,
+  `productCount` int not null,
+  `productImg` VARCHAR(2048),
+  PRIMARY KEY (`productName`)
+  );	
