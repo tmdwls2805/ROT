@@ -4,9 +4,13 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.hoseo.rot.admin.AdminRepository">
 	<insert id="addProduct" parameterType="Product">
-		INSERT INTO	product(productKind, productName, productOrigin, productPrice, productVolume, productCount, productImg) 
-		VALUES(#{productKind}, #{productName}, #{productOrigin}, #{productPrice}, #{productVolume}, #{productCount}, #{productImg});
+		INSERT INTO	product(productKind, productName, productOrigin, productPrice, productVolume, productCount, productImg, productImgOriName, productImgUrl) 
+		VALUES(#{productKind}, #{productName}, #{productOrigin}, #{productPrice}, #{productVolume}, #{productCount}, #{productImg}, #{productImgOriName}, #{productImgUrl});
 	</insert>
+	
+	<select id="getProduct" parameterType="Product" resultType="Product">
+		SELECT * FROM product;
+	</select>
 </mapper>
 
 <!-- select concat('upload/recipe/',FileName)   -->

@@ -72,5 +72,7 @@ CREATE TABLE IF NOT EXISTS `product` (
   `productVolume` VARCHAR(2048) not null,
   `productCount` int not null,
   `productImg` VARCHAR(2048),
+  `productImgOriName` VARCHAR(2048),
+  `productImgUrl` VARCHAR(2048),
   PRIMARY KEY (`productName`)
   );	

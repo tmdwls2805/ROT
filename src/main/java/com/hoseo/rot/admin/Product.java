@@ -12,4 +12,6 @@ public class Product {
 	private String productVolume;
 	private int productCount;
 	private String productImg;
+	private String productImgOriName;
+	private String productImgUrl;
 }

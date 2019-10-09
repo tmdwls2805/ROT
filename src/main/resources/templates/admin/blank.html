@@ -27,7 +27,7 @@
 
 </head>
 
-<body id="page-top"  th:if="${session.member != null && session.member.id=='admin'}">
+<body id="page-top">
 
 	<div th:replace="~{admin/replace/nav :: nav}"></div>
 
@@ -52,7 +52,13 @@
         <h1>Blank Page</h1>
         <hr>
         <p>This is a great starting point for new custom pages.</p>
-
+		<div th:each="product : ${productList}">
+		
+			<div th:text="${product.productKind}"></div>
+			
+			<img th:src="@{'/product/'+${product.productImg}}">
+			
+		</div>
       </div>
       <!-- /.container-fluid -->
 

@@ -2,6 +2,7 @@ package com.hoseo.rot.admin;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import java.util.List;
 
 @Service
 public class AdminService {
@@ -9,7 +10,11 @@ public class AdminService {
 	private AdminRepository adminRepository;
 	
 	public boolean addProduct(Product p) {
-		return adminRepository.addProduct(p)==1;
+		return adminRepository.addProduct(p)!=0;
+	}
+	
+	public List<Product> getProduct() {
+		return adminRepository.getProduct();
 	}
 
 }

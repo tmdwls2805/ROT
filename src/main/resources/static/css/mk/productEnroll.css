@@ -4,7 +4,7 @@
 	width:466.4px;
 }
 
-select {
+.input-text {
   font-family: "Roboto", sans-serif;
   outline: 0;
   background: #fff;
@@ -15,7 +15,7 @@ select {
   font-size: 14px;
 }
 
-select:focus {
+.input-text:focus {
   font-family: "Roboto", sans-serif;
   outline: 0;
   background: #fff;
@@ -26,71 +26,6 @@ select:focus {
   font-size: 14px;
 }
 
-input[type=text] {
-  font-family: "Roboto", sans-serif;
-  outline: 0;
-  background: #fff;
-  width: 100%;
-  border: #dadada 1px solid;
-  padding: 15px;
-  box-sizing: border-box;
-  font-size: 14px;
-}
-
-input[type=text]:focus {
-  font-family: "Roboto", sans-serif;
-  outline: 0;
-  background: #fff;
-  width: 100%;
-  border:#f42f2c 1px solid;
-  padding: 15px;
-  box-sizing: border-box;
-  font-size: 14px;
-}
-
-input[type=number] {
-  font-family: "Roboto", sans-serif;
-  outline: 0;
-  background: #fff;
-  width: 100%;
-  border: #dadada 1px solid;
-  padding: 15px;
-  box-sizing: border-box;
-  font-size: 14px;
-}
-
-input[type=number]:focus {
-  font-family: "Roboto", sans-serif;
-  outline: 0;
-  background: #fff;
-  width: 100%;
-  border:#f42f2c 1px solid;
-  padding: 15px;
-  box-sizing: border-box;
-  font-size: 14px;
-}
-
-input[type=file] {
-  font-family: "Roboto", sans-serif;
-  outline: 0;
-  background: #fff;
-  width: 100%;
-  border: #dadada 1px solid;
-  padding: 15px;
-  box-sizing: border-box;
-  font-size: 14px;
-}
-
-input[type=file]:focus {
-  font-family: "Roboto", sans-serif;
-  outline: 0;
-  background: #fff;
-  width: 100%;
-  border:#f42f2c 1px solid;
-  padding: 15px;
-  box-sizing: border-box;
-  font-size: 14px;
-}
 
 input[type=submit] {
   font-family: "Roboto", sans-serif;

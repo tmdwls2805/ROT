@@ -54,9 +54,9 @@
         <hr>
         <div class="container-main">
 
-	        <form name="form" method="post" action="">
+	        <form name="form" method="post" action="addProduct" enctype="multipart/form-data">
 	        	<label for="productKind">상품 종류</label>
-	        	<select name="productKind" required >
+	        	<select class="input-text" name="productKind" required >
 	        		<option value="">종류</option>
 	        		<option value="채소">채소</option>
 	        		<option value="채소">육류</option>
@@ -66,22 +66,22 @@
 	        	</select>
 	        	
 	        	<label for="productName">상품 이름</label>
-	        	<input type="text" name="productName" required />
+	        	<input class="input-text" type="text" name="productName" required />
 	        	
 	        	<label for="productOrigin">상품 원산지</label>
-	        	<input type="text" name="productOrigin" required />
+	        	<input class="input-text" type="text" name="productOrigin" required />
 	        	
 	        	<label for="productPrice">상품 가격</label>
-	        	<input type="text" name="productPrice" required />
+	        	<input class="input-text" type="text" name="productPrice" required />
 	        	
 	        	<label for="productVolume">상품 양</label>
-	        	<input type="text" name="productVolume" required />
+	        	<input class="input-text" type="text" name="productVolume" required />
 	        
 	        	<label for="productCount">상품 수량</label>
-	        	<input type="number" name="productCount" required />
+	        	<input class="input-text" type="number" name="productCount" required />
 	        	
 	        	<label for="productImg">상품사진</label>
-	        	<input type="file" name="productImg" id="productImg" />
+	        	<input class="input-text" type="file" name="file1" id="productImg" />
 	        	<img id="uploadImg" src="#" style="width:232px; height:232px;">
 	        	<input type="submit" value="상품등록">
 	        </form>
