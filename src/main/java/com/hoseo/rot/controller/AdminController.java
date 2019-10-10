@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import org.apache.commons.io.FilenameUtils;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -39,22 +40,23 @@ public class AdminController {
 	 * if(adminService.addProduct(p)) { return "redirect:/productEnroll"; } return
 	 * "admin/productEnroll"; }
 	 */
+	@Autowired
+	private Environment env;
 	
 	@PostMapping("/addProduct")
 	public String addProduct(Product p, HttpServletRequest request, MultipartHttpServletRequest multi) {
 		Iterator<String> imgs = multi.getFileNames();
-		String path = "D:\\upload";
-		String folderName1 = "\\product\\";      
+		String path = env.getProperty("upload-product-path");
+		String folderName1 = "product/"; 
+        File destinationFile = null;
+        MultipartFile mFile = null; 
         
 		while (imgs.hasNext()) {
 			String uploadFile = imgs.next();			
-			MultipartFile mFile = multi.getFile(uploadFile);
+			mFile = multi.getFile(uploadFile);
 			String sourceFileName = mFile.getOriginalFilename();
 			String sourceFileNameExtension = FilenameUtils.getExtension(sourceFileName).toLowerCase();
-			File destinationFile; 
 	        String destinationFileName;        
-	        	        
-	        
 			do { 
 	            destinationFileName = RandomStringUtils.randomAlphanumeric(32) + "." + sourceFileNameExtension;            	
 	            	destinationFile = new File(path + folderName1 +destinationFileName);
