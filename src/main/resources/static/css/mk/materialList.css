@@ -31,9 +31,10 @@
 
 .productName{
 	display:block;
-	font-size:13px;
+	font-size:15px;
 	color:#555;
-	font-weight:400;
+	font-weight:700;
+	margin:0px 0px 8px 0px;
 }
 
 .productName:hover{
@@ -53,8 +54,16 @@
 	font-weight:400;
 }
 
+.productVolume2 {
+	display:block;
+	font-size:11px;
+	color:#222;
+	font-weight:400;
+	margin:0px 0px 8px 0px;
+}
+
 .productPrice-m{
-	font-size:15px;
+	font-size:13px;
 	color:#f42f2c;
 	font-weight:400;
 }

@@ -10,7 +10,7 @@ public class Product {
 	private String productOrigin;
 	private String productPrice;
 	private String productVolume;
-	private int productCount;
+	private String productCount;
 	private String productImg;
 	private String productImgOriName;
 	private String productImgUrl;

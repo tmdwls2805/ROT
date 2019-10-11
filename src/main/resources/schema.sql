@@ -70,7 +70,7 @@ CREATE TABLE IF NOT EXISTS `product` (
   `productOrigin` VARCHAR(2048) not null,
   `productPrice` VARCHAR(2048) not null,
   `productVolume` VARCHAR(2048) not null,
-  `productCount` int not null,
+  `productCount` VARCHAR(2048) not null,
   `productImg` VARCHAR(2048),
   `productImgOriName` VARCHAR(2048),
   `productImgUrl` VARCHAR(2048),
