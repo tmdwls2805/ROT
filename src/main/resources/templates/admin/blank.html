@@ -59,6 +59,19 @@
 			<img th:src="@{'/upload/product/'+${product.productImg}}" style="width:250px; height:250px;">
 			
 		</div>
+		
+		                     <div class="col-md-6 all breakfast">
+								<div class="single-menu">
+									<div class="title-wrap d-flex justify-content-between">
+											
+										 <div th:each="product : ${productList}">
+										 	<img th:src="@{'/upload/product/'+${product.productImg}}" style="width:250px; height:250px;">
+											<h4 th:text="${product.productKind}"></h4>
+											<h4 class="price">$49</h4>
+									</div>											
+								</div>					                               
+                            </div>  
+                         	</div>  
       </div>
       <!-- /.container-fluid -->
 
