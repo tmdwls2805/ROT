@@ -31,5 +31,6 @@ public class RecipeController {
 	  } 
 	  return "recipe/recipeEnroll"; 
 	  }
+	    
 
 }

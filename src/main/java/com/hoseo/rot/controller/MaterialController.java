@@ -19,4 +19,10 @@ public class MaterialController {
 		return "material/materialList";
 	}
 	
+	@GetMapping("/materialListDetails")
+	public String materialListDetails(ModelMap m, int productNum) {
+		m.put("product" , adminService.getProductDetails(productNum));
+		return "material/materialListDetails";
+	}
+	
 }

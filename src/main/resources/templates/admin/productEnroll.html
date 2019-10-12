@@ -73,13 +73,13 @@
 	        	<input class="input-text" type="text" name="productOrigin" required />
 	        	
 	        	<label for="productPrice">상품 가격</label>
-	        	<input class="input-text" type="text" name="productPrice" onkeyup="this.value=number_format(this.value)" required />
+	        	<input class="input-text" type="text" name="productPrice" required />
 	        	
 	        	<label for="productVolume">상품 양</label>
 	        	<input class="input-text" type="text" name="productVolume" required />
 	        
 	        	<label for="productCount">상품 수량</label>
-	        	<input class="input-text" type="text" name="productCount" onkeyup="this.value=number_format(this.value)" required />
+	        	<input class="input-text" type="text" name="productCount" required />
 	        	
 	        	<label for="productImg">상품사진</label>
 	        	<input class="input-text" type="file" name="file1" id="productImg" />
@@ -116,15 +116,6 @@
     $("#productImg").change(function() {
         readURL(this);
     });
-    
-    var number, nArr;
-    function number_format(number)
-    {
-      number=number.replace(/\,/g,"");
-      nArr = String(number).split('').join(',').split('');
-      for( var i=nArr.length-1, j=1; i>=0; i--, j++)  if( j%6 != 0 && j%2 == 0) nArr[i] = '';
-      return nArr.join('');
-     }
 </script>
 </body>
 

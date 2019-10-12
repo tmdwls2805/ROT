@@ -71,7 +71,7 @@
 							   <div class="col-md-6 all"  th:id="${product.productKind}">
 									<div class="m-menu">
 										<div class="title-wrap d-flex justify-content-between">
-											<a href="#">
+											<a th:href="@{'materialListDetails?productNum='+${product.productNum}}">
 												<img th:src="@{'/upload/product/'+${product.productImg}}" style="width:100%; height:100%; border-radius:0px;">
 											</a>
 										</div>
@@ -80,7 +80,7 @@
 												<span class="productName" th:text="${product.productName}"></span>
 											</a>	
 											<span class="productPrice" th:text="${product.productPrice}"></span><span class="productPrice-m">원</span>
-											<span class="productVolume"><span th:text="${product.productVolume}"></span>당 : 1,000원</span>
+											<span class="productVolume"><span th:text="${product.productVolume}"></span>당 : <span th:text="${product.productPrice}">1,000</span>원</span>
 											<span class="productVolume2">수량 : <span th:text="${product.productCount}"></span>개</span>
 										</div>							
 									</div>

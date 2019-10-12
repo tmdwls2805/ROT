@@ -11,6 +11,10 @@
 	<select id="getProduct" parameterType="Product" resultType="Product">
 		SELECT * FROM product;
 	</select>
+	
+		<select id="getProductDetails" parameterType="Product" resultType="Product">
+			SELECT * FROM product where productNum=#{productNum};
+		</select>
 </mapper>
 
 <!-- select concat('upload/recipe/',FileName)   -->

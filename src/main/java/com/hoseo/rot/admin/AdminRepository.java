@@ -8,4 +8,5 @@ import org.apache.ibatis.annotations.Mapper;
 public interface AdminRepository {
 	public int addProduct(Product p);
 	public List<Product> getProduct();
+	public Product getProductDetails(int productNum);
 }

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<!-- Mobile Specific Meta -->
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!-- Favicon-->
+<link rel="shortcut icon" href="img/logo1.png">
+<!-- Author Meta -->
+<meta name="author" content="colorlib">
+<!-- Meta Description -->
+<meta name="description" content="">
+<!-- Meta Keyword -->
+<meta name="keywords" content="">
+<!-- meta character set -->
+<meta charset="UTF-8">
+<!-- Site Title -->
+<title>내일의 레시피</title>
+
+<!-- CSS ============================================= -->
+<link rel="stylesheet" href="../static/css/linearicons.css" th:href="@{/css/linearicons.css}">
+<link rel="stylesheet" href="../static/css/font-awesome.min.css" th:href="@{/css/font-awesome.min.css}">
+<link rel="stylesheet" href="../static/css/bootstrap.css" th:href="@{/css/bootstrap.css}">
+<link rel="stylesheet" href="../static/css/magnific-popup.css" th:href="@{/css/magnific-popup.css}">
+<link rel="stylesheet" href="../static/css/jquery-ui.css" th:href="@{/css/jquery-ui.css}">
+<link rel="stylesheet" href="../static/css/nice-select.css" th:href="@{/css/nice-select.css}">
+<link rel="stylesheet" href="../static/css/animate.min.css" th:href="@{/css/animate.min.css}">
+<link rel="stylesheet" href="../static/css/owl.carousel.css" th:href="@{/css/owl.carousel.css}">
+<link rel="stylesheet" href="../static/css/main.css" th:href="@{/css/main.css}">
+<link rel="stylesheet" href="../static/css/mk/materialListDetails.css" th:href="@{/css/mk/materialListDetails.css}">
+
+<script src="../static/js/vendor/jquery-2.2.4.min.js" th:src="@{/js/vendor/jquery-2.2.4.min.js}"></script>
+<script src="../static/js/popper.min.js" th:src="@{/js/popper.min.js}"></script>
+<script src="../static/js/vendor/bootstrap.min.js" th:src="@{/js/vendor/bootstrap.min.js}"></script>
+<script src="../static/js/jquery-ui.js" th:src="@{/js/jquery-ui.js}"></script>
+<script src="../static/js/easing.min.js" th:src="@{/js/easing.min.js}"></script>
+<script src="../static/js/hoverIntent.js" th:src="@{/js/hoverIntent.js}"></script>
+<script src="../static/js/superfish.min.js" th:src="@{/js/superfish.min.js}"></script>
+<script src="../static/js/jquery.ajaxchimp.min.js" th:src="@{/js/jquery.ajaxchimp.min.js}"></script>
+<script src="../static/js/jquery.magnific-popup.min.js" th:src="@{/js/jquery.magnific-popup.min.js}"></script>
+<script src="../static/js/jquery.nice-select.min.js" th:src="@{/js/jquery.nice-select.min.js}"></script>
+<script src="../static/js/owl.carousel.min.js" th:src="@{/js/owl.carousel.min.js}"></script>
+<script src="../static/js/isotope.pkgd.min.js" th:src="@{/js/isotope.pkgd.min.js}"></script>
+<script src="../static/js/mail-script.js" th:src="@{/js/mail-script.js}"></script>
+<script src="../static/js/main.js" th:src="@{/js/main.js}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+	<div th:replace="~{header :: header}"></div>
+	<!-- #header -->
+	<section class="relative about-banner">
+		<div class="overlay overlay-bg"></div>
+		<div class="container">
+			<div class="row d-flex align-items-center justify-content-center">
+				<div class="about-content col-lg-12">
+					<h1 class="text-white">식재료</h1>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- End banner Area -->
+
+	<!-- Start contact-page Area -->
+
+	<section class="contact-page-area section-gap">
+		<div class="container">
+		
+			<div class="row">
+				
+					<table border="0" class="productTable">
+						<tr class="">
+							<td rowspan="5" class="productTdImg"><img class="productImg" th:src="@{'/upload/product/'+${product.productImg}}" style="width:500px; height:500px; border-radius:0px;"></td>
+							<td class="productBlank"></td>
+							
+							<td class="productTd">
+								<div class="productTop">
+									<img src="img/mk/productTop.png" style="height:45px; width:588px;">
+								</div>
+								<div class="productMiddle">
+									<h2 class="productName" th:text="${product.productName}"></h2>
+									<div class="productOriginDiv">
+										<span class="productOrigin">원산지:</span>
+										<span class="productOrigin" th:text="${product.productOrigin}"></span>								
+									</div>
+								</div>
+								<div>
+									<span class="productPrice" th:text="${product.productPrice}"></span>
+									<span class="productWon">원</span>
+								</div>
+								<div class="productVolume">
+									(<span th:text="${product.productVolume}"></span> 당 : <span th:text="${product.productPrice}"></span>원)
+								</div>
+								<div class="productCount">
+									수량 : <span th:text="${product.productCount}"></span>개
+								</div>
+							</td>
+						</tr>
+						
+						<tr class="productEx2">
+							<td class="productBlank"></td>
+							<td></td>
+						</tr>
+						
+						<tr>
+							<td class="productBlank"></td>
+							<td class="productEx3 productSaleCount">
+								<div>
+									<span class="productSaleName" th:text="${product.productName}"></span>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td class="productBlank"></td>
+							<td class="productEx4 productSaleCount">
+								<div>
+									<span class="productSaleName" th:text="${product.productName}"></span>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td class="productBlank"></td>	
+							<td class="productEx5">
+							</td>
+						</tr>
+						
+
+					</table>
+				
+				
+			</div>
+			
+		</div>
+	</section>
+
+	<!-- End contact-page Area -->
+	<!-- End home-about Area -->
+	<!-- start footer Area -->
+	<div th:replace="~{footer :: footer}"></div>
+	<!-- End footer Area -->
+</body>
+</html>

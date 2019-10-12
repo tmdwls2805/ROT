@@ -8,9 +8,9 @@ public class Product {
 	private String productKind;
 	private String productName;
 	private String productOrigin;
-	private String productPrice;
+	private int productPrice;
 	private String productVolume;
-	private String productCount;
+	private int productCount;
 	private String productImg;
 	private String productImgOriName;
 	private String productImgUrl;

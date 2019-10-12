@@ -1,0 +1,132 @@
+.productImg{
+	width:500px;
+	height:500px;
+	border-radius:0px;
+}
+
+.productEx{
+	width:588px;
+	height:67.2px;
+}
+
+.productBlank{
+	width:50px;
+}
+
+.productTdImg{
+	vertical-align:top;
+}
+
+.productTable{
+
+}
+
+.productName{
+	font-size:30px;
+	line-height:35px;
+	color:#222;
+	letter-spacing:-.5px;
+	word-wrap:break-word;
+	word-break:break-all;
+	margin:0px 0px 4px 0px;
+}
+
+.productOrigin{
+	font-size:25px;
+	font-weight:normal;
+	line-height:33px;
+	color:#666;
+}
+
+.productEx2{
+	height:20px;
+}
+
+.productEx3{
+	height:65px;
+	vertical-align:top;
+	border-left:1px solid #e7e7e7;
+	border-top:1px solid #e7e7e7;
+	border-right:1px solid #e7e7e7;
+}
+
+.productEx4{
+	height:65px;
+	vertical-align:bottom;
+	border-bottom:1px solid #e7e7e7;
+	border-left:1px solid #e7e7e7;
+	border-right:1px solid #e7e7e7;
+}
+
+.productEx5{
+	height:64px;
+}
+
+.productTd{
+	width:588px;
+	vertical-align:top;
+	border-bottom:1px solid #cccccc;
+}
+
+.productTop{
+	margin:0px 0px 28px 0px;
+}
+
+.productMiddle{
+	margin:0px 0px 46px 0px;
+}
+
+.productOriginDiv{
+	margin:0 0 0 4px;
+}
+
+.productPrice{
+	font-size:40px;
+	font-family:'Roboto-Medium',sans-serif;
+	color:#222;
+	font-weight:700;
+}
+
+.productWon{
+	font-size:26px;
+	color:#222;
+	margin:4px 0 -4px 0;
+}
+
+.productVolume{
+	margin:7px 0 0 4px;
+	font-size:15px;
+	line-height:18px;
+	color:#666;
+	letter-spacing:-.5px;
+	font-weight:700;
+}
+
+.productCount{
+	margin:7px 0 35px 4px;
+	font-size:15px;
+	line-height:18px;
+	color:#666;
+	letter-spacing:-.5px;
+	font-weight:700;
+}
+
+.productSaleCount{
+	padding:15px 19px;
+	background:#f4f4f4;
+}
+
+.productSaleName{
+	vertical-align:top;
+	font-size: 16px;
+    line-height: 27px;
+    color: #666;
+    font-weight:700;
+    letter-spacing: -.5px;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+table{
+	font-family:'³ª´®¹Ù¸¥°íµñ',NanumBarunGothic,'Apple SD Gothic Neo',AppleGothic,'µ¸¿ò',Dotum,sans-serif;
+}
