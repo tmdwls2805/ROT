@@ -303,4 +303,65 @@ table{
 
 .productTr2{
 	vertical-align:bottom;
+	text-align:center;
+}
+
+.popular_img{
+	display:block;
+}
+
+.popular_name{
+	display:block;	
+	font-size:14px;
+	font-weight:500;
+    color: #555;
+    font-family:"Poppins", sans-serif;
+    margin:0 0 5px 0;
+    width:165px;
+    overflow:hidden; 
+    text-overflow:ellipsis; 
+    white-space:nowrap;
+
+}
+
+.popular_name:hover{
+	text-decoration:underline;
+	color: #555;
+}
+
+.popular_priceDiv{
+	display:block;
+}
+
+
+.popular_price2{
+    font-family:"Poppins", sans-serif;	
+    font-size: 20px;
+    color: #222;
+    letter-spacing: -.5px;
+    font-weight:500;
+    float:left;
+}
+
+.popular_won2{
+    font-family:"Poppins", sans-serif;
+    margin: 0px 0 0 2px;
+    font-size: 11px;
+    font-weight:500;
+    color: #222;	
+    vertical-align:middle;
+}
+
+.popular_volumeDiv{
+	display: inline-block;
+    font-size: 11px;
+    font-weight:500;
+    font-family:"Poppins", sans-serif;   
+    color: #222;
+}
+
+.popular_product{
+	float:left;
+	margin:0 10px 0 10px;
+	text-align:left;
 }

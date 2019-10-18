@@ -35,6 +35,10 @@
 	color:#555;
 	font-weight:700;
 	margin:0px 0px 8px 0px;
+	width:215px;
+    overflow:hidden; 
+    text-overflow:ellipsis; 
+    white-space:nowrap;
 }
 
 .productName:hover{
