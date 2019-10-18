@@ -45,6 +45,7 @@
 	color: #f42f2c;
 	font-size:22px;
 	font-weight:700;
+    font-family:"Poppins", sans-serif;	
 }
 
 .productVolume {
@@ -52,6 +53,7 @@
 	font-size:11px;
 	color:#222;
 	font-weight:400;
+    font-family:"Poppins", sans-serif;	
 }
 
 .productVolume2 {
@@ -60,12 +62,14 @@
 	color:#222;
 	font-weight:400;
 	margin:0px 0px 8px 0px;
+    font-family:"Poppins", sans-serif;	
 }
 
 .productPrice-m{
 	font-size:13px;
 	color:#f42f2c;
 	font-weight:400;
+    font-family:"Poppins", sans-serif;
 }
 
 .subject{

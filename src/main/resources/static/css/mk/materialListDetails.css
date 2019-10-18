@@ -1,3 +1,7 @@
+table{
+	font-family:'³ª´®¹Ù¸¥°íµñ',NanumBarunGothic,'Apple SD Gothic Neo',AppleGothic,'µ¸¿ò',Dotum,sans-serif;
+}
+
 .productImg{
 	width:500px;
 	height:500px;
@@ -29,6 +33,7 @@
 	word-wrap:break-word;
 	word-break:break-all;
 	margin:0px 0px 4px 0px;
+    font-family:"Poppins", sans-serif;	
 }
 
 .productOrigin{
@@ -36,6 +41,7 @@
 	font-weight:normal;
 	line-height:33px;
 	color:#666;
+    font-family:"Poppins", sans-serif;	
 }
 
 .productEx2{
@@ -55,11 +61,29 @@
 	vertical-align:bottom;
 	border-bottom:1px solid #e7e7e7;
 	border-left:1px solid #e7e7e7;
-	border-right:1px solid #e7e7e7;
 }
 
 .productEx5{
 	height:64px;
+	text-align:right;
+	border-bottom:1px solid #e7e7e7;
+	border-right:1px solid #e7e7e7;
+}
+
+.productEx6{
+	margin: 33px 0 41px;
+    padding-right: 19px;
+    line-height: 42px;
+    height:120px;
+    letter-spacing: -.5px;
+    text-align:right;
+	border-bottom:1px solid #cccccc;    
+}
+
+.productEx7{
+	height:90px; 
+	vertical-align:bottom;
+	horizonal-align: middle;	
 }
 
 .productTd{
@@ -85,12 +109,16 @@
 	font-family:'Roboto-Medium',sans-serif;
 	color:#222;
 	font-weight:700;
+	float:left;
+    font-family:"Poppins", sans-serif;	
 }
 
 .productWon{
 	font-size:26px;
 	color:#222;
-	margin:4px 0 -4px 0;
+	margin: 4px 0 0 3px;
+	float:left;
+    font-family:"Poppins", sans-serif;	
 }
 
 .productVolume{
@@ -100,6 +128,7 @@
 	color:#666;
 	letter-spacing:-.5px;
 	font-weight:700;
+    font-family:"Poppins", sans-serif;	
 }
 
 .productCount{
@@ -109,6 +138,7 @@
 	color:#666;
 	letter-spacing:-.5px;
 	font-weight:700;
+    font-family:"Poppins", sans-serif;	
 }
 
 .productSaleCount{
@@ -125,8 +155,152 @@
     letter-spacing: -.5px;
     word-wrap: break-word;
     word-break: break-all;
+    font-family:"Poppins", sans-serif;    
 }
 
-table{
-	font-family:'³ª´®¹Ù¸¥°íµñ',NanumBarunGothic,'Apple SD Gothic Neo',AppleGothic,'µ¸¿ò',Dotum,sans-serif;
+.inpbx{
+    width: 40px;
+    height: 35px;
+    background: #fff;
+    vertical-align: top;
+    text-align:center;	
+}
+
+.product_amount{
+	float:left;
+	color: #222;
+    width:50px;
+    height:35px;
+    border:1px solid #e7e7e7;
+    font-size:14px;
+    line-height:35px;
+    text-align:center;	
+    font-family:'³ª´®¹Ù¸¥°íµñ',NanumBarunGothic,'Apple SD Gothic Neo',AppleGothic,'µ¸¿ò',Dotum,sans-serif;
+}
+
+.img-plus{
+	width:35px;
+	height:35px;
+	border:1px solid #e7e7e7;
+}
+
+.amount{
+	float:left;
+}
+
+.img-minus{
+ 	width:35px;
+	height:35px;
+	border:1px solid #e7e7e7;
+ }
+ 
+.product_amountBox{
+ 	padding:15px 19px;
+    color: #222;
+    background:#f4f4f4;
+ }
+ 
+.product_amountPrice{
+    font-family:"Poppins", sans-serif;
+    font-size: 25px;
+    font-weight:500;
+    font-style:normal;
+    margin-bottom:5px;
+    float:right;	
+ }
+ 
+.product_amountPriceWon{
+    font-size: 16px;
+    font-weight:700;
+    margin: 2px 0 -1px 2px;
+    float:right;
+    font-family:"Poppins", sans-serif;    
+ }
+ 
+.ex6Won{
+ 	float:right;
+ 	color:#f7511a;
+ 	font-weight:500;	
+	margin: 3px 0 0 2px;
+    font-size: 20px;
+    font-weight:500;
+    vertical-align: middle;
+    font-family:"Poppins", sans-serif;
+}
+
+.ex6Price{
+	float:right;
+ 	color:#f7511a;
+ 	font-weight:700;
+    font-family:"Poppins", sans-serif;
+    font-size: 35px;
+    vertical-align: middle;	
+    margin:0 2px 0 15px;
+}
+
+.ex6Hap{
+	margin:1px 0 0 0;
+ 	float:right;
+ 	color:#222;	
+	font-size: 25px;
+    font-weight:500;
+    font-family:"Poppins", sans-serif;
+    vertical-align: middle;	
+}
+
+.ex7Cart{
+	float:left;
+}
+
+.ex7Buy{
+	float:left;
+}
+
+.product_cart{
+	height:55px;
+  	font-family: "Roboto", sans-serif;
+	text-transform: uppercase;
+	outline: 0;
+	background: #222;
+	font-size: 14px;
+	width:294px;
+	border: 0;
+	padding: 15px;
+	color: #FFFFFF;
+	font-size: 20px;
+	font-weight:600;
+	-webkit-transition: all 0.3 ease;
+	transition: all 0.3 ease;
+	cursor: pointer;
+}
+
+.product_buy{
+	height:55px;
+  	font-family: "Roboto", sans-serif;
+	text-transform: uppercase;
+	outline: 0;
+	background: #f42f2c;
+	font-size: 14px;
+	width:294px;
+	border: 0;
+	padding: 15px;
+	color: #FFFFFF;
+	font-size: 20px;
+	font-weight:600;
+	-webkit-transition: all 0.3 ease;
+	transition: all 0.3 ease;
+	cursor: pointer;
+}
+
+.productBlank2{
+	height:250px;
+}
+
+.productTr{
+	height:54px;
+	border-bottom:4px solid #222;
+}
+
+.productTr2{
+	vertical-align:bottom;
 }

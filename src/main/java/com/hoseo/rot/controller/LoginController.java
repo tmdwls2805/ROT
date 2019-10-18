@@ -24,6 +24,7 @@ public class LoginController {
 	@Autowired
 	private MemberService memberService;
 	
+	
 	// 약관동의
 	@GetMapping("/signUp")
 	public String signUp() {
