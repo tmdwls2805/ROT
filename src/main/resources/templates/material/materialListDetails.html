@@ -195,11 +195,11 @@
 							<td colspan="4">
 								<div class="popular_product" th:each="product2 : ${productList}">
 									<div class="popular_img">
-										<a href="#">
+										<a th:href="@{'materialListDetails?productNum='+${product2.productNum}}">
 											<img th:src="@{'/upload/product/'+${product2.productImg}}" style="width:165px; height:165px; margin:30px 0 15px 0;">
 										</a>
 									</div>
-									<a href="#" class="popular_name"><span th:text="${product2.productName}"></span></a>
+									<a th:href="@{'materialListDetails?productNum='+${product2.productNum}}" class="popular_name"><span th:text="${product2.productName}"></span></a>
 									<div class="popular_priceDiv">
 										<div class="popular_price">
 											<span class="popular_price2" th:text="${product2.productPrice}"></span><span class="popular_won2">원</span>

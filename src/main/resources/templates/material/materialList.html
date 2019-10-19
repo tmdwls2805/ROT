@@ -76,7 +76,7 @@
 											</a>
 										</div>
 										<div class="m-menu-text">
-											<a href="#">
+											<a th:href="@{'materialListDetails?productNum='+${product.productNum}}">
 												<span class="productName" th:text="${product.productName}"></span>
 											</a>	
 											<span class="productPrice" th:text="${product.productPrice}"></span><span class="productPrice-m">원</span>
