@@ -69,6 +69,15 @@
     font-family:"Poppins", sans-serif;	
 }
 
+.productVolume3 {
+	display:block;
+	font-size:14px;
+	color:#f42f2c;
+	font-weight:400;
+	margin:0px 0px 8px 0px;
+    font-family:"Poppins", sans-serif;	
+}
+
 .productPrice-m{
 	font-size:13px;
 	color:#f42f2c;

@@ -20,5 +20,9 @@ public class AdminService {
 	public Product getProductDetails(int productNum) {
 		return adminRepository.getProductDetails(productNum);
 	}
+	
+	public List<Product> getProductList() {
+		return adminRepository.getProductList();
+	}
 
 }

@@ -90,8 +90,11 @@
 								<div class="productVolume">
 									(<span th:text="${product.productVolume}"></span> 당 : <span th:text="${product.productPrice}"></span>원)
 								</div>
-								<div class="productCount">
+								<div class="productCount"  th:if="${product.productCount!=0}">
 									남은 수량 : <span th:text="${product.productCount}"></span>개
+								</div>
+								<div class="productCount_SoldOut"  th:if="${product.productCount == 0}">
+									 일시품절
 								</div>
 							</td>
 						</tr>
@@ -101,7 +104,7 @@
 							<td  colspan="2"></td>
 						</tr>
 						
-						<tr>
+						<tr  th:if="${product.productCount!=0}">
 							<td class="productBlank"></td>
 							<td class="productEx3 productSaleCount" colspan="2">
 								<div>
@@ -109,7 +112,7 @@
 								</div>
 							</td>
 						</tr>
-						<tr>
+						<tr  th:if="${product.productCount!=0}">
 							<td class="productBlank"></td>
 							<td class="productEx4 productSaleCount">
 								<div class="amount">
@@ -137,7 +140,7 @@
 								</div>
 							</td>
 						</tr>
-						<tr>
+						<tr  th:if="${product.productCount!=0}">
 							<td class="productBlank"></td>	
 							<td class="productEx6"  colspan="2">
 								<div class="ex6Won">
@@ -151,7 +154,15 @@
 								</div>
 							</td>
 						</tr>
-						<tr>
+						<tr  th:if="${product.productCount==0}">
+							<td class="productBlank"></td>	
+							<td class="productEx6"  colspan="2">
+								<div class="ex6Price">
+									<span>일시품절</span>
+								</div>
+							</td>
+						</tr>
+						<tr th:if="${product.productCount!=0}">
 							<td></td>
 							<td></td>
 							<td class="productEx7" colspan="2">
@@ -163,9 +174,18 @@
 								</div>	
 							</td>
 						</tr>
+						<tr th:if="${product.productCount==0}">
+							<td></td>
+							<td></td>
+							<td class="productEx7" colspan="2">
+							</td>
+						</tr>
+						
 						<tr>
 							<td class="productBlank2" colspan="4"></td>
 						</tr>
+						
+						
 						<tr class="productTr">
 							<td class="" colspan="4">
 								<h3>카테고리 인기상품</h3>
@@ -173,108 +193,22 @@
 						</tr>
 						<tr class="productTr2">
 							<td colspan="4">
-								<div class="popular_product">
+								<div class="popular_product" th:each="product2 : ${productList}">
 									<div class="popular_img">
 										<a href="#">
-											<img th:src="@{'/upload/product/'+${product.productImg}}" style="width:165px; height:165px; margin:30px 0 15px 0;">
+											<img th:src="@{'/upload/product/'+${product2.productImg}}" style="width:165px; height:165px; margin:30px 0 15px 0;">
 										</a>
 									</div>
-									<a href="#" class="popular_name"><span>양파</span></a>
+									<a href="#" class="popular_name"><span th:text="${product2.productName}"></span></a>
 									<div class="popular_priceDiv">
 										<div class="popular_price">
-											<span class="popular_price2" th:text="${product.productPrice}"></span><span class="popular_won2">원</span>
+											<span class="popular_price2" th:text="${product2.productPrice}"></span><span class="popular_won2">원</span>
 										</div>
 									</div>
 									<div class="popular_volumeDiv">
-										(<span th:text="${product.productVolume}"></span>당: <span th:text="${product.productPrice}"></span>원)
+										(<span th:text="${product2.productVolume}"></span>당: <span th:text="${product2.productPrice}"></span>원)
 									</div>
-								</div>
-								
-								<div class="popular_product">
-									<div class="popular_img">
-										<a href="#">
-											<img th:src="@{'/upload/product/'+${product.productImg}}" style="width:165px; height:165px; margin:30px 0 15px 0;">
-										</a>
-									</div>
-									<a href="#" class="popular_name"><span>양파</span></a>
-									<div class="popular_priceDiv">
-										<div class="popular_price">
-											<span class="popular_price2" th:text="${product.productPrice}"></span><span class="popular_won2">원</span>
-										</div>
-									</div>
-									<div class="popular_volumeDiv">
-										(<span th:text="${product.productVolume}"></span>당: <span th:text="${product.productPrice}"></span>원)
-									</div>
-								</div>
-
-								<div class="popular_product">
-									<div class="popular_img">
-										<a href="#">
-											<img th:src="@{'/upload/product/'+${product.productImg}}" style="width:165px; height:165px; margin:30px 0 15px 0;">
-										</a>
-									</div>
-									<a href="#" class="popular_name"><span>양파</span></a>
-									<div class="popular_priceDiv">
-										<div class="popular_price">
-											<span class="popular_price2" th:text="${product.productPrice}"></span><span class="popular_won2">원</span>
-										</div>
-									</div>
-									<div class="popular_volumeDiv">
-										(<span th:text="${product.productVolume}"></span>당: <span th:text="${product.productPrice}"></span>원)
-									</div>
-								</div>
-								
-								<div class="popular_product">
-									<div class="popular_img">
-										<a href="#">
-											<img th:src="@{'/upload/product/'+${product.productImg}}" style="width:165px; height:165px; margin:30px 0 15px 0;">
-										</a>
-									</div>
-									<a href="#" class="popular_name"><span>양파</span></a>
-									<div class="popular_priceDiv">
-										<div class="popular_price">
-											<span class="popular_price2" th:text="${product.productPrice}"></span><span class="popular_won2">원</span>
-										</div>
-									</div>
-									<div class="popular_volumeDiv">
-										(<span th:text="${product.productVolume}"></span>당: <span th:text="${product.productPrice}"></span>원)
-									</div>
-								</div>
-								
-								<div class="popular_product">
-									<div class="popular_img">
-										<a href="#">
-											<img th:src="@{'/upload/product/'+${product.productImg}}" style="width:165px; height:165px; margin:30px 0 15px 0;">
-										</a>
-									</div>
-									<a href="#" class="popular_name"><span>양파</span></a>
-									<div class="popular_priceDiv">
-										<div class="popular_price">
-											<span class="popular_price2" th:text="${product.productPrice}"></span><span class="popular_won2">원</span>
-										</div>
-									</div>
-									<div class="popular_volumeDiv">
-										(<span th:text="${product.productVolume}"></span>당: <span th:text="${product.productPrice}"></span>원)
-									</div>
-								</div>
-								
-								<div class="popular_product">
-									<div class="popular_img">
-										<a href="#">
-											<img th:src="@{'/upload/product/'+${product.productImg}}" style="width:165px; height:165px; margin:30px 0 15px 0;">
-										</a>
-									</div>
-									<a href="#" class="popular_name"><span>양파</span></a>
-									<div class="popular_priceDiv">
-										<div class="popular_price">
-											<span class="popular_price2" th:text="${product.productPrice}"></span><span class="popular_won2">원</span>
-										</div>
-									</div>
-									<div class="popular_volumeDiv">
-										(<span th:text="${product.productVolume}"></span>당: <span th:text="${product.productPrice}"></span>원)
-									</div>
-								</div>	
-																																								
+								</div>																														
 							</td>
 						</tr>
 				</table>

@@ -9,4 +9,5 @@ public interface AdminRepository {
 	public int addProduct(Product p);
 	public List<Product> getProduct();
 	public Product getProductDetails(int productNum);
+	public List<Product> getProductList();
 }

@@ -14,4 +14,5 @@ public class Product {
 	private String productImg;
 	private String productImgOriName;
 	private String productImgUrl;
+	private int productCom;
 }

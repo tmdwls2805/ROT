@@ -74,5 +74,6 @@ CREATE TABLE IF NOT EXISTS `product` (
   `productImg` VARCHAR(2048),
   `productImgOriName` VARCHAR(2048),
   `productImgUrl` VARCHAR(2048),
+  `productCom` int default 0, 
   PRIMARY KEY (`productName`)
   );	

@@ -15,6 +15,10 @@
 		<select id="getProductDetails" parameterType="Product" resultType="Product">
 			SELECT * FROM product where productNum=#{productNum};
 		</select>
+		
+	<select id="getProductList" parameterType="Product" resultType="Product">
+		SELECT * FROM product where productCom ORDER BY productCom DESC limit 6;
+	</select>
 </mapper>
 
 <!-- select concat('upload/recipe/',FileName)   -->
