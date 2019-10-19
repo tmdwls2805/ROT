@@ -49,6 +49,7 @@
 <script src="../static/slick/slick.min.js" th:src="@{/slick/slick.min.js}"></script>
 <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<link rel="stylesheet" href="../static/css/mk/materialList.css" th:href="@{/css/mk/materialList.css}">
 </head>
 <body>
 	<div th:replace="~{header :: header}"></div>
@@ -67,9 +68,51 @@
 
 	<!-- Start contact-page Area -->
 
-<section class="contact-page-area section-gap">
+	<section class="menu-area section-gap" id="menu">
+		<div class="container">
+			<div class="row d-flex justify-content-center">
+				<div class="menu-content pb-70 col-lg-8">
+					<div class="search-div">
+						<style>
 
-</section>
+.input_text {
+  width: 300px;
+  height: 50px;
+  background: #fff;
+  border: 1px solid #ccc;
+  font-size: 10pt;
+  color: #63717f;
+  padding-left: 15px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+.sch_smit {
+	width: 54px; height: 50px;
+	margin: 0; border: 0;
+	vertical-align: top;
+	background:i;
+	color: white;
+	font-weight: bold;
+	border-radius: 1px;
+	cursor: pointer;
+}
+.sch_smit:hover {
+	background: #56C82C;
+}
+</style>
+
+<span class='green_window'>
+	<input type='text' class='input_text' />
+</span>
+<button type='submit' class='sch_smit'>검색</button>
+					</div>
+				</div>
+			</div>
+			</div>
+
+
+	</section>
 
 	<!-- End contact-page Area -->
 	<!-- End home-about Area -->

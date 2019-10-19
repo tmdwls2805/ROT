@@ -74,7 +74,7 @@
 		<div class="container">
 			<div class="row d-flex align-items-center justify-content-center">
 				<div class="about-content col-lg-12">
-					<h1 class="text-white"></h1>
+					<h1 class="text-white">레시피 등록</h1>
 				</div>
 			</div>
 		</div>
@@ -85,10 +85,10 @@
 	<section class="section-center">
 		<div class="container">
 			<form class="form" name="form" method="post" action="recipeEnroll">
-			<input type="text" name="reciId" th:value="${session.member.id}" hidden="hidden"/>
-			<input type="text" name="reciName" th:value="${session.member.name}" hidden="hidden"/>
+<!-- 			<input type="text" name="reciId" th:value="${session.member.id}" hidden="hidden"/>
+			<input type="text" name="reciName" th:value="${session.member.name}" hidden="hidden"/> -->
 						
-				<table class="reciTable" border="1">
+				<table class="reciTable" border="1" style="width:100%;">
 						
 					<tr>
 						<th colspan="3">레시피 등록</th>
@@ -164,7 +164,7 @@
 
 				<ul>
 					<li>
-						<table class="reciTable" border="1">
+						<table class="reciTable" border="1" style="width:100%;">
 							<tr>
 								<td class="matName-sit"><input type="text"
 									class="input-matName" name="matName" placeholder="예) 미역국" /><br>
@@ -188,7 +188,7 @@
 						</table>
 					</li>
 				</ul>
-				<table border="1" class="reciTable">
+				<table border="1" class="reciTable" style="width:100%;">
 					<tr>
 						<td>
 							<button type="button" onclick="">묶음 추가</button>
@@ -200,7 +200,7 @@
 				</table>
 				<ul>
 					<li>
-						<table border="1" class="reciTable">
+						<table border="1" class="reciTable" style="width:100%;">
 							<tr>
 								<td style="width:200px;">
 									STEP
@@ -216,7 +216,7 @@
 						</table>
 					</li>
 				</ul>
-				<table border="1" class="reciTable">
+				<table border="1" class="reciTable" style="width:100%;">
 					<tr>
 						<td colspan="2">
 							<button type="button" onclick="">추가</button>
