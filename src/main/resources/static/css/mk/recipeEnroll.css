@@ -2,63 +2,47 @@
 .section-center{
 	background:#f8f8f8;
 	padding:120px 0;
-	text-align:center;
 	display:block;
 }
 
-.container{
-	width:100%;
-	align:center;
-}
+
 
 .form .input-reciSub {
   font-family: "Roboto", sans-serif;
   outline: 0;
-  background: #fff;
+  background: #f5f5f5;
   width: 610px;
-  border: #f2f2f2 1px solid;
+  border: 1px solid #e1e1e1;
   padding: 15px;
   box-sizing: border-box;
   font-size: 14px;
-  border-color:#d5d5d5;
+  border-radius: 4px;  
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+  transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;  
 }
 
 .form .input-reciSub:focus {
-  font-family: "Roboto", sans-serif;
-  outline: 0;
-  background: #fff;
-  width: 610px;
   border:#f42f2c 1px solid;
-  padding: 15px;
-  box-sizing: border-box;
-  font-size: 14px;
-  resize: none;
 }
 
 .form .input-reciIntro{
   font-family: "Roboto", sans-serif;
   outline: 0;
-  background: #fff;
+  background: #f5f5f5;
   width: 610px;
   height:100px;
-  border: #f2f2f2 1px solid;
+  border: 1px solid #e1e1e1;
   padding: 15px;
   box-sizing: border-box;
   font-size: 14px;
-  border-color:#d5d5d5;
+  border-radius: 4px;  
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+  transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;    
   resize: none;
 }
 
 .form .input-reciIntro:focus {
-  font-family: "Roboto", sans-serif;
-  outline: 0;
-  background: #fff;
-  width: 610px;
-  height:100px;
   border:#f42f2c 1px solid;
-  padding: 15px;
-  box-sizing: border-box;
-  font-size: 14px;
 }
 
 .form .input-mat2Find {
@@ -74,14 +58,7 @@
 }
 
 .form .input-mat2Find:focus {
-  font-family: "Roboto", sans-serif;
-  outline: 0;
-  background: #fff;
-  width: 330px;
   border:#f42f2c 1px solid;
-  padding: 15px;
-  box-sizing: border-box;
-  font-size: 14px;
 }
 
 
@@ -98,14 +75,7 @@
 }
 
 .form .input-mat2Vol:focus {
-  font-family: "Roboto", sans-serif;
-  outline: 0;
-  background: #fff;
-  width: 280px;
-  border:#f42f2c 1px solid;
-  padding: 15px;
-  box-sizing: border-box;
-  font-size: 14px;
+  border:#f42f2c 1px solid;;
 }
 
 .form .input-matName {
@@ -121,14 +91,7 @@
 }
 
 .form .input-matName:focus {
-  font-family: "Roboto", sans-serif;
-  outline: 0;
-  background: #fff;
-  width: 210px;
   border:#f42f2c 1px solid;
-  padding: 15px;
-  box-sizing: border-box;
-  font-size: 14px;
 }
 
 .error-next-box{
@@ -144,6 +107,12 @@
 
 .reciTable{
 	width:100%;
+}
+
+.reciTable1{
+	width:100%;
+	margin-bottom:13px;
+	border:1px solid #e1e1e1	
 }
 
 .matName-sit{
@@ -202,6 +171,10 @@
   margin-top:10px;
 }
 
+.reciTable1 img{
+	border: 1px solid #e1e1e1;
+	margin-bottom:5px;	
+}
 
 .recipe-submit:hover, .recipe-submit:active, .recipe-submit:focus {
   background: #e62e2b;
@@ -226,4 +199,131 @@
 
 .recipe-button:hover, .recipe-button:active, .recipe-buttonfocus {
   background: #c1c1c1;
+}
+
+.enroll_title{
+    font-size: 22px;
+    font-weight: normal;
+	color:#333;
+}
+
+.enroll_title_td{
+	vertical-align:top;
+	padding-top:8px;
+}
+
+.enroll_title_td1{
+	vertical-align:top;
+	padding-top:8px;
+	width:148px;
+}
+
+table{
+	background:#fff;
+}
+
+.table-top{
+	height:35px;
+}
+
+.table-left{
+	width:45px;
+}
+
+.table-right{
+	width:30px;
+}
+
+.table-bottom{
+	height:40px;
+}
+
+.reciTable1 .reciInput{
+	vertical-align:top;
+	text-align:left;
+}
+
+.reciTable1 .reciInputPic{
+	vertical-align:top;
+	text-align:right;
+}
+
+.reciTable1 .blank{
+	height:35px;
+}
+
+.reciTable1 .reciSelect1{
+  font-family: "Roboto", sans-serif;
+  outline: 0;
+  background: #f5f5f5;
+  width: 130px;
+  height:55px;
+  border: 1px solid #e1e1e1;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 17px;
+  border-radius: 4px;  
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+  transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;  
+}
+
+.reciTable1 .reciSelect1:focus{
+  border: 1px solid #f42f2c;
+}
+
+.reciTable1 .reciSelect2{
+  font-family: "Roboto", sans-serif;
+  outline: 0;
+  background: #f5f5f5;
+  width: 130px;
+  height:55px;
+  border: 1px solid #e1e1e1;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 17px;
+  border-radius: 4px;  
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+  transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;  
+	margin-right:30px;
+}
+
+.reciTable1 .reciSelect2:focus{
+  border: 1px solid #f42f2c;
+}
+
+
+.reciTable1 .reciSelect3{
+  font-family: "Roboto", sans-serif;
+  outline: 0;
+  background: #f5f5f5;
+  width: 110px;
+  height:55px;
+  border: 1px solid #e1e1e1;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 17px;
+  border-radius: 4px;  
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+  transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;  
+   margin-right:30px;
+}
+
+.reciTable1 .reciSelect3:focus{
+  border: 1px solid #f42f2c;
+}
+.reciInputText{
+	font-weight:500;
+	font-size: 17px;
+    line-height: 1.42857143;
+    color: #333;
+}
+
+.guide{
+    font-size: 14px;
+    line-height: 1.8;
+    color: #999;	
+}
+
+.InputreciMainPic{
+	width:250px;
 }
