@@ -256,52 +256,6 @@
 								</td>
 							</tr>							
 						</table>
-					</li>
-					<li>
-						<table class="reciTable2">
-							<tr>
-								<td class="table-left" rowspan="3"></td>
-								<td  class="blank3" colspan="2"></td>
-								<td class="table-right" rowspan="3"></td>
-							</tr>							
-							<tr>
-								<td class="matName-sit"><input type="text"
-									class="input-matName" name="matName" value="재료" /><br>
-									<button class="groupDeleteButton" type="button">묶음삭제</button>
-								</td>
-								<td class="matName-sit2">
-									<ul class="input-mat">
-										<li>
-											<div class="input-mat2">
-												<input type="text" class="input-mat2Find" name="mat2Find" placeholder="예) 미역" /> 
-												<input type="text" class="input-mat2Vol" name="mat2Vol" placeholder="예) 100g" />
-												<button class="deleteButton" type="button" onclick=""><img class="deleteImg" th:src=@{/img/mk/delete.png}></button>
-											</div>										
-										</li>
-										<li>
-											<div class="input-mat2">
-												<input type="text" class="input-mat2Find" name="mat2Find" placeholder="예) 미역" /> 
-												<input type="text" class="input-mat2Vol" name="mat2Vol" placeholder="예) 100g" />
-												<button class="deleteButton" type="button" onclick=""><img class="deleteImg" th:src=@{/img/mk/delete.png}></button>
-											</div>										
-										</li>
-										<li>
-											<div class="input-mat2">
-												<input type="text" class="input-mat2Find" name="mat2Find" placeholder="예) 미역" /> 
-												<input type="text" class="input-mat2Vol" name="mat2Vol" placeholder="예) 100g" />
-												<button class="deleteButton" type="button" onclick=""><img class="deleteImg" th:src=@{/img/mk/delete.png}></button>
-											</div>										
-										</li>																				
-									</ul>
-								</td>
-							</tr>
-							<tr>
-								<td></td>
-								<td class="addButtonTd">
-									<button type="button" class="addButton" onclick=""><img class="addImg" th:src="@{/img/mk/add.png}">추가</button>
-								</td>
-							</tr>							
-						</table>
 					</li>					
 				</ul>
 				
@@ -331,58 +285,100 @@
 				
 <!-- -------------------------------두 번째 테이블 끝------------------------------- -->						
 <!-- -------------------------------세 번째 테이블 시작------------------------------- -->						
-				<ul>
-					<li>
-						<table class="reciTable1" border="1">
-							<tr>
-								<td class="enroll_title_td">
-									<p class="enroll_title">요리정보</p>
-								</td>
-								<td colspan="2">
-								</td>								
-							</tr>
-							<tr>
-								<td style="width:200px;">
-									STEP
-								</td>
-								<td>
-									<textarea class="orderContent" name="orderContent"></textarea>
-								</td>
-								<td style="width:400px;">
-										<img name="orderPic" onclick="" src="#" th:src="@{img/mk/comPic.gif}"
-									style="width: 160px; height: 160px; cursor: pointer">
-								</td>
-							</tr>
-						</table>
-					</li>
-				</ul>
-				<table class="reciTable1" border="1">
+				<table  class="reciTable3">
 					<tr>
-						<td colspan="2">
-							<button type="button" onclick="">추가</button>
+						<td class="table-left" rowspan="4"></td>
+						<td  class="blank"></td>
+						<td class="table-right" rowspan="4"></td>
+					</tr>	
+					<tr>
+						<td class="enroll_title_td">
+							<p class="enroll_title">요리순서</p>
 						</td>
 					</tr>
 					<tr>
-						<td style="height:30px;"></td>
+						<td>
+							<span class="guide">※ 요리의 맛이 좌우될 수 있는 중요한 부분은 빠짐없이 적어주세요.</span>	
+						</td>
 					</tr>
+					<tr>
+						<td>
+							<span class="guide2">예) 10분간 익혀주세요 ▷ 10분간 약한불로 익혀주세요.</span><br>
+							<span class="guide2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;마늘편은 익혀주세요 ▷ 마늘편을 충분히 익혀주셔야 매운 맛이 사라집니다.</span><br>
+							<span class="guide2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;꿀을 조금 넣어주세요 ▷ 꿀이 없는 경우, 설탕 1스푼으로 대체 가능합니다.</span>
+						</td>
+					</tr>
+				</table>
+				<ul>
+					<li>
+						<table class="reciTable3-1">
+							<tr>
+								<td class="table-left" rowspan="2"></td>
+								<td  class="blank2" colspan="3"></td>
+								<td class="table-right" rowspan="2"></td>
+							</tr>	
+							<tr>
+								<td class="step"style="width:200px;">
+									Step1
+								</td>
+								<td class="textContent">
+									<textarea class="orderContent" name="orderContent" placeholder="예) 소고기는 기름기를 떼어내고 적당한 크기로 썰어주세요."></textarea>
+								</td>
+								<td class="uploadImg">
+										<img class="orderPic" id="uploadPic" name="uploadPic" onclick="" src="#" th:src="@{img/mk/comPic.gif}">
+										<input class="InputreciMainPic" type="file" name="file2" id="orderPic" />
+								</td>
+							</tr>
+							<tr>
+								<td class="blank3" colspan="5"></td>
+							</tr>
+						</table>
+					</li>					
+				</ul>
+				<table  class="reciTable3-2">
+					<tr>
+						<td class="blank"></td>
+					</tr>
+					<tr>
+						<td class="orderButton-td">
+							<button type="button" class="orderButton" onclick=""><img class="addImg" th:src="@{/img/mk/add.png}">순서추가</button>
+						</td>
+					</tr>
+				</table>
+				
+				<table class="reciTable4">
+					<tr>
+						<td class="table-left" rowspan="3"></td>
+						<td  class="blank" colspan="2"></td>
+						<td class="table-right" rowspan="3"></td>
+					</tr>	
 					<tr>
 						<td class="enroll_title_td">
 							<p class="enroll_title">레시피 팁</p>
 						</td>
 						<td>
-							<textarea class="input-reciIntro" name="reciTip" placeholder="이 레시피의 탄생 배경을 적어주세요."></textarea>
+							<textarea class="input-reciIntro2" name="reciTip" placeholder="이 레시피의 탄생 배경을 적어주세요."></textarea>
 						</td>
 					</tr>
 					<tr>
-						<td style="height:30px;"></td>
+						<td class="table-bottom" colspan="2"></td>
 					</tr>
+				</table>
+					
+				<table class="reciTable5">
 					<tr>
-						<td colspan="2">
-							<input class="recipe-submit" type="button" value="저장"/>&nbsp;&nbsp;
+						<td class="table-top"></td>
+					</tr>	
+					<tr>
+						<td>
+							<input class="recipe-submit2" type="button" value="저장"/>&nbsp;&nbsp;
 							<input class="recipe-submit" type="submit" value="저장후 등록하기"/>&nbsp;&nbsp;
 							<input class="recipe-button" type="button" value="취소" onclick="goBack()" />
 						</td>
 					</tr>
+					<tr>
+						<td class="table-bottom"></td>
+					</tr>	
 				</table>
 			</form>
 		</div>
@@ -394,7 +390,7 @@
 	}
 	</script>
 	
-	<script>
+<script>
     function readURL(input) {
         if (input.files && input.files[0]) {
             var reader = new FileReader();
@@ -407,6 +403,22 @@
 
     $("#reciMainPic").change(function() {
         readURL(this);
+    });
+</script>
+
+<script>
+    function readURL2(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function(e) {
+                $('#uploadPic').attr('src', e.target.result);
+            }
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+
+    $("#orderPic").change(function() {
+        readURL2(this);
     });
 </script>
 	
