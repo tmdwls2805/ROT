@@ -21,6 +21,8 @@ import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 import com.hoseo.rot.admin.AdminService;
 import com.hoseo.rot.admin.Product;
+import com.hoseo.rot.member.Member;
+import com.hoseo.rot.member.MemberService;
 
 
 
@@ -76,14 +78,16 @@ public class AdminController {
 		return "admin/productEnroll"; 
 	}
 
+	@Autowired
+	private MemberService memberService;
 	
 	@GetMapping("/blank")
-	public String getProduct(ModelMap m) {
-		m.put("productList", adminService.getProduct());
+	public String getMemberTest(ModelMap m) {
+		m.put("memberList", memberService.getMemberTest());
 		return "admin/blank";
 	}
 
-
+	
 	
 	
 	@GetMapping("/management")

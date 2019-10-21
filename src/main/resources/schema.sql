@@ -9,9 +9,9 @@ CREATE TABLE IF NOT EXISTS `member` (
   `addr2` VARCHAR(2048) NOT NULL,
   `point` VARCHAR(2048) NULL DEFAULT 0,
   `nickname` varchar(2048) NOT NULL,
-  `profileImg` varchar(2048),
-  `profileImgOriName` VARCHAR(2048),
-  `profileImgUrl` VARCHAR(2048), 
+  `profileImg` varchar(2048) DEFAULT 'profile.png',
+  `profileImgOriName` VARCHAR(2048) DEFAULT 'profile.png',
+  `profileImgUrl` VARCHAR(2048) DEFAULT 'D:\\upload\\profile\\', 
   `regdate` VARCHAR(2048) NOT NULL,
   UNIQUE KEY (`email`),
   PRIMARY KEY (`id`));

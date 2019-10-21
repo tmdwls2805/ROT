@@ -5,7 +5,7 @@
 <mapper namespace="com.hoseo.rot.member.MemberRepository">
 	
 	<insert id="addMember" parameterType="Member">
-		INSERT INTO member(id, password, name, email, phone, zipcode, addr1, addr2, nickname, profileImg, profileImgOriName, profileImgUrl, point) VALUES
+		INSERT INTO member(id, password, name, email, phone, zipcode, addr1, addr2, nickname, profileImg, profileImgOriName, profileImgUrl, point, regDate) VALUES
 		(
 		#{id},
 		#{password},
@@ -24,30 +24,34 @@
 	</insert>
 	
 	<select id="idCheck" parameterType="String" resultType="int">
-		SELECT count(id) FROM MEMBER WHERE id = #{id}
+		SELECT count(id) FROM MEMBER WHERE id = #{id};
 	</select>
 	
 	<select id="emailCheck" parameterType="String" resultType="int">
-		SELECT count(email) FROM MEMBER WHERE email = #{email}
+		SELECT count(email) FROM MEMBER WHERE email = #{email};
 	</select>
 	
 	<select id="nicknameCheck" parameterType="String" resultType="int">
-		SELECT count(nickname) FROM MEMBER WHERE nickname = #{nickname}
+		SELECT count(nickname) FROM MEMBER WHERE nickname = #{nickname};
 	</select>	
 	
 	<select id="getMember" parameterType="Member" resultType="Member">
-		SELECT * FROM member WHERE id = #{id}
+		SELECT * FROM member WHERE id = #{id};
 			<if test="@org.springframework.util.StringUtils@isEmpty(password) == false">
-			and password = #{password}
+			and password = #{password};
 		</if>
 	</select>
 	
 	<select id="getUser" parameterType="Member" resultType="Member">
-		SELECT * FROM member WHERE id = #{id}
+		SELECT * FROM member WHERE id = #{id};
 	</select>
 	
 	<select id="findId" parameterType="Member" resultType="Member">
-		SELECT id, name FROM member WHERE name = #{name} and email = #{email}
+		SELECT id, name FROM member WHERE name = #{name} and email = #{email};
+	</select>
+	
+	<select id="getMemberTest" parameterType="Member" resultType="Member">
+		SELECT * FROM member;
 	</select>
 	
 

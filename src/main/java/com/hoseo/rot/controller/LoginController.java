@@ -19,7 +19,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
@@ -33,6 +32,7 @@ public class LoginController {
 
 	@Autowired
 	private MemberService memberService;
+	private Environment env;
 	
 	
 	// 약관동의
@@ -90,11 +90,10 @@ public class LoginController {
         return map;
     }
 	
-	@Autowired
-	private Environment env;
+
 	// 회원가입 완료
 	@PostMapping("/signUp2/sign")
-	public String sign(Member m, HttpServletRequest request, MultipartHttpServletRequest multi, HttpSession session) {
+	public String sign(Member m, HttpSession session, HttpServletRequest request, MultipartHttpServletRequest multi) {
 		Iterator<String> imgs = multi.getFileNames();
 		String path = env.getProperty("upload-profile-path");
 		String folderName1 = "profile/"; 
@@ -114,7 +113,7 @@ public class LoginController {
 	            	m.setProfileImgOriName(sourceFileName);
 	            	m.setProfileImgUrl(path+folderName1);	
 	            
-	        } while (destinationFile.exists()); 
+	        } while (destinationFile.exists());
 	        
 	        destinationFile.getParentFile().mkdirs(); 
 	        
