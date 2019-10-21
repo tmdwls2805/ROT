@@ -60,8 +60,8 @@
 	th:src="@{/js/isotope.pkgd.min.js}"></script>
 <script src="../static/js/mail-script.js" th:src="@{/js/mail-script.js}"></script>
 <script src="../static/js/main.js" th:src="@{/js/main.js}"></script>
-<link rel="stylesheet" href="../static/css/mk/recipeEnroll.css"
-	th:href="@{/css/mk/recipeEnroll.css}">
+<link rel="stylesheet" href="../static/css/mk/recipeEnroll.css?after"
+	th:href="@{/css/mk/recipeEnroll.css?after}">
 <script
 	src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
@@ -87,13 +87,14 @@
 			<form class="form" name="form" method="post" action="recipeEnroll">
 <!-- 			<input type="text" name="reciId" th:value="${session.member.id}" hidden="hidden"/>
 			<input type="text" name="reciName" th:value="${session.member.name}" hidden="hidden"/> -->
-						
+
+<!-- -------------------------------첫 번째 테이블 시작------------------------------- -->						
 				<table class="reciTable1">
 				
 					<tr>
-						<td class="table-left" rowspan="9"></td>
+						<td class="table-left" rowspan="10"></td>
 						<td  class="table-top" colspan="3"></td>
-						<td class="table-right" rowspan="9"></td>
+						<td class="table-right" rowspan="10"></td>
 					</tr>
 					
 					<tr>
@@ -152,7 +153,12 @@
 							</select>
 						</td>
 					</tr>
-
+					
+					<tr>
+						<td></td>
+						<td class="blank2"></td>
+					</tr>
+					
 					<tr>
 						<td></td>
 						<td><span class="guide">※ 분류를 바르게 설정해주시면, 이용자들이 쉽게 레시피를 검색할 수 있어요.</span></td>
@@ -190,45 +196,144 @@
 						<td class="table-bottom" colspan="5"></td>
 					</tr>
 				</table>
+<!-- -------------------------------첫 번째 테이블 끝------------------------------- -->	
+<!-- -------------------------------두 번째 테이블 시작------------------------------- -->			
+				<table  class="reciTable2-1">
+					<tr>
+								<td class="table-left" rowspan="2"></td>
+								<td  class="table-top"></td>
+								<td class="table-right" rowspan="2"></td>
+					</tr>
+					<tr>
+						<td class="guide-td1">
+							<span class="guide">※ 재료가 남거나 부족하지 않도록 정확한 계량정보를 적어주세요.</span>						
+						</td>
+					</tr>
+				</table>				
 				<ul>
 					<li>
-						<table class="reciTable" border="1">
+						<table class="reciTable2">
+							<tr>
+								<td class="table-left" rowspan="3"></td>
+								<td  class="blank3" colspan="2"></td>
+								<td class="table-right" rowspan="3"></td>
+							</tr>							
 							<tr>
 								<td class="matName-sit"><input type="text"
-									class="input-matName" name="matName" placeholder="예) 미역국" /><br>
-									<button type="button">묶음삭제</button></td>
-
+									class="input-matName" name="matName" value="재료" /><br>
+									<button class="groupDeleteButton" type="button">묶음삭제</button>
+								</td>
 								<td class="matName-sit2">
 									<ul class="input-mat">
 										<li>
-											<input type="text" class="input-mat2Find" name="mat2Find" placeholder="예) 미역" /> 
-											<input type="text" class="input-mat2Vol" name="mat2Vol" placeholder="예) 100g" />
-											<button type="button" onclick="">삭제</button>
+											<div class="input-mat2">
+												<input type="text" class="input-mat2Find" name="mat2Find" placeholder="예) 미역" /> 
+												<input type="text" class="input-mat2Vol" name="mat2Vol" placeholder="예) 100g" />
+												<button class="deleteButton" type="button" onclick=""><img class="deleteImg" th:src=@{/img/mk/delete.png}></button>
+											</div>										
 										</li>
+										<li>
+											<div class="input-mat2">
+												<input type="text" class="input-mat2Find" name="mat2Find" placeholder="예) 미역" /> 
+												<input type="text" class="input-mat2Vol" name="mat2Vol" placeholder="예) 100g" />
+												<button class="deleteButton" type="button" onclick=""><img class="deleteImg" th:src=@{/img/mk/delete.png}></button>
+											</div>										
+										</li>
+										<li>
+											<div class="input-mat2">
+												<input type="text" class="input-mat2Find" name="mat2Find" placeholder="예) 미역" /> 
+												<input type="text" class="input-mat2Vol" name="mat2Vol" placeholder="예) 100g" />
+												<button class="deleteButton" type="button" onclick=""><img class="deleteImg" th:src=@{/img/mk/delete.png}></button>
+											</div>										
+										</li>																				
 									</ul>
 								</td>
 							</tr>
 							<tr>
-								<td colspan="3">
-									<button type="button" onclick="">추가</button>
+								<td></td>
+								<td class="addButtonTd">
+									<button type="button" class="addButton" onclick=""><img class="addImg" th:src="@{/img/mk/add.png}">추가</button>
 								</td>
-							</tr>
+							</tr>							
 						</table>
 					</li>
+					<li>
+						<table class="reciTable2">
+							<tr>
+								<td class="table-left" rowspan="3"></td>
+								<td  class="blank3" colspan="2"></td>
+								<td class="table-right" rowspan="3"></td>
+							</tr>							
+							<tr>
+								<td class="matName-sit"><input type="text"
+									class="input-matName" name="matName" value="재료" /><br>
+									<button class="groupDeleteButton" type="button">묶음삭제</button>
+								</td>
+								<td class="matName-sit2">
+									<ul class="input-mat">
+										<li>
+											<div class="input-mat2">
+												<input type="text" class="input-mat2Find" name="mat2Find" placeholder="예) 미역" /> 
+												<input type="text" class="input-mat2Vol" name="mat2Vol" placeholder="예) 100g" />
+												<button class="deleteButton" type="button" onclick=""><img class="deleteImg" th:src=@{/img/mk/delete.png}></button>
+											</div>										
+										</li>
+										<li>
+											<div class="input-mat2">
+												<input type="text" class="input-mat2Find" name="mat2Find" placeholder="예) 미역" /> 
+												<input type="text" class="input-mat2Vol" name="mat2Vol" placeholder="예) 100g" />
+												<button class="deleteButton" type="button" onclick=""><img class="deleteImg" th:src=@{/img/mk/delete.png}></button>
+											</div>										
+										</li>
+										<li>
+											<div class="input-mat2">
+												<input type="text" class="input-mat2Find" name="mat2Find" placeholder="예) 미역" /> 
+												<input type="text" class="input-mat2Vol" name="mat2Vol" placeholder="예) 100g" />
+												<button class="deleteButton" type="button" onclick=""><img class="deleteImg" th:src=@{/img/mk/delete.png}></button>
+											</div>										
+										</li>																				
+									</ul>
+								</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td class="addButtonTd">
+									<button type="button" class="addButton" onclick=""><img class="addImg" th:src="@{/img/mk/add.png}">추가</button>
+								</td>
+							</tr>							
+						</table>
+					</li>					
 				</ul>
-				<table class="reciTable" border="1">
+				
+				<table class="reciTable2-2">
 					<tr>
-						<td>
-							<button type="button" onclick="">묶음 추가</button>
+								<td class="table-left" rowspan="4"></td>
+								<td class="table-bottom2"></td>
+								<td class="table-right" rowspan="4"></td>								
+
+					</tr>
+					<tr>
+						<td class="groupAddButton-Td">
+							<span>※ 양념, 양념장, 소스, 드레싱, 토핑, 시럽, 육수 밑간 등으로 구분해서 작성해주세요.</span>
+						</td>
+					</tr>
+					<tr>
+						<td class="groupAddButton-Td2">
+							<button class="groupAddButton" type="button" onclick="">
+								<img class="add2" th:src="@{/img/mk/add2.png}"> 재료/양념 묶음 추가
+							</button>
 						</td>
 					</tr>
 					<tr>
 						<td style="height: 30px;"></td>
 					</tr>
 				</table>
+				
+<!-- -------------------------------두 번째 테이블 끝------------------------------- -->						
+<!-- -------------------------------세 번째 테이블 시작------------------------------- -->						
 				<ul>
 					<li>
-						<table class="reciTable" border="1">
+						<table class="reciTable1" border="1">
 							<tr>
 								<td class="enroll_title_td">
 									<p class="enroll_title">요리정보</p>
@@ -251,7 +356,7 @@
 						</table>
 					</li>
 				</ul>
-				<table class="reciTable" border="1">
+				<table class="reciTable1" border="1">
 					<tr>
 						<td colspan="2">
 							<button type="button" onclick="">추가</button>
