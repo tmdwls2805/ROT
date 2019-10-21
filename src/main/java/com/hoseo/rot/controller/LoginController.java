@@ -1,11 +1,19 @@
 package com.hoseo.rot.controller;
 
 
+import java.io.File;
+import java.io.IOException;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Map;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+
+import org.apache.commons.io.FilenameUtils;
+import org.apache.commons.lang3.RandomStringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -13,6 +21,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 import com.hoseo.rot.member.MemberService;
 import com.hoseo.rot.member.Member;
@@ -66,16 +76,62 @@ public class LoginController {
         return map;
     }
 	
+	// 닉네임 중복 확인 	
+	@RequestMapping("/signUp2/nicknameCheck")
+    @ResponseBody
+    public Map<Object, Object> nicknameCheck(@RequestBody String nickname) {
+        
+        int count = 0;
+        Map<Object, Object> map = new HashMap<Object, Object>();
+ 
+        count = memberService.nicknameCheck(nickname);
+        map.put("cnt", count);
+ 
+        return map;
+    }
+	
+	@Autowired
+	private Environment env;
 	// 회원가입 완료
 	@PostMapping("/signUp2/sign")
-	public String sign(Member m, HttpSession session) {
+	public String sign(Member m, HttpServletRequest request, MultipartHttpServletRequest multi, HttpSession session) {
+		Iterator<String> imgs = multi.getFileNames();
+		String path = env.getProperty("upload-profile-path");
+		String folderName1 = "profile/"; 
+        File destinationFile = null;
+        MultipartFile mFile = null; 
+        
+		while (imgs.hasNext()) {
+			String uploadFile = imgs.next();			
+			mFile = multi.getFile(uploadFile);
+			String sourceFileName = mFile.getOriginalFilename();
+			String sourceFileNameExtension = FilenameUtils.getExtension(sourceFileName).toLowerCase();
+	        String destinationFileName;        
+			do { 
+	            destinationFileName = RandomStringUtils.randomAlphanumeric(32) + "." + sourceFileNameExtension;            	
+	            	destinationFile = new File(path + folderName1 +destinationFileName);
+	            	m.setProfileImg(destinationFileName);
+	            	m.setProfileImgOriName(sourceFileName);
+	            	m.setProfileImgUrl(path+folderName1);	
+	            
+	        } while (destinationFile.exists()); 
+	        
+	        destinationFile.getParentFile().mkdirs(); 
+	        
+	        try {
+	        	mFile.transferTo(destinationFile);	        		            	           
+			} catch (IllegalStateException | IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}    
 		if (memberService.addMember(m) == true) {
 			Member member = memberService.getUser(m);
 			session.setAttribute("member", member);
 			session.setAttribute("id", member.getId());
 			return "redirect:/signUpComplete";
 		} else {
-			return "login/signup2";
+			return "login/signUp2";
 		}
 	}
 	

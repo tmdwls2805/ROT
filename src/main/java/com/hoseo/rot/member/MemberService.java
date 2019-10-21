@@ -47,6 +47,11 @@ public class MemberService{
     public int emailCheck(String email) {
     	return memberRepository.emailCheck(email);
     }
+ 
+    /*닉네임 중복 체크*/
+    public int nicknameCheck(String nickname) {
+    	return memberRepository.nicknameCheck(nickname);
+    }    
     
     /*로그인*/
     public boolean isValidUser(Member m) {

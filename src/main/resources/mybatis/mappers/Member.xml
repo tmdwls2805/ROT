@@ -5,7 +5,7 @@
 <mapper namespace="com.hoseo.rot.member.MemberRepository">
 	
 	<insert id="addMember" parameterType="Member">
-		INSERT INTO member VALUES
+		INSERT INTO member(id, password, name, email, phone, zipcode, addr1, addr2, nickname, profileImg, profileImgOriName, profileImgUrl, point) VALUES
 		(
 		#{id},
 		#{password},
@@ -15,6 +15,10 @@
 		#{zipcode},
 		#{addr1},
 		#{addr2},
+		#{nickname},
+		#{profileImg},
+		#{profileImgOriName},
+		#{profileImgUrl},
 		#{point},
 		now());
 	</insert>
@@ -26,6 +30,10 @@
 	<select id="emailCheck" parameterType="String" resultType="int">
 		SELECT count(email) FROM MEMBER WHERE email = #{email}
 	</select>
+	
+	<select id="nicknameCheck" parameterType="String" resultType="int">
+		SELECT count(nickname) FROM MEMBER WHERE nickname = #{nickname}
+	</select>	
 	
 	<select id="getMember" parameterType="Member" resultType="Member">
 		SELECT * FROM member WHERE id = #{id}

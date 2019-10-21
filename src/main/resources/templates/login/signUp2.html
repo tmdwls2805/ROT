@@ -65,25 +65,7 @@
 						<div class="error-next-box" id="chkName"></div>
 					
 					</div>
-<!-- 					<div class="row-gender">
-						<div  class="join-title">
-							<label for="gender" class="font">성별</label>
-						</div>
-						<select class="select-gender" id="gender" name="gender" required >
-							<option value selected>성별</option>
-							<option value="M">남자</option>
-							<option value="F">여자</option>
-						</select> 
-					</div>
-					<div class="row-year">
-						<div  class="join-title">
-							<label for="year" class="font">생년월일</label>
-						</div>
-						<input type="text" class="index-text-3" id="year" name="year" maxlength="4" placeholder="년(4자)" required />
-						<select class="index-select-3" id="month" name="month" required ></select> 
-						<input type="text" class="index-text-3" id="year" name="day" maxlength="2" placeholder="일" required />
-					</div> -->
-					
+				
 					<div class="row-email">
 						<div  class="join-title">
 							<label for="email" class="font">본인 확인 이메일</label>
@@ -98,6 +80,7 @@
 						<input type="text" id="phone" name="phone" maxlength="11"  class="index-text-100"  placeholder="'-' 없이 입력"  required />
 						<div class="error-next-box" id="chkPhone"></div> 
 					</div>
+					
 					<div class="row-address">
 						<div  class="join-title">
 							<label for="zipcode" class="font">주소</label>
@@ -107,12 +90,47 @@
    						<input type="text" class="index-text-1002" name="addr2" id="addr2" placeholder="상세주소 입력"  required />
    						<div class="error-next-box" id="chkAddr"></div>
 					</div>
+					
+					<div class="row-nickname">
+						<div  class="join-title">
+							<label for="nickname" class="font">닉네임</label>
+						</div>
+						<input type="text" id="nickname" name="nickname" maxlength="20" class="index-text-100" required /> 
+						<div class="error-next-box" id="chkNickname"></div>
+					</div>
+					
+					<div class="row-profileImg">
+						<div  class="join-title">
+							<label for="profileImg" class="font">프로필 이미지</label>
+						</div>
+						<div style="text-align:center;">
+							<img id="uploadImg" th:src="@{/img/mk/profile.png}" style="width:232px; height:232px; border:1px solid #dadada;">
+						</div> 
+						<input type="file" name="file1" id="profileImg" maxlength="20" class="index-text-100" />
+					</div>
 				</div>	
-				<button id="signUpBtn" name="signUpBtn" class="index-button-100" disabled="disabled">가입하기</button>
+				<button id="signUpBtn" name="signUpBtn" class="index-button-100">가입하기</button>
 			</form>
 		</div>
 <!----------------------------------------------------- 회원가입 폼 끝 ------------------------------------------------------------>	
-		
+<script>
+
+</script>
+<script>
+    function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function(e) {
+                $('#uploadImg').attr('src', e.target.result);
+            }
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+
+    $("#profileImg").change(function() {
+        readURL(this);
+    });
+</script>		
 <!----------------------------------------------------- 우편번호 검색 시작 ------------------------------------------------------------>		
 <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
 <script>
@@ -165,6 +183,7 @@
 var idJ = /^[a-zA-Z0-9~!@#$%^&*()_+|<>?:{}]{6,}$/;
 var passwordJ = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&])[A-Za-z\d$@$!%*#?&]{8,}$/; 
 var nameJ = /^[가-힣]{2,6}$/; 
+var nicknameJ = /^[a-zA-z0-9\s가-힣]{2,}$/;
 var zipcodeJ = /^[0-9]{1,10}$/;
 var phoneJ = /^01([0|1|6|7|8|9]?)?([0-9]{3,4})?([0-9]{4})$/;
 var emailJ = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
@@ -172,6 +191,7 @@ var addrJ = /^[a-zA-z0-9\sㄱ-ㅎㅏ-ㅣ가-힣~!@#$%^&*()_+|<>?:{}]{1,40}$/;
 var empJ = /^[]{0}$/
 var idck = 0;
 var emailck = 0;
+var nicknameck=0;
 
 $(function() {
     //idck 버튼을 클릭했을 때 
@@ -214,7 +234,6 @@ $(function() {
 });
 
 $(function() {
-    //idck 버튼을 클릭했을 때 
     $("#email").blur(function() {
         var email =  $("#email").val(); 
         $.ajax({
@@ -253,23 +272,45 @@ $(function() {
 });
 
 
-/* $('#email').blur(function(){
-	if(empJ.test($('#email').val())){
-		$('#chkEmail').text('필수 정보입니다.');
-		$('#chkEmail').css('color', 'red');
-		$("#signUpBtn").attr("disabled", true);
-		
-	}else if (!emailJ.test($('#email').val())){
-		$('#chkEmail').text('이메일 형식을 확인해주세요.');
-		$('#chkEmail').css('color', 'red');
-		$("#signUpBtn").attr("disabled", true);
-		
-	}else if (emailJ.test($('#email').val())){
-		$('#chkEmail').text('');
-		$("#signUpBtn").attr("disabled", false);
-	}
+$(function() {
+    $("#nickname").blur(function() {
+        var nickname =  $("#nickname").val(); 
+        $.ajax({
+            async: true,
+            type : 'POST',
+            data : nickname,
+            url : "/signUp2/nicknameCheck",
+            dataType : "json",
+            contentType: "application/json; charset=UTF-8",
+            success : function(data) {
+	                if (data.cnt > 0) {
+	                	$('#chkNickname').text('이미 사용중인 닉네임입니다.');
+	            		$('#chkNickname').css('color', 'red');
+	            		$("#signUpBtn").attr("disabled", true);
+	                    
+	                } else {
+	                	if (!nicknameJ.test($('#nickname').val())){
+	                		$('#chkNickname').text('2자 이상 영문 대 소문자, 숫자, 한글을 사용하세요.');
+	                		$('#chkNickname').css('color', 'red');
+	                		$("#signUpBtn").attr("disabled", true);
+	                		
+	                	} else if (nicknameJ.test($('#nickname').val())){
+	                		$('#chkNickname').text('');
+	                		$("#signUpBtn").attr("disabled", false);
+	                	} 
+	                	nicknameck = 1;
+            	}
+            }
+        });
+        if (empJ.test($('#nickname').val())){
+    		$('#chkNickname').text('필수 정보입니다.');
+    		$('#chkNickname').css('color', 'red');
+    		$("#signUpBtn").attr("disabled", true);
+    	}
+    });
 });
- */
+
+
 $('#password').blur(function(){
 	if (empJ.test($('#password').val())){
 		$('#chkPassword').text('필수 정보입니다.');

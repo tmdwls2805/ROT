@@ -15,6 +15,10 @@ public class Member {
 	private int zipcode;
 	private String addr1;
 	private String addr2;
+	private String nickname;
+	private String profileImg;
+	private String profileImgOriName;
+	private String profileImgUrl;
 	private int point;
 	private Timestamp regDate;
 

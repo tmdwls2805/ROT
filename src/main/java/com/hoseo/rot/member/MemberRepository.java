@@ -11,6 +11,8 @@ public interface MemberRepository {
 	public int idCheck(String id); // 아이디 중복 체크
 	
 	public int emailCheck(String email); // 이메일 중복 체크
+
+	public int nicknameCheck(String nickname); // 이메일 중복 체크
 	
 	public Member getMember(Member m); // 회원 불러오기
     

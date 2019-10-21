@@ -12,6 +12,8 @@ public class Recipe {
 	private String reciSub;
 	private String reciIntro;
 	private String reciMainPic;
+	private String reciMainPicOriName;
+	private String reciMainPicUrl;
 	private String reciFind;
 	private String reciSit;
 	private String reciWay;
@@ -21,5 +23,6 @@ public class Recipe {
 	private String reciLev;
 	private String reciTip;
 	private String reciStatus;
+	private int reciLookUp;
 	private Timestamp reciregdate;
 }

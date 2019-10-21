@@ -9,6 +9,8 @@ public class RecipeOrder {
 	private int orderNum;
 	private String orderContent;
 	private String orderPic;
+	private String orderPicOriName;
+	private String orderPicUrl;	
 
 }
 

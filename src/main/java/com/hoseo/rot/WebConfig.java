@@ -14,9 +14,6 @@ public class WebConfig implements WebMvcConfigurer {
    @Override
    public void addResourceHandlers(ResourceHandlerRegistry registry) {
 		
-		
-		
-		
 		  String uploadRecipeFolder=env.getProperty("rot.upload.recipe.path");
 		  registry.addResourceHandler("/upload/recipe/**")
 		  .addResourceLocations(uploadRecipeFolder);
@@ -25,6 +22,9 @@ public class WebConfig implements WebMvcConfigurer {
 		  registry.addResourceHandler("/upload/product/**")
 		  .addResourceLocations(uploadProductFolder);
 		 
+		  String uploadProfileFolder=env.getProperty("rot.upload.profile.path");
+		  registry.addResourceHandler("/upload/profile/**")
+		  .addResourceLocations(uploadProfileFolder);
 
 		/*
 		 * String uploadUrl = env.getProperty("upload-product-path");

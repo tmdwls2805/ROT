@@ -35,11 +35,6 @@ public class AdminController {
 		return "admin/productEnroll";
 	}
 	
-	/*
-	 * @PostMapping("/productEnroll") public String enroll(Product p) {
-	 * if(adminService.addProduct(p)) { return "redirect:/productEnroll"; } return
-	 * "admin/productEnroll"; }
-	 */
 	@Autowired
 	private Environment env;
 	
@@ -76,7 +71,7 @@ public class AdminController {
 			}
 		}        
 		if(adminService.addProduct(p)) {			
-			return "redirect:/blank";
+			return "redirect:/productEnroll";
 		}
 		return "admin/productEnroll"; 
 	}

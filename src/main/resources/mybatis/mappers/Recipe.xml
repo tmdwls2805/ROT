@@ -5,8 +5,8 @@
 <mapper	namespace="com.hoseo.rot.recipe.RecipeRepository">
 
 	<insert id="addRecipe" parameterType="Recipe">
-		INSERT INTO recipe(reciId, reciName, reciSub, reciIntro, reciMainPic, reciFind,reciSit,reciWay,reciMat,reciPer,reciTim,reciLev,reciTip,reciStatus,reciRegdate)
-		VALUES (#{reciId}, #{reciName}, #{reciSub}, #{reciIntro}, #{reciMainPic}, #{reciFind}, #{reciSit}, #{reciWay}, #{reciMat}, #{reciPer}, #{reciTim}, #{reciLev}, #{reciTip}, #{reciStatus}, now());
+		INSERT INTO recipe(reciId, reciName, reciSub, reciIntro, reciMainPic, reciMainPicOriName, reciMainPicUrl, reciFind, reciSit, reciWay, reciMat, reciPer, reciTim, reciLev, reciTip, reciStatus, reciLookUp, reciRegdate)
+		VALUES (#{reciId}, #{reciName}, #{reciSub}, #{reciIntro}, #{reciMainPic}, #{reciMainPicOriName}, #{reciMainPicUrl}, #{reciFind}, #{reciSit}, #{reciWay}, #{reciMat}, #{reciPer}, #{reciTim}, #{reciLev}, #{reciTip}, #{reciStatus}, #{reciLookUp}, now());
 	</insert>
 	
  	<insert id="addMaterial" parameterType="Material">
@@ -20,8 +20,8 @@
 	</insert>
 	
 	<insert id="addRecipeOrder" parameterType="RecipeOrder">
-		INSERT INTO recipeOrder(reciInputNum, orderContent, orderPic) 
-		VALUES (#{reciInputNum}, #{orderContent}, #{orderPic});
+		INSERT INTO recipeOrder(reciInputNum, orderContent, orderPic, orderPicOriName, orderPicUrl) 
+		VALUES (#{reciInputNum}, #{orderContent}, #{orderPic}, #{orderPicOriName}, #{orderPicUrl});
 	</insert>
 
 </mapper>

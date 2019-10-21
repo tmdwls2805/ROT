@@ -1,5 +1,5 @@
-Insert into member values('tmdwls2805', '11bfdd79733872fe4b318003b4dd9018b852bce2d34ed937d0f3fb06b14da2d1', '박승진', 'qkrtmdwls280@gmail.com','01040702805','123','경기','안산','0',now());
-Insert into member values('admin', '8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918', '박승진', 'admin@gmail.com','01040702805','123','경기','안산','0',now());
+Insert into member values('tmdwls2805', '11bfdd79733872fe4b318003b4dd9018b852bce2d34ed937d0f3fb06b14da2d1', '박승진', 'qkrtmdwls280@gmail.com','01040702805','123','경기','안산','0','개발자', '', '' ,'',now());
+Insert into member values('admin', '8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918', '박승진', 'admin@gmail.com','01040702805','123','경기','안산','0','관리자', '', '' ,'',now());
 Insert into product values(1, '채소', '양파', '국내산', '1000', '1망', '0', '양파.jpg', '양파.jpg', 'D:\\upload\\product\\', '1000');
 Insert into product values(2, '육류', '돼지고기 목살', '국내산', '1000', '100g', '1000', '돼지고기 목살.jpg', '돼지고기 목살.jpg', 'D:\\upload\\product\\', '40');
 Insert into product values(3, '과일', '자몽', '국내산', '1000', '1개', '1000', '자몽.jpg', '자몽.jpg', 'D:\\upload\\product\\', '30');
