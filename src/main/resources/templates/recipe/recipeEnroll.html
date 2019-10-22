@@ -102,11 +102,11 @@
 							<p class="enroll_title">레시피 제목</p>
 						</td>
 						<td class="reciInput">
-							<input type="text" class="input-reciSub" name="reciSub" placeholder="예) 소고기 미역국 끓이기" />
+							<input type="text" class="input-reciSub" name="reciSub" placeholder="예) 소고기 미역국 끓이기" required/>
 						</td>
 						<td rowspan="8" class="reciInputPic">
 							<img name="reciMainPicImg" id="reciMainPicImg" th:src="@{img/mk/mainPic.gif}" style="width: 250px; height: 250px; cursor: pointer">
-							<input class="InputreciMainPic" type="file" name="file1" id="reciMainPic" />
+							<input class="InputreciMainPic" type="file" name="file1" id="reciMainPic" required />
 						</td>
 					</tr>
 					
@@ -132,22 +132,22 @@
 							<p class="enroll_title">카테고리</p>
 						</td>
 						<td class="reciInput">
-							<select name="reciFind" class="reciSelect1">
+							<select name="reciFind" class="reciSelect1" required>
 									<option value="" selected>종류별</option>
 									<option value="밑반찬">밑반찬</option>
 							</select> 
 							
-							<select name="reciSit" class="reciSelect1">
+							<select name="reciSit" class="reciSelect1" required>
 									<option value="" selected>상황별</option>
 									<option value="일상">일상</option>
 							</select> 
 							
-							<select name="reciWay" class="reciSelect1">
+							<select name="reciWay" class="reciSelect1" required>
 									<option value="" selected>방법별</option>
 									<option value="볶음">볶음</option>
 							</select> 
 							
-							<select name="reciMat" class="reciSelect1">
+							<select name="reciMat" class="reciSelect1" required>
 									<option value="" selected>재료별</option>
 									<option value="소고기">소고기</option>
 							</select>
@@ -174,17 +174,17 @@
 						</td>
 						<td class="reciInput">
 						<span class="reciInputText">인원</span>  
-						<select name="reciPer" class="reciSelect3">
+						<select name="reciPer" class="reciSelect3" required>
 								<option value="" selected>인원</option>
 								<option value="1인분">1인분</option>
 						</select> 
 						<span class="reciInputText">시간</span> 
-						<select name="reciTim" class="reciSelect2">
+						<select name="reciTim" class="reciSelect2" required>
 								<option value="" selected>시간</option>
 								<option value="5분이내">5분이내</option>
 						</select> 
 						<span class="reciInputText">난이도</span> 
-						<select name="reciLev" class="reciSelect3">
+						<select name="reciLev" class="reciSelect3" required>
 								<option value="" selected>난이도</option>
 								<option value="아무나">아무나</option>
 						</select>
