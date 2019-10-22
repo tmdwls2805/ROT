@@ -8,5 +8,35 @@
     "name": "upload-product-path",
     "type": "java.lang.String",
     "description": "A description for 'upload-product-path'"
+  },
+  {
+    "name": "upload-profile-path",
+    "type": "java.lang.String",
+    "description": "A description for 'upload-profile-path'"
+  },
+  {
+    "name": "upload-recipe-path",
+    "type": "java.lang.String",
+    "description": "A description for 'upload-recipe-path'"
+  },
+  {
+    "name": "rot.upload.recipe.path",
+    "type": "java.lang.String",
+    "description": "A description for 'rot.upload.recipe.path'"
+  },
+  {
+    "name": "rot.upload.product.path",
+    "type": "java.lang.String",
+    "description": "A description for 'rot.upload.product.path'"
+  },
+  {
+    "name": "rot.upload.profile.path",
+    "type": "java.lang.String",
+    "description": "A description for 'rot.upload.profile.path'"
+  },
+  {
+    "name": "upload-img-path",
+    "type": "java.lang.String",
+    "description": "A description for 'upload-img-path'"
   }
 ]}

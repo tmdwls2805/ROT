@@ -43,7 +43,7 @@ public class AdminController {
 	@PostMapping("/addProduct")
 	public String addProduct(Product p, HttpServletRequest request, MultipartHttpServletRequest multi) {
 		Iterator<String> imgs = multi.getFileNames();
-		String path = env.getProperty("upload-product-path");
+		String path = env.getProperty("upload-img-path");
 		String folderName1 = "product/"; 
         File destinationFile = null;
         MultipartFile mFile = null; 
