@@ -99,8 +99,8 @@ public class LoginController {
 	@PostMapping("/signUp2/sign")
 	public String sign(Member m, HttpSession session, HttpServletRequest request, MultipartHttpServletRequest multi) {
 		Iterator<String> imgs = multi.getFileNames();
-		String path = env.getProperty("upload-product-path");
-		String folderName1 = "product/"; 
+		String path = env.getProperty("upload-img-path");
+		String folderName1 = "profile/"; 
         File destinationFile = null;
         MultipartFile mFile = null; 
         
