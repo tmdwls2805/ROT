@@ -84,7 +84,7 @@
 	<!-- Start contact-page Area -->
 	<section class="section-center">
 		<div class="container">
-			<form class="form" name="form" method="post" action="recipeEnroll">
+			<form class="form" name="form" method="post" action="recipeEnroll" enctype="multipart/form-data">
 			<input type="text" name="reciId" th:value="${session.member.id}" hidden="hidden"/>
 			<input type="text" name="reciName" th:value="${session.member.name}" hidden="hidden"/>
 

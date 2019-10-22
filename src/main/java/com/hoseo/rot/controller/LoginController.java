@@ -36,7 +36,7 @@ public class LoginController {
 
 	@Autowired
 	private MemberService memberService;
-	private Environment env;
+	
 	
 	
 	// 약관동의
@@ -94,10 +94,11 @@ public class LoginController {
         return map;
     }
 	
-
+	@Autowired
+	private Environment env;
 	// 회원가입 완료
 	@PostMapping("/signUp2/sign")
-	public String sign(Member m, HttpSession session, HttpServletRequest request, MultipartHttpServletRequest multi) {
+	public String sign(Member m, HttpSession session, MultipartHttpServletRequest multi) {
 		Iterator<String> imgs = multi.getFileNames();
 		String path = env.getProperty("upload-img-path");
 		String folderName1 = "profile/"; 
