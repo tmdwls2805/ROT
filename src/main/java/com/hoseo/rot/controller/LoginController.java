@@ -24,9 +24,12 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 import com.hoseo.rot.member.MemberService;
+
+import lombok.extern.slf4j.Slf4j;
+
 import com.hoseo.rot.member.Member;
 
-
+@Slf4j
 @Controller
 public class LoginController {
 
@@ -93,37 +96,8 @@ public class LoginController {
 
 	// 회원가입 완료
 	@PostMapping("/signUp2/sign")
-	public String sign(Member m, HttpSession session, HttpServletRequest request, MultipartHttpServletRequest multi) {
-		Iterator<String> imgs = multi.getFileNames();
-		String path = env.getProperty("upload-profile-path");
-		String folderName1 = "profile/"; 
-        File destinationFile = null;
-        MultipartFile mFile = null; 
-        
-		while (imgs.hasNext()) {
-			String uploadFile = imgs.next();			
-			mFile = multi.getFile(uploadFile);
-			String sourceFileName = mFile.getOriginalFilename();
-			String sourceFileNameExtension = FilenameUtils.getExtension(sourceFileName).toLowerCase();
-	        String destinationFileName;        
-			do { 
-	            destinationFileName = RandomStringUtils.randomAlphanumeric(32) + "." + sourceFileNameExtension;            	
-	            	destinationFile = new File(path + folderName1 +destinationFileName);
-	            	m.setProfileImg(destinationFileName);
-	            	m.setProfileImgOriName(sourceFileName);
-	            	m.setProfileImgUrl(path+folderName1);	
-	            
-	        } while (destinationFile.exists());
-	        
-	        destinationFile.getParentFile().mkdirs(); 
-	        
-	        try {
-	        	mFile.transferTo(destinationFile);	        		            	           
-			} catch (IllegalStateException | IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		}    
+	public String sign(Member m, HttpSession session) {
+   
 		if (memberService.addMember(m) == true) {
 			Member member = memberService.getUser(m);
 			session.setAttribute("member", member);

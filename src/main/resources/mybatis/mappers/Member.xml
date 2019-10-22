@@ -36,7 +36,7 @@
 	</select>	
 	
 	<select id="getMember" parameterType="Member" resultType="Member">
-		SELECT * FROM member WHERE id = #{id};
+		SELECT * FROM member WHERE id = #{id}
 			<if test="@org.springframework.util.StringUtils@isEmpty(password) == false">
 			and password = #{password};
 		</if>
