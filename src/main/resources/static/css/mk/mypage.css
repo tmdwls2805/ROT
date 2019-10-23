@@ -1,0 +1,84 @@
+.profileTop {
+	height: 170px;
+}
+
+.profileBottom {
+	text-align: center;
+	margin-top: -74px;
+	vertical-align: top;
+	height: 220px;
+}
+
+.widget-wrap2 {
+	background: #fff;
+	margin-bottom: 10px;
+	border: 1px solid #e1e1e1;
+}
+
+.sideProfileImg {
+	width: 140px;
+	height: 140px;
+	border-radius: 50%;
+	border: 5px solid #fff;
+	border-color: rgba(255, 255, 255, 0.5);
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.mypage_table {
+	width: 100%;
+	background: #fff;
+}
+
+.table_title {
+	height: 60px;
+	background: #f8f8f8;
+	border: 1px solid #e1e1e1; padding : 14px 18px;
+	font-size: 25px;
+	font-weight: 700;
+	position: relative;
+	box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.1);
+	color: #333;
+	padding: 14px 18px
+}
+
+.table_content {
+	height: 500px;
+	border: 1px solid #e1e1e1;
+	text-align: center;
+	vertical-align: middle;
+}
+
+.contentProfileImg {
+	width: 250px;
+	height: 250px;
+	border-radius: 50%;
+	border: 1px solid #e1e1e1;
+}
+
+.changeProfileOImg {
+	color: #333;
+	text-decoration: underline;
+	cursor: pointer;
+	margin-top: 10px;
+}
+
+.changeProfileOImg:hover {
+	color: #333;
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+.changeDiv {
+	display: inline-block;
+	margin-top: 3px;
+}
+
+#changeIcon {
+	margin-top: -5px;
+	width: 15px;
+	height: auto;
+}
+
+.blank{
+	width:50px;
+}

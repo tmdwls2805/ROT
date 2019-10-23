@@ -43,15 +43,14 @@
 				        	<li>
 								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 				        	</li>
-							<li><a id="nav-a2" href="#" th:text="${session.member != null && session.member.id!='admin'} ? |${session.member.nickname}님|"></a>
+							<li><a id="nav-a2" th:href="@{/recipeNote}" th:text="${session.member != null && session.member.id!='admin'} ? |${session.member.nickname}님|"></a>
 								<ul>
-									<li><a th:href="@{/MyHome}">MY 홈</a></li>
 									<li><a th:href="@{/recipeNote}">레시피 노트</a></li>
-									<li><a href="#">내가 쓴 게시물</a></li>
-									<li><a href="#">문의내역</a></li>
-									<li><a href="#">주문조회</a></li>
-						            <li><a href="#">장바구니</a></li>
-						            <li><a href="#">회원정보수정</a></li>
+									<li><a th:href="@{/writeBoard}">내가 쓴 게시물</a></li>
+									<li><a th:href="@{/contactHistory}">문의내역</a></li>
+									<li><a th:href="@{/orderInquiry}">주문조회</a></li>
+						            <li><a th:href="@{/cart}">장바구니</a></li>
+						            <li><a th:href="@{/updateMemberInfo}">회원정보수정</a></li>
 						            <li><a th:href="@{/logout}">로그아웃</a></li>
 					            </ul>
 							</li>

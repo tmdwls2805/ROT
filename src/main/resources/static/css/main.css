@@ -2274,7 +2274,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 .section-gap {
-	padding: 120px 0
+	padding: 120px 0;
 }
 
 .alert-msg {
@@ -2443,7 +2443,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 .menu-area {
-	background: #f9f9ff
+	background:#f8f8f8;
 }
 
 .menu-area .primary-btn {
@@ -3259,9 +3259,10 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 .widget-wrap {
-	background: #fafaff;
+	background: #fff;
+	margin-bottom:10px;
 	padding: 20px 0px;
-	border: 1px solid #eee
+	border: 1px solid #e1e1e1;
 }
 
 @media ( max-width : 991px) {
@@ -3553,7 +3554,8 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 .single-post-area {
 	padding-top: 80px;
-	padding-bottom: 80px
+	padding-bottom: 80px;
+	background:#f8f8f8;
 }
 
 .single-post-area .meta-details {
