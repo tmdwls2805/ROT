@@ -174,7 +174,7 @@
 						</td>
 					</tr>
 				</table>				
-				<ul>
+				<ul id="add2List">
 					<li>
 						<table class="reciTable2">
 							<tr>
@@ -185,10 +185,10 @@
 							<tr>
 								<td class="matName-sit"><input type="text"
 									class="input-matName" name="matName" value="재료" /><br>
-									<button class="groupDeleteButton" type="button">묶음삭제</button>
+									<button class="groupDeleteButton" type="button" onclick="deleteBox2(this)">묶음삭제</button>
 								</td>
 								<td class="matName-sit2">
-									<ul id="add1List" class="input-mat">
+									<ul id="addList" class="input-mat">
 										<li>
 											<div class="input-mat2">
 												<input type="text" class="input-mat2Find" name="mat2Find" placeholder="예) 미역" /> 
@@ -202,7 +202,7 @@
 							<tr>
 								<td></td>
 								<td class="addButtonTd">
-									<button id="add1" type="button" class="addButton"><img class="addImg" th:src="@{/img/mk/add.png}">추가</button>
+									<button id="add" type="button" class="addButton"><img class="addImg" th:src="@{/img/mk/add.png}">추가</button>
 								</td>
 							</tr>							
 						</table>
@@ -223,7 +223,7 @@
 					</tr>
 					<tr>
 						<td class="groupAddButton-Td2">
-							<button class="groupAddButton" type="button" onclick="">
+							<button class="groupAddButton" type="button" id="add2">
 								<img class="add2" th:src="@{/img/mk/add2.png}"> 재료/양념 묶음 추가
 							</button>
 						</td>
@@ -259,7 +259,7 @@
 						</td>
 					</tr>
 				</table>
-				<ul>
+				<ul id="add3List">
 					<li>
 						<table class="reciTable3-1">
 							<tr>
@@ -269,7 +269,7 @@
 							</tr>	
 							<tr>
 								<td class="step"style="width:200px;">
-									Step1
+									Step
 								</td>
 								<td class="textContent">
 									<textarea class="orderContent" name="orderContent" placeholder="예) 소고기는 기름기를 떼어내고 적당한 크기로 썰어주세요."></textarea>
@@ -291,7 +291,7 @@
 					</tr>
 					<tr>
 						<td class="orderButton-td">
-							<button type="button" class="orderButton" onclick=""><img class="addImg" th:src="@{/img/mk/add.png}">순서추가</button>
+							<button type="button" class="orderButton" id="add3"><img class="addImg" th:src="@{/img/mk/add.png}">순서추가</button>
 						</td>
 					</tr>
 				</table>
