@@ -85,7 +85,7 @@
 											<span class="productVolume"><span th:text="${product.productVolume}"></span>당 : <span th:text="${product.productPrice}">1,000</span>원</span>
 											
 											<div th:if="${product.productCount != 0}">
-											<span class="productVolume2">남은 수량 : <span th:text="${product.productCount}"></span>개</span>
+											<span class="productVolume2">원산지 : <span  th:text="${product.productOrigin}"></span></span>
 											</div>
 											
 											<div th:if="${product.productCount == 0}">

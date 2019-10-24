@@ -75,7 +75,7 @@
 									(<span th:text="${product.productVolume}"></span> 당 : <span th:text="${product.productPrice}"></span>원)
 								</div>
 								<div class="productCount"  th:if="${product.productCount!=0}">
-									남은 수량 : <span th:text="${product.productCount}"></span>개
+									
 								</div>
 								<div class="productCount_SoldOut"  th:if="${product.productCount == 0}">
 									 일시품절
@@ -131,7 +131,7 @@
 								<div class="ex6Won">
 									<span>원</span>
 								</div>
-								<div class="ex6Price">
+								<div>
 									<input name="buyAmount" class="product_amountPriceSum" id="total_count_view2" th:value="${product.productPrice}" readonly/>
 								</div>
 								<div class="ex6Hap">
@@ -219,10 +219,14 @@ var total_count = document.getElementById("total_count"); //추가
 var total_count_view = document.getElementById("total_count_view"); //추가
 var total_count_view2 = document.getElementById("total_count_view2");
 function plus(){
+ if(count < 20){
   count++;
   countEl.value = count;
   total_count_view.value = total_count.value * countEl.value; //추가
   total_count_view2.value = total_count_view.value;
+ }else{
+	 alert('최대 20개까지 구매 가능합니다.');
+ }
 }
 function minus(){
   
