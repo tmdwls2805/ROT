@@ -18,36 +18,19 @@
 <title>내일의 레시피</title>
 
 <!-- CSS ============================================= -->
-<link rel="stylesheet" href="../static/css/linearicons.css" th:href="@{/css/linearicons.css}">
-<link rel="stylesheet" href="../static/css/font-awesome.min.css" th:href="@{/css/font-awesome.min.css}">
-<link rel="stylesheet" href="../static/css/bootstrap.css" th:href="@{/css/bootstrap.css}">
-<link rel="stylesheet" href="../static/css/magnific-popup.css" th:href="@{/css/magnific-popup.css}">
-<link rel="stylesheet" href="../static/css/jquery-ui.css" th:href="@{/css/jquery-ui.css}">
-<link rel="stylesheet" href="../static/css/nice-select.css" th:href="@{/css/nice-select.css}">
-<link rel="stylesheet" href="../static/css/animate.min.css" th:href="@{/css/animate.min.css}">
-<link rel="stylesheet" href="../static/css/owl.carousel.css" th:href="@{/css/owl.carousel.css}">
-<link rel="stylesheet" href="../static/css/main.css" th:href="@{/css/main.css}">
-<link rel="stylesheet" href="../static/css/mk/materialListDetails.css" th:href="@{/css/mk/materialListDetails.css}">
-<link rel="stylesheet" type="text/css" href="../static/slick/slick.css" th:href="@{/slick/slick.css}"/>
-<link rel="stylesheet" type="text/css" href="../static/slick/slick-theme.css" th:href="@{/slick/slick-theme.css}" />
-<script src="../static/js/vendor/jquery-2.2.4.min.js" th:src="@{/js/vendor/jquery-2.2.4.min.js}"></script>
-<script src="../static/js/popper.min.js" th:src="@{/js/popper.min.js}"></script>
-<script src="../static/js/vendor/bootstrap.min.js" th:src="@{/js/vendor/bootstrap.min.js}"></script>
-<script src="../static/js/jquery-ui.js" th:src="@{/js/jquery-ui.js}"></script>
-<script src="../static/js/easing.min.js" th:src="@{/js/easing.min.js}"></script>
-<script src="../static/js/hoverIntent.js" th:src="@{/js/hoverIntent.js}"></script>
-<script src="../static/js/superfish.min.js" th:src="@{/js/superfish.min.js}"></script>
-<script src="../static/js/jquery.ajaxchimp.min.js" th:src="@{/js/jquery.ajaxchimp.min.js}"></script>
-<script src="../static/js/jquery.magnific-popup.min.js" th:src="@{/js/jquery.magnific-popup.min.js}"></script>
-<script src="../static/js/jquery.nice-select.min.js" th:src="@{/js/jquery.nice-select.min.js}"></script>
-<script src="../static/js/owl.carousel.min.js" th:src="@{/js/owl.carousel.min.js}"></script>
-<script src="../static/js/isotope.pkgd.min.js" th:src="@{/js/isotope.pkgd.min.js}"></script>
-<script src="../static/js/mail-script.js" th:src="@{/js/mail-script.js}"></script>
-<script src="../static/js/main.js" th:src="@{/js/main.js}"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script type="text/javascript" src="../static/slick/slick.min.js" th:src="@{/slick/slick.min.js}"></script>
-<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<link rel="stylesheet" th:href="@{/css/linearicons.css}">
+<link rel="stylesheet" th:href="@{/css/font-awesome.min.css}">
+<link rel="stylesheet" th:href="@{/css/bootstrap.css}">
+<link rel="stylesheet" th:href="@{/css/magnific-popup.css}">
+<link rel="stylesheet" th:href="@{/css/jquery-ui.css}">
+<link rel="stylesheet" th:href="@{/css/nice-select.css}">
+<link rel="stylesheet" th:href="@{/css/animate.min.css}">
+<link rel="stylesheet" th:href="@{/css/owl.carousel.css}">
+<link rel="stylesheet" th:href="@{/css/main.css}">
+<link rel="stylesheet" th:href="@{/slick/slick.css}"/>
+<link rel="stylesheet" th:href="@{/slick/slick-theme.css}" />
+<link rel="stylesheet" th:href="@{/css/mk/materialListDetails.css?after}">
+
 </head>
 <body>
 	<div th:replace="~{header :: header}"></div>
@@ -117,17 +100,17 @@
 							<td class="productBlank"></td>
 							<td class="productEx4 productSaleCount">
 								<div class="amount">
-									<a href="javascript:void(0);" class="minus" onclick="ItmOp.changeOrdQty(this, -1, 1, 20);">
+									<a class="minus" id="minus" onclick="minus()">
 										<img src="img/mk/minus.png" class="img-minus">
 									</a>
 								</div>
 								<div class="amount">
 									<span class="inpbx">
-										<input type="number" name="buyCount" class="product_amount" value="1" onchange="ItmOp.changeOrdQty(this, 0, 1, 20);">
+										<input type="number" name="buyCount" id="count" class="product_amount" value="1" readonly />
 									</span>
 								</div>
 								<div class="amount">
-									<a href="javascript:void(0);" class="plus" onclick="ItmOp.changeOrdQty(this, 1, 1, 20);">
+									<a class="plus" id="plus" onclick="plus()">
 										<img src="img/mk/plus.png" class="img-plus">
 									</a>
 								</div>	
@@ -135,7 +118,8 @@
 							</td>
 							<td  class="productEx5 product_amountBox">
 								<span class="product_amountPriceWon">원</span>
-								<span class="product_amountPrice" th:text="${product.productPrice}"></span>
+								<input class="product_amountPrice" id="total_count_view" th:value="${product.productPrice}" readonly/>
+								<input type="text" th:value="${product.productPrice}" id="total_count" hidden="hidden"/>
 								<div>
 								
 								</div>
@@ -148,7 +132,7 @@
 									<span>원</span>
 								</div>
 								<div class="ex6Price">
-									<span th:text="${product.productPrice}"></span>
+									<input name="buyAmount" class="product_amountPriceSum" id="total_count_view2" th:value="${product.productPrice}" readonly/>
 								</div>
 								<div class="ex6Hap">
 									<span>합계</span>
@@ -217,7 +201,6 @@
 								<input type="text" name="productNum" th:value="${product.productNum}" hidden="hidden"/>
 								<input type="text" name="productName" th:value="${product.productName}" hidden="hidden"/>
 								<input type="text" name="productPrice" th:value="${product.productPrice}" hidden="hidden"/>
-								<input type="text" name="buyAmount" th:value="${product.productPrice}*3" hidden="hidden"/>
 							</td>
 						</tr>
 				</table>
@@ -229,4 +212,44 @@
 	<div th:replace="~{footer :: footer}"></div>
 	<!-- End footer Area -->
 </body>
+<script>
+var count = 1;
+var countEl = document.getElementById("count");
+var total_count = document.getElementById("total_count"); //추가
+var total_count_view = document.getElementById("total_count_view"); //추가
+var total_count_view2 = document.getElementById("total_count_view2");
+function plus(){
+  count++;
+  countEl.value = count;
+  total_count_view.value = total_count.value * countEl.value; //추가
+  total_count_view2.value = total_count_view.value;
+}
+function minus(){
+  
+  if (count > 1) {
+    count--;
+    countEl.value = count;
+  total_count_view.value = total_count_view.value - total_count.value;
+  total_count_view2.value = total_count_view.value//추가  
+  }  
+}
+</script>
+<script th:src="@{/js/vendor/jquery-2.2.4.min.js}"></script>
+<script th:src="@{/js/popper.min.js}"></script>
+<script th:src="@{/js/vendor/bootstrap.min.js}"></script>
+<script th:src="@{/js/jquery-ui.js}"></script>
+<script th:src="@{/js/easing.min.js}"></script>
+<script th:src="@{/js/hoverIntent.js}"></script>
+<script th:src="@{/js/superfish.min.js}"></script>
+<script th:src="@{/js/jquery.ajaxchimp.min.js}"></script>
+<script th:src="@{/js/jquery.magnific-popup.min.js}"></script>
+<script th:src="@{/js/jquery.nice-select.min.js}"></script>
+<script th:src="@{/js/owl.carousel.min.js}"></script>
+<script th:src="@{/js/isotope.pkgd.min.js}"></script>
+<script th:src="@{/js/mail-script.js}"></script>
+<script th:src="@{/js/main.js}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script type="text/javascript" th:src="@{/slick/slick.min.js}"></script>
+<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 </html>

@@ -183,11 +183,17 @@ table{
     height:35px;
     border:1px solid #e7e7e7;
     font-size:14px;
+    font-weight:700;
     line-height:35px;
-    text-align:center;	
+    text-align:center;
     font-family:'³ª´®¹Ù¸¥°íµñ',NanumBarunGothic,'Apple SD Gothic Neo',AppleGothic,'µ¸¿ò',Dotum,sans-serif;
 }
 
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
 .img-plus{
 	width:35px;
 	height:35px;
@@ -217,12 +223,16 @@ table{
     font-style:normal;
     margin-bottom:5px;
     float:right;	
+    border:none;
+    width:120px;
+    text-align:right;
+    background:#f4f4f4;
  }
  
 .product_amountPriceWon{
     font-size: 16px;
     font-weight:700;
-    margin: 2px 0 -1px 2px;
+    margin: 9px 0 0 2px;
     float:right;
     font-family:"Poppins", sans-serif;    
  }
@@ -239,6 +249,10 @@ table{
 }
 
 .ex6Price{
+
+}
+
+.product_amountPriceSum{
 	float:right;
  	color:#f7511a;
  	font-weight:700;
@@ -246,6 +260,10 @@ table{
     font-size: 35px;
     vertical-align: middle;	
     margin:0 2px 0 15px;
+    border:none;
+    width:130px;
+    text-align:right;
+    background:#f8f8f8;	
 }
 
 .ex6Hap{
