@@ -86,4 +86,15 @@ CREATE TABLE IF NOT EXISTS `recipeOrder` (
   FOREIGN KEY (`reciInputNum`) REFERENCES recipe (`reciNum`) ON DELETE CASCADE 
   );
   
-  
+CREATE TABLE IF NOT EXISTS `cart` (
+	`cartNum` int AUTO_INCREMENT, 
+    `productNum` int not null,
+	`productName` varchar(2048) not null,    
+	`productPrice` int not null,  
+    `buyer` varchar(2048) not null,
+    `buyCount` int not null,
+    `buyAmount` int not null,
+     PRIMARY KEY (`cartNum`),
+     FOREIGN KEY (`productName`) REFERENCES product (`productName`) on update cascade,
+     FOREIGN KEY (`buyer`) REFERENCES member (`id`)
+);

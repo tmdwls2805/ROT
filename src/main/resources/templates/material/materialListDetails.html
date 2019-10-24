@@ -69,6 +69,7 @@
 		
 			<div class="row">
 				
+				<form name="form" method="post" th:action="@{/materialListDetails/cart}">
 					<table class="productTable">
 						<tr>
 							<td rowspan="5" class="productTdImg"><img class="productImg" th:src="@{'/upload/product/'+${product.productImg}}" style="width:500px; height:500px; border-radius:0px;"></td>
@@ -108,7 +109,7 @@
 							<td class="productBlank"></td>
 							<td class="productEx3 productSaleCount" colspan="2">
 								<div>
-									<span class="productSaleName" th:text="${product.productName}"></span>
+									<span class="productSaleName"  th:text="${product.productName}"></span>
 								</div>
 							</td>
 						</tr>
@@ -122,7 +123,7 @@
 								</div>
 								<div class="amount">
 									<span class="inpbx">
-										<input type="number" name="cartCount" class="product_amount" value="1" onchange="ItmOp.changeOrdQty(this, 0, 1, 20);">
+										<input type="number" name="buyCount" class="product_amount" value="1" onchange="ItmOp.changeOrdQty(this, 0, 1, 20);">
 									</span>
 								</div>
 								<div class="amount">
@@ -211,7 +212,16 @@
 								</div>																														
 							</td>
 						</tr>
+						<tr>
+							<td>
+								<input type="text" name="productNum" th:value="${product.productNum}" hidden="hidden"/>
+								<input type="text" name="productName" th:value="${product.productName}" hidden="hidden"/>
+								<input type="text" name="productPrice" th:value="${product.productPrice}" hidden="hidden"/>
+								<input type="text" name="buyAmount" th:value="${product.productPrice}*3" hidden="hidden"/>
+							</td>
+						</tr>
 				</table>
+			</form>	
 			</div>
 		</div>
 	</section>

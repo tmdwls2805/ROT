@@ -19,6 +19,11 @@
 	<select id="getProductList" parameterType="Product" resultType="Product">
 		SELECT * FROM product where productCom ORDER BY productCom DESC limit 6;
 	</select>
+	
+	<insert id="addCart" parameterType="Cart">
+		INSERT INTO cart(productNum, productName, productPrice, buyer, buyCount, buyAmount)
+		VALUES(#{productNum}, #{productName}, #{productPrice}, #{buyer}, #{buyCount}, #{buyAmount});
+	</insert>
 </mapper>
 
 <!-- select concat('upload/recipe/',FileName)   -->

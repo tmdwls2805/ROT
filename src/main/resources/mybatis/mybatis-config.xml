@@ -14,6 +14,7 @@
 		<typeAlias type="com.hoseo.rot.recipe.Material" alias="Material"/>
 		<typeAlias type="com.hoseo.rot.recipe.Material2" alias="Material2"/>
 		<typeAlias type="com.hoseo.rot.admin.Product" alias="Product"/>
+		<typeAlias type="com.hoseo.rot.admin.Cart" alias="Cart"/>
 	</typeAliases>
 	
 	<mappers>

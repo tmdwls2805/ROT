@@ -25,4 +25,7 @@ public class AdminService {
 		return adminRepository.getProductList();
 	}
 
+	public boolean addCart(Cart c) {
+		return adminRepository.addCart(c)!=0;
+	}
 }
