@@ -155,4 +155,12 @@ public class MypageController {
 			model.put("member",memberService.getMypage(id));
 			return "mypage/contactHistory";
 	}
+	
+	@RequestMapping(value = "/Withdrawal", method = { RequestMethod.GET, RequestMethod.POST })	
+	public String Withdrawal(ModelMap model, HttpSession session) throws Exception{
+		Member m =  (Member) session.getAttribute("member");
+		String id = m.getId();
+			model.put("member",memberService.getMypage(id));
+			return "mypage/Withdrawal";
+	}
 }
