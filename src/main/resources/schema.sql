@@ -48,7 +48,6 @@ CREATE TABLE IF NOT EXISTS `member` (
   `reciTim` VARCHAR(2048),
   `reciLev` VARCHAR(2048),
    `reciTip` VARCHAR(2048),
-	`reciStatus` VARCHAR(2048),
     `reciLookUp` int default 0,
    `reciRegdate` DATETIME NOT NULL,
   PRIMARY KEY (`reciNum`),

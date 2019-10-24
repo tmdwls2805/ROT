@@ -22,7 +22,6 @@ public class Recipe {
 	private String reciTim;
 	private String reciLev;
 	private String reciTip;
-	private String reciStatus;
 	private int reciLookUp;
 	private Timestamp reciregdate;
 }

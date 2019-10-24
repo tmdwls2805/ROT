@@ -5,8 +5,8 @@
 <mapper	namespace="com.hoseo.rot.recipe.RecipeRepository">
 
 	<insert id="addRecipe" parameterType="Recipe">
-		INSERT INTO recipe(reciId, reciName, reciSub, reciIntro, reciMainPic, reciMainPicOriName, reciMainPicUrl, reciFind, reciSit, reciWay, reciMat, reciPer, reciTim, reciLev, reciTip, reciStatus, reciLookUp, reciRegdate)
-		VALUES (#{reciId}, #{reciName}, #{reciSub}, #{reciIntro}, #{reciMainPic}, #{reciMainPicOriName}, #{reciMainPicUrl}, #{reciFind}, #{reciSit}, #{reciWay}, #{reciMat}, #{reciPer}, #{reciTim}, #{reciLev}, #{reciTip}, #{reciStatus}, #{reciLookUp}, now());
+		INSERT INTO recipe(reciId, reciName, reciSub, reciIntro, reciMainPic, reciMainPicOriName, reciMainPicUrl, reciFind, reciSit, reciWay, reciMat, reciPer, reciTim, reciLev, reciTip, reciLookUp, reciRegdate)
+		VALUES (#{reciId}, #{reciName}, #{reciSub}, #{reciIntro}, #{reciMainPic}, #{reciMainPicOriName}, #{reciMainPicUrl}, #{reciFind}, #{reciSit}, #{reciWay}, #{reciMat}, #{reciPer}, #{reciTim}, #{reciLev}, #{reciTip}, #{reciLookUp}, now());
 	</insert>
 	
  	<insert id="addMaterial" parameterType="Material">
