@@ -106,7 +106,7 @@
 						<div style="text-align:center;">
 							<img id="uploadImg" th:src="@{/img/mk/profile.png}" style="width:232px; height:232px; border:1px solid #dadada;">
 						</div> 
-						<input type="file" name="file1" id="profileImg" maxlength="20" class="index-text-100" />
+						<input type="file" name="file1" id="profileImg" maxlength="20" class="index-text-100"/>
 					</div>
 				</div>	
 				<input type="submit" id="signUpBtn" name="signUpBtn" value="가입하기" class="index-button-100">
@@ -378,26 +378,6 @@ $('#phone').blur(function(){
 		
 	}else if (phoneJ.test($('#phone').val())){
 		$('#chkPhone').text('');
-		$("#signUpBtn").attr("disabled", false);
-	}
-});
-
-$('#zipcode').blur(function(){
-	if(empJ.test($('#zipcode').val())){
-		$("#signUpBtn").attr("disabled", true);
-	}else if (!zipcodeJ.test($('#zipcode').val())){
-		$("#signUpBtn").attr("disabled", true);
-	}else if (zipcodeJ.test($('#zipcode').val())){
-		$("#signUpBtn").attr("disabled", false);
-	}
-});
-
-$('#addr1').blur(function(){
-	if(empJ.test($('#addr1').val())){
-		$("#signUpBtn").attr("disabled", true);
-	}else if (!addrJ.test($('#addr1').val())){
-		$("#signUpBtn").attr("disabled", true);
-	}else if (addrJ.test($('#addr1').val())){
 		$("#signUpBtn").attr("disabled", false);
 	}
 });

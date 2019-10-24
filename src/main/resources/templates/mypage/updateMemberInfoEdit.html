@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<!-- Mobile Specific Meta -->
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!-- Favicon-->
+<link rel="shortcut icon" href="img/logo1.png">
+<!-- Author Meta -->
+<meta name="author" content="colorlib">
+<!-- Meta Description -->
+<meta name="description" content="">
+<!-- Meta Keyword -->
+<meta name="keywords" content="">
+<!-- meta character set -->
+<meta charset="UTF-8">
+<!-- Site Title -->
+<title>내일의 레시피</title>
+
+<!-- CSS ============================================= -->
+<link rel="stylesheet" href="../static/css/linearicons.css"
+	th:href="@{/css/linearicons.css}">
+<link rel="stylesheet" href="../static/css/font-awesome.min.css"
+	th:href="@{/css/font-awesome.min.css}">
+<link rel="stylesheet" href="../static/css/bootstrap.css"
+	th:href="@{/css/bootstrap.css}">
+<link rel="stylesheet" href="../static/css/magnific-popup.css"
+	th:href="@{/css/magnific-popup.css}">
+<link rel="stylesheet" href="../static/css/jquery-ui.css"
+	th:href="@{/css/jquery-ui.css}">
+<link rel="stylesheet" href="../static/css/nice-select.css"
+	th:href="@{/css/nice-select.css}">
+<link rel="stylesheet" href="../static/css/animate.min.css"
+	th:href="@{/css/animate.min.css}">
+<link rel="stylesheet" href="../static/css/owl.carousel.css"
+	th:href="@{/css/owl.carousel.css}">
+<link rel="stylesheet" href="../static/css/main.css"
+	th:href="@{/css/main.css}">
+<link rel="stylesheet" href="../static/css/mk/materialListDetails.css"
+	th:href="@{/css/mk/materialListDetails.css}">
+<link rel="stylesheet" href="../static/slick/slick.css"
+	th:href="@{/slick/slick.css}" />
+<link rel="stylesheet" href="../static/slick/slick-theme.css"
+	th:href="@{/slick/slick-theme.css}" />
+<link rel="stylesheet" href="../static/css/mk/mypage.css"
+	th:href="@{/css/mk/mypage.css}" />
+<link rel="stylesheet" href="../static/css/mk/updateMemberInfo.css?after"
+	th:href="@{/css/mk/updateMemberInfo.css?after}" />
+
+
+</head>
+		<body>	
+			<div th:replace="~{header :: header}"></div>
+		  
+			<!-- start banner Area -->
+			<section class="relative about-banner">	
+				<div class="overlay overlay-bg"></div>
+				<div class="container">				
+					<div class="row d-flex align-items-center justify-content-center">
+						<div class="about-content col-lg-12">
+							<h1 class="text-white">
+								마이페이지			
+							</h1>	
+						</div>	
+					</div>
+				</div>
+			</section>
+			<!-- End banner Area -->					  
+			
+			<!-- Start post-content Area -->
+			<section class="post-content-area single-post-area">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-8 posts-list">
+							<div class="single-post row">
+								<form method="post" name="form" th:action="@{/updateMemberInfoEdit/update}" style="width:100%">
+								<table class="mypage_table">
+									<tr>
+										<td class="table_title" colspan="4">
+											<h3>회원정보 수정</h3>
+										</td>
+									</tr>
+									<tr class="update_table">
+										<td class="table_left" rowspan="10"></td>
+										<td class="table_top" colspan="2"></td>
+										<td class="table_right" rowspan="10"></td>
+									</tr>		
+									<tr class="update_table2">
+										<td class="title_td">
+											<span class="profile_title">아이디</span>
+										</td>
+										<td class="content_td">
+											<span class="profile_content" th:text="${member.id}"></span>
+										</td>
+									</tr>
+									<tr class="update_table2">
+										<td class="title_td">
+											<span class="profile_title">이름</span>
+										</td>
+										<td class="content_td">
+											<span class="profile_content" th:text="${member.name}"></span>
+										</td>
+									</tr>	
+									<tr class="update_table2">
+										<td class="title_td">
+											<span class="profile_title">닉네임</span>
+										</td>
+										<td class="content_td">
+											<span class="profile_content" th:text="${member.nickname}"></span>
+										</td>
+									</tr>		
+									<tr class="update_table2">
+										<td class="title_td">
+											<span class="profile_title">이메일</span>
+										</td>
+										<td class="content_td">
+											<span class="profile_content" th:text="${member.email}"></span>
+										</td>
+									</tr>		
+									<tr class="update_table2">
+										<td class="title_td">
+											<span class="profile_title">휴대전화</span>
+										</td>
+										<td class="content_td">
+											<input type="text" id="phone" name="phone" th:value="${member.phone}" class="update_input" required />
+											<div class="error-next-box" id="chkPhone"></div> 
+										</td>
+									</tr>		
+									<tr class="update_table2">
+										<td class="title_td">
+											<span class="profile_title">주소</span>
+										</td>
+										<td class="content_td2">
+											<input type="text" name="zipcode" th:value="${member.zipcode}" id="sample6_postcode" class="update_input3" readonly required/>
+											<input type="button" class="index-button-32" onclick="sample6_execDaumPostcode()" value="우편번호 찾기">
+											<br>
+											<input type="text" name="addr1" th:value="${member.addr1}" id="sample6_address" class="update_input2" readonly required/><br>
+											<input type="text" name="addr2" th:value="${member.addr2}" id="addr2" class="update_input2" required/>
+											<div class="error-next-box" id="chkAddr"></div>
+										</td>
+									</tr>				
+									<tr class="update_table2">
+										<td class="title_td">
+											<span class="profile_title">가입일자</span>
+										</td>
+										<td class="content_td">
+											<span class="profile_content" th:text="${member.regDate}"></span>
+										</td>
+									</tr>			
+									<tr class="update_table3">
+										<td colspan="2" class="input_td">
+											<input type="button" class="updateButton2" onclick="goBack()" value="취소"/>
+											<input type="submit" class="updateButton3" value="수정하기"/>
+										</td>
+									</tr>														
+									<tr class="table_bottom">
+										<td colspan="2">
+										</td>
+									</tr>							
+								</table>
+								</form>
+							</div>
+						</div>
+						<div class="col-lg-4 sidebar-widgets">
+							<div class="widget-wrap2">
+									<div class="profileTop" style="background:url('img/mk/profile_back.jpg'); background-size:cover;">
+									</div>
+									<div class="profileBottom" th:if="${member.profileImgOriName != ''}">
+										<img class="sideProfileImg" th:src="@{'/upload/profile/'+${member.profileImg}}" alt="">
+										<h4 id="profileNickname" th:text="${member.nickname}"></h4>
+											<div class="updateProfileImg">
+												<img id="changeIcon" th:src="@{img/mk/pencil.png}">
+												<a class="changeProfileOImg" th:href="@{updateProfileImg}">프로필사진 변경하기</a>
+											</div>
+									</div>
+									<div class="profileBottom" th:if="${member.profileImgOriName == ''}">
+										<img class="sideProfileImg" th:src="@{img/mk/profile.png}" alt="">
+										<h4 id="profileNickname" th:text="${member.nickname}"></h4>
+											<div class="updateProfileImg">
+												<img id="changeIcon" th:src="@{img/mk/pencil.png}">
+												<a class="changeProfileOImg" th:href="@{updateProfileImg}">프로필사진 변경하기</a>
+											</div>
+									</div>									
+								</div>
+							<div class="widget-wrap">	
+								<div class="single-sidebar-widget post-category-widget">
+									<ul class="cat-list">
+										<li>
+											<a th:href="@{/recipeNote}" class="d-flex justify-content-between">
+												<p>레시피 노트</p>
+											</a>
+										</li>
+										<li>
+											<a th:href="@{/writeBoard}" class="d-flex justify-content-between">
+												<p>내가 쓴 게시물</p>
+											</a>
+										</li>
+										<li>
+											<a th:href="@{/contactHistory}" class="d-flex justify-content-between">
+												<p>문의내역</p>
+											</a>
+										</li>
+										<li>
+											<a th:href="@{/orderInquiry}" class="d-flex justify-content-between">
+												<p>주문조회</p>
+											</a>
+										</li>
+										<li>
+											<a th:href="@{/cart}" class="d-flex justify-content-between">
+												<p>장바구니</p>
+											</a>
+										</li>
+										<li>
+											<a th:href="@{/updateMemberInfo}" class="d-flex justify-content-between">
+												<p>회원정보 수정</p>
+											</a>
+										</li>															
+									</ul>
+								</div>	
+								
+							</div>
+						</div>
+					</div>
+				</div>	
+			</section>
+			<!-- End post-content Area -->
+			
+			<div th:replace="~{footer :: footer}"></div>
+			
+		</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>	
+<script>
+var nicknameJ = /^[a-zA-z0-9\s가-힣]{2,}$/;
+var zipcodeJ = /^[0-9]{1,10}$/;
+var phoneJ = /^01([0|1|6|7|8|9]?)?([0-9]{3,4})?([0-9]{4})$/;
+var emailJ = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
+var addrJ = /^[a-zA-z0-9\sㄱ-ㅎㅏ-ㅣ가-힣~!@#$%^&*()_+|<>?:{}]{1,40}$/;
+var empJ = /^[]{0}$/
+
+$('#phone').blur(function(){
+	if(empJ.test($('#phone').val())){
+		$('#chkPhone').text('필수 정보입니다.');
+		$('#chkPhone').css('color', 'red');
+		$('#chkPhone').css('font-size', '13px');
+		$('#chkPhone').css('margin-left', '10px');
+		$("#signUpBtn").attr("disabled", true);
+		
+	}else if (!phoneJ.test($('#phone').val())){
+		$('#chkPhone').text('휴대폰번호를 확인해주세요.');
+		$('#chkPhone').css('font-size', '13px');
+		$('#chkPhone').css('margin-left', '10px');
+		$('#chkPhone').css('color', 'red');
+		$("#signUpBtn").attr("disabled", true);
+		
+	}else if (phoneJ.test($('#phone').val())){
+		$('#chkPhone').text('');
+		$("#signUpBtn").attr("disabled", false);
+	}
+});
+
+$('#addr2').blur(function(){
+	if(empJ.test($('#addr2').val())){
+		$('#chkAddr').text('필수 정보입니다.');
+		$('#chkAddr').css('font-size', '13px');
+		$('#chkAddr').css('margin-left', '10px');
+		$('#chkAddr').css('color', 'red');
+		$("#signUpBtn").attr("disabled", true);
+		
+	}else if (!addrJ.test($('#addr2').val())){
+		$('#chkAddr').text('주소를 확인해주세요.');
+		$('#chkAddr').css('font-size', '13px');
+		$('#chkAddr').css('margin-left', '10px');
+		$('#chkAddr').css('color', 'red');
+		$("#signUpBtn").attr("disabled", true);
+		
+	}else if (addrJ.test($('#addr2').val())){
+		$('#chkAddr').text('');
+		$("#signUpBtn").attr("disabled", false);
+	}
+});
+</script>	
+<script>
+	function goBack() {
+		window.history.back();
+	}
+</script>
+<script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
+<script>
+    function sample6_execDaumPostcode() {
+        new daum.Postcode({
+            oncomplete: function(data) {
+                // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
+
+                // 각 주소의 노출 규칙에 따라 주소를 조합한다.
+                // 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
+                var fullAddr = ''; // 최종 주소 변수
+                var extraAddr = ''; // 조합형 주소 변수
+
+                // 사용자가 선택한 주소 타입에 따라 해당 주소 값을 가져온다.
+                if (data.userSelectedType === 'R') { // 사용자가 도로명 주소를 선택했을 경우
+                    fullAddr = data.roadAddress;
+
+                } else { // 사용자가 지번 주소를 선택했을 경우(J)
+                    fullAddr = data.jibunAddress;
+                }
+
+                // 사용자가 선택한 주소가 도로명 타입일때 조합한다.
+                if(data.userSelectedType === 'R'){
+                    //법정동명이 있을 경우 추가한다.
+                    if(data.bname !== ''){
+                        extraAddr += data.bname;
+                    }
+                    // 건물명이 있을 경우 추가한다.
+                    if(data.buildingName !== ''){
+                        extraAddr += (extraAddr !== '' ? ', ' + data.buildingName : data.buildingName);
+                    }
+                    // 조합형주소의 유무에 따라 양쪽에 괄호를 추가하여 최종 주소를 만든다.
+                    fullAddr += (extraAddr !== '' ? ' ('+ extraAddr +')' : '');
+                }
+
+                // 우편번호와 주소 정보를 해당 필드에 넣는다.
+                document.getElementById('sample6_postcode').value = data.zonecode; //5자리 새우편번호 사용
+                document.getElementById('sample6_address').value = fullAddr;
+
+                // 커서를 상세주소 필드로 이동한다.
+                document.getElementById('addr2').focus();
+            }
+        }).open();
+        
+    }
+</script>		
+		<script src="../static/js/vendor/jquery-2.2.4.min.js"
+	th:src="@{/js/vendor/jquery-2.2.4.min.js}"></script>
+<script src="../static/js/popper.min.js" th:src="@{/js/popper.min.js}"></script>
+<script src="../static/js/vendor/bootstrap.min.js"
+	th:src="@{/js/vendor/bootstrap.min.js}"></script>
+<script src="../static/js/jquery-ui.js" th:src="@{/js/jquery-ui.js}"></script>
+<script src="../static/js/easing.min.js" th:src="@{/js/easing.min.js}"></script>
+<script src="../static/js/hoverIntent.js" th:src="@{/js/hoverIntent.js}"></script>
+<script src="../static/js/superfish.min.js"
+	th:src="@{/js/superfish.min.js}"></script>
+<script src="../static/js/jquery.ajaxchimp.min.js"
+	th:src="@{/js/jquery.ajaxchimp.min.js}"></script>
+<script src="../static/js/jquery.magnific-popup.min.js"
+	th:src="@{/js/jquery.magnific-popup.min.js}"></script>
+<script src="../static/js/jquery.nice-select.min.js"
+	th:src="@{/js/jquery.nice-select.min.js}"></script>
+<script src="../static/js/owl.carousel.min.js"
+	th:src="@{/js/owl.carousel.min.js}"></script>
+<script src="../static/js/isotope.pkgd.min.js"
+	th:src="@{/js/isotope.pkgd.min.js}"></script>
+<script src="../static/js/mail-script.js" th:src="@{/js/mail-script.js}"></script>
+<script src="../static/js/main.js" th:src="@{/js/main.js}"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="../static/slick/slick.min.js"
+	th:src="@{/slick/slick.min.js}"></script>
+<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+</html>

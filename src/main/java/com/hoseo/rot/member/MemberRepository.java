@@ -22,7 +22,15 @@ public interface MemberRepository {
     
     public Member getUser(Member m); // 회원가입 완료한 회원정보 불러오기
     
+    public Member getMypage(String id);
+    
     public Member findId(Member m); // 아이디 찾기
+    
 	public List<Member> getMemberTest();
+	
+	public int updateUser(Member m);
+	
+	public int updateUserProfileImg(Member m);
+	
     
 }

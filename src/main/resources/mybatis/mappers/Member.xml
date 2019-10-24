@@ -46,6 +46,10 @@
 		SELECT * FROM member WHERE id = #{id};
 	</select>
 	
+	<select id="getMypage" parameterType="Member" resultType="Member">
+		SELECT * FROM member WHERE id = #{id};
+	</select>
+	
 	<select id="findId" parameterType="Member" resultType="Member">
 		SELECT id, name FROM member WHERE name = #{name} and email = #{email};
 	</select>
@@ -54,6 +58,26 @@
 		SELECT * FROM member;
 	</select>
 	
+	<update id="updateUser" parameterType="Member">
+		UPDATE member
+		SET
+		phone = #{phone},
+		zipcode = #{zipcode},
+		addr1 = #{addr1},
+		addr2 = #{addr2}
+		WHERE 
+		id = #{id};
+	</update>
+	
+	<update id="updateUserProfileImg" parameterType="Member">
+		UPDATE member
+		SET
+		profileImg = #{profileImg},
+		profileImgOriName = #{profileImgOriName},
+		profileImgUrl = #{profileImgUrl}
+		WHERE
+		id = #{id};
+	</update>
 
 
 </mapper>

@@ -42,37 +42,10 @@
 	th:href="@{/slick/slick.css}" />
 <link rel="stylesheet" href="../static/slick/slick-theme.css"
 	th:href="@{/slick/slick-theme.css}" />
-<link rel="stylesheet" href="../static/css/mk/mypage.css?after"
-	th:href="@{/css/mk/mypage.css?after}" />
-<script src="../static/js/vendor/jquery-2.2.4.min.js"
-	th:src="@{/js/vendor/jquery-2.2.4.min.js}"></script>
-<script src="../static/js/popper.min.js" th:src="@{/js/popper.min.js}"></script>
-<script src="../static/js/vendor/bootstrap.min.js"
-	th:src="@{/js/vendor/bootstrap.min.js}"></script>
-<script src="../static/js/jquery-ui.js" th:src="@{/js/jquery-ui.js}"></script>
-<script src="../static/js/easing.min.js" th:src="@{/js/easing.min.js}"></script>
-<script src="../static/js/hoverIntent.js" th:src="@{/js/hoverIntent.js}"></script>
-<script src="../static/js/superfish.min.js"
-	th:src="@{/js/superfish.min.js}"></script>
-<script src="../static/js/jquery.ajaxchimp.min.js"
-	th:src="@{/js/jquery.ajaxchimp.min.js}"></script>
-<script src="../static/js/jquery.magnific-popup.min.js"
-	th:src="@{/js/jquery.magnific-popup.min.js}"></script>
-<script src="../static/js/jquery.nice-select.min.js"
-	th:src="@{/js/jquery.nice-select.min.js}"></script>
-<script src="../static/js/owl.carousel.min.js"
-	th:src="@{/js/owl.carousel.min.js}"></script>
-<script src="../static/js/isotope.pkgd.min.js"
-	th:src="@{/js/isotope.pkgd.min.js}"></script>
-<script src="../static/js/mail-script.js" th:src="@{/js/mail-script.js}"></script>
-<script src="../static/js/main.js" th:src="@{/js/main.js}"></script>
-<script
-	src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="../static/slick/slick.min.js"
-	th:src="@{/slick/slick.min.js}"></script>
-<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-
+<link rel="stylesheet" href="../static/css/mk/mypage.css"
+	th:href="@{/css/mk/mypage.css}" />
+<link rel="stylesheet" href="../static/css/mk/updateProfileImg.css"
+	th:href="@{/css/mk/updateProfileImg.css}" />	
 </head>
 		<body>	
 			<div th:replace="~{header :: header}"></div>
@@ -98,39 +71,63 @@
 					<div class="row">
 						<div class="col-lg-8 posts-list">
 							<div class="single-post row">
-								<table class="mypage_table" border="1" >
+								<form name="form" method="post" th:action="@{/updateProfileImg/update}" enctype="multipart/form-data">
+								<table class="mypage_table">
 									<tr>
-										<td class="table_title">
+										<td class="table_title" colspan="3">
 											<h3>프로필사진 변경</h3>
 										</td>
 									</tr>
-									<tr class="table_content">
-										<td>
+									<tr>
+										<td class="table_left" rowspan="4"></td>
+										<td class="table_top"></td>
+										<td class="table_right" rowspan="4"></td>
+									</tr>
+									<tr>
+										<td class="updateProfile_td">
 											<div>
-												<img class="contentProfileImg" src="img/mk/profile.png" alt="">
-											</div>
-											<div class="changeDiv">
-												<img id="changeIcon" th:src="@{img/mk/pencil.png}">
-												<a class="changeProfileOImg" href="#">프로필사진 변경하기</a>
+												<img class="contentProfileImg" id="uploadImg" src="img/mk/profile.png" alt="">
 											</div>
 										</td>
-									</tr>									
+									</tr>	
+									<tr>
+										<td class="updateProfile_td">
+											<input type="file" name="file1" id="profileImg"/>
+										</td>
+									</tr>			
+									<tr>
+										<td class="updateProfile_td2">
+											<input type="button" class="updateButton2" onclick="goBack()" value="취소"/>
+											<input type="submit" class="updateButton3" value="변경하기"/>
+										</td>
+									</tr>
+									<tr>
+										<td class="table_bottom" colspan="3"></td>
+									</tr>					
 								</table>
+								</form>
 							</div>
 						</div>
-						<div class="col-lg-4 sidebar-widgets">
+												<div class="col-lg-4 sidebar-widgets">
 							<div class="widget-wrap2">
 									<div class="profileTop" style="background:url('img/mk/profile_back.jpg'); background-size:cover;">
 									</div>
-									<div class="profileBottom">
-										<div></div>
-										<img class="sideProfileImg" src="img/mk/profile.png" alt=""><br>
-										
-										<br>
-										<h4>사용자</h4>
+									<div class="profileBottom" th:if="${member.profileImgOriName != ''}">
+										<img class="sideProfileImg" th:src="@{'/upload/profile/'+${member.profileImg}}" alt="">
+										<h4 id="profileNickname" th:text="${member.nickname}"></h4>
+											<div class="updateProfileImg">
 												<img id="changeIcon" th:src="@{img/mk/pencil.png}">
 												<a class="changeProfileOImg" th:href="@{updateProfileImg}">프로필사진 변경하기</a>
+											</div>
 									</div>
+									<div class="profileBottom" th:if="${member.profileImgOriName == ''}">
+										<img class="sideProfileImg" th:src="@{img/mk/profile.png}" alt="">
+										<h4 id="profileNickname" th:text="${member.nickname}"></h4>
+											<div class="updateProfileImg">
+												<img id="changeIcon" th:src="@{img/mk/pencil.png}">
+												<a class="changeProfileOImg" th:href="@{updateProfileImg}">프로필사진 변경하기</a>
+											</div>
+									</div>										
 								</div>
 							<div class="widget-wrap">	
 								<div class="single-sidebar-widget post-category-widget">
@@ -162,14 +159,13 @@
 										</li>
 										<li>
 											<a th:href="@{/updateMemberInfo}" class="d-flex justify-content-between">
-												<p>회원정보수정</p>
+												<p>회원정보 수정</p>
 											</a>
 										</li>															
 									</ul>
 								</div>	
-								
 							</div>
-						</div>
+						</div>	
 					</div>
 				</div>	
 			</section>
@@ -177,4 +173,53 @@
 			
 			<div th:replace="~{footer :: footer}"></div>
 		</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>			
+<script>
+    function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function(e) {
+                $('#uploadImg').attr('src', e.target.result);
+            }
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+
+    $("#profileImg").change(function() {
+        readURL(this);
+    });
+</script>	
+<script>
+	function goBack() {
+		window.history.back();
+	}
+</script>		
+<script src="../static/js/vendor/jquery-2.2.4.min.js"
+	th:src="@{/js/vendor/jquery-2.2.4.min.js}"></script>
+<script src="../static/js/popper.min.js" th:src="@{/js/popper.min.js}"></script>
+<script src="../static/js/vendor/bootstrap.min.js"
+	th:src="@{/js/vendor/bootstrap.min.js}"></script>
+<script src="../static/js/jquery-ui.js" th:src="@{/js/jquery-ui.js}"></script>
+<script src="../static/js/easing.min.js" th:src="@{/js/easing.min.js}"></script>
+<script src="../static/js/hoverIntent.js" th:src="@{/js/hoverIntent.js}"></script>
+<script src="../static/js/superfish.min.js"
+	th:src="@{/js/superfish.min.js}"></script>
+<script src="../static/js/jquery.ajaxchimp.min.js"
+	th:src="@{/js/jquery.ajaxchimp.min.js}"></script>
+<script src="../static/js/jquery.magnific-popup.min.js"
+	th:src="@{/js/jquery.magnific-popup.min.js}"></script>
+<script src="../static/js/jquery.nice-select.min.js"
+	th:src="@{/js/jquery.nice-select.min.js}"></script>
+<script src="../static/js/owl.carousel.min.js"
+	th:src="@{/js/owl.carousel.min.js}"></script>
+<script src="../static/js/isotope.pkgd.min.js"
+	th:src="@{/js/isotope.pkgd.min.js}"></script>
+<script src="../static/js/mail-script.js" th:src="@{/js/mail-script.js}"></script>
+<script src="../static/js/main.js" th:src="@{/js/main.js}"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="../static/slick/slick.min.js"
+	th:src="@{/slick/slick.min.js}"></script>
+<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>		
 </html>

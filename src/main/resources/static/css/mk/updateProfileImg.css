@@ -1,0 +1,87 @@
+.contentProfileImg{
+	width:350px;
+	height:350px;
+	border-radius:50%;
+}
+
+.mypage_table{
+	border: 1px solid #e1e1e1;
+}
+
+form{
+	width:100%;
+}
+
+.table_left{
+	width:5%;
+}
+
+.table_right{
+	width:5%;
+}
+
+.table_top{
+	width:90%;
+	height:30px;	
+}
+
+.table_bottom{
+	height:30px;	
+}
+
+.updateButton2{
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  outline: 0;
+  background: #d4d4d4;
+  font-size: 14px;
+  width:250px;
+  border: 0;
+  padding: 15px;
+  color: #FFFFFF;
+  font-size: 20px;
+  font-weight:600;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+}
+
+.updateButton2:hover{
+  background: #c1c1c1;
+}  
+
+
+.updateButton3{
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  outline: 0;
+  background: #f42f2c;
+  font-size: 14px;
+  width:250px;
+  border: 0;
+  padding: 15px;
+  color: #FFFFFF;
+  font-size: 20px;
+  font-weight:600;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+}
+
+.updateButton3:hover{
+  background: #e62e2b;
+}  
+
+.updateProfile_td2{
+	padding: 40px 0 10px 0;	
+	text-align:center;
+}
+
+.updateProfile_td{	
+	padding: 10px 0 10px 0;	
+	text-align:center;
+}
+
+input[type=file]{
+	border:1px solid #ccc;
+}

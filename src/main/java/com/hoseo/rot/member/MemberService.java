@@ -91,15 +91,26 @@ public class MemberService{
     public Member getUser(Member m) {
     	return memberRepository.getUser(m);
     }
+    
+    public Member getMypage(String id) {
+    	return memberRepository.getMypage(id);
+    }
 	
 	/* 아이디 찾기 */
     public Member findId(Member m) {
     	return memberRepository.findId(m);
     }
     
-    
 	public List<Member> getMemberTest() {
 		return memberRepository.getMemberTest();
 	}
+	
+    public int updateUser(Member member) {
+    	return memberRepository.updateUser(member);
+    }
+    
+    public int updateUserProfileImg(Member member) {
+    	return memberRepository.updateUserProfileImg(member);
+    }
 }
 
