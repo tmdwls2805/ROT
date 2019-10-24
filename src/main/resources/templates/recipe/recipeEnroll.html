@@ -18,53 +18,17 @@
 <title>내일의 레시피</title>
 
 <!-- CSS ============================================= -->
-<link rel="stylesheet" href="../static/css/linearicons.css"
-	th:href="@{/css/linearicons.css}">
-<link rel="stylesheet" href="../static/css/font-awesome.min.css"
-	th:href="@{/css/font-awesome.min.css}">
-<link rel="stylesheet" href="../static/css/bootstrap.css"
-	th:href="@{/css/bootstrap.css}">
-<link rel="stylesheet" href="../static/css/magnific-popup.css"
-	th:href="@{/css/magnific-popup.css}">
-<link rel="stylesheet" href="../static/css/jquery-ui.css"
-	th:href="@{/css/jquery-ui.css}">
-<link rel="stylesheet" href="../static/css/nice-select.css"
-	th:href="@{/css/nice-select.css}">
-<link rel="stylesheet" href="../static/css/animate.min.css"
-	th:href="@{/css/animate.min.css}">
-<link rel="stylesheet" href="../static/css/owl.carousel.css"
-	th:href="@{/css/owl.carousel.css}">
-<link rel="stylesheet" href="../static/css/main-select.css"
-	th:href="@{/css/main-select.css}">
-<link rel="stylesheet" href="../static/css/mk/contact.css"
-	th:href="@{/css/mk/contact.css}">
-<script src="../static/js/vendor/jquery-2.2.4.min.js"
-	th:src="@{/js/vendor/jquery-2.2.4.min.js}"></script>
-<script src="../static/js/popper.min.js" th:src="@{/js/popper.min.js}"></script>
-<script src="../static/js/vendor/bootstrap.min.js"
-	th:src="@{/js/vendor/bootstrap.min.js}"></script>
-<script src="../static/js/jquery-ui.js" th:src="@{/js/jquery-ui.js}"></script>
-<script src="../static/js/easing.min.js" th:src="@{/js/easing.min.js}"></script>
-<script src="../static/js/hoverIntent.js" th:src="@{/js/hoverIntent.js}"></script>
-<script src="../static/js/superfish.min.js"
-	th:src="@{/js/superfish.min.js}"></script>
-<script src="../static/js/jquery.ajaxchimp.min.js"
-	th:src="@{/js/jquery.ajaxchimp.min.js}"></script>
-<script src="../static/js/jquery.magnific-popup.min.js"
-	th:src="@{/js/jquery.magnific-popup.min.js}"></script>
-<script src="../static/js/jquery.nice-select.min.js"
-	th:src="@{/js/jquery.nice-select.min.js}"></script>
-<script src="../static/js/owl.carousel.min.js"
-	th:src="@{/js/owl.carousel.min.js}"></script>
-<script src="../static/js/isotope.pkgd.min.js"
-	th:src="@{/js/isotope.pkgd.min.js}"></script>
-<script src="../static/js/mail-script.js" th:src="@{/js/mail-script.js}"></script>
-<script src="../static/js/main.js" th:src="@{/js/main.js}"></script>
-<link rel="stylesheet" href="../static/css/mk/recipeEnroll.css?after"
-	th:href="@{/css/mk/recipeEnroll.css?after}">
-<script
-	src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
+<link rel="stylesheet" th:href="@{/css/linearicons.css}">
+<link rel="stylesheet" th:href="@{/css/font-awesome.min.css}">
+<link rel="stylesheet" th:href="@{/css/bootstrap.css}">
+<link rel="stylesheet" th:href="@{/css/magnific-popup.css}">
+<link rel="stylesheet" th:href="@{/css/jquery-ui.css}">
+<link rel="stylesheet" th:href="@{/css/nice-select.css}">
+<link rel="stylesheet" th:href="@{/css/animate.min.css}">
+<link rel="stylesheet" th:href="@{/css/owl.carousel.css}">
+<link rel="stylesheet" th:href="@{/css/main-select.css}">
+<link rel="stylesheet" th:href="@{/css/mk/contact.css}">
+<link rel="stylesheet" th:href="@{/css/mk/recipeEnroll.css?after}">	
 </head>
 <body>
 	<div th:replace="~{header :: header}"></div>
@@ -224,26 +188,12 @@
 									<button class="groupDeleteButton" type="button">묶음삭제</button>
 								</td>
 								<td class="matName-sit2">
-									<ul class="input-mat">
+									<ul id="add1List" class="input-mat">
 										<li>
 											<div class="input-mat2">
 												<input type="text" class="input-mat2Find" name="mat2Find" placeholder="예) 미역" /> 
 												<input type="text" class="input-mat2Vol" name="mat2Vol" placeholder="예) 100g" />
-												<button class="deleteButton" type="button" onclick=""><img class="deleteImg" th:src=@{/img/mk/delete.png}></button>
-											</div>										
-										</li>
-										<li>
-											<div class="input-mat2">
-												<input type="text" class="input-mat2Find" name="mat2Find" placeholder="예) 미역" /> 
-												<input type="text" class="input-mat2Vol" name="mat2Vol" placeholder="예) 100g" />
-												<button class="deleteButton" type="button" onclick=""><img class="deleteImg" th:src=@{/img/mk/delete.png}></button>
-											</div>										
-										</li>
-										<li>
-											<div class="input-mat2">
-												<input type="text" class="input-mat2Find" name="mat2Find" placeholder="예) 미역" /> 
-												<input type="text" class="input-mat2Vol" name="mat2Vol" placeholder="예) 100g" />
-												<button class="deleteButton" type="button" onclick=""><img class="deleteImg" th:src=@{/img/mk/delete.png}></button>
+												<button class="deleteButton" type="button" onclick="deleteBox(this)"><img class="deleteImg" th:src=@{/img/mk/delete.png}></button>
 											</div>										
 										</li>																				
 									</ul>
@@ -252,7 +202,7 @@
 							<tr>
 								<td></td>
 								<td class="addButtonTd">
-									<button type="button" class="addButton" onclick=""><img class="addImg" th:src="@{/img/mk/add.png}">추가</button>
+									<button id="add1" type="button" class="addButton"><img class="addImg" th:src="@{/img/mk/add.png}">추가</button>
 								</td>
 							</tr>							
 						</table>
@@ -371,8 +321,7 @@
 					</tr>	
 					<tr>
 						<td>
-							<input class="recipe-submit2" type="button" value="저장"/>&nbsp;&nbsp;
-							<input class="recipe-submit" type="submit" value="저장후 등록하기"/>&nbsp;&nbsp;
+							<input class="recipe-submit" type="submit" value="등록하기"/>&nbsp;&nbsp;
 							<input class="recipe-button" type="button" value="취소" onclick="goBack()" />
 						</td>
 					</tr>
@@ -383,49 +332,55 @@
 			</form>
 		</div>
 	</section>
-	
-	<script>
-	function goBack() {
-		window.history.back();
-	}
-	</script>
-	
-<script>
-    function readURL(input) {
-        if (input.files && input.files[0]) {
-            var reader = new FileReader();
-            reader.onload = function(e) {
-                $('#reciMainPicImg').attr('src', e.target.result);
-            }
-            reader.readAsDataURL(input.files[0]);
-        }
-    }
-
-    $("#reciMainPic").change(function() {
-        readURL(this);
-    });
-</script>
-
-<script>
-    function readURL2(input) {
-        if (input.files && input.files[0]) {
-            var reader = new FileReader();
-            reader.onload = function(e) {
-                $('#uploadPic').attr('src', e.target.result);
-            }
-            reader.readAsDataURL(input.files[0]);
-        }
-    }
-
-    $("#orderPic").change(function() {
-        readURL2(this);
-    });
-</script>
-	
-	<!-- End contact-page Area -->
-	<!-- End home-about Area -->
-	<!-- start footer Area -->
-	<div th:replace="~{footer :: footer}"></div>
-	<!-- End footer Area -->
+<div th:replace="~{footer :: footer}"></div>
 </body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script type="text/javascript">
+function goBack() {
+	window.history.back();
+}
+
+function readURL(input) {
+	if (input.files && input.files[0]) {
+		var reader = new FileReader();
+		reader.onload = function(e) {
+			$('#reciMainPicImg').attr('src', e.target.result);
+		}
+		reader.readAsDataURL(input.files[0]);
+	}
+}
+
+$("#reciMainPic").change(function() {
+	readURL(this);
+});
+
+function readURL2(input) {
+	if (input.files && input.files[0]) {
+		var reader = new FileReader();
+		reader.onload = function(e) {
+		$('#uploadPic').attr('src', e.target.result);
+		}
+		reader.readAsDataURL(input.files[0]);
+		}
+	}
+
+$("#orderPic").change(function() {
+	readURL2(this);
+});
+</script>
+<script th:src="@{/js/mk/recipeEnroll.js}"></script>		
+<script th:src="@{/js/vendor/jquery-2.2.4.min.js}"></script>
+<script th:src="@{/js/popper.min.js}"></script>
+<script th:src="@{/js/vendor/bootstrap.min.js}"></script>
+<script th:src="@{/js/jquery-ui.js}"></script>
+<script th:src="@{/js/easing.min.js}"></script>
+<script th:src="@{/js/hoverIntent.js}"></script>
+<script th:src="@{/js/superfish.min.js}"></script>
+<script th:src="@{/js/jquery.ajaxchimp.min.js}"></script>
+<script th:src="@{/js/jquery.magnific-popup.min.js}"></script>
+<script th:src="@{/js/jquery.nice-select.min.js}"></script>
+<script th:src="@{/js/owl.carousel.min.js}"></script>
+<script th:src="@{/js/isotope.pkgd.min.js}"></script>
+<script th:src="@{/js/mail-script.js}"></script>
+<script th:src="@{/js/main.js}"></script>
 </html>
