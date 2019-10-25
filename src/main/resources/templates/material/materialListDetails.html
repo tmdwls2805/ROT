@@ -30,6 +30,7 @@
 <link rel="stylesheet" th:href="@{/slick/slick.css}"/>
 <link rel="stylesheet" th:href="@{/slick/slick-theme.css}" />
 <link rel="stylesheet" th:href="@{/css/mk/materialListDetails.css?after}">
+<link rel="stylesheet" th:href="@{/css/mk/test.css}">
 
 </head>
 <body>
@@ -152,9 +153,19 @@
 							<td></td>
 							<td></td>
 							<td class="productEx7" colspan="2">
+							<div th:if="${session.member == null}">
 								<div class="ex7Cart">
-									<input class="product_cart" onclick="msg()" id="cart_add" type="submit" value="장바구니" />
+									<input class="product_cart" id="cart_add" type="submit" value="장바구니" />
 								</div>
+							</div>
+							<div th:if="${session.member != null}">
+									<div class='appoint-holiday-list'>
+										<div class="ex7Cart">
+											<!-- <input class="product_cart" id="cart_add2" type="submit" value="장바구니" /> -->
+											<input class="product_cart" id="cart_add2" type="button" value="장바구니" />
+										</div>
+									</div>
+							</div>	
 								<div class="ex7Buy">
 									<input class="product_buy" type="button" value="바로구매" />	
 								</div>	
@@ -214,24 +225,13 @@
 	<!-- End footer Area -->
 </body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<!-- <script>
-function msg(){
-	var msg = '로그인을 해야 이용가능합니다.';
-	var returnUrl = '/loginForm';
-	alert(msg);
-	document.location.href=returnUrl;
-};
-</script> -->
+
 <script>
+var msg = '로그인을 해야 이용가능합니다.';
 $('#cart_add').on('click', function(){
-	var msg = '로그인을 해야 이용가능합니다.';
 	alert(msg);
 });
-</script>
 
-
-
-<script>
 function my_calc(item, item_count, item_sum, item_sum2){ 
     if(item_count.value==0){    
     	alert('개수를 정확히 적어주세요.');
@@ -272,6 +272,7 @@ function minus(){
   }  
 }
 </script>
+<script th:src="@{/js/mk/test.js}"></script>
 <script th:src="@{/js/vendor/jquery-2.2.4.min.js}"></script>
 <script th:src="@{/js/popper.min.js}"></script>
 <script th:src="@{/js/vendor/bootstrap.min.js}"></script>

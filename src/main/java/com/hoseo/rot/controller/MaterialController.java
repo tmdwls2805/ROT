@@ -39,7 +39,6 @@ public class MaterialController {
 		model.put("member", adminService.addCart(c));
 		return "redirect:/materialListDetails?productNum="+ c.getProductNum();
 		}else{
-			model.addAttribute("msg");        // script를 이용한 controller에서 alert띄우기
 			return "redirect:/loginForm";
 		}
 	}
