@@ -34,9 +34,14 @@ public class MaterialController {
 	@PostMapping("/materialListDetails/cart")
 	public String addCart(Cart c, ModelMap model, HttpSession session) {
 		Member m =  (Member) session.getAttribute("member");
+		if(m != null) {
 		c.setBuyer(m.getId());
 		model.put("member", adminService.addCart(c));
-		return "redirect:/materialList";
+		return "redirect:/materialListDetails?productNum="+ c.getProductNum();
+		}else{
+			model.addAttribute("msg");        // script를 이용한 controller에서 alert띄우기
+			return "redirect:/loginForm";
+		}
 	}
 	
 }

@@ -153,10 +153,10 @@
 							<td></td>
 							<td class="productEx7" colspan="2">
 								<div class="ex7Cart">
-									<input class="product_cart" type="submit" value="장바구니" />
+									<input class="product_cart" onclick="msg()" id="cart_add" type="submit" value="장바구니" />
 								</div>
 								<div class="ex7Buy">
-									<input class="product_buy" type="submit" value="바로구매" />	
+									<input class="product_buy" type="button" value="바로구매" />	
 								</div>	
 							</td>
 						</tr>
@@ -213,6 +213,24 @@
 	<div th:replace="~{footer :: footer}"></div>
 	<!-- End footer Area -->
 </body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<!-- <script>
+function msg(){
+	var msg = '로그인을 해야 이용가능합니다.';
+	var returnUrl = '/loginForm';
+	alert(msg);
+	document.location.href=returnUrl;
+};
+</script> -->
+<script>
+$('#cart_add').on('click', function(){
+	var msg = '로그인을 해야 이용가능합니다.';
+	alert(msg);
+});
+</script>
+
+
+
 <script>
 function my_calc(item, item_count, item_sum, item_sum2){ 
     if(item_count.value==0){    
