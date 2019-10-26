@@ -1,0 +1,18 @@
+.PopUp{
+	position: absolute;
+    margin-left: -240px;
+    top: 628.2px;
+    z-index: 999000;
+    left: 50%;
+    text-align: center;	
+}
+
+.PopArea{
+	max-width: 760px;
+    position: relative;
+    text-align: left;
+}
+
+.Pop_title{
+	
+}

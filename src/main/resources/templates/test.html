@@ -44,6 +44,42 @@
 	th:href="@{/slick/slick-theme.css}" />
 <link rel="stylesheet" href="../static/css/mk/slider.css"
 	th:href="@{/css/mk/slider.css}" />
+<link rel="stylesheet" th:href="@{/css/mk/popUp.css}" />	
+
+</head>
+<body>
+	<div th:replace="~{header :: header}"></div>
+	<!-- #header -->
+	<section class="relative about-banner">
+		<div class="overlay overlay-bg"></div>
+		<div class="container">
+			<div class="row d-flex align-items-center justify-content-center">
+				<div class="about-content col-lg-12">
+					<h1 class="text-white">테스트</h1>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="menu-area section-gap" id="menu">
+		<div class="container">
+			<!-- Content Row -->
+			<div class="row">
+			
+				<div class="PopUp">
+					<div class="PopArea">wd</div>
+				</div>
+				
+				
+				
+				
+			</div>
+			<!-- /.row -->
+
+		</div>
+	</section>
+	<div th:replace="~{footer :: footer}"></div>
+</body>
 <script src="../static/js/vendor/jquery-2.2.4.min.js"
 	th:src="@{/js/vendor/jquery-2.2.4.min.js}"></script>
 <script src="../static/js/popper.min.js" th:src="@{/js/popper.min.js}"></script>
@@ -66,63 +102,8 @@
 	th:src="@{/js/isotope.pkgd.min.js}"></script>
 <script src="../static/js/mail-script.js" th:src="@{/js/mail-script.js}"></script>
 <script src="../static/js/main.js" th:src="@{/js/main.js}"></script>
-<script
-	src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="../static/slick/slick.min.js"
-	th:src="@{/slick/slick.min.js}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script th:src="@{/slick/slick.min.js}"></script>
 <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-</head>
-<body>
-	<div th:replace="~{header :: header}"></div>
-	<!-- #header -->
-	<section class="relative about-banner">
-		<div class="overlay overlay-bg"></div>
-		<div class="container">
-			<div class="row d-flex align-items-center justify-content-center">
-				<div class="about-content col-lg-12">
-					<h1 class="text-white">마이페이지</h1>
-				</div>
-			</div>
-		</div>
-	</section>
-
-	<section class="menu-area section-gap" id="menu">
-		<div class="container">
-			<!-- Content Row -->
-			<div class="row">
-				<!-- Sidebar Column -->
-				<div class="col-lg-3 mb-4">
-					<div class="single-widget category-widget">
-
-						<ul>
-							<li><a href="#" class=""><span>레시피 노트</span></a></li>
-							<li><a href="#" class=""><span>내가 쓴 게시물</span></a></li>
-							<li><a href="#" class=""><span>문의내역</span></a></li>
-							<li><a href="#" class=""><span>주문조회</span></a></li>
-							<li><a href="#" class=""><span>장바구니</span></a></li>
-							<li><a href="#" class=""><span>회원정보수정</span></a></li>
-							<li><a href="#" class=""><span>회원탈퇴</span></a></li>
-						</ul>
-					</div>
-				</div>
-
-				<div class="col-lg-9 mb-4">
-					<div align="center">
-						<h2>레시피 노트</h2>
-						<p>자신이 쓴 레시피 노트를 확인해보세요!</p>
-						<table border="1" style="width:100%;">
-							<tr>
-								<td></td>
-							</tr>
-						</table>
-					</div>
-				</div>
-			</div>
-			<!-- /.row -->
-
-		</div>
-	</section>
-	<div th:replace="~{footer :: footer}"></div>
-</body>
 </html>

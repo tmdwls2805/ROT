@@ -21,9 +21,13 @@
 	</select>
 	
 	<insert id="addCart" parameterType="Cart">
-		INSERT INTO cart(productNum, productName, productPrice, buyer, buyCount, buyAmount)
-		VALUES(#{productNum}, #{productName}, #{productPrice}, #{buyer}, #{buyCount}, #{buyAmount});
+		INSERT INTO cart(productNum, productName, productPrice, buyer, buyCount, buyAmount, productImg)
+		VALUES(#{productNum}, #{productName}, #{productPrice}, #{buyer}, #{buyCount}, #{buyAmount}, #{productImg});
 	</insert>
+	
+	<select id="getCart" parameterType="Cart" resultType="Cart">
+		SELECT * FROM cart where buyer=#{buyer};
+	</select>
 </mapper>
 
 <!-- select concat('upload/recipe/',FileName)   -->

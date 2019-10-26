@@ -161,8 +161,7 @@
 							<div th:if="${session.member != null}">
 									<div class='appoint-holiday-list'>
 										<div class="ex7Cart">
-											<!-- <input class="product_cart" id="cart_add2" type="submit" value="장바구니" /> -->
-											<input class="product_cart" id="cart_add2" type="button" value="장바구니" />
+											<input class="product_cart" id="cart_add2" type="submit" value="장바구니" />
 										</div>
 									</div>
 							</div>	
@@ -213,6 +212,7 @@
 								<input type="text" name="productNum" th:value="${product.productNum}" hidden="hidden"/>
 								<input type="text" name="productName" th:value="${product.productName}" hidden="hidden"/>
 								<input type="text" name="productPrice" th:value="${product.productPrice}" hidden="hidden"/>
+								<input type="text" name="productImg" th:value="${product.productImg}" hidden="hidden"/>
 							</td>
 						</tr>
 				</table>

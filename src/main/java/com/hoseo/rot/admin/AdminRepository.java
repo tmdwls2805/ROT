@@ -11,4 +11,5 @@ public interface AdminRepository {
 	public Product getProductDetails(int productNum);
 	public List<Product> getProductList();
 	public int addCart(Cart c);
+	public List<Cart> getCart(String buyer);
 }

@@ -88,6 +88,7 @@ CREATE TABLE IF NOT EXISTS `recipeOrder` (
 CREATE TABLE IF NOT EXISTS `cart` (
 	`cartNum` int AUTO_INCREMENT, 
     `productNum` int not null,
+    `productImg` varchar(2048) not null,
 	`productName` varchar(2048) not null,    
 	`productPrice` int not null,  
     `buyer` varchar(2048) not null,

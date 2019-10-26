@@ -19,6 +19,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
+import com.hoseo.rot.admin.AdminService;
+import com.hoseo.rot.admin.Cart;
 import com.hoseo.rot.member.Member;
 import com.hoseo.rot.member.MemberService;
 
@@ -26,6 +28,8 @@ import com.hoseo.rot.member.MemberService;
 public class MypageController {
 	@Autowired
 	MemberService memberService;
+	@Autowired
+	AdminService adminService;
 	
 	//레시피 노트
 	@RequestMapping(value = "/recipeNote", method = { RequestMethod.GET, RequestMethod.POST })	
@@ -54,15 +58,6 @@ public class MypageController {
 			return "mypage/orderInquiry";
 	}
 	
-	// 장바구니
-	@RequestMapping(value = "/cart", method = { RequestMethod.GET, RequestMethod.POST })	
-	public String cart(ModelMap model, HttpSession session) throws Exception{
-		Member m =  (Member) session.getAttribute("member");
-		String id = m.getId();
-			model.put("member",memberService.getMypage(id));
-			return "mypage/cart";
-	}
-	
 	//회원정보 보여주기
 	@RequestMapping(value = "/updateMemberInfo", method = { RequestMethod.GET, RequestMethod.POST })	
 	public String updateMemberInfo(ModelMap model, HttpSession session) throws Exception{
@@ -79,6 +74,19 @@ public class MypageController {
 		String id = m.getId();
 			model.put("member",memberService.getMypage(id));	
 			return "mypage/updateMemberInfoEdit";		
+	}
+	
+	// 장바구니
+	@RequestMapping(value = "/cart", method = { RequestMethod.GET, RequestMethod.POST })	
+	public String cart(ModelMap model, HttpSession session) throws Exception{
+		Member m =  (Member) session.getAttribute("member");
+		String id = m.getId();
+			model.put("member",memberService.getMypage(id));
+			
+		String buyer = m.getId();
+			model.put("cartList", adminService.getCart(buyer));
+			
+			return "mypage/cart";
 	}
 	
 	//회원정보수정 update 완료
@@ -156,6 +164,7 @@ public class MypageController {
 			return "mypage/contactHistory";
 	}
 	
+	//주문조회
 	@RequestMapping(value = "/Withdrawal", method = { RequestMethod.GET, RequestMethod.POST })	
 	public String Withdrawal(ModelMap model, HttpSession session) throws Exception{
 		Member m =  (Member) session.getAttribute("member");

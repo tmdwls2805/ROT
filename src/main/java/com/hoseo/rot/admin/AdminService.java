@@ -28,4 +28,8 @@ public class AdminService {
 	public boolean addCart(Cart c) {
 		return adminRepository.addCart(c)!=0;
 	}
+	
+	public List<Cart> getCart(String buyer) {
+		return adminRepository.getCart(buyer);
+	}
 }

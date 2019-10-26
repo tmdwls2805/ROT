@@ -19,9 +19,9 @@
 .pop-layer {
   display: none;
   position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 50%;
+  top: 30%;
+  left: 30%;
+  width: 30%;
   height: auto;
   background-color: #fff;
   border: 5px solid #3571B5;

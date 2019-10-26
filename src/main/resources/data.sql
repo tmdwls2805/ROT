@@ -12,3 +12,5 @@ Insert into product values(9, '채소', '양파2', '국내산', '1000', '1망', 
 Insert into product values(10, '육류', '돼지고기 목살2', '국내산', '1000', '100g', '1000', '돼지고기 목살.jpg', '돼지고기 목살.jpg', 'D:\\upload\\product\\', '0');
 Insert into product values(11, '과일', '자몽2', '국내산', '1000', '1개', '1000', '자몽.jpg', '자몽.jpg', 'D:\\upload\\product\\', '0');
 Insert into product values(12, '채소', '대파2', '국내산', '1000', '1단', '1000', '대파.jpg', '대파.jpg', 'D:\\upload\\product\\', '0');
+Insert into cart values(1, 2, '돼지고기 목살.jpg', '돼지고기 목살', 1000, 'tmdwls2805', 1, 1000);
+Insert into cart values(2, 2, '돼지고기 목살.jpg', '돼지고기 목살', 1000, 'tmdwls2805', 3, 3000); 

@@ -36,8 +36,9 @@ public class MaterialController {
 		Member m =  (Member) session.getAttribute("member");
 		if(m != null) {
 		c.setBuyer(m.getId());
-		model.put("member", adminService.addCart(c));
-		return "redirect:/materialListDetails?productNum="+ c.getProductNum();
+		model.put("cartList", adminService.addCart(c));
+		return "redirect:/cart";
+		/* return "redirect:/materialListDetails?productNum="+ c.getProductNum(); */
 		}else{
 			return "redirect:/loginForm";
 		}

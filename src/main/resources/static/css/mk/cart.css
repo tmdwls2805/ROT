@@ -1,0 +1,28 @@
+form{
+	width:100%;
+}
+
+.mypage_table{
+	border: 1px solid #e1e1e1;
+}
+
+.table_top{
+	height:35px;
+}
+
+.table_bottom{
+	height:35px;
+	border-bottom: 1px solid #e1e1e1;
+}
+
+.table_side{
+	width:4%;
+}
+
+.cart_table{
+	width:100%;
+	border-top: 2px solid #ddd;
+    border-bottom: 2px solid #ddd;
+    margin: 0;
+}
+
