@@ -87,22 +87,48 @@
 										<td>
 											<table class="cart_table" border="1">
 												<tr>
-													<td>선택</td>
+													<td class="cart_title">선택</td>
 												
-													<td>상품정보</td>
+													<td class="cart_title2">상품정보</td>
 												
-													<td>상품금액</td>
+													<td class="cart_title3">상품금액</td>
 												
-													<td>판매금액</td>
+													<td class="cart_title4">판매금액</td>
 												</tr>
-												<tr th:each="cart : ${cartList}">
+												<tr class="cart_tr" th:each="cart : ${cartList}">
 													<td></td>
 													<td>
-														<span th:text="${cart.productName}"></span>
+														<div class="cart_content">
+															<div>
+																<a>
+																	<img class="cartImg" th:src="@{'/upload/product/'+${cart.productImg}}">
+																</a>		
+																<span class="cartName" th:text="${cart.productName}"></span>
+															</div>
+															<div class="cartVolume">
+																수량 
+																<input type="number" class="cart_count" th:value="${cart.buyCount}"/>
+															</div>
+														</div>
 													</td>
-													<td></td>
-													<td></td>
+													<td class="cart_price">
+														<input type="number" class="input_price" th:value=${cart.productPrice} />원
+													</td>
+													<td class="cart_price">
+														<input type="number" class="input_price" th:value=${cart.buyAmount} />원
+													</td>
 												</tr>
+												<tr>
+													<td colspan="3" class="cart_bottom">
+														<span class="bottom_font">+배송료 - 위의 상품은 판매제휴 업체 <span class="bottom_name">내일의 레시피</span>에서 발송되는 상품입니다.</span>
+													</td>
+													<td class="cart_bottom">
+														<span class="bottom_font">무료배송</span>
+													</td>
+												</tr>
+											</table>
+											<table>
+									
 											</table>
 										</td>
 									</tr>		
