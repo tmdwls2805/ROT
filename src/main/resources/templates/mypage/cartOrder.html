@@ -74,9 +74,9 @@
 										</td>
 									</tr>
 									<tr class="table_top">
-										<td class="table_side" rowspan="5"></td>
+										<td class="table_side" rowspan="7"></td>
 										<td></td>
-										<td class="table_side" rowspan="5"></td>
+										<td class="table_side2" rowspan="7"></td>
 									</tr>		
 									<tr>
 										<td>
@@ -161,7 +161,7 @@
 									</tr>				
 									<tr>
 										<td>
-											<table class="order_table" border="1">
+											<table class="order_table">
 												<tr class="order_top">
 													<td rowspan="5" class="order_title">
 														<span class="orderInfo">주문자 정보</span>
@@ -249,10 +249,10 @@
 												</tr>		
 												<tr>
 													<td colspan="3">
-														<table class="order_table" border="1">
+														<table class="order_table">
 													
 															<tr class="order_top">
-																<td rowspan="3" class="order_title">
+																<td rowspan="4" class="order_title">
 																	<span class="orderInfo">결제 금액</span>
 																</td>
 																<td class="order_list">
@@ -269,26 +269,122 @@
 																	<span class="orderListInfo">배송비</span>
 																</td>
 																<td class="order_content2">
-																	
+																	<span class="orderListInfo3">3000</span><span class="orderListInfo2">원</span>
 																</td>
 															</tr>
 															<tr>
 																<td  class="order_list">
 																	<span class="orderListInfo">총 결제금액</span>
 																</td>
-																<td class="order_content2">
-																	
+																<td class="order_content2 amount_price">
+																	<span class="amount_price2">4000</span>원
 																</td>
-															</tr>																
-	
+															</tr>		
+															<tr class="order_bottom">
+																<td class="blank2" colspan="4"></td>
+															</tr>															
 														</table>
 													</td>
-												</tr>																																
+												</tr>	
+												<tr>
+													<td colspan="3" class="blank5"></td>
+												</tr>		
+												<tr class="order_top">
+													<td rowspan="6" class="order_title">
+														<span class="orderInfo">결제수단</span>
+													</td>
+													<td class="order_list">
+														<span class="orderListInfo">일반결제</span>
+													</td>
+													<td class="order_content">
+														<input type="radio" name="payment" value="신용카드 " checked=""/><span class="radioText">신용카드</span>
+														<input type="radio" name="payment" value="계좌이체 " /><span class="radioText">계좌이체</span>
+														<input type="radio" name="payment" value="가상계좌 " /><span class="radioText">가상계좌</span>
+														<input type="radio" name="payment" value="핸드폰 " /><span class="radioText">핸드폰</span>
+													</td>
+												</tr>
+												<tr>
+													<td class="blank3"></td>
+												</tr>
+												<tr>
+													<td class="order_list">
+														<span class="orderListInfo">품절시 처리 방법</span>
+													</td>
+													<td>
+														<table class="refund_table">
+															<tr>
+																<td class="refund_td">
+																	<input type="radio" name="refund" value="환불 "  checked=""/><span class="radioText2">REFUND 환불</span>
+																	<br>
+																	<p class="refund_font">환불을 선택하시면 별도의 연락 없이<br>선택하신 결제 방법으로 환불해 드립니다.</p>
+																</td>
+																<td class="refund_blank"></td>
+																<td class="refund_td">
+																	<input type="radio" name="refund" value="교환 " /><span class="radioText2">EXCHANGE 교환</span>
+																	<br>
+																	<p class="refund_font">교환을 선택하시면 주문자 정보를 통해<br>연락드린 후 교환을 도와드리겠습니다.</p>
+																</td>
+															</tr>
+														</table>
+													</td>
+												</tr>	
+												<tr>
+													<td class="blank5" colspan="2"></td>
+												</tr>
+												<tr>
+													<td class="order_list">
+														<span class="orderListInfo">환불 계좌 정보</span>
+													</td>
+													<td class="order_content3" style="height:50px;">
+														<span class="bank">은행명</span>
+
+														<select class="bank_select">
+															<option value>선택해주세요</option>
+															<option value="경남은행">경남은행</option>
+															<option value="광주은행">광주은행</option>
+															<option value="국민은행">국민은행</option>
+															<option value="기업은행">기업은행</option>
+															<option value="농협중앙회">농협중앙회</option>
+															<option value="대구은행">대구은행</option>
+															<option value="부산은행">부산은행</option>
+															<option value="산업은행">산업은행</option>
+															<option value="서울은행">서울은행</option>
+															<option value="수협">수협</option>
+															<option value="시티은행">시티은행</option>
+															<option value="신한은행">신한은행</option>
+															<option value="신협">신협</option>
+															<option value="우리은행">우리은행</option>
+															<option value="우체국">우체국</option>
+															<option value="시티은행">시티은행</option>
+															<option value="전북은행">전북은행</option>
+															<option value="SC">SC</option>
+															<option value="제주은행">제주은행</option>	
+															<option value="하나은행">하나은행</option>
+															<option value="새마을금고">새마을금고</option>
+														</select>		
+														<span class="bank">계좌번호</span>
+														<input type="number" class="refund_number"/>
+														<span class="bank">예금주</span>
+														<input type="text" class="refund_name"/>
+													</td>
+												</tr>
+												<tr>
+													<td class="blank2" colspan="2" style="border-bottom: 2px solid #ddd;"></td>
+												</tr>																														
 											</table>
 										</td>
-									</tr>					
-									<tr class="table_bottom">
-										<td></td>
+									</tr>
+									<tr>
+										<td class="blank" colspan="3"></td>
+									</tr>
+									<tr>
+										<td class="submit_td">
+											<input type="submit" class="buyButton" value="결제하기"/>
+											<input type="button" class="cancelButton" value="취소하기"/>
+										</td>
+									</tr>
+									<tr>
+										<td class="table_bottom" colspan="3"></td>
 									</tr>
 								</table>
 								</form>
