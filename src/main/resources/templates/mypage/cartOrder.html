@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<!-- Mobile Specific Meta -->
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!-- Favicon-->
+<link rel="shortcut icon" href="img/logo1.png">
+<!-- Author Meta -->
+<meta name="author" content="colorlib">
+<!-- Meta Description -->
+<meta name="description" content="">
+<!-- Meta Keyword -->
+<meta name="keywords" content="">
+<!-- meta character set -->
+<meta charset="UTF-8">
+<!-- Site Title -->
+<title>내일의 레시피</title>
+
+<!-- CSS ============================================= -->
+<link rel="stylesheet" href="../static/css/linearicons.css"
+	th:href="@{/css/linearicons.css}">
+<link rel="stylesheet" href="../static/css/font-awesome.min.css"
+	th:href="@{/css/font-awesome.min.css}">
+<link rel="stylesheet" href="../static/css/bootstrap.css"
+	th:href="@{/css/bootstrap.css}">
+<link rel="stylesheet" href="../static/css/magnific-popup.css"
+	th:href="@{/css/magnific-popup.css}">
+<link rel="stylesheet" href="../static/css/jquery-ui.css"
+	th:href="@{/css/jquery-ui.css}">
+<link rel="stylesheet" href="../static/css/nice-select.css"
+	th:href="@{/css/nice-select.css}">
+<link rel="stylesheet" href="../static/css/animate.min.css"
+	th:href="@{/css/animate.min.css}">
+<link rel="stylesheet" href="../static/css/owl.carousel.css"
+	th:href="@{/css/owl.carousel.css}">
+<link rel="stylesheet" href="../static/css/main.css"
+	th:href="@{/css/main.css}">
+<link rel="stylesheet" href="../static/css/mk/materialListDetails.css"
+	th:href="@{/css/mk/materialListDetails.css}">
+<link rel="stylesheet" href="../static/slick/slick.css"
+	th:href="@{/slick/slick.css}" />
+<link rel="stylesheet" href="../static/slick/slick-theme.css"
+	th:href="@{/slick/slick-theme.css}" />
+<link rel="stylesheet" href="../static/css/mk/mypage.css"
+	th:href="@{/css/mk/mypage.css}" />
+<link rel="stylesheet" href="../static/css/mk/cartOrder.css"
+	th:href="@{/css/mk/cartOrder.css}" />	
+</head>
+		<body>	
+			<div th:replace="~{header :: header}"></div>
+		  
+			<!-- start banner Area -->
+			<section class="relative about-banner">	
+				<div class="overlay overlay-bg"></div>
+				<div class="container">				
+					<div class="row d-flex align-items-center justify-content-center">
+						<div class="about-content col-lg-12">>	
+						</div>	
+					</div>
+				</div>
+			</section>
+			<!-- End banner Area -->					  
+			
+			<!-- Start post-content Area -->
+			<section class="post-content-area single-post-area">
+				<div class="container">
+					<div class="row">
+								<form name="form" method="post">
+								<table class="mypage_table">
+									<tr>
+										<td class="table_title" colspan="3">
+											<h3>주문하기</h3>
+										</td>
+									</tr>
+									<tr class="table_top">
+										<td class="table_side" rowspan="5"></td>
+										<td></td>
+										<td class="table_side" rowspan="5"></td>
+									</tr>		
+									<tr>
+										<td>
+											<table class="cart_table">
+												<tr>
+													<td class="cart_title2">상품정보</td>
+													<td class="cart_title">수량</td>
+													<td class="cart_title3">상품금액</td>											
+													<td class="cart_title4">판매금액</td>
+												</tr>
+												<tr class="cart_tr" th:each="cart : ${cartList}">
+													<td class="cart_content">
+																<a th:href="@{'materialListDetails?productNum='+${cart.productNum}}">
+																	<img class="cartImg" th:src="@{'/upload/product/'+${cart.productImg}}">
+																	<span class="cartName" th:text="${cart.productName}"></span>
+																</a>
+													</td>
+													<td class="cart_buyCount">
+														<span th:text="${cart.buyCount}"></span>
+													</td>
+													<td class="cart_price">
+														<input type="number" class="input_price" id="total_count" th:value="${cart.productPrice}" readonly />원
+													</td>
+													<td class="cart_price">
+														<input type="number" name="buyAmount" class="input_price" th:value="${cart.buyAmount}" readonly />원
+														<input type="text" name="productNum" th:value="${cart.productNum}" hidden="hidden" readonly />
+														<input type="text" name="cartNum" th:value="${cart.cartNum}" hidden="hidden" readonly />
+													</td>
+												</tr>
+												<tr>
+													<td colspan="3" class="cart_bottom">
+														<span class="bottom_font">+배송료 - 위의 상품은 판매제휴 업체 <span class="bottom_name">내일의 레시피</span>에서 발송되는 상품입니다.</span>
+													</td>
+													<td class="cart_bottom">
+														<span class="bottom_font">무료배송</span>
+													</td>
+												</tr>
+											</table>
+											<table class="price_table">
+												<tr>
+													<td class="price_blank"></td>
+													<td class="price_content">
+														<table class="price_table2">
+															<tr>
+																<td colspan="2"></td>
+															</tr>
+															<tr>
+																<td class="price_real">
+																	<span>총 상품금액</span>
+																</td>
+																<td class="price_real2">
+																	<span><input type="number" value="2" class="total_amount" readonly/>원</span>
+																</td>
+															</tr>
+															<tr>
+																<td class="price_real">
+																	<span>배송비</span>
+																</td>
+																<td class="price_real2">
+																	<span>무료배송</span>
+																</td>
+															</tr>
+															<tr>
+																<td class="price_real_1">
+																	<span>총 결제금액</span>
+																</td>
+																<td class="price_real2_1">
+																	<span><input type="number" class="total_amount2" value="2" readonly/>원</span>
+																</td>
+															</tr>		
+															<tr>
+																<td colspan="2"></td>
+															</tr>																												
+														</table>
+													</td>
+												</tr>
+											</table>
+										</td>
+									</tr>
+									<tr>
+										<td class="blank" ></td>
+									</tr>				
+									<tr>
+										<td>
+											<table class="order_table" border="1">
+												<tr class="order_top">
+													<td rowspan="5" class="order_title">
+														<span class="orderInfo">주문자 정보</span>
+													</td>
+													<td class="order_list">
+														<span class="orderListInfo">주문하시는분</span>
+													</td>
+													<td class="order_content">
+														<input type="text" class="orderer"/>
+													</td>
+												</tr>
+												<tr>
+													<td class="order_list">
+														<span class="orderListInfo">주소</span>
+													</td>
+													<td class="order_content">
+														<span class="orderContentSpan" th:text="${member.addr1}"></span>&nbsp;<span class="orderContentSpan" th:text="${member.addr2}"></span>
+													</td>
+												</tr>
+												<tr>
+													<td class="order_list">
+														<span class="orderListInfo">핸드폰번호</span>
+													</td>
+													<td class="order_content">
+														<input type="text" class="orderer" th:value="${member.phone}"/>
+													</td>
+												</tr>
+												<tr>
+													<td class="order_list">
+														<span class="orderListInfo">이메일</span>
+													</td>
+													<td class="order_content">
+														<input type="text" class="orderer" th:value="${member.email}" />
+													</td>
+												</tr>
+												<tr class="order_bottom">
+													<td class="blank2" colspan="2"></td>
+												</tr>
+												<tr>
+													<td colspan="3" class="blank3"></td>
+												</tr>
+												
+												<tr class="order_top">
+													<td rowspan="5" class="order_title">
+														<span class="orderInfo">배송 정보</span>
+													</td>
+													<td class="order_list">
+														<span class="orderListInfo">받으실분</span>
+													</td>
+													<td class="order_content">
+														<input type="text" class="orderer"/>
+													</td>
+												</tr>
+												<tr>
+													<td  class="order_list">
+														<span class="orderListInfo">받으실곳</span>
+													</td>
+													<td class="order_content">
+														<input type="text" class="postcode" th:value="${member.zipcode}" id="sample6_postcode" readonly/><input type="button" class="postcodeButton" onclick="sample6_execDaumPostcode()" value="우편번호 찾기">
+														<br><input type="text" class="input_addr" th:value="${member.addr1}" id="sample6_address" readonly/>
+														<br><input type="text" class="input_addr" th:value="${member.addr2}" id="addr2"/>
+													</td>
+												</tr>
+												<tr>
+													<td  class="order_list">
+														<span class="orderListInfo">핸드폰번호</span>
+													</td>
+													<td class="order_content">
+														<input type="text" class="orderer" th:value="${member.phone}"/>
+													</td>
+												</tr>
+												<tr>
+													<td  class="order_list">
+														<span class="orderListInfo">남기실 말씀</span>
+													</td>
+													<td class="order_content">
+														<input type="text" class="orderer2"/>
+													</td>
+												</tr>				
+												<tr class="order_bottom">
+													<td class="blank2" colspan="2"></td>
+												</tr>	
+												<tr>
+													<td colspan="3" class="blank4"></td>
+												</tr>		
+												<tr>
+													<td colspan="3">
+														<table class="order_table" border="1">
+													
+															<tr class="order_top">
+																<td rowspan="3" class="order_title">
+																	<span class="orderInfo">결제 금액</span>
+																</td>
+																<td class="order_list">
+																	<span class="orderListInfo">상품합계금액</span>
+																</td>
+																<td class="order_content2">
+																	<span class="orderListInfo3">1000</span><span class="orderListInfo2">원</span>
+																</td>
+																<td rowspan="3" class="order_blank"></td>
+															</tr>
+															<tr>
+																<td  class="order_list">
+																	<span class="orderListInfo">배송비</span>
+																</td>
+																<td class="order_content2">
+																	
+																</td>
+															</tr>
+															<tr>
+																<td  class="order_list">
+																	<span class="orderListInfo">총 결제금액</span>
+																</td>
+																<td class="order_content2">
+																	
+																</td>
+															</tr>																
+	
+														</table>
+													</td>
+												</tr>																																
+											</table>
+										</td>
+									</tr>					
+									<tr class="table_bottom">
+										<td></td>
+									</tr>
+								</table>
+								</form>
+							</div>
+					</div>
+				</section>
+			<!-- End post-content Area -->
+			
+			<div th:replace="~{footer :: footer}"></div>
+		</body>
+<script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
+<script>
+    function sample6_execDaumPostcode() {
+        new daum.Postcode({
+            oncomplete: function(data) {
+                // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
+
+                // 각 주소의 노출 규칙에 따라 주소를 조합한다.
+                // 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
+                var fullAddr = ''; // 최종 주소 변수
+                var extraAddr = ''; // 조합형 주소 변수
+
+                // 사용자가 선택한 주소 타입에 따라 해당 주소 값을 가져온다.
+                if (data.userSelectedType === 'R') { // 사용자가 도로명 주소를 선택했을 경우
+                    fullAddr = data.roadAddress;
+
+                } else { // 사용자가 지번 주소를 선택했을 경우(J)
+                    fullAddr = data.jibunAddress;
+                }
+
+                // 사용자가 선택한 주소가 도로명 타입일때 조합한다.
+                if(data.userSelectedType === 'R'){
+                    //법정동명이 있을 경우 추가한다.
+                    if(data.bname !== ''){
+                        extraAddr += data.bname;
+                    }
+                    // 건물명이 있을 경우 추가한다.
+                    if(data.buildingName !== ''){
+                        extraAddr += (extraAddr !== '' ? ', ' + data.buildingName : data.buildingName);
+                    }
+                    // 조합형주소의 유무에 따라 양쪽에 괄호를 추가하여 최종 주소를 만든다.
+                    fullAddr += (extraAddr !== '' ? ' ('+ extraAddr +')' : '');
+                }
+
+                // 우편번호와 주소 정보를 해당 필드에 넣는다.
+                document.getElementById('sample6_postcode').value = data.zonecode; //5자리 새우편번호 사용
+                document.getElementById('sample6_address').value = fullAddr;
+
+                // 커서를 상세주소 필드로 이동한다.
+                document.getElementById('addr2').focus();
+            }
+        }).open();
+        
+    }
+</script>		
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>	
+<script src="../static/js/vendor/jquery-2.2.4.min.js"
+	th:src="@{/js/vendor/jquery-2.2.4.min.js}"></script>
+<script src="../static/js/popper.min.js" th:src="@{/js/popper.min.js}"></script>
+<script src="../static/js/vendor/bootstrap.min.js"
+	th:src="@{/js/vendor/bootstrap.min.js}"></script>
+<script src="../static/js/jquery-ui.js" th:src="@{/js/jquery-ui.js}"></script>
+<script src="../static/js/easing.min.js" th:src="@{/js/easing.min.js}"></script>
+<script src="../static/js/hoverIntent.js" th:src="@{/js/hoverIntent.js}"></script>
+<script src="../static/js/superfish.min.js"
+	th:src="@{/js/superfish.min.js}"></script>
+<script src="../static/js/jquery.ajaxchimp.min.js"
+	th:src="@{/js/jquery.ajaxchimp.min.js}"></script>
+<script src="../static/js/jquery.magnific-popup.min.js"
+	th:src="@{/js/jquery.magnific-popup.min.js}"></script>
+<script src="../static/js/jquery.nice-select.min.js"
+	th:src="@{/js/jquery.nice-select.min.js}"></script>
+<script src="../static/js/owl.carousel.min.js"
+	th:src="@{/js/owl.carousel.min.js}"></script>
+<script src="../static/js/isotope.pkgd.min.js"
+	th:src="@{/js/isotope.pkgd.min.js}"></script>
+<script src="../static/js/mail-script.js" th:src="@{/js/mail-script.js}"></script>
+<script src="../static/js/main.js" th:src="@{/js/main.js}"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="../static/slick/slick.min.js"
+	th:src="@{/slick/slick.min.js}"></script>
+<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>		
+</html>

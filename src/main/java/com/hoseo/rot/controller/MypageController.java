@@ -164,12 +164,24 @@ public class MypageController {
 			return "mypage/contactHistory";
 	}
 	
-	//주문조회
+	//회원탈퇴
 	@RequestMapping(value = "/Withdrawal", method = { RequestMethod.GET, RequestMethod.POST })	
 	public String Withdrawal(ModelMap model, HttpSession session) throws Exception{
 		Member m =  (Member) session.getAttribute("member");
 		String id = m.getId();
 			model.put("member",memberService.getMypage(id));
 			return "mypage/Withdrawal";
+	}
+	
+	//주문
+	@RequestMapping(value = "/cartOrder", method = { RequestMethod.GET, RequestMethod.POST })	
+	public String cartOrder(ModelMap model, HttpSession session) throws Exception{
+		Member m =  (Member) session.getAttribute("member");
+		String id = m.getId();
+			model.put("member",memberService.getMypage(id));
+			
+		String buyer = m.getId();
+			model.put("cartList", adminService.getCart(buyer));
+			return "mypage/cartOrder";
 	}
 }
