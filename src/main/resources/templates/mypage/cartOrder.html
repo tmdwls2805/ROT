@@ -380,7 +380,7 @@
 									<tr>
 										<td class="submit_td">
 											<input type="submit" class="buyButton" value="결제하기"/>
-											<input type="button" class="cancelButton" value="취소하기"/>
+											<input type="button" class="cancelButton" value="취소하기"  onclick="goBack()"/>
 										</td>
 									</tr>
 									<tr>
@@ -440,7 +440,12 @@
         
     }
 </script>		
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>	
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script type="text/javascript">
+function goBack() {
+	window.history.back();
+}
+</script>
 <script src="../static/js/vendor/jquery-2.2.4.min.js"
 	th:src="@{/js/vendor/jquery-2.2.4.min.js}"></script>
 <script src="../static/js/popper.min.js" th:src="@{/js/popper.min.js}"></script>
