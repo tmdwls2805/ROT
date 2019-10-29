@@ -106,6 +106,7 @@ form{
 }
 
 .input_price{
+	padding-right:3px;	
 	font-family: Arial, Nanum Gothic, Nanum Gothic;	
 	width:60px;
 	height:18px;		
@@ -145,4 +146,186 @@ form{
 	margin-left:6px;
 	text-align:right;
 	padding-right:5px;
+}
+
+.price_table{
+  	width:100%;	
+  	
+}
+
+.price_content{
+	width:400px;
+	height:125px;
+	background:#f42f2c;
+}
+
+.price_table2{
+  	width:100%;	
+  	height:100%;
+  	padding:10px 0 10px 0;
+}
+
+.price_real{
+	width:50%;
+	color:#fff;
+	font-size:13px;
+	font-family: Arial, Nanum Gothic, Nanum Gothic;
+	font-weight:500;
+	text-align:left;
+	padding-left:25px;
+}
+
+.price_real2{
+	width:50%;
+	color:#fff;
+	font-size:13px;
+	font-family: Arial, Nanum Gothic, Nanum Gothic;
+	font-weight:500;
+	text-align:right;
+	padding-right:25px;
+}
+
+.price_real_1{
+	width:50%;
+	color:#fff;
+	font-size:15px;
+	font-family: Arial, Nanum Gothic, Nanum Gothic;
+	font-weight:700;
+	text-align:left;
+	padding-left:25px;
+}
+
+.price_real2_1{
+	width:50%;
+	color:#fff;
+	font-size:15px;
+	font-family: Arial, Nanum Gothic, Nanum Gothic;
+	font-weight:700;
+	text-align:right;
+	padding-right:25px;
+}
+
+.img-minus{
+	width:20px;
+	height:20px;
+	border-radius:3px;
+	border:1px solid #c1c1c1;
+}
+
+.img-plus{
+	width:20px;
+	height:20px;
+	border-radius:3px;
+	border:1px solid #c1c1c1;
+}
+
+.count_update{
+	height:20px;
+	width:40px;
+	color:#525252;
+	font-weight:700;
+	background:#fff;
+	font-size:10px;
+	border-radius:3px;
+	border:1px solid #c1c1c1;	
+	display:inline;
+	vertical-align:middle;
+	padding:4px 10px 3px 10px;
+	cursor:pointer;
+}
+
+.count_update:hover .count_update:hover:focus .count_update:active{
+	color:#525252;
+}
+
+.total_amount{
+	width:150px;
+	background:#f42f2c;
+	border:#f42f2c;
+	color:#fff;
+	font-weight:500;
+	padding-right:3px;
+	text-align:right;
+}
+
+.total_amount2{
+	width:150px;
+	background:#f42f2c;
+	border:#f42f2c;
+	color:#fff;
+	font-weight:700;
+	padding-right:3px;
+	text-align:right;
+}
+
+.button_blank{
+	height:60px;
+}
+
+.button_td{
+	text-align:center;
+}
+
+.select_delete{
+	width:130px;
+	height:50px;
+	border: 1px solid #d4d4d4;
+    background-color: #ccc;
+    color: #000;
+    font-weight:700;
+    min-width: 110px;
+    font-family: 'Nanum Gothic';
+    font-size: 14px;
+    cursor: pointer;  
+    margin:0 5px 0 0;      
+}
+
+.select_delete:hover{
+	background: #c1c1c1;	
+}
+
+.select_order{
+	width:130px;
+	height:50px;
+	border: 1px solid #c1c1c1;
+    background-color: #f42f2c;
+    color: #fff;
+    font-weight:700;
+    min-width: 110px;
+    font-family: 'Nanum Gothic';
+    font-size: 14px;
+    cursor: pointer;
+    margin:0 5px 0 5px;      	
+}
+
+.select_order:hover{
+	background: #e62e2b;	
+}
+
+.clear{
+	width:130px;
+	height:50px;
+    border: 1px solid #d0d0d0;
+    background-color: #fff;
+    color: #2a2a2a;
+    font-weight:700;
+    min-width: 110px;
+    font-family: 'Nanum Gothic';
+    font-size: 14px;
+    cursor: pointer;	
+    margin:0 5px 0 5px;    
+}
+
+.shopping{
+	width:130px;
+	height:50px;
+    border: 1px solid #d0d0d0;
+    background-color: #fff;
+    color: #2a2a2a;
+    font-weight:700;
+    min-width: 110px;
+    font-family: 'Nanum Gothic';
+    font-size: 14px;
+    cursor: pointer;	
+    margin:0 0 0 5px;     
 }

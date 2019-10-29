@@ -19,11 +19,30 @@
 	<select id="getProductList" parameterType="Product" resultType="Product">
 		SELECT * FROM product where productCom ORDER BY productCom DESC limit 6;
 	</select>
-	
+
+	<update id="addCartCol" parameterType="Cart">
+		SELECT count(*) FROM cart WHERE productNum=#{productNum} AND buyer=#{buyer}
+		<if test="count(*)==0">
+		INSERT INTO cart(productNum, productName, productPrice, buyer, buyCount, buyAmount, productImg)
+		VALUES(#{productNum}, #{productName}, #{productPrice}, #{buyer}, #{buyCount}, #{buyAmount}, #{productImg}) 
+		</if>
+		<if test="count(*) != 0">
+		UPDATE cart SET buyCount = buyCount + #{buyCount} WHERE productNum=#{productNum} AND buyer=#{buyer} 
+		</if>
+	</update>
+		
 	<insert id="addCart" parameterType="Cart">
 		INSERT INTO cart(productNum, productName, productPrice, buyer, buyCount, buyAmount, productImg)
 		VALUES(#{productNum}, #{productName}, #{productPrice}, #{buyer}, #{buyCount}, #{buyAmount}, #{productImg});
 	</insert>
+		
+	<select id="cartCount" parameterType="Cart" resultType="int">
+		SELECT COUNT(*) FROM cart WHERE productNum=#{productNum} AND buyer=#{buyer};
+	</select>
+	
+	<update id="addCountCart" parameterType="Cart" >
+		UPDATE cart SET buyCount = buyCount + #{buyCount} ,buyAmount = buyAmount + #{buyAmount} WHERE productNum=#{productNum} AND buyer=#{buyer}; 
+	</update>
 	
 	<select id="getCart" parameterType="Cart" resultType="Cart">
 		SELECT * FROM cart where buyer=#{buyer};

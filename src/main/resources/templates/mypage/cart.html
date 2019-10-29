@@ -79,13 +79,13 @@
 										</td>
 									</tr>
 									<tr class="table_top">
-										<td class="table_side" rowspan="4"></td>
+										<td class="table_side" rowspan="5"></td>
 										<td></td>
-										<td class="table_side" rowspan="4"></td>
+										<td class="table_side" rowspan="5"></td>
 									</tr>		
 									<tr>
 										<td>
-											<table class="cart_table" border="1">
+											<table class="cart_table">
 												<tr>
 													<td class="cart_title">선택</td>
 												
@@ -100,22 +100,32 @@
 													<td>
 														<div class="cart_content">
 															<div>
-																<a>
+																<a th:href="@{'materialListDetails?productNum='+${cart.productNum}}">
 																	<img class="cartImg" th:src="@{'/upload/product/'+${cart.productImg}}">
-																</a>		
-																<span class="cartName" th:text="${cart.productName}"></span>
+																	<span class="cartName" th:text="${cart.productName}"></span>
+																</a>
 															</div>
 															<div class="cartVolume">
 																수량 
-																<input type="number" class="cart_count" th:value="${cart.buyCount}"/>
+																<input type="number" id="count" name="buyCount" class="cart_count" th:value="${cart.buyCount}" 
+																onkeyup="my_calc(this.form.total_count, this.form.buyCount, this.form.total_count_view)"/>
+																<a class="minus" id="minus" onclick="minus(this)">
+																	<img src="img/mk/minus.png" class="img-minus">
+																</a>
+																<a class="plus" id="plus" onclick="plus(this)">
+																	<img src="img/mk/plus.png" class="img-plus">
+																</a>
+																<a class="count_update">변경</a>
 															</div>
 														</div>
 													</td>
 													<td class="cart_price">
-														<input type="number" class="input_price" th:value=${cart.productPrice} />원
+														<input type="number" class="input_price" id="total_count" th:value="${cart.productPrice}" readonly />원
 													</td>
 													<td class="cart_price">
-														<input type="number" class="input_price" th:value=${cart.buyAmount} />원
+														<input type="number" name="buyAmount" class="input_price" th:value="${cart.buyAmount}" readonly />원
+														<input type="text" name="productNum" th:value="${cart.productNum}" hidden="hidden" readonly />
+														<input type="text" name="cartNum" th:value="${cart.cartNum}" hidden="hidden" readonly />
 													</td>
 												</tr>
 												<tr>
@@ -127,11 +137,58 @@
 													</td>
 												</tr>
 											</table>
-											<table>
-									
+											<table class="price_table">
+												<tr>
+													<td class="price_blank"></td>
+													<td class="price_content">
+														<table class="price_table2">
+															<tr>
+																<td colspan="2"></td>
+															</tr>
+															<tr>
+																<td class="price_real">
+																	<span>총 상품금액</span>
+																</td>
+																<td class="price_real2">
+																	<span><input type="number" value="2" class="total_amount" readonly/>원</span>
+																</td>
+															</tr>
+															<tr>
+																<td class="price_real">
+																	<span>배송비</span>
+																</td>
+																<td class="price_real2">
+																	<span>무료배송</span>
+																</td>
+															</tr>
+															<tr>
+																<td class="price_real_1">
+																	<span>총 결제금액</span>
+																</td>
+																<td class="price_real2_1">
+																	<span><input type="number" class="total_amount2" value="2" readonly/>원</span>
+																</td>
+															</tr>		
+															<tr>
+																<td colspan="2"></td>
+															</tr>																												
+														</table>
+													</td>
+												</tr>
 											</table>
 										</td>
 									</tr>		
+									<tr class="button_blank">
+										<td></td>
+									</tr>
+									<tr>
+										<td class="button_td">
+											<input type="button" class="select_delete" value="선택상품 삭제"/>
+											<input type="button" class="select_order" value="선택상품 주문"/>
+											<input type="button" class="clear" value="비우기"/>
+											<input type="button" onClick="location.href='/materialList'" class="shopping" value="쇼핑계속하기"/>
+										</td>
+									</tr>									
 									<tr class="table_bottom">
 										<td></td>
 									</tr>
@@ -209,8 +266,7 @@
 			
 			<div th:replace="~{footer :: footer}"></div>
 		</body>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>			
-	
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>	
 <script src="../static/js/vendor/jquery-2.2.4.min.js"
 	th:src="@{/js/vendor/jquery-2.2.4.min.js}"></script>
 <script src="../static/js/popper.min.js" th:src="@{/js/popper.min.js}"></script>

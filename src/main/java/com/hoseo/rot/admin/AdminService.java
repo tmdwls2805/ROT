@@ -24,12 +24,20 @@ public class AdminService {
 	public List<Product> getProductList() {
 		return adminRepository.getProductList();
 	}
-
-	public boolean addCart(Cart c) {
-		return adminRepository.addCart(c)!=0;
-	}
 	
 	public List<Cart> getCart(String buyer) {
 		return adminRepository.getCart(buyer);
+	}
+	
+	public int cartCount(Cart c) {              // 아이디와 상품번호로 count select
+		return adminRepository.cartCount(c); 
+	}
+	
+	public boolean alterCountCart(Cart c) {      // 장바구니 update
+		return adminRepository.addCountCart(c)!=0;
+	}
+	
+	public boolean addCart(Cart c) {             // 장바구니 insert
+		return adminRepository.addCart(c)!=0;
 	}
 }
