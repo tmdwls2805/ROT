@@ -57,12 +57,10 @@ public class MaterialController {
 			}else{
 				c.setBuyer(m.getId());
 				model.put("cartList", adminService.addCart(c));
-				
 			}
 		return "redirect:/cart";
 		}else{
 			return "redirect:/loginForm";
 		}
 	}
-
 }
