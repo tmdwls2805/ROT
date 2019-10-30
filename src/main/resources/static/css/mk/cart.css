@@ -2,6 +2,10 @@ form{
 	width:100%;
 }
 
+.check{
+	text-align:center;
+}
+
 .mypage_table{
 	border: 1px solid #e1e1e1;
 }
@@ -28,6 +32,24 @@ form{
 
 .cart_tr{
 	border-bottom: 2px solid #ddd;
+}
+
+.cartCount0{
+	height:100px;
+	text-align:center;
+	padding:20px 0 20px 0;
+}
+
+.cartCount0_span{
+	font-size:14px;
+	font-weight:700;
+	color:#525252;
+}
+
+.cartCount0_span2{
+	font-size:14px;
+	font-weight:700;
+	color:#969696;
 }
 
 .cart_title{

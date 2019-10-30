@@ -40,4 +40,8 @@ public class AdminService {
 	public boolean addCart(Cart c) {             // 장바구니 insert
 		return adminRepository.addCart(c)!=0;
 	}
+	
+	public int userCartCount(String buyer) {
+		return adminRepository.userCartCount(buyer);
+	}
 }

@@ -82,9 +82,9 @@ public class MypageController {
 		Member m =  (Member) session.getAttribute("member");
 		String id = m.getId();
 			model.put("member",memberService.getMypage(id));
-			
 		String buyer = m.getId();
 			model.put("cartList", adminService.getCart(buyer));
+			model.put("userCart", adminService.userCartCount(buyer));
 			
 			return "mypage/cart";
 	}

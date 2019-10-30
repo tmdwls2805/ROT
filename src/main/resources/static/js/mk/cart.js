@@ -19,12 +19,10 @@ my_total(document.form);
 var countEl = document.getElementById("count");
 var total_count = document.getElementById("total_count"); //추가
 var total_count_view = document.getElementById("total_count_view"); //추가
-var total_count_view2 = document.getElementById("total_count_view2");
 function plus(){
  if(countEl.value < 100){
   countEl.value++;
   total_count_view.value = total_count.value * countEl.value; //추가
-  total_count_view2.value = total_count_view.value;
  }else{
 	 alert('최대 100개까지 구매 가능합니다.');
  }
@@ -34,7 +32,6 @@ function minus(){
   if (countEl.value > 1) {
 	 countEl.value--;
   total_count_view.value = total_count_view.value - total_count.value;
-  total_count_view2.value = total_count_view.value//추가  
   }  
 }
 

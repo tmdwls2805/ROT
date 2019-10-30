@@ -47,6 +47,10 @@
 	<select id="getCart" parameterType="Cart" resultType="Cart">
 		SELECT * FROM cart where buyer=#{buyer};
 	</select>
+	
+	<select id="userCartCount" parameterType="Cart" resultType="int">
+		SELECT COUNT(*) FROM cart where buyer=#{buyer};
+	</select>
 </mapper>
 
 <!-- select concat('upload/recipe/',FileName)   -->

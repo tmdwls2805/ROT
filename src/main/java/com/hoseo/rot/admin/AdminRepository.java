@@ -14,4 +14,5 @@ public interface AdminRepository {
 	public List<Cart> getCart(String buyer);
 	public int cartCount(Cart c);
 	public int addCountCart(Cart c);
+	public int userCartCount(String buyer);
 }
