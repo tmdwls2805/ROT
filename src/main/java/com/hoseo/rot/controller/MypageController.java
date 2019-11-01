@@ -2,7 +2,9 @@ package com.hoseo.rot.controller;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.Iterator;
+import java.util.Map;
 
 import javax.servlet.http.HttpSession;
 
@@ -16,6 +18,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
@@ -179,9 +183,19 @@ public class MypageController {
 		Member m =  (Member) session.getAttribute("member");
 		String id = m.getId();
 			model.put("member",memberService.getMypage(id));
-			
 		String buyer = m.getId();
 			model.put("cartList", adminService.getCart(buyer));
 			return "mypage/cartOrder";
+	}
+	
+	//장바구니 상품 삭제
+	@GetMapping("/delCart")
+	@ResponseBody
+	public Map<Object, Object> delCartItem(@RequestParam(value="cartNum") int cartNum, Cart c) {
+		c.setCartNum(cartNum);
+		adminService.delCartItem(c);
+		Map<Object, Object> map = new HashMap<Object, Object>();
+		map.put("data", "success");
+		return map;
 	}
 }

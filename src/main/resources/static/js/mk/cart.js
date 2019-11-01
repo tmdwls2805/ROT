@@ -55,19 +55,16 @@ $('.closeCartPop').click(function(e){
 var stat = 0;
 $('#cart_add').click(function(e){	
 	e.preventDefault();	
-			$('.goCartPop').css("display", "block");
-			$('.goMyCart').click(function(e){
-				$('form').attr("target", '');
-				$('form').attr("action", "/materialListDetails/cart");
-				$("form").unbind("submit").submit();
-				$('.goCartPop').css("display", "none");
-			});
-			$('.closeCartPop').click(function(e){	
-				$('form').attr("target", "iframe");
-				$('form').attr("action", "/materialListDetails/cart");
-				$("form").unbind("submit").submit();
-				$('.goCartPop').css("display", "none");
-			});
+	$('form').attr("target", "iframe");
+	$('form').attr("action", "/materialListDetails/cart");
+	$("form").unbind("submit").submit();
+	$('.goCartPop').css("display", "block");
+	$('.goMyCart').click(function(e){
+		$(location).attr("href", "cart");
+	});
+	$('.closeCartPop').click(function(e){	
+		$('.goCartPop').css("display", "none");
+	});
 });
 
 function closePop(self){
@@ -76,4 +73,58 @@ function closePop(self){
 
 function closePop2(self){
 	$(self).parent('div').parent('div').css("display", "none");
+}
+
+$('.closePop').click(function() {
+	$('.delCartPop').css("display", "none");
+});
+
+$('.delCartItem2').click(function(){
+	cartNum = $(this).next('.cartNum').val();
+	alert(cartNum);
+	$('.delCartPop').css("display", "block");
+});
+
+function checkAll(){
+	if($("#lb_chk").is(':checked')){
+		$("input[name=cartProductIds]").prop("checked", true);
+	}else{
+		$("input[name=cartProductIds]").prop("checked", false);
+	}
+}
+
+$("input[name=cartProductIds]").click(function(){
+	if($("input[name=cartProductIds]:checked").length == $("input[name=cartProductIds]").length){
+		$("input[id='lb_chk']").prop("checked", true);
+	}else{
+		$("input[id='lb_chk']").prop("checked", false);
+	}
+});
+
+function delSelected(){
+	$('.delCartPop').css("display", "block");	
+	var chk_obj = $("input[name=cartProductIds]:checked");
+	$('.delCartItem').click(function() {
+		$(chk_obj).each(function() {		
+			var checkboxValue = $(this).parents('table').children('.cartNum').val();
+			alert(checkboxValue);
+			delCartItem(checkboxValue);
+		});
+	});
+}
+
+function delCartItem(self) {	
+	$.ajax({
+		async: true,
+	    type : 'GET',
+	    data : {"cartNum": self},
+	    url : "delCart",
+	    dataType : "json",
+	    contentType: "application/json; charset=UTF-8",
+	    success : function(data) {
+	    	$(location).attr("href", "cart");
+	    },
+	    error : function(error) {
+	    }
+	});
 }

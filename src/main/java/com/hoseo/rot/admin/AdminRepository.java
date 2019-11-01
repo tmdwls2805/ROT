@@ -15,4 +15,5 @@ public interface AdminRepository {
 	public int cartCount(Cart c);
 	public int addCountCart(Cart c);
 	public int userCartCount(String buyer);
+	public int delCartItem(Cart c);
 }

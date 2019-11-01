@@ -44,4 +44,8 @@ public class AdminService {
 	public int userCartCount(String buyer) {
 		return adminRepository.userCartCount(buyer);
 	}
+	
+	public int delCartItem(Cart c) {
+		return adminRepository.delCartItem(c);
+	}
 }

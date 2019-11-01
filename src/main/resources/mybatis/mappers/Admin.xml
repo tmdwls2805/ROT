@@ -51,6 +51,10 @@
 	<select id="userCartCount" parameterType="Cart" resultType="int">
 		SELECT COUNT(*) FROM cart where buyer=#{buyer};
 	</select>
+	
+	<delete id="delCartItem" parameterType="Cart">
+		DELETE FROM cart WHERE cartNum = #{cartNum};
+	</delete>
 </mapper>
 
 <!-- select concat('upload/recipe/',FileName)   -->
