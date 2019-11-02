@@ -43,10 +43,11 @@ public class RecipeController {
 	  
 	  @PostMapping("/recipeEnroll") 
 	  public String enroll(Recipe r, RecipeOrder ro, Material m, Material2 m2, HttpServletRequest h, MultipartHttpServletRequest multi) {
-		  
 			Iterator<String> imgs = multi.getFileNames();
 			String path = env.getProperty("upload-img-path");
 			String folderName1 = "recipe/"; 
+			String folderName2 = "recipe/";
+			String thumb = "yes"; 
 	        File destinationFile = null;
 	        MultipartFile mFile = null; 
 	        
@@ -58,15 +59,20 @@ public class RecipeController {
 		        String destinationFileName;        
 				do { 
 		            destinationFileName = RandomStringUtils.randomAlphanumeric(32) + "." + sourceFileNameExtension;            	
-		            	destinationFile = new File(path + folderName1 +destinationFileName);
-		            	r.setReciMainPic(destinationFileName);
-		            	r.setReciMainPicOriName(sourceFileName);
-		            	r.setReciMainPicUrl(path+folderName1);
-		            
+			            if(thumb.equals("yes")) {	            	
+				            destinationFile = new File(path + folderName1 +destinationFileName);
+			            	r.setReciMainPic(destinationFileName);
+			            	r.setReciMainPicOriName(sourceFileName);
+			            	r.setReciMainPicUrl(path+folderName1);
+			            	thumb = "no";
+			            } else {
+			            	destinationFile = new File(path + folderName2 +destinationFileName);
+			            	ro.setOrderPic(destinationFileName);
+			            	ro.setOrderPicOriName(sourceFileName);
+			            	ro.setOrderPicUrl(path+folderName2);
+			            }
 		        } while (destinationFile.exists());
-		        
-		        destinationFile.getParentFile().mkdirs(); 
-		        
+		        destinationFile.getParentFile().mkdirs(); 		        
 		        try {
 		        	mFile.transferTo(destinationFile);	        		            	           
 				} catch (IllegalStateException | IOException e) {
@@ -101,9 +107,9 @@ public class RecipeController {
 		  ro.setReciInputNum(r.getReciNum());
 		  for(int i = 0; i<orderContent.length; i++) {
 			  ro.setOrderContent(orderContent[i]);
-			  ro.setOrderPic(orderPic[i]);
-			  ro.setOrderPicOriName(orderPicOriName[i]);
-			  ro.setOrderPicUrl(orderPicUrl[i]);
+//			  ro.setOrderPic(orderPic[i]);
+//			  ro.setOrderPicOriName(orderPicOriName[i]);
+//			  ro.setOrderPicUrl(orderPicUrl[i]);
 			  recipeService.addRecipeOrder(ro);
 		  }
 		  
