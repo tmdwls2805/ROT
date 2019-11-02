@@ -51,7 +51,6 @@
 			<form class="form" name="form" method="post" action="recipeEnroll" enctype="multipart/form-data">
 			<input type="text" name="reciId" th:value="${session.member.id}" hidden="hidden"/>
 			<input type="text" name="reciName" th:value="${session.member.name}" hidden="hidden"/>
-
 <!-- -------------------------------첫 번째 테이블 시작------------------------------- -->						
 				<table class="reciTable1">
 				
@@ -183,22 +182,22 @@
 								<td class="table-right" rowspan="3"></td>
 							</tr>							
 							<tr class="add_tr">
-								<td class="matName-sit"><input type="text"
-									class="input-matName" name="matName" value="재료" required/><br>
+								<td class="matName-sit">
+									<input type="text" class="input-matName" name="matName" value="재료" required/><br>
 									<button class="groupDeleteButton" type="button" onclick="deleteBox2(this)">묶음삭제</button>
 								</td>
 								<td class="matName-sit2">
 									<ul id="addList" class="input-mat recepiList">
 										<li class="recepiRow2">
 											<div class="input-mat2">
-												<input type="text" class="input-mat2Find" name="mat2Find" placeholder="예) 미역" /> 
-												<input type="text" class="input-mat2Vol" name="mat2Vol" placeholder="예) 100g" />
+												<input type="text" class="input-mat2Find" name="mat2Find" placeholder="예) 미역" required/> 
+												<input type="text" class="input-mat2Vol" name="mat2Vol" placeholder="예) 100g" required/>
 											</div>										
 										</li>	
 										<li class="recepiRow2">
 											<div class="input-mat2">
-												<input type="text" class="input-mat2Find" name="mat2Find" placeholder="예) 미역" /> 
-												<input type="text" class="input-mat2Vol" name="mat2Vol" placeholder="예) 100g" />
+												<input type="text" class="input-mat2Find" name="mat2Find" placeholder="예) 미역" required/> 
+												<input type="text" class="input-mat2Vol" name="mat2Vol" placeholder="예) 100g" required/>
 												<button class="deleteButton" type="button" onclick="deleteBox(this)"><img class="deleteImg" src="/img/mk/delete.png"></button>
 											</div>										
 										</li>																			

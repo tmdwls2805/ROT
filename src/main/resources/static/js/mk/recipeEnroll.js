@@ -3,8 +3,8 @@ function addItem(self){
 	/* var item = $(".recepiRow2",tbl).clone(); */
 	var item = $(`<li class="recepiRow2">
 											<div class="input-mat2">
-												<input type="text" class="input-mat2Find" name="mat2Find" placeholder="예) 미역" /> 
-												<input type="text" class="input-mat2Vol" name="mat2Vol" placeholder="예) 100g" />
+												<input type="text" class="input-mat2Find" name="mat2Find" placeholder="예) 미역" required/> 
+												<input type="text" class="input-mat2Vol" name="mat2Vol" placeholder="예) 100g" required/>
 												<button class="deleteButton" type="button" onclick="deleteBox(this)"><img class="deleteImg" src="/img/mk/delete.png"></button>
 											</div>										
 										</li>`).clone();
@@ -28,14 +28,14 @@ $("#add2").on("click", function(){
 									<ul id="addList" class="input-mat recepiList">
 										<li class="recepiRow2">
 											<div class="input-mat2">
-												<input type="text" class="input-mat2Find" name="mat2Find" placeholder="예) 미역" /> 
-												<input type="text" class="input-mat2Vol" name="mat2Vol" placeholder="예) 100g" />
+												<input type="text" class="input-mat2Find" name="mat2Find" placeholder="예) 미역" required/> 
+												<input type="text" class="input-mat2Vol" name="mat2Vol" placeholder="예) 100g" required/>
 											</div>										
 										</li>	
 										<li class="recepiRow2">
 											<div class="input-mat2">
-												<input type="text" class="input-mat2Find" name="mat2Find" placeholder="예) 미역" /> 
-												<input type="text" class="input-mat2Vol" name="mat2Vol" placeholder="예) 100g" />
+												<input type="text" class="input-mat2Find" name="mat2Find" placeholder="예) 미역" required/> 
+												<input type="text" class="input-mat2Vol" name="mat2Vol" placeholder="예) 100g" required/>
 												<button class="deleteButton" type="button" onclick="deleteBox(this)"><img class="deleteImg" src="/img/mk/delete.png"></button>
 											</div>										
 										</li>																			

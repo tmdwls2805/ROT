@@ -6,12 +6,18 @@
 
 	<insert id="addRecipe" parameterType="Recipe">
 		INSERT INTO recipe(reciId, reciName, reciSub, reciIntro, reciMainPic, reciMainPicOriName, reciMainPicUrl, reciFind, reciSit, reciWay, reciMat, reciPer, reciTim, reciLev, reciTip, reciLookUp, reciRegdate)
-		VALUES (#{reciId}, #{reciName}, #{reciSub}, #{reciIntro}, #{reciMainPic}, #{reciMainPicOriName}, #{reciMainPicUrl}, #{reciFind}, #{reciSit}, #{reciWay}, #{reciMat}, #{reciPer}, #{reciTim}, #{reciLev}, #{reciTip}, #{reciLookUp}, now());
+		VALUES (#{reciId}, #{reciName}, #{reciSub}, #{reciIntro}, #{reciMainPic}, #{reciMainPicOriName}, #{reciMainPicUrl}, #{reciFind}, #{reciSit}, #{reciWay}, #{reciMat}, #{reciPer}, #{reciTim}, #{reciLev}, #{reciTip}, #{reciLookUp}, now())
+		<selectKey keyProperty="reciNum" resultType="int" order="AFTER">
+			SELECT LAST_INSERT_ID()
+		</selectKey>
 	</insert>
 	
  	<insert id="addMaterial" parameterType="Material">
-		INSERT INTO material 
-		VALUES (#{reciInputNum},m#{matName});
+		INSERT INTO material(reciInputNum, matName)
+		VALUES (#{reciInputNum}, #{matName});
+		<selectKey keyProperty="matNum" resultType="int" order="AFTER">
+			SELECT LAST_INSERT_ID()
+		</selectKey>
 	</insert>
 	
 	<insert id="addMaterial2" parameterType="Material2">
