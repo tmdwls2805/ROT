@@ -19,5 +19,6 @@ public interface RecipeRepository {
 	public Material getMaterial(Material m);
 	public Material2 getMaterial2(Material2 m2);	
 	public List<Recipe> getRecipeList();
+	public int getRecipeCount();
 
 }

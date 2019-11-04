@@ -44,5 +44,8 @@ public class RecipeService {
 	  public Material2 getMaterial2(Material2 m2) {
 		  return recipeRepository.getMaterial2(m2);
 	  }	  
+	  public int getRecipeCount() {
+		  return recipeRepository.getRecipeCount();
+	  }
 
 }

@@ -38,7 +38,14 @@ public class RecipeController {
 	 @GetMapping("/recipeList")
 	 public String recipeList(ModelMap m) {
 		 m.put("recipeList", recipeService.getRecipeList());
+		 m.put("recipeCount", recipeService.getRecipeCount());
 		 return "recipe/recipeList";
+	 }
+	 
+	 @GetMapping("/recipeListDetails")
+	 public String recipeListDetails() {
+		 
+		 return "recipe/recipeListDetails";
 	 }
 	
 	  @GetMapping("/recipeEnroll") 
