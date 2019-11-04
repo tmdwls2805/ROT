@@ -73,18 +73,13 @@ $("#add3").on("click", function(){
 									Step
 								</td>
 								<td class="textContent">
-									<textarea class="orderContent" name="orderContent" placeholder="예) 소고기는 기름기를 떼어내고 적당한 크기로 썰어주세요."></textarea>
+									<textarea class="orderContent" name="orderContent" placeholder="예) 소고기는 기름기를 떼어내고 적당한 크기로 썰어주세요." required="required"></textarea>
 								</td>
-								<td class="uploadImg">
-										<img class="orderPic" id="uploadPic" name="uploadPic" src="img/mk/comPic.gif">
-										<button class="deleteButton" type="button" onclick="deleteBox3(this)"><img class="deleteImg" src="/img/mk/delete.png"></button>
-								</td>		
 							</tr>
 							<tr>
 								<td></td>
 								<td></td>
 								<td>
-									<input class="InputreciMainPic" type="file" name="file2" id="orderPic" />
 								</td>
 							</tr>
 							<tr>

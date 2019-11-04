@@ -1,5 +1,7 @@
 package com.hoseo.rot.recipe;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -25,6 +27,22 @@ public class RecipeService {
 	  public boolean addMaterial2(Material2 m2) { 
 		  return recipeRepository.addMaterial2(m2)==1; 
 		  }
-
+	  
+	  
+	  public List<Recipe> getRecipeList() {
+		  return recipeRepository.getRecipeList();
+	  }
+	  public Recipe getRecipe(Recipe r) {
+		  return recipeRepository.getRecipe(r);
+	  }
+	  public RecipeOrder getRecipeOrder(RecipeOrder ro) {
+		  return recipeRepository.getRecipeOrder(ro);
+	  }	  
+	  public Material getMaterial(Material m) {
+		  return recipeRepository.getMaterial(m);
+	  }
+	  public Material2 getMaterial2(Material2 m2) {
+		  return recipeRepository.getMaterial2(m2);
+	  }	  
 
 }

@@ -50,7 +50,7 @@
 		<div class="container">
 			<form class="form" name="form" method="post" action="recipeEnroll" enctype="multipart/form-data">
 			<input type="text" name="reciId" th:value="${session.member.id}" hidden="hidden"/>
-			<input type="text" name="reciName" th:value="${session.member.name}" hidden="hidden"/>
+			<input type="text" name="reciName" th:value="${session.member.nickname}" hidden="hidden"/>
 <!-- -------------------------------첫 번째 테이블 시작------------------------------- -->						
 				<table class="reciTable1">
 				
@@ -82,7 +82,7 @@
 							<p class="enroll_title">요리소개</p>
 						</td>
 						<td class="reciInput">
-							<textarea class="input-reciIntro" name="reciIntro" placeholder="이 레시피의 탄생 배경을 적어주세요."></textarea>
+							<textarea class="input-reciIntro" name="reciIntro" placeholder="이 레시피의 탄생 배경을 적어주세요." required="required"></textarea>
 						</td>
 					</tr>
 
@@ -277,17 +277,17 @@
 									Step
 								</td>
 								<td class="textContent">
-									<textarea class="orderContent" name="orderContent" placeholder="예) 소고기는 기름기를 떼어내고 적당한 크기로 썰어주세요."></textarea>
+									<textarea class="orderContent" name="orderContent" placeholder="예) 소고기는 기름기를 떼어내고 적당한 크기로 썰어주세요." required="required"></textarea>
 								</td>
-								<td class="uploadImg">
+<!-- 								<td class="uploadImg">
 										<img class="orderPic" id="uploadPic" name="uploadPic" src="#" th:src="@{img/mk/comPic.gif}">
-								</td>		
+								</td> -->		
 							</tr>
 							<tr>
 								<td></td>
 								<td></td>
 								<td>
-									<input class="InputreciMainPic" type="file" name="file2" id="orderPic" />
+<!-- 									<input class="InputreciMainPic" type="file" name="file2" id="orderPic" /> -->
 								</td>
 							</tr>
 							<tr>

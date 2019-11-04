@@ -70,30 +70,28 @@
 			<div class="filters-content">
 				<div class="row grid">
 						<div th:each="product : ${productList}">
-							   <div class="col-md-6 all"  th:id="${product.productKind}">
+								
+							   <div class="col-md-6 all" th:id="${product.productKind}">
+							   		<a class="materialList" th:href="@{'materialListDetails?productNum='+${product.productNum}}">
 									<div class="m-menu">
 										<div class="title-wrap d-flex justify-content-between">
-											<a th:href="@{'materialListDetails?productNum='+${product.productNum}}">
-												<img th:src="@{'/upload/product/'+${product.productImg}}" style="width:100%; height:100%; border-radius:0px;">
-											</a>
+											<img class="productImg" th:src="@{'/upload/product/'+${product.productImg}}">
 										</div>
 										<div class="m-menu-text">
-											<a th:href="@{'materialListDetails?productNum='+${product.productNum}}">
-												<span class="productName" th:text="${product.productName}"></span>
-											</a>	
+											<span class="productName" th:text="${product.productName}"></span>
 											<span class="productPrice" th:text="${product.productPrice}"></span><span class="productPrice-m">원</span>
 											<span class="productVolume"><span th:text="${product.productVolume}"></span>당 : <span th:text="${product.productPrice}">1,000</span>원</span>
-											
 											<div th:if="${product.productCount != 0}">
 											<span class="productVolume2">원산지 : <span  th:text="${product.productOrigin}"></span></span>
 											</div>
-											
 											<div th:if="${product.productCount == 0}">
 											<span class="productVolume3">일시품절</span>
 											</div>
 										</div>							
 									</div>
-	                            </div>	                          
+									</a> 
+	                            </div>	
+	                                                     
                           </div>							
 					</div>				
 				</div>

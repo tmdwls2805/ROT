@@ -12,11 +12,13 @@ import org.apache.commons.lang3.RandomStringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
+import com.hoseo.rot.admin.AdminService;
 import com.hoseo.rot.member.Member;
 import com.hoseo.rot.recipe.Material;
 import com.hoseo.rot.recipe.Material2;
@@ -30,11 +32,17 @@ public class RecipeController {
 
 	@Autowired
 	private RecipeService recipeService;
+	@Autowired
+	private AdminService adminService;
 
+	 @GetMapping("/recipeList")
+	 public String recipeList(ModelMap m) {
+		 m.put("recipeList", recipeService.getRecipeList());
+		 return "recipe/recipeList";
+	 }
 	
 	  @GetMapping("/recipeEnroll") 
-	  public String recipeEnroll() 
-	  { 
+	  public String recipeEnroll() { 
 		  return "recipe/recipeEnroll"; 
 		  }
 	  
@@ -108,7 +116,7 @@ public class RecipeController {
 		  for(int i = 0; i<orderContent.length; i++) {
 			  ro.setOrderContent(orderContent[i]);
 //			  ro.setOrderPic(orderPic[i]);
-//			  ro.setOrderPicOriName(orderPicOriName[i]);
+// 			  ro.setOrderPicOriName(orderPicOriName[i]);
 //			  ro.setOrderPicUrl(orderPicUrl[i]);
 			  recipeService.addRecipeOrder(ro);
 		  }

@@ -29,5 +29,23 @@
 		INSERT INTO recipeOrder(reciInputNum, orderContent, orderPic, orderPicOriName, orderPicUrl) 
 		VALUES (#{reciInputNum}, #{orderContent}, #{orderPic}, #{orderPicOriName}, #{orderPicUrl});
 	</insert>
+	
+	<select id="getRecipe" parameterType="Recipe" resultType="Recipe">
+		SELECT * FROM recipe WHERE reciNum=#{reciNum};
+	</select>
+		<select id="getRecipeList" parameterType="Recipe" resultType="Recipe">
+		SELECT * FROM recipe;
+	</select>
+	
+	<select id="getRecipeOrder" parameterType="RecipeOrder" resultType="RecipeOrder">
+		SELECT * FROM recipeOrder WHERE reciInputNum=#{reciInputNum};
+	</select>	
+	
+	<select id="getMaterial" parameterType="Material" resultType="Material">
+		SELECT * FROM material WHERE reciInputNum=#{reciInputNum};
+	</select>
 
+	<select id="getMaterial2" parameterType="Material2" resultType="Material2">
+		SELECT * FROM material2 WHERE reciInputNum=#{reciInputNum};
+	</select>	
 </mapper>

@@ -1,5 +1,7 @@
 package com.hoseo.rot.recipe;
 
+import java.util.List;
+
 import org.apache.ibatis.annotations.Mapper;
 
 
@@ -11,5 +13,11 @@ public interface RecipeRepository {
 	public int addRecipeOrder(RecipeOrder ro);
 	public int addMaterial(Material m);
 	public int addMaterial2(Material2 m2);
+	
+	public Recipe getRecipe(Recipe r);
+	public RecipeOrder getRecipeOrder(RecipeOrder ro);
+	public Material getMaterial(Material m);
+	public Material2 getMaterial2(Material2 m2);	
+	public List<Recipe> getRecipeList();
 
 }
