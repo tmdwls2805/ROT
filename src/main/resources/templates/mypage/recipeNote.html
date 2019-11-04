@@ -18,61 +18,20 @@
 <title>내일의 레시피</title>
 
 <!-- CSS ============================================= -->
-<link rel="stylesheet" href="../static/css/linearicons.css"
-	th:href="@{/css/linearicons.css}">
-<link rel="stylesheet" href="../static/css/font-awesome.min.css"
-	th:href="@{/css/font-awesome.min.css}">
-<link rel="stylesheet" href="../static/css/bootstrap.css"
-	th:href="@{/css/bootstrap.css}">
-<link rel="stylesheet" href="../static/css/magnific-popup.css"
-	th:href="@{/css/magnific-popup.css}">
-<link rel="stylesheet" href="../static/css/jquery-ui.css"
-	th:href="@{/css/jquery-ui.css}">
-<link rel="stylesheet" href="../static/css/nice-select.css"
-	th:href="@{/css/nice-select.css}">
-<link rel="stylesheet" href="../static/css/animate.min.css"
-	th:href="@{/css/animate.min.css}">
-<link rel="stylesheet" href="../static/css/owl.carousel.css"
-	th:href="@{/css/owl.carousel.css}">
-<link rel="stylesheet" href="../static/css/main.css"
-	th:href="@{/css/main.css}">
-<link rel="stylesheet" href="../static/css/mk/materialListDetails.css"
-	th:href="@{/css/mk/materialListDetails.css}">
-<link rel="stylesheet" href="../static/slick/slick.css"
-	th:href="@{/slick/slick.css}" />
-<link rel="stylesheet" href="../static/slick/slick-theme.css"
-	th:href="@{/slick/slick-theme.css}" />
-<link rel="stylesheet" href="../static/css/mk/mypage.css"
-	th:href="@{/css/mk/mypage.css}" />
-<script src="../static/js/vendor/jquery-2.2.4.min.js"
-	th:src="@{/js/vendor/jquery-2.2.4.min.js}"></script>
-<script src="../static/js/popper.min.js" th:src="@{/js/popper.min.js}"></script>
-<script src="../static/js/vendor/bootstrap.min.js"
-	th:src="@{/js/vendor/bootstrap.min.js}"></script>
-<script src="../static/js/jquery-ui.js" th:src="@{/js/jquery-ui.js}"></script>
-<script src="../static/js/easing.min.js" th:src="@{/js/easing.min.js}"></script>
-<script src="../static/js/hoverIntent.js" th:src="@{/js/hoverIntent.js}"></script>
-<script src="../static/js/superfish.min.js"
-	th:src="@{/js/superfish.min.js}"></script>
-<script src="../static/js/jquery.ajaxchimp.min.js"
-	th:src="@{/js/jquery.ajaxchimp.min.js}"></script>
-<script src="../static/js/jquery.magnific-popup.min.js"
-	th:src="@{/js/jquery.magnific-popup.min.js}"></script>
-<script src="../static/js/jquery.nice-select.min.js"
-	th:src="@{/js/jquery.nice-select.min.js}"></script>
-<script src="../static/js/owl.carousel.min.js"
-	th:src="@{/js/owl.carousel.min.js}"></script>
-<script src="../static/js/isotope.pkgd.min.js"
-	th:src="@{/js/isotope.pkgd.min.js}"></script>
-<script src="../static/js/mail-script.js" th:src="@{/js/mail-script.js}"></script>
-<script src="../static/js/main.js" th:src="@{/js/main.js}"></script>
-<script
-	src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="../static/slick/slick.min.js"
-	th:src="@{/slick/slick.min.js}"></script>
-<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-
+<link rel="stylesheet" th:href="@{/css/linearicons.css}">
+<link rel="stylesheet" th:href="@{/css/font-awesome.min.css}">
+<link rel="stylesheet" th:href="@{/css/bootstrap.css}">
+<link rel="stylesheet" th:href="@{/css/magnific-popup.css}">
+<link rel="stylesheet" th:href="@{/css/jquery-ui.css}">
+<link rel="stylesheet" th:href="@{/css/nice-select.css}">
+<link rel="stylesheet" th:href="@{/css/animate.min.css}">
+<link rel="stylesheet" th:href="@{/css/owl.carousel.css}">
+<link rel="stylesheet" th:href="@{/css/main.css}">
+<link rel="stylesheet" th:href="@{/css/mk/materialListDetails.css}">
+<link rel="stylesheet" th:href="@{/slick/slick.css}" />
+<link rel="stylesheet" th:href="@{/slick/slick-theme.css}" />
+<link rel="stylesheet" th:href="@{/css/mk/mypage.css}" />
+<link rel="stylesheet" th:href="@{/css/mk/recipeNote.css}" />
 </head>
 		<body>	
 			<div th:replace="~{header :: header}"></div>
@@ -98,19 +57,55 @@
 					<div class="row">
 						<div class="col-lg-8 posts-list">
 							<div class="single-post row">
-								<table class="mypage_table" border="1" >
+								<table class="mypage_table" border="1">
 									<tr>
 										<td class="table_title" colspan="3">
 											<h3>레시피 노트</h3>
 										</td>
 									</tr>
-									<tr class="table_content">
-									</tr>									
+									<tr th:if="${recipeCount == 0}" >
+										<td class="table-content">
+											<div  class="none-div">
+												<div>
+													<img class="none-recipe-img" th:src="@{/img/mk/none_recipe.png}">
+												</div>
+												<div>
+													<p class="none-recipe-text">레시피를 직접 올려보세요!</p>
+													<span class="none-recipe-text2">자랑하고 싶은 나만의 레시피! 공유하고 싶은 멋진 레시피를 올려 주세요.</span>
+												</div>
+												<div class="none-div2">
+													<button onclick="location.href='/recipeEnroll'"class="goRecipeEnroll">레시피 등록하기</button>
+												</div>
+											</div>
+										</td>
+									</tr>		
+									<tr th:if="${recipeCount != 0}"  class="table-content">
+										<td class="recipe-content">
+											<table class="recipe-content-table">
+												<tr class="content" th:each="recipe : ${recipeList}">
+													<td class="td1">
+														<a th:href="@{'recipeListDetails?reciNum='+${recipe.reciNum}}">
+															<img class="recipeImg" th:src="@{'/upload/recipe/'+${recipe.reciMainPic}}">
+															<p class="recipeSub" th:text="${recipe.reciSub}"></p>
+														</a>
+														<div>
+															<span class="recipeDate" th:text="${#strings.substring(recipe.reciregdate, 0, 10)}"></span>
+															<span class="recipeLookUp" th:text="${recipe.reciLookUp}"></span>
+															<span class="recipeComment">0</span>
+														</div>
+														<a class="recipeUpdate">삭제</a>
+														<a th:href="@{'recipeUpdate?reciNum='+${recipe.reciNum}}" class="recipeUpdate">수정</a>
+														
+													</td>
+												</tr>
+											</table>
+										</td>
+									</tr>							
 								</table>
 							</div>
 						</div>
 						
-												<div class="col-lg-4 sidebar-widgets">
+						<div class="col-lg-4 sidebar-widgets">
 							<div class="widget-wrap2">
 									<div class="profileTop" style="background:url('img/mk/profile_back.jpg'); background-size:cover;">
 									</div>								
@@ -180,4 +175,23 @@
 			<!-- End post-content Area -->
 			<div th:replace="~{footer :: footer}"></div>
 		</body>
+<script th:src="@{/js/vendor/jquery-2.2.4.min.js}"></script>
+<script th:src="@{/js/popper.min.js}"></script>
+<script th:src="@{/js/vendor/bootstrap.min.js}"></script>
+<script th:src="@{/js/jquery-ui.js}"></script>
+<script th:src="@{/js/easing.min.js}"></script>
+<script th:src="@{/js/hoverIntent.js}"></script>
+<script th:src="@{/js/superfish.min.js}"></script>
+<script th:src="@{/js/jquery.ajaxchimp.min.js}"></script>
+<script th:src="@{/js/jquery.magnific-popup.min.js}"></script>
+<script th:src="@{/js/jquery.nice-select.min.js}"></script>
+<script th:src="@{/js/owl.carousel.min.js}"></script>
+<script th:src="@{/js/isotope.pkgd.min.js}"></script>
+<script th:src="@{/js/mail-script.js}"></script>
+<script th:src="@{/js/main.js}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script th:src="@{/slick/slick.min.js}"></script>
+<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+		
 </html>

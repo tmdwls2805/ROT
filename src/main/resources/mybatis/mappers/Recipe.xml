@@ -34,6 +34,14 @@
 		SELECT * FROM recipe WHERE reciNum=#{reciNum};
 	</select>
 	
+	<select id="getRecipeUser" parameterType="Recipe" resultType="Recipe">
+		SELECT * FROM recipe WHERE reciId=#{reciId};
+	</select>	
+	
+	<select id="getRecipeUserCount" parameterType="Recipe" resultType="int">
+		SELECT count(*) FROM recipe WHERE reciId=#{reciId};
+	</select>	
+	
 	<select id="getRecipeCount" parameterType="Recipe" resultType="int">
 		SELECT count(*) FROM recipe;
 	</select>	

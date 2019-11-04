@@ -27,6 +27,7 @@ import com.hoseo.rot.admin.AdminService;
 import com.hoseo.rot.admin.Cart;
 import com.hoseo.rot.member.Member;
 import com.hoseo.rot.member.MemberService;
+import com.hoseo.rot.recipe.RecipeService;
 
 @Controller
 public class MypageController {
@@ -34,6 +35,8 @@ public class MypageController {
 	MemberService memberService;
 	@Autowired
 	AdminService adminService;
+	@Autowired
+	RecipeService recipeService;
 	
 	//레시피 노트
 	@RequestMapping(value = "/recipeNote", method = { RequestMethod.GET, RequestMethod.POST })	
@@ -41,6 +44,9 @@ public class MypageController {
 		Member m =  (Member) session.getAttribute("member");
 		String id = m.getId();
 			model.put("member",memberService.getMypage(id));
+		String reciId = m.getId();
+			model.put("recipeList", recipeService.getRecipeUser(reciId));
+			model.put("recipeCount", recipeService.getRecipeUserCount(reciId));
 			return "mypage/recipeNote";
 	}
 	

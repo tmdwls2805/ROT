@@ -47,6 +47,12 @@ public class RecipeController {
 		 
 		 return "recipe/recipeListDetails";
 	 }
+	 
+	 @GetMapping("/recipeUpdate")
+	 public String recipeUpdate() {
+		 
+		 return "recipe/recipeUpdate";
+	 }	 
 	
 	  @GetMapping("/recipeEnroll") 
 	  public String recipeEnroll() { 

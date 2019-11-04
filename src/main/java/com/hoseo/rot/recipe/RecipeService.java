@@ -47,5 +47,12 @@ public class RecipeService {
 	  public int getRecipeCount() {
 		  return recipeRepository.getRecipeCount();
 	  }
+	  public List<Recipe> getRecipeUser(String reciId) {
+		  return recipeRepository.getRecipeUser(reciId);
+	  }
+	  
+	  public int getRecipeUserCount(String reciId) {
+		  return recipeRepository.getRecipeUserCount(reciId);
+	  }
 
 }
