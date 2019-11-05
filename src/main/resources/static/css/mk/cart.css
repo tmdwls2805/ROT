@@ -132,7 +132,31 @@ form{
     cursor: pointer;
 }
 
+.delCartItem2:hover{
+    color: #525252;
+    font-weight: 700;
+    background: #fff;
+    font-size: 10px;
+    border-radius: 3px;
+    border: 1px solid #c1c1c1;
+    display: inline;
+    padding: 5px 30px 5px 30px;
+    cursor: pointer;
+}
+
 .buyCartItem{
+    color: #fff;
+    font-weight: 700;
+    background: #f42f2c;
+    font-size: 10px;
+    border-radius: 3px;
+    border: 1px solid #f42f2c;
+    display: inline;
+    padding: 5px 19.5px 5px 19.5px;
+    cursor: pointer;
+}
+
+.buyCartItem:hover{
     color: #fff;
     font-weight: 700;
     background: #f42f2c;

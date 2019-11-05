@@ -17,6 +17,7 @@
 <link rel="stylesheet" th:href="@{/css/animate.min.css}">
 <link rel="stylesheet" th:href="@{/css/owl.carousel.css}">
 <link rel="stylesheet" th:href="@{/css/main.css}">
+<link rel="stylesheet" th:href="@{/css/mk/recipeListDetails.css}">
 </head>
 <body>
 	<div th:replace="~{header :: header}"></div>
@@ -34,7 +35,97 @@
 	<section class="contact-page-area section-gap">
 		<div class="container">
 			<div class="row">
-				
+				<table class="recipe-table1">
+					<tr>
+						<td class="recipe-td">
+							<div>
+								<img class="recipeImg" th:src="@{'/upload/recipe/'+${recipe.reciMainPic}}">
+							</div>
+							<div class="profileDiv" th:if="${member.profileImgOriName != ''}">
+								<img class="profileImg" th:src="@{'/upload/profile/'+${member.profileImg}}">						
+							</div>
+							<div class="profileDiv" th:if="${member.profileImgOriName == ''}">
+								<img class="profileImg" th:src="@{img/mk/profile.png}">						
+							</div>							
+							<div>
+								<p class="nickname" th:text="${member.nickname}"></p>
+								<h3 class="reciSub" th:text="${recipe.reciSub}"></h3>
+							</div>
+
+						</td>
+					</tr>
+				</table>
+				<table class="recipe-table2">
+					<tr>
+						<td class="recipe-td2">
+							<span class="material-title">재료</span><span  class="material-title2">Ingredients</span>
+						</td>
+					</tr>
+					<tr>
+						<td class="recipe-td3">
+							<div th:each="material : ${materialList}">
+								<table  class="recipe-table3" border="1">
+									<tr>
+										<td>
+											<div>
+												[<span th:text="${material.matName}"></span>]
+											</div>
+											<div class="materialList">
+											아아아ㅏ
+											</div>
+											
+										</td>
+									</tr>
+								</table>	
+							</div>						
+						</td>
+					</tr>
+					<tr>
+						<td class="blank"></td>
+					</tr>
+				</table>
+				<table class="recipe-table4">
+					<tr>
+						<td  class="recipe-td2" colspan="2">
+							<span class="material-title">조리순서</span><span  class="material-title2">Steps</span>						
+						</td>
+					</tr>
+					<tr th:each="recipeOrder : ${recipeOrderList}">
+						<td class="recipe-td4">
+							<div class="orderContent">
+									<span class="step">Step1</span>
+							</div>						
+						</td>
+						<td class="recipe-td5">
+							<span class="orderText" th:text="${recipeOrder.orderContent}"></span>
+						</td>
+					</tr>
+					<tr>
+						<td colspan="2" class="recipe-td6">
+							<img src="http://recipe1.ezmember.co.kr/img/tit_tip.gif" alt="팁-주의사항">
+						</td>
+					</tr>		
+					<tr>
+						<td colspan="2" class="recipe-td7">
+							<span class="recipeTip">팁이예요~</span>
+						</td>
+					</tr>
+					<tr>
+						<td colspan="2" class="recipe-td8">
+							<table class="recipe-table5">
+								<tr>
+									<td class="recipe-td9">
+										<span class="date">등록일 : </span>
+										<span class="date" th:text="${#strings.substring(recipe.reciregdate, 0, 10)}"></span>
+									</td>
+									<td class="recipe-td10">
+										<span class="date2">저작자의 사전 동의 없이 이미지 및 문구의 무단 도용 및 복제를 금합니다.</span>
+									</td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+				</table>
 			</div>
 		</div>
 	</section>

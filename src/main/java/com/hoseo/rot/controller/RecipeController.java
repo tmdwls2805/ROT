@@ -3,6 +3,7 @@ package com.hoseo.rot.controller;
 import java.io.File;
 import java.io.IOException;
 import java.util.Iterator;
+import java.util.List;
 
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -20,6 +21,7 @@ import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 import com.hoseo.rot.admin.AdminService;
 import com.hoseo.rot.member.Member;
+import com.hoseo.rot.member.MemberService;
 import com.hoseo.rot.recipe.Material;
 import com.hoseo.rot.recipe.Material2;
 import com.hoseo.rot.recipe.Recipe;
@@ -34,6 +36,8 @@ public class RecipeController {
 	private RecipeService recipeService;
 	@Autowired
 	private AdminService adminService;
+	@Autowired
+	private MemberService memberService;
 
 	 @GetMapping("/recipeList")
 	 public String recipeList(ModelMap m) {
@@ -43,7 +47,13 @@ public class RecipeController {
 	 }
 	 
 	 @GetMapping("/recipeListDetails")
-	 public String recipeListDetails() {
+	 public String recipeListDetails(ModelMap m, Recipe r) {
+		 r = recipeService.getRecipe(r);
+		 m.put("recipe", r);
+		 m.put("member", memberService.getMypage(r.getReciId()));
+		 m.put("materialList", recipeService.getMaterial(r.getReciNum()));
+		 m.put("recipeOrderList", recipeService.getRecipeOrder(r.getReciNum()));
+		 
 		 
 		 return "recipe/recipeListDetails";
 	 }
@@ -86,12 +96,11 @@ public class RecipeController {
 			            	r.setReciMainPicOriName(sourceFileName);
 			            	r.setReciMainPicUrl(path+folderName1);
 			            	thumb = "no";
-			            } else {
-			            	destinationFile = new File(path + folderName2 +destinationFileName);
-			            	ro.setOrderPic(destinationFileName);
-			            	ro.setOrderPicOriName(sourceFileName);
-			            	ro.setOrderPicUrl(path+folderName2);
-			            }
+				} /*
+					 * else { destinationFile = new File(path + folderName2 +destinationFileName);
+					 * ro.setOrderPic(destinationFileName); ro.setOrderPicOriName(sourceFileName);
+					 * ro.setOrderPicUrl(path+folderName2); }
+					 */
 		        } while (destinationFile.exists());
 		        destinationFile.getParentFile().mkdirs(); 		        
 		        try {
@@ -108,9 +117,11 @@ public class RecipeController {
 		  String [] mat2Find = h.getParameterValues("mat2Find");
 		  String [] mat2Vol = h.getParameterValues("mat2Vol");
 		  String [] orderContent = h.getParameterValues("orderContent");
-		  String [] orderPic = h.getParameterValues("orderPic");
-		  String [] orderPicOriName = h.getParameterValues("orderPicOriName");
-		  String [] orderPicUrl = h.getParameterValues("orderPicUrl");
+			/*
+			 * String [] orderPic = h.getParameterValues("orderPic"); String []
+			 * orderPicOriName = h.getParameterValues("orderPicOriName"); String []
+			 * orderPicUrl = h.getParameterValues("orderPicUrl");
+			 */
 		  
 		  m.setReciInputNum(r.getReciNum());
 		  for(int i = 0; i<matName.length; i++) {

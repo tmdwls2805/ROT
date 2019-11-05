@@ -26,8 +26,8 @@
 	</insert>
 	
 	<insert id="addRecipeOrder" parameterType="RecipeOrder">
-		INSERT INTO recipeOrder(reciInputNum, orderContent, orderPic, orderPicOriName, orderPicUrl) 
-		VALUES (#{reciInputNum}, #{orderContent}, #{orderPic}, #{orderPicOriName}, #{orderPicUrl});
+		INSERT INTO recipeOrder(reciInputNum, orderContent) 
+		VALUES (#{reciInputNum}, #{orderContent});
 	</insert>
 	
 	<select id="getRecipe" parameterType="Recipe" resultType="Recipe">
@@ -37,6 +37,18 @@
 	<select id="getRecipeUser" parameterType="Recipe" resultType="Recipe">
 		SELECT * FROM recipe WHERE reciId=#{reciId};
 	</select>	
+	
+	<resultMap id="Material2Map" type="Material2">
+		<id property="matInputNum" column="matInputNum" />
+		<result property="reciInputNum" column="reciInputNum" />
+		<result property="mat2Num" column="mat2Num" />
+		<result property="mat2Find" column="mat2Find" />
+		<result property="mat2Vol" column="mat2Vol" />
+	</resultMap>
+	
+	<select id="getMaterial2" parameterType="Material2" resultMap="Material2Map">
+		SELECT * FROM material2 WHERE matInputNum=#{matInputNum};
+	</select>
 	
 	<select id="getRecipeUserCount" parameterType="Recipe" resultType="int">
 		SELECT count(*) FROM recipe WHERE reciId=#{reciId};
@@ -57,8 +69,4 @@
 	<select id="getMaterial" parameterType="Material" resultType="Material">
 		SELECT * FROM material WHERE reciInputNum=#{reciInputNum};
 	</select>
-
-	<select id="getMaterial2" parameterType="Material2" resultType="Material2">
-		SELECT * FROM material2 WHERE reciInputNum=#{reciInputNum};
-	</select>	
 </mapper>

@@ -35,14 +35,15 @@ public class RecipeService {
 	  public Recipe getRecipe(Recipe r) {
 		  return recipeRepository.getRecipe(r);
 	  }
-	  public RecipeOrder getRecipeOrder(RecipeOrder ro) {
-		  return recipeRepository.getRecipeOrder(ro);
+	  public List<RecipeOrder> getRecipeOrder(int reciInputNum) {
+		  return recipeRepository.getRecipeOrder(reciInputNum);
 	  }	  
-	  public Material getMaterial(Material m) {
-		  return recipeRepository.getMaterial(m);
+	  
+	  public List<Material> getMaterial(int reciInputNum) {
+		  return recipeRepository.getMaterial(reciInputNum);
 	  }
-	  public Material2 getMaterial2(Material2 m2) {
-		  return recipeRepository.getMaterial2(m2);
+	  public List<Material2> getMaterial2(int matInputNum) {
+		  return recipeRepository.getMaterial2(matInputNum);
 	  }	  
 	  public int getRecipeCount() {
 		  return recipeRepository.getRecipeCount();

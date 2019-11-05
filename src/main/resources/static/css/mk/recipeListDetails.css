@@ -1,0 +1,187 @@
+*{
+	font-family: Arial, Nanum Gothic, Nanum Gothic;    
+}
+
+.recipe-table1{
+	width:100%;
+	border: 1px solid #e6e7e8;
+	background:#fff;
+}
+
+.recipe-table2{
+	width:100%;
+	border: 1px solid #e6e7e8;
+	background:#fff;
+	margin-top:20px;
+}
+
+.recipe-table3{
+	width:100%;
+	background:#fff;
+	margin-bottom:40px;
+}
+
+.recipe-table4{
+	width:100%;
+	border: 1px solid #e6e7e8;
+	background:#fff;
+	margin-top:20px;
+}
+
+.recipe-table5{
+	width:100%;
+	border: 1px solid #e6e7e8;
+}
+
+.recipe-td{
+	text-align:center;
+	padding:60px 30px 90px 30px;
+}
+
+.recipe-td2{
+	text-align:left;
+	padding:30px 30px 0 30px;
+}
+
+.recipe-td3{
+	text-align:left;
+	padding:25px 65px 0 65px;
+}
+
+.recipe-td4{
+	text-align:left;
+	padding:50px 65px 0 65px;
+	width:20%;
+	vertical-align:top;
+}
+
+.recipe-td5{
+	text-align:left;
+	padding:50px 65px 30px 0;
+	width:80%;
+	vertical-align:top;
+}
+
+.recipe-td6{
+	padding:30px 0 30px 0;
+}
+
+.recipe-td7{
+	padding:0 50px 60px 50px;
+}
+
+.recipe-td8{
+	padding:0 50px 60px 50px;
+}
+
+.recipe-td9{
+	height:53px;
+	background: #f9f9f9;
+    border-top: 1px dashed #ccc;
+    border-bottom: 1px dashed #ccc;
+    border-left: 1px dashed #ccc;
+    padding: 12px 18px 11px 30px;
+    text-align: left;		
+}
+
+.recipe-td10{
+	height:53px;
+	background: #f9f9f9;
+    border-top: 1px dashed #ccc;
+    border-bottom: 1px dashed #ccc;
+    border-right: 1px dashed #ccc;
+    padding: 12px 30px 11px 8px;
+    text-align: right;	
+}
+
+.recipeTip{
+	font-size:20px;
+	color:#333;
+}
+
+.recipeImg{
+	width:600px;
+	height:400px;
+}
+
+.profileImg {
+	width: 140px;
+	height: 140px;
+	border-radius: 50%;
+	border: 5px solid #fff;
+	border-color: rgba(255, 255, 255, 0.5);
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.profileDiv{
+	margin-top:-75px;
+}
+
+.nickname{
+    color: #333;
+    font-size: 20px;
+    font-weight:500;
+    display: inline-block;
+    line-height: 1;
+    margin-top: 15px;	
+}
+
+.reciSub{
+	color: #333;
+	font-size: 34px;
+    letter-spacing: -0.05em;
+    line-height: 1.3;
+    text-align: center;
+    padding: 0 10px;	
+    font-weight:500;
+}
+
+.material-title{
+    font-size: 23px;
+    color: #000;
+    font-weight:500;	
+}
+
+.material-title2{
+	color: #ccc;
+    font-size: 16px;
+    font-style: italic;
+    padding-left: 4px;	
+}
+
+.materialList{
+	width:47%; 
+	float:left;
+}
+
+.orderContent{
+	margin-bottom:60px;
+}
+
+.orderText{
+	font-size:24px;
+	color:#333;
+	margin-left:30px;
+}
+
+.step{
+	font-size: 38px;
+	font-weight:300;
+    color: #f42f2c;
+}
+
+.blank{
+	height:40px;
+}
+
+.date{
+	font-weight: normal;
+	font-size:13px;
+	color:#999;
+}
+
+.date2{
+    display: inline-block;
+    font-size: 12px;
+    color: #999;	
+}

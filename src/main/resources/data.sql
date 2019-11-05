@@ -18,3 +18,9 @@ Insert into recipe values('tmdwls2805', '개발자', 1, '미역국 만들기', '
 Insert into recipe values('tmdwls2805', '개발자', 2, '맛있는 순대볶음', '저의 두번째 요리,  순대볶음 만들기입니다.', '순대볶음.jpg', '순대볶음.jpg', 'D:/upload/recipe/', '메인반찬', '일상', '볶음', '가공식품류', '2인', '1시간이내', '아무나', '', 0, now());
 Insert into recipe values('tmdwls2805', '개발자', 3, '잡채가 이렇게나 쉽다', '저의 세번째 요리, 잡채 만들기입니다.', '잡채.png', '잡채.png', 'D:/upload/recipe/', '메인반찬', '일상', '볶음', '기타', '4인', '30분이내', '아무나', '', 0, now());
 Insert into recipe values('tmdwls2805', '개발자', 4, '돼지고기 김치찌개 끓이기', '저의 네번째 요리, 순대볶음 만들기입니다.', '김치찌개.jpg', '김치찌개.jpg', 'D:/upload/recipe/', '찌개', '일상', '끓이기', '돼지고기', '2인', '30분이내', '아무나', '', 0, now());
+Insert into material values(1, 1, '재료');
+Insert into material values(1, 2, '재료2');
+Insert into material2 values(1, 1, 1, '미역', '100g');
+Insert into material2 values(1, 1, 2, '미역', '200g');
+Insert into material2 values(1, 2, 3, '미역', '300g');
+Insert into material2 values(1, 2, 4, '미역', '400g');

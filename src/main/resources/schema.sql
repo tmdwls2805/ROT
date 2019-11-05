@@ -78,9 +78,6 @@ CREATE TABLE IF NOT EXISTS `recipeOrder` (
   `reciInputNum` INT NULL,
   `orderNum` int NULL AUTO_INCREMENT,
   `orderContent` VARCHAR(2048),
-  `orderPic` VARCHAR(2048),
-  `orderPicOriName` VARCHAR(2048),
-  `orderPicUrl` VARCHAR(2048),  
   PRIMARY KEY (`orderNum`),
   FOREIGN KEY (`reciInputNum`) REFERENCES recipe (`reciNum`) ON DELETE CASCADE 
   );
