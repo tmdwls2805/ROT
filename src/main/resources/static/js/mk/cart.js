@@ -3,10 +3,10 @@ function my_calc(item, item_count, item_sum, item_sum2){
     	alert('개수를 정확히 적어주세요.');
     	item_count.value=1;
     	var count = 1; 
-    }else if(item_count.value>100){
-    	alert('최대 100개까지 구매 가능합니다.');
-    	item_count.value=100;
-    	var count = 100;
+    }else if(item_count.value>20){
+    	alert('최대 20개까지 구매 가능합니다.');
+    	item_count.value=20;
+    	var count = 20;
     }
     else{ 
     	var count = item_count.value; 
@@ -18,20 +18,24 @@ my_total(document.form);
 
 var countEl = document.getElementById("count");
 var total_count = document.getElementById("total_count"); //추가
-var total_count_view = document.getElementById("total_count_view"); //추가
+var total_count_view = document.getElementById("total_count_view");
+var total_count_view2 = document.getElementById("total_count_view2");//추가
 function plus(){
  if(countEl.value < 100){
   countEl.value++;
   total_count_view.value = total_count.value * countEl.value; //추가
+  total_count_view2.value = total_count_view.value;
  }else{
 	 alert('최대 100개까지 구매 가능합니다.');
  }
 }
+
 function minus(){
   
   if (countEl.value > 1) {
 	 countEl.value--;
   total_count_view.value = total_count_view.value - total_count.value;
+  total_count_view2.value = total_count_view.value
   }  
 }
 
