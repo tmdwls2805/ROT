@@ -21,8 +21,8 @@
 	</insert>
 	
 	<insert id="addMaterial2" parameterType="Material2">
-		INSERT INTO material2(reciInputNum, matInputNum, mat2Find, mat2Vol) 
-		VALUES(#{reciInputNum}, #{matInputNum}, #{mat2Find}, #{mat2Vol});
+		INSERT INTO material2(reciInputNum, matNum, mat2Find, mat2Vol) 
+		VALUES(#{reciInputNum}, #{matNum}, #{mat2Find}, #{mat2Vol});
 	</insert>
 	
 	<insert id="addRecipeOrder" parameterType="RecipeOrder">
@@ -37,18 +37,6 @@
 	<select id="getRecipeUser" parameterType="Recipe" resultType="Recipe">
 		SELECT * FROM recipe WHERE reciId=#{reciId};
 	</select>	
-	
-	<resultMap id="Material2Map" type="Material2">
-		<id property="matInputNum" column="matInputNum" />
-		<result property="reciInputNum" column="reciInputNum" />
-		<result property="mat2Num" column="mat2Num" />
-		<result property="mat2Find" column="mat2Find" />
-		<result property="mat2Vol" column="mat2Vol" />
-	</resultMap>
-	
-	<select id="getMaterial2" parameterType="Material2" resultMap="Material2Map">
-		SELECT * FROM material2 WHERE matInputNum=#{matInputNum};
-	</select>
 	
 	<select id="getRecipeUserCount" parameterType="Recipe" resultType="int">
 		SELECT count(*) FROM recipe WHERE reciId=#{reciId};
@@ -66,7 +54,18 @@
 		SELECT * FROM recipeOrder WHERE reciInputNum=#{reciInputNum};
 	</select>	
 	
-	<select id="getMaterial" parameterType="Material" resultType="Material">
+	<resultMap type="Material" id="MaterialMap">
+		<result property="reciInputNum" column="reciInputNum" />
+		<result property="matNum" column="matNum" />
+		<result property="matName" column="matName" />
+		<collection property="material2List" column="matNum" javaType="java.util.ArrayList" ofType="Material2" select="getMaterial2" />
+	</resultMap>
+	
+	<select id="getMaterial" parameterType="int" resultMap="MaterialMap">
 		SELECT * FROM material WHERE reciInputNum=#{reciInputNum};
+	</select>
+	
+	<select id="getMaterial2" parameterType="int" resultType="Material2">
+		SELECT * FROM material2 WHERE matNum=#{matNum};
 	</select>
 </mapper>

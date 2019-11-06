@@ -67,11 +67,22 @@
 								<table  class="recipe-table3" border="1">
 									<tr>
 										<td>
-											<div>
+											
+											<div class="material-title3">
 												[<span th:text="${material.matName}"></span>]
 											</div>
-											<div class="materialList">
-											아아아ㅏ
+											<div class="materialList" th:each="material2:${material.material2List}">
+												<table border="1" class="materialList-table" style="width:85%;">
+													<tr>
+														<td class="materialList-td">
+															<span th:text="${material2.mat2Find}" class="mat2Find"></span>
+														</td>
+														<td class="materialList-td2">
+															<span th:text="${material2.mat2Vol}" class="mat2Vol"></span>
+														</td>
+													</tr>
+												</table>
+												
 											</div>
 											
 										</td>

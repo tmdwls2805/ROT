@@ -6,7 +6,7 @@ import lombok.Data;
 @Data
 public class Material2 {
 	private int reciInputNum;
-	private int matInputNum;
+	private int matNum;
 	private int mat2Num;
 	private String mat2Find;
 	private String mat2Vol;

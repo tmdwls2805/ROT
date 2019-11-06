@@ -65,13 +65,13 @@ CREATE TABLE IF NOT EXISTS `material` (
 
 CREATE TABLE IF NOT EXISTS `material2` (
   `reciInputNum` INT,
-  `matInputNum` INT,
+  `matNum` INT,
   `mat2Num` INT AUTO_INCREMENT,
   `mat2Find` VARCHAR(2048),
   `mat2Vol` VARCHAR(2048),
   PRIMARY KEY (`mat2Num`),
   FOREIGN KEY (`reciInputNum`) REFERENCES recipe (`reciNum`) ON DELETE CASCADE ,
-  FOREIGN KEY (`matInputNum`) REFERENCES material (`matNum`)
+  FOREIGN KEY (`matNum`) REFERENCES material (`matNum`)
 );
 
 CREATE TABLE IF NOT EXISTS `recipeOrder` (

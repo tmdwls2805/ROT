@@ -16,19 +16,18 @@ public class RecipeService {
 		return recipeRepository.addRecipe(r)==1;
 	}
 	
-	  public boolean addRecipeOrder(RecipeOrder ro) { 
+	public boolean addRecipeOrder(RecipeOrder ro) { 
 		  return recipeRepository.addRecipeOrder(ro)==1; 
-		  }
+	}
 	  
-	  public boolean addMaterial(Material m) { 
+	public boolean addMaterial(Material m) { 
 		  return recipeRepository.addMaterial(m)==1; 
-		  }
+	}
 	  
-	  public boolean addMaterial2(Material2 m2) { 
+	public boolean addMaterial2(Material2 m2) { 
 		  return recipeRepository.addMaterial2(m2)==1; 
-		  }
-	  
-	  
+	}
+	    
 	  public List<Recipe> getRecipeList() {
 		  return recipeRepository.getRecipeList();
 	  }
@@ -38,13 +37,7 @@ public class RecipeService {
 	  public List<RecipeOrder> getRecipeOrder(int reciInputNum) {
 		  return recipeRepository.getRecipeOrder(reciInputNum);
 	  }	  
-	  
-	  public List<Material> getMaterial(int reciInputNum) {
-		  return recipeRepository.getMaterial(reciInputNum);
-	  }
-	  public List<Material2> getMaterial2(int matInputNum) {
-		  return recipeRepository.getMaterial2(matInputNum);
-	  }	  
+	 
 	  public int getRecipeCount() {
 		  return recipeRepository.getRecipeCount();
 	  }
@@ -55,5 +48,13 @@ public class RecipeService {
 	  public int getRecipeUserCount(String reciId) {
 		  return recipeRepository.getRecipeUserCount(reciId);
 	  }
+	  
+	  
+	  public List<Material> getMaterial(int reciInputNum) {
+		  return recipeRepository.getMaterial(reciInputNum);
+	  }
+	  public List<Material2> getMaterial2(int reciInputNum) {
+		  return recipeRepository.getMaterial2(reciInputNum);
+	  }	  	  
 
 }

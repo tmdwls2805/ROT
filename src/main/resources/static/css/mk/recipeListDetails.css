@@ -16,9 +16,10 @@
 }
 
 .recipe-table3{
-	width:100%;
+	width:48%;
 	background:#fff;
 	margin-bottom:40px;
+	float:left;
 }
 
 .recipe-table4{
@@ -150,8 +151,9 @@
 }
 
 .materialList{
-	width:47%; 
+	width:100%; 
 	float:left;
+	margin: 0 35px;
 }
 
 .orderContent{
@@ -184,4 +186,31 @@
     display: inline-block;
     font-size: 12px;
     color: #999;	
+}
+
+.material-title3{
+	padding-bottom: 15px;
+    color: #333;
+    font-size: 16px;
+    display: block;
+    font-weight:700;
+}
+
+.mat2Find{
+	font-size:18px;
+	color:#333;
+	margin-right:;
+}
+
+.mat2Vol{
+	font-size:18px;
+	color:#999;
+}
+
+.materialList-td{
+	text-align:left;
+}
+
+.materialList-td2{
+	text-align:right;	
 }

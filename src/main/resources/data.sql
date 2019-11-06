@@ -24,3 +24,4 @@ Insert into material2 values(1, 1, 1, '미역', '100g');
 Insert into material2 values(1, 1, 2, '미역', '200g');
 Insert into material2 values(1, 2, 3, '미역', '300g');
 Insert into material2 values(1, 2, 4, '미역', '400g');
+

@@ -47,12 +47,12 @@ public class RecipeController {
 	 }
 	 
 	 @GetMapping("/recipeListDetails")
-	 public String recipeListDetails(ModelMap m, Recipe r) {
+	 public String recipeListDetails(ModelMap map, Recipe r, Material m, Material2 m2) {
 		 r = recipeService.getRecipe(r);
-		 m.put("recipe", r);
-		 m.put("member", memberService.getMypage(r.getReciId()));
-		 m.put("materialList", recipeService.getMaterial(r.getReciNum()));
-		 m.put("recipeOrderList", recipeService.getRecipeOrder(r.getReciNum()));
+		 map.put("recipe", r);
+		 map.put("member", memberService.getMypage(r.getReciId()));
+		 map.put("materialList", recipeService.getMaterial(r.getReciNum()));
+		 map.put("recipeOrderList", recipeService.getRecipeOrder(r.getReciNum()));
 		 
 		 
 		 return "recipe/recipeListDetails";
@@ -128,7 +128,7 @@ public class RecipeController {
 			  m.setMatName(matName[i]);
 			  recipeService.addMaterial(m);
 			  m2.setReciInputNum(r.getReciNum());
-			  m2.setMatInputNum(m.getMatNum());
+			  m2.setMatNum(m.getMatNum());
 			  for(int j=0; j<mat2Find.length; j++) {
 				  m2.setMat2Find(mat2Find[j]);
 				  m2.setMat2Vol(mat2Vol[j]);
