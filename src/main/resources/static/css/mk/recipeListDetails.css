@@ -34,9 +34,14 @@
 	border: 1px solid #e6e7e8;
 }
 
+.recipe-table6{
+	width:100%;
+	border-bottom: 1px solid #e6e7e8;
+}
+
 .recipe-td{
 	text-align:center;
-	padding:60px 30px 90px 30px;
+	padding:60px 30px 30px 30px;
 }
 
 .recipe-td2{
@@ -93,6 +98,10 @@
     border-right: 1px dashed #ccc;
     padding: 12px 30px 11px 8px;
     text-align: right;	
+}
+
+.recipe-td11{
+	padding:0 250px 90px 250px;	
 }
 
 .recipeTip{
@@ -209,8 +218,70 @@
 
 .materialList-td{
 	text-align:left;
+	padding:10px 0 5px 0;
+	border-bottom: 1px solid #d9d9d9;
 }
 
 .materialList-td2{
 	text-align:right;	
+	padding:10px 0 5px 0;
+	border-bottom: 1px solid #d9d9d9;
+}
+
+.summary_in{
+	position: relative;
+    padding: 10px 25px 10px 24px;
+    color: #aaa;
+    font-style: italic;
+    font-size: 16px;
+    line-height: 170%;
+    width: 510px;
+    margin: 0 auto;
+}
+
+.summary_in_m1{
+	position: absolute;
+    left: 0;
+    top: 0;
+    display: block;	
+}
+
+.summary_in_m2{
+	position: absolute;
+    right: 0;
+    bottom: 16px;
+    display: block;
+}
+
+.summary_in_m3{
+	text-align:center;
+}
+
+.summary_in2{
+	padding: 15px 15px 0;
+    text-align: center;
+    padding-bottom: 40px;
+}
+
+.summary_in2 span{
+	display: inline-block;
+    width: 32%;
+    padding-top: 56px;
+    color: #bcb7b7;
+    font-size: 16px;
+}
+
+.summary_info1{
+	background: url(http://recipe1.ezmember.co.kr/img/mobile/icon_man.png) center no-repeat;
+    background-size: 34px;	
+}
+
+.summary_info2{
+	background: url(http://recipe1.ezmember.co.kr/img/mobile/icon_time2.png) center no-repeat;
+    background-size: 34px;	
+}
+
+.summary_info3{
+	background: url(http://recipe1.ezmember.co.kr/img/mobile/icon_star.png) center no-repeat;
+    background-size: 34px;	
 }

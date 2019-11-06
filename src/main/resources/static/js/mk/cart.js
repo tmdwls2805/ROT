@@ -79,11 +79,10 @@ $('.closePop').click(function() {
 	$('.delCartPop').css("display", "none");
 });
 
-$('.delCartItem2').click(function(){
+/*$('.delCartItem2').click(function(){
 	cartNum = $(this).next('.cartNum').val();
-	alert(cartNum);
 	$('.delCartPop').css("display", "block");
-});
+});*/
 
 function checkAll(){
 	if($("#lb_chk").is(':checked')){
@@ -101,7 +100,7 @@ $("input[name=cartProductIds]").click(function(){
 	}
 });
 
-function delSelected(){
+/*function delSelected(){
 	$('.delCartPop').css("display", "block");	
 	var chk_obj = $("input[name=cartProductIds]:checked");
 	$('.delCartItem').click(function() {
@@ -111,9 +110,9 @@ function delSelected(){
 			delCartItem(checkboxValue);
 		});
 	});
-}
+}*/
 
-function delCartItem(self) {	
+/*function delCartItem(self) {	
 	$.ajax({
 		async: true,
 	    type : 'GET',
@@ -127,4 +126,4 @@ function delCartItem(self) {
 	    error : function(error) {
 	    }
 	});
-}
+}*/

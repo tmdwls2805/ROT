@@ -379,7 +379,7 @@
 									</tr>
 									<tr>
 										<td class="submit_td">
-											<input type="submit" class="buyButton" value="결제하기"/>
+											<input type="submit" onclick="build()" class="buyButton" value="결제하기"/>
 											<input type="button" class="cancelButton" value="취소하기"  onclick="goBack()"/>
 										</td>
 									</tr>
@@ -395,6 +395,7 @@
 			
 			<div th:replace="~{footer :: footer}"></div>
 		</body>
+<script th:src="@{/js/mk/build.js}"></script>		
 <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
 <script>
     function sample6_execDaumPostcode() {

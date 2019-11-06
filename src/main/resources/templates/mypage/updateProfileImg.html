@@ -138,17 +138,17 @@
 											</a>
 										</li>
 										<li>
-											<a th:href="@{/writeBoard}" class="d-flex justify-content-between">
+											<a onclick="build()" class="d-flex justify-content-between">
 												<p>내가 쓴 게시물</p>
 											</a>
 										</li>
 										<li>
-											<a th:href="@{/contactHistory}" class="d-flex justify-content-between">
+											<a onclick="build()" class="d-flex justify-content-between">
 												<p>문의내역</p>
 											</a>
 										</li>
 										<li>
-											<a th:href="@{/orderInquiry}" class="d-flex justify-content-between">
+											<a onclick="build()" class="d-flex justify-content-between">
 												<p>주문조회</p>
 											</a>
 										</li>
@@ -163,7 +163,7 @@
 											</a>
 										</li>		
 										<li>
-											<a th:href="@{/Withdrawal}" class="d-flex justify-content-between">
+											<a onclick="build()" class="d-flex justify-content-between">
 												<p>회원탈퇴</p>
 											</a>
 										</li>													
@@ -199,6 +199,7 @@
 		window.history.back();
 	}
 </script>		
+<script th:src="@{/js/mk/build.js}"></script>
 <script src="../static/js/vendor/jquery-2.2.4.min.js"
 	th:src="@{/js/vendor/jquery-2.2.4.min.js}"></script>
 <script src="../static/js/popper.min.js" th:src="@{/js/popper.min.js}"></script>

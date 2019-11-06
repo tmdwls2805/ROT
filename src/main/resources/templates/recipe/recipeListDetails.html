@@ -51,7 +51,28 @@
 								<p class="nickname" th:text="${member.nickname}"></p>
 								<h3 class="reciSub" th:text="${recipe.reciSub}"></h3>
 							</div>
-
+						</td>
+					</tr>
+					<tr>
+						<td class="recipe-td11">
+							<table class="recipe-table6">
+								<tr>
+									<td>
+										<div class="summary_in">
+											<img class="summary_in_m1" src="http://recipe1.ezmember.co.kr/img/mobile/icon_marks1.png">
+											<img class="summary_in_m2" src="http://recipe1.ezmember.co.kr/img/mobile/icon_marks2.png">
+											<div class="summary_in_m3">
+												<span th:text="${recipe.reciIntro}"></span>
+											</div>
+										</div>
+										<div class="summary_in2">
+											<span class="summary_info1" th:text="${recipe.reciPer}"></span>
+											<span class="summary_info2" th:text="${recipe.reciTim}"></span>
+											<span class="summary_info3" th:text="${recipe.reciLev}"></span>
+										</div>
+									</td>
+								</tr>
+							</table>
 						</td>
 					</tr>
 				</table>
@@ -64,7 +85,7 @@
 					<tr>
 						<td class="recipe-td3">
 							<div th:each="material : ${materialList}">
-								<table  class="recipe-table3" border="1">
+								<table  class="recipe-table3">
 									<tr>
 										<td>
 											
@@ -72,7 +93,7 @@
 												[<span th:text="${material.matName}"></span>]
 											</div>
 											<div class="materialList" th:each="material2:${material.material2List}">
-												<table border="1" class="materialList-table" style="width:85%;">
+												<table border="0" class="materialList-table" style="width:85%;">
 													<tr>
 														<td class="materialList-td">
 															<span th:text="${material2.mat2Find}" class="mat2Find"></span>
@@ -104,7 +125,7 @@
 					<tr th:each="recipeOrder : ${recipeOrderList}">
 						<td class="recipe-td4">
 							<div class="orderContent">
-									<span class="step">Step1</span>
+									<span class="step">Step</span>
 							</div>						
 						</td>
 						<td class="recipe-td5">
@@ -142,6 +163,7 @@
 	</section>
 	<div th:replace="~{footer :: footer}"></div>
 </body>
+<script th:src="@{/js/mk/build.js}"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script th:src="@{/js/vendor/jquery-2.2.4.min.js}"></script>
 <script th:src="@{/js/popper.min.js}"></script>

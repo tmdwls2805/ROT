@@ -30,7 +30,7 @@
 <link rel="stylesheet" th:href="@{/slick/slick.css}"/>
 <link rel="stylesheet" th:href="@{/slick/slick-theme.css}" />
 <link rel="stylesheet" th:href="@{/css/mk/materialListDetails.css?after}">
-
+<script th:src="@{/js/mk/build.js}"></script>
 </head>
 <body>
 	<div th:replace="~{header :: header}"></div>
@@ -166,7 +166,7 @@
 									</div>
 							</div>	
 								<div class="ex7Buy">
-									<input class="product_buy" type="button" value="바로구매" />	
+									<input class="product_buy" onclick="build()" type="button" value="바로구매" />	
 								</div>	
 							</td>
 						</tr>

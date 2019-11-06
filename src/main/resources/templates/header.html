@@ -46,9 +46,9 @@
 							<li><a id="nav-a2" th:href="@{/recipeNote}" th:text="${session.member != null && session.member.id!='admin'} ? |${session.member.nickname}님|"></a>
 								<ul>
 									<li><a th:href="@{/recipeNote}">레시피 노트</a></li>
-									<li><a th:href="@{/writeBoard}">내가 쓴 게시물</a></li>
-									<li><a th:href="@{/contactHistory}">문의내역</a></li>
-									<li><a th:href="@{/orderInquiry}">주문조회</a></li>
+									<li><a onclick="build()">내가 쓴 게시물</a></li>
+									<li><a onclick="build()">문의내역</a></li>
+									<li><a onclick="build()">주문조회</a></li>
 						            <li><a th:href="@{/cart}">장바구니</a></li>
 						            <li><a th:href="@{/updateMemberInfo}">회원정보수정</a></li>
 						            <li><a th:href="@{/logout}">로그아웃</a></li>
@@ -65,8 +65,8 @@
 				        <ul class="nav-menu">
 				          <li><a id="nav-a1" href="/material/materialList" th:href="@{/materialList}">식재료</a></li>
 				          <li><a id="nav-a1" th:href="@{/recipeList}">레시피</a></li>
-				          <li><a id="nav-a1" href="">자유게시판</a></li>	
-				          <li><a id="nav-a1" href="">고객센터</a></li>					          					          		          
+				          <li><a id="nav-a1" onclick="build()">자유게시판</a></li>	
+				          <li><a id="nav-a1" onclick="build()">고객센터</a></li>					          					          		          
 				          <li><a id="nav-a1" href="contact.html" th:href="@{/contact}">오시는 길</a></li>
 				        </ul>
 				      </nav><!-- #nav-menu-container -->					      		  

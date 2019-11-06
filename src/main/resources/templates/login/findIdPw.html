@@ -63,6 +63,7 @@
 <script src="../static/js/main.js" th:src="@{/js/main.js}"></script>
 <script src="http://maps.googleapis.com/maps/api/js"></script>
 <link rel="stylesheet" href="../static/css/mk/findIdPw.css?after" th:href="@{/css/mk/findIdPw.css?after}">
+<script th:src="@{/js/mk/build.js}"></script>
 </head>
 <body>
 	<div th:replace="~{header :: header}"></div>
@@ -104,8 +105,7 @@
 									절자를 거치시면 <strong>비밀번호 찾기</strong>가 가능합니다.
 								</span> <br>
 								<br>
-								<br> <a class="btn btn-primary"
-									href="findPassword.html" th:href="@{/findPassword}">비밀번호 재설정하기</a>
+								<br> <a class="btn btn-primary" onclick="build()">비밀번호 재설정하기</a>
 						</td>
 					</tr>
 				</table>

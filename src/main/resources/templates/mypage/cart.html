@@ -127,7 +127,7 @@
 																<a class="plus" id="plus" onclick="plus(this)">
 																	<img src="img/mk/plus.png" class="img-plus">
 																</a>
-																<a class="count_update">변경</a>
+																<a class="count_update" onclick="build()">변경</a>
 															</div>
 														</div>
 													</td>
@@ -139,8 +139,8 @@
 														<input type="text" name="productNum" th:value="${cart.productNum}" hidden="hidden" readonly />
 													</td>
 													<td class="cartNum_td">
-														<a class="buyCartItem">주문하기</a><br>
-														<a class="delCartItem2">삭제</a>
+														<a class="buyCartItem" onclick="build()">주문하기</a><br>
+														<a class="delCartItem2" onclick="build()">삭제</a>
 														<input type="text" class="cartNum" name="cartNum" th:value="${cart.cartNum}" hidden="hidden" readonly />
 													</td>
 												</tr>	
@@ -203,13 +203,13 @@
 									<tr>
 										<td class="button_td">
 											<div th:if="${userCart==0}">
-												<input type="button" class="clear" value="비우기"/>
+												<input type="button" onclick="build()" class="clear" value="비우기"/>
 												<input type="button" onClick="location.href='/materialList'" class="shopping" value="쇼핑계속하기"/>
 											</div>										
 											<div th:if="${userCart!=0}">
-												<input type="button" class="select_delete" onclick="delSelected()" value="선택상품 삭제"/>
+												<input type="button" onclick="build()" class="select_delete" value="선택상품 삭제"/>
 												<input type="button" onclick="location.href='/cartOrder'" class="select_order" value="선택상품 주문"/>
-												<input type="button" class="clear" value="비우기"/>
+												<input type="button" onclick="build()" class="clear" value="비우기"/>
 												<input type="button" onClick="location.href='/materialList'" class="shopping" value="쇼핑계속하기"/>
 											</div>
 										</td>
@@ -251,17 +251,17 @@
 											</a>
 										</li>
 										<li>
-											<a th:href="@{/writeBoard}" class="d-flex justify-content-between">
+											<a onclick="build()" class="d-flex justify-content-between">
 												<p>내가 쓴 게시물</p>
 											</a>
 										</li>
 										<li>
-											<a th:href="@{/contactHistory}" class="d-flex justify-content-between">
+											<a onclick="build()" class="d-flex justify-content-between">
 												<p>문의내역</p>
 											</a>
 										</li>
 										<li>
-											<a th:href="@{/orderInquiry}" class="d-flex justify-content-between">
+											<a onclick="build()" class="d-flex justify-content-between">
 												<p>주문조회</p>
 											</a>
 										</li>
@@ -276,7 +276,7 @@
 											</a>
 										</li>		
 										<li>
-											<a th:href="@{/Withdrawal}" class="d-flex justify-content-between">
+											<a onclick="build()"class="d-flex justify-content-between">
 												<p>회원탈퇴</p>
 											</a>
 										</li>													
@@ -301,6 +301,7 @@
 			
 			<div th:replace="~{footer :: footer}"></div>
 		</body>
+<script th:src="@{/js/mk/build.js}"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>	
 <script th:src="@{/js/mk/cart.js}"></script>
 <script src="../static/js/vendor/jquery-2.2.4.min.js"
