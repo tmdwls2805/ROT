@@ -93,8 +93,8 @@
 															<span class="recipeLookUp" th:text="${recipe.reciLookUp}"></span>
 															<span class="recipeComment">0</span>
 														</div>
-														<a onclick="build()" class="recipeUpdate">삭제</a>
-														<a th:href="@{'recipeUpdate?reciNum='+${recipe.reciNum}}" class="recipeUpdate">수정</a>
+														<a onclick="deleteRecipe(this)" class="recipeUpdate">삭제</a>
+														<a onclick="build()" class="recipeUpdate">수정</a>
 														
 													</td>
 												</tr>
@@ -175,6 +175,7 @@
 			<!-- End post-content Area -->
 			<div th:replace="~{footer :: footer}"></div>
 		</body>
+<script th:src="@{/js/mk/recipeNote.js}"></script>	
 <script th:src="@{/js/mk/build.js}"></script>		
 <script th:src="@{/js/vendor/jquery-2.2.4.min.js}"></script>
 <script th:src="@{/js/popper.min.js}"></script>

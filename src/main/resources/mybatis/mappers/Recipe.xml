@@ -30,6 +30,26 @@
 		VALUES (#{reciInputNum}, #{orderContent});
 	</insert>
 	
+	<update id="updateRecipe" parameterType="Recipe">
+		UPDATE recipe SET reciSub=#{reciSub}, reciIntro=#{reciIntro}, reciTip=#{reciTip} WHERE reciNum=#{reciNum};
+	</update>
+	
+	<update id="updateRecipeOrder" parameterType="RecipeOrder">
+		UPDATE recipeOrder SET orderContent=#{orderContent} WHERE reciInputNum=#{reciInputNum} AND orderNum=#{orderNum};
+	</update>
+	
+	<update id="updateMaterial" parameterType="Material">
+		UPDATE material SET matName=#{matName} WHERE reciInputNum=#{reciInputNum} AND matNum=#{matNum};
+	</update>
+	
+	<update id="updateMaterial2" parameterType="Material2">
+		UPDATE material2 SET mat2Find=#{mat2Find}, mat2Vol=#{mat2Vol} WHERE reciInputNum=#{reciInputNum} AND mat2Num=#{mat2Num};
+	</update>			
+	
+	<delete id="deleteRecipe" parameterType="Recipe">
+		DELETE FROM recipe WHERE reciNum=#{reciNum};
+	</delete>
+	
 	<select id="getRecipe" parameterType="Recipe" resultType="Recipe">
 		SELECT * FROM recipe WHERE reciNum=#{reciNum};
 	</select>

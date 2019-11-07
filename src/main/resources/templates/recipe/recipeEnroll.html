@@ -237,9 +237,14 @@
 <!-- -------------------------------두 번째 테이블 시작------------------------------- -->			
 				<table  class="reciTable2-1">
 					<tr>
-								<td class="table-left" rowspan="2"></td>
+								<td class="table-left" rowspan="3"></td>
 								<td  class="table-top"></td>
-								<td class="table-right" rowspan="2"></td>
+								<td class="table-right" rowspan="3"></td>
+					</tr>
+					<tr>
+						<td class="enroll_title_td">
+							<p class="enroll_title">요리재료</p>
+						</td>
 					</tr>
 					<tr>
 						<td class="guide-td1">
@@ -266,6 +271,7 @@
 											<div class="input-mat2">
 												<input type="text" class="input-mat2Find" name="mat2Find" placeholder="예) 미역" required/> 
 												<input type="text" class="input-mat2Vol" name="mat2Vol" placeholder="예) 100g" required/>
+												<button class="deleteButton" type="button" onclick="deleteBox(this)"><img class="deleteImg" src="/img/mk/delete.png"></button>
 											</div>										
 										</li>	
 										<li class="recepiRow2">
@@ -352,6 +358,7 @@
 								</td>
 								<td class="textContent">
 									<textarea class="orderContent" name="orderContent" placeholder="예) 소고기는 기름기를 떼어내고 적당한 크기로 썰어주세요." required="required"></textarea>
+									<button class="deleteButton2" type="button" onclick="deleteBox3(this)"><img class="deleteImg" src="/img/mk/delete.png"></button>
 								</td>
 <!-- 								<td class="uploadImg">
 										<img class="orderPic" id="uploadPic" name="uploadPic" src="#" th:src="@{img/mk/comPic.gif}">

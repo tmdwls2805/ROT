@@ -438,7 +438,7 @@ table{
 }
 
 .reciTable3-1 .textContent{
-	vertical-align:top;
+	vertical-align:middle;
 }
 
 .reciTable3-1 .uploadImg{
@@ -598,6 +598,14 @@ form{
 	background:#fff;
 	margin:0 0 10px 0;
 	vertical-align:middle;
+}
+
+.deleteButton2{	
+	border:none;
+	background:#fff;
+	margin:0 0 10px 0;
+	padding-top:65px;
+	vertical-align:top;
 }
 
 .input-mat2{

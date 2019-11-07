@@ -56,6 +56,7 @@ $("#add2").on("click", function(){
 	li.attr("id", li.attr("id") + "_" +  ($(".recepiRow").size() + 1));
 	btn.attr("id", btn.attr("id") + "_" +  ($(".addRecepiBtn").size() + 1));
 	
+	
 	$("#add2List").append(row);
 	
 });
@@ -69,11 +70,12 @@ $("#add3").on("click", function(){
 								<td class="table-right" rowspan="3"></td>
 							</tr>	
 							<tr>
-								<td class="step"style="width:200px;">
+								<td class="step" id="step" style="width:200px;">
 									Step
 								</td>
 								<td class="textContent">
 									<textarea class="orderContent" name="orderContent" placeholder="예) 소고기는 기름기를 떼어내고 적당한 크기로 썰어주세요." required="required"></textarea>
+									<button class="deleteButton2" type="button" onclick="deleteBox3(this)"><img class="deleteImg" src="/img/mk/delete.png"></button>
 								</td>
 							</tr>
 							<tr>
@@ -87,7 +89,7 @@ $("#add3").on("click", function(){
 							</tr>
 						</table>
 					</li>`).clone();
-		
+			
 		$("#add3List").append(row);
 });
 

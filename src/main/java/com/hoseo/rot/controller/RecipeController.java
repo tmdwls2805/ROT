@@ -16,6 +16,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
@@ -59,10 +61,51 @@ public class RecipeController {
 	 }
 	 
 	 @GetMapping("/recipeUpdate")
-	 public String recipeUpdate() {
-		 
+	 public String recipeUpdate(ModelMap map, Recipe r, Material m, Material2 m2) {
+		 r = recipeService.getRecipe(r);
+		 map.put("recipe", r);
+		 map.put("member", memberService.getMypage(r.getReciId()));
+		 map.put("materialList", recipeService.getMaterial(r.getReciNum()));
+		 map.put("recipeOrderList", recipeService.getRecipeOrder(r.getReciNum()));
 		 return "recipe/recipeUpdate";
 	 }	 
+	 
+	 
+	 @RequestMapping(value = "/recipeUpdate/update", method = { RequestMethod.GET, RequestMethod.POST })	
+	 public String update(Recipe r, RecipeOrder ro, Material m, Material2 m2, HttpServletRequest h) {	
+	  if(recipeService.updateRecipe(r)){
+		  String [] matName = h.getParameterValues("matName");
+		  String [] mat2Find = h.getParameterValues("mat2Find");
+		  String [] mat2Vol = h.getParameterValues("mat2Vol");
+		  String [] orderContent = h.getParameterValues("orderContent");
+		  
+		  for(int i = 0; i<matName.length; i++) {
+			  m.setMatName(matName[i]);
+			  recipeService.updateMaterial(m);
+			  m2.setReciInputNum(r.getReciNum());
+			  m2.setMatNum(m.getMatNum());
+			  for(int j=0; j<mat2Find.length; j++) {
+				  m2.setMat2Find(mat2Find[j]);
+				  m2.setMat2Vol(mat2Vol[j]);
+				  recipeService.updateMaterial2(m2);
+			  }
+		  }
+		  
+		  for(int i = 0; i<orderContent.length; i++) {
+			  ro.setOrderContent(orderContent[i]);
+			  recipeService.updateRecipeOrder(ro);
+		  }
+		  return "redirect:/recipeNote";
+	  } 
+	  return "recipe/recipeUpdate"; 
+	 }	  
+
+	 @PostMapping("/recipeNoteDelete")
+	 public String delete(Recipe r) {
+		 recipeService.deleteRecipe(r);
+		 return "mypage/recipeNote";
+	 }
+
 	
 	  @GetMapping("/recipeEnroll") 
 	  public String recipeEnroll() { 
@@ -144,14 +187,8 @@ public class RecipeController {
 //			  ro.setOrderPicUrl(orderPicUrl[i]);
 			  recipeService.addRecipeOrder(ro);
 		  }
-		  
-		  
-		  
-		  
 		  return "redirect:/";
 	  } 
 	  return "recipe/recipeEnroll"; 
 	  }
-	    
-
 }

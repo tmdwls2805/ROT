@@ -1,13 +1,23 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!-- Mobile Specific Meta -->
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!-- Favicon-->
 <link rel="shortcut icon" href="img/logo1.png">
+<!-- Author Meta -->
 <meta name="author" content="colorlib">
+<!-- Meta Description -->
 <meta name="description" content="">
+<!-- Meta Keyword -->
 <meta name="keywords" content="">
+<!-- meta character set -->
 <meta charset="UTF-8">
+<!-- Site Title -->
 <title>내일의 레시피</title>
+
+<!-- CSS ============================================= -->
 <link rel="stylesheet" th:href="@{/css/linearicons.css}">
 <link rel="stylesheet" th:href="@{/css/font-awesome.min.css}">
 <link rel="stylesheet" th:href="@{/css/bootstrap.css}">
@@ -16,32 +26,351 @@
 <link rel="stylesheet" th:href="@{/css/nice-select.css}">
 <link rel="stylesheet" th:href="@{/css/animate.min.css}">
 <link rel="stylesheet" th:href="@{/css/owl.carousel.css}">
-<link rel="stylesheet" th:href="@{/css/main.css}">
+<link rel="stylesheet" th:href="@{/css/main-select.css}">
+<link rel="stylesheet" th:href="@{/css/mk/contact.css}">
+<link rel="stylesheet" th:href="@{/css/mk/recipeEnroll.css}">	
 </head>
 <body>
 	<div th:replace="~{header :: header}"></div>
+	<!-- #header -->
 	<section class="relative about-banner">
 		<div class="overlay overlay-bg"></div>
 		<div class="container">
 			<div class="row d-flex align-items-center justify-content-center">
 				<div class="about-content col-lg-12">
-					<h1 class="text-white">레시피</h1>
+					<h1 class="text-white">레시피 등록</h1>
 				</div>
 			</div>
 		</div>
 	</section>
+	<!-- End banner Area -->
 
-	<section class="contact-page-area section-gap">
+	<!-- Start contact-page Area -->
+	<section class="section-center">
 		<div class="container">
-			<div class="row">
+			<form class="form" name="form" method="post" th:action="@{/recipeUpdate/update}" enctype="multipart/form-data">
+			<input type="text" name="reciId" th:value="${session.member.id}" hidden="hidden"/>
+			<input type="text" name="reciName" th:value="${session.member.nickname}" hidden="hidden"/>
+			<input type="text" name="reciNum" th:value="${recipe.reciNum}" hidden="hidden"/>
+			<input type="text" name="reciInputNum" th:value="${recipe.reciNum}" hidden="hidden"/>
+<!-- -------------------------------첫 번째 테이블 시작------------------------------- -->						
+				<table class="reciTable1">
 				
-			</div>
+					<tr>
+						<td class="table-left" rowspan="10"></td>
+						<td  class="table-top" colspan="3"></td>
+						<td class="table-right" rowspan="10"></td>
+					</tr>
+					
+					<tr>
+						<td class="enroll_title_td1">
+							<p class="enroll_title"><span style="color:#f42f2c; font-weight:700; margin-right:5px;">*</span>레시피 제목</p>
+						</td>
+						<td class="reciInput">
+							<input type="text" class="input-reciSub" name="reciSub" th:value="${recipe.reciSub}" placeholder="예) 소고기 미역국 끓이기" required/>
+						</td>
+						<td rowspan="8" class="reciInputPic">
+							<img name="reciMainPicImg" id="reciMainPicImg" th:src="@{'/upload/recipe/'+${recipe.reciMainPic}}" style="width: 250px; height: 250px; cursor: pointer">
+						</td>
+					</tr>
+					
+					<tr>
+						<td colspan="2" class="blank"></td>
+					</tr>
+					
+					<tr>
+						<td class="enroll_title_td">
+							<p class="enroll_title"><span style="color:#f42f2c; font-weight:700; margin-right:5px;">*</span>요리소개</p>
+						</td>
+						<td class="reciInput">
+							<textarea class="input-reciIntro" th:text="${recipe.reciIntro}" name="reciIntro" placeholder="이 레시피의 탄생 배경을 적어주세요." required="required"></textarea>
+						</td>
+					</tr>
+
+					<tr>
+						<td colspan="2" class="blank"></td>
+					</tr>
+
+					<tr>
+						<td class="enroll_title_td">
+							<p class="enroll_title">카테고리</p>
+						</td>
+						<td class="reciInput">
+							<input name="reciFind" class="reciSelect1" th:value="${recipe.reciFind}" readonly/>
+								
+			
+							<input name="reciSit" class="reciSelect1" th:value="${recipe.reciSit}" readonly/>
+									 
+							
+							<input name="reciWay" class="reciSelect1" th:value="${recipe.reciWay}" readonly/>
+									
+							
+							<input name="reciMat" class="reciSelect1" th:value="${recipe.reciMat}" readonly/>
+									
+						</td>
+					</tr>
+					
+					<tr>
+						<td></td>
+						<td class="blank2"></td>
+					</tr>
+					
+					<tr>
+						<td></td>
+						<td><span class="guide">※ 분류를 바르게 설정해주시면, 이용자들이 쉽게 레시피를 검색할 수 있어요.</span></td>
+					</tr>
+
+					<tr>
+						<td colspan="2" class="blank"></td>
+					</tr>
+
+					<tr>
+						<td class="enroll_title_td">
+							<p class="enroll_title">요리정보</p>
+						</td>
+						<td class="reciInput">
+						<span class="reciInputText">인원</span>  
+						<input name="reciPer" class="reciSelect3" th:value="${recipe.reciPer}" readonly/>
+								
+						<span class="reciInputText">시간</span> 
+						<input name="reciTim" class="reciSelect2" th:value="${recipe.reciTim}" readonly/>
+								
+						<span class="reciInputText">난이도</span> 
+						<input name="reciLev" class="reciSelect3" th:value="${recipe.reciLev}" readonly/>
+								
+
+						</td>
+					</tr>
+
+					<tr>
+						<td class="table-bottom" colspan="5"></td>
+					</tr>
+				</table>
+<!-- -------------------------------첫 번째 테이블 끝------------------------------- -->	
+<!-- -------------------------------두 번째 테이블 시작------------------------------- -->			
+				<table  class="reciTable2-1">
+					<tr>
+								<td class="table-left" rowspan="3"></td>
+								<td  class="table-top"></td>
+								<td class="table-right" rowspan="3"></td>
+					</tr>
+					<tr>
+						<td class="enroll_title_td">
+							<p class="enroll_title"><span style="color:#f42f2c; font-weight:700; margin-right:5px;">*</span>요리재료</p>
+						</td>
+					</tr>
+					<tr>
+						<td class="guide-td1">
+							<span class="guide">※ 재료가 남거나 부족하지 않도록 정확한 계량정보를 적어주세요.</span>						
+						</td>
+					</tr>
+				</table>				
+				<ul id="add2List">
+					<li class="recepiRow" id="recepiRow"  th:each="material : ${materialList}">
+						<table class="reciTable2">
+							<tr>
+								<td class="table-left" rowspan="3"></td>
+								<td  class="blank3" colspan="2"></td>
+								<td class="table-right" rowspan="3"></td>
+							</tr>							
+							<tr class="add_tr">
+								<td class="matName-sit">
+									<input type="text" name="matNum" th:value="${material.matNum}" hidden="hidden"/>
+									<input type="text" class="input-matName" name="matName" value="재료" th:value="${material.matName}" required/><br>
+									<button class="groupDeleteButton" type="button" onclick="deleteBox2(this)">묶음삭제</button>
+								</td>
+								<td class="matName-sit2">
+									<ul id="addList" class="input-mat recepiList">
+										<li class="recepiRow2" th:each="material2:${material.material2List}">
+											<div class="input-mat2">
+												<input type="text" name="mat2Num" th:value="${material2.mat2Num}" hidden="hidden"/>
+												<input th:value="${material2.mat2Find}" type="text" class="input-mat2Find" name="mat2Find" placeholder="예) 미역" required/> 
+												<input th:value="${material2.mat2Vol}" type="text" class="input-mat2Vol" name="mat2Vol" placeholder="예) 100g" required/>
+												<button class="deleteButton" type="button" onclick="deleteBox(this)"><img class="deleteImg" src="/img/mk/delete.png"></button>
+											</div>										
+										</li>																			
+									</ul>
+								</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td class="addButtonTd">
+									<button id="add1" type="button" class="addButton addRecepiBtn" onclick="addItem(this)"><img class="addImg" src="/img/mk/add.png">추가</button>
+								</td>
+							</tr>							
+						</table>
+					</li>					
+				</ul>
+				
+				<table class="reciTable2-2">
+					<tr>
+								<td class="table-left" rowspan="4"></td>
+								<td class="table-bottom2"></td>
+								<td class="table-right" rowspan="4"></td>								
+
+					</tr>
+					<tr>
+						<td class="groupAddButton-Td">
+							<span>※ 양념, 양념장, 소스, 드레싱, 토핑, 시럽, 육수 밑간 등으로 구분해서 작성해주세요.</span>
+						</td>
+					</tr>
+					<tr>
+						<td class="groupAddButton-Td2">
+							<button class="groupAddButton" type="button" id="add2">
+								<img class="add2" src="/img/mk/add2.png"> 재료/양념 묶음 추가
+							</button>
+						</td>
+					</tr>
+					<tr>
+						<td style="height: 30px;"></td>
+					</tr>
+				</table>
+				
+<!-- -------------------------------두 번째 테이블 끝------------------------------- -->						
+<!-- -------------------------------세 번째 테이블 시작------------------------------- -->						
+				<table  class="reciTable3">
+					<tr>
+						<td class="table-left" rowspan="4"></td>
+						<td  class="blank"></td>
+						<td class="table-right" rowspan="4"></td>
+					</tr>	
+					<tr>
+						<td class="enroll_title_td">
+							<p class="enroll_title"><span style="color:#f42f2c; font-weight:700; margin-right:5px;">*</span>요리순서</p>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<span class="guide">※ 요리의 맛이 좌우될 수 있는 중요한 부분은 빠짐없이 적어주세요.</span>	
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<span class="guide2">예) 10분간 익혀주세요 ▷ 10분간 약한불로 익혀주세요.</span><br>
+							<span class="guide2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;마늘편은 익혀주세요 ▷ 마늘편을 충분히 익혀주셔야 매운 맛이 사라집니다.</span><br>
+							<span class="guide2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;꿀을 조금 넣어주세요 ▷ 꿀이 없는 경우, 설탕 1스푼으로 대체 가능합니다.</span>
+						</td>
+					</tr>
+				</table>
+				<ul id="add3List">
+					<li th:each="recipeOrder : ${recipeOrderList}">
+						<table class="reciTable3-1">
+							<tr>
+								<td class="table-left" rowspan="3"></td>
+								<td  class="blank2" colspan="4"></td>
+								<td class="table-right" rowspan="3"></td>
+							</tr>	
+							<tr>
+								<td class="step"style="width:200px;">
+									Step
+								</td>
+								<td class="textContent">
+									<input type="text" name="orderNum" th:value="${recipeOrder.orderNum}" hidden="hidden"/>
+									<textarea th:text="${recipeOrder.orderContent}" class="orderContent" name="orderContent" placeholder="예) 소고기는 기름기를 떼어내고 적당한 크기로 썰어주세요." required="required"></textarea>
+									<button class="deleteButton2" type="button" onclick="deleteBox3(this)"><img class="deleteImg" src="/img/mk/delete.png"></button>
+								</td>
+<!-- 								<td class="uploadImg">
+										<img class="orderPic" id="uploadPic" name="uploadPic" src="#" th:src="@{img/mk/comPic.gif}">
+								</td> -->		
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td>
+<!-- 									<input class="InputreciMainPic" type="file" name="file2" id="orderPic" /> -->
+								</td>
+							</tr>
+							<tr>
+								<td class="blank3" colspan="6"></td>
+							</tr>
+						</table>
+					</li>					
+				</ul>
+				<table  class="reciTable3-2">
+					<tr>
+						<td class="blank"></td>
+					</tr>
+					<tr>
+						<td class="orderButton-td">
+							<button type="button" class="orderButton" id="add3"><img class="addImg" th:src="@{/img/mk/add.png}">순서추가</button>
+						</td>
+					</tr>
+				</table>
+				
+				<table class="reciTable4">
+					<tr>
+						<td class="table-left" rowspan="3"></td>
+						<td  class="blank" colspan="2"></td>
+						<td class="table-right" rowspan="3"></td>
+					</tr>	
+					<tr>
+						<td class="enroll_title_td">
+							<p class="enroll_title"><span style="color:#f42f2c; font-weight:700; margin-right:5px;">*</span>레시피 팁</p>
+						</td>
+						<td>
+							<textarea class="input-reciIntro2" th:text="${recipe.reciTip}" name="reciTip" placeholder="이 레시피의 탄생 배경을 적어주세요."></textarea>
+						</td>
+					</tr>
+					<tr>
+						<td class="table-bottom" colspan="2"></td>
+					</tr>
+				</table>
+					
+				<table class="reciTable5">
+					<tr>
+						<td class="table-top"></td>
+					</tr>	
+					<tr>
+						<td>
+							<input class="recipe-submit" type="submit" value="수정하기"/>&nbsp;&nbsp;
+							<input class="recipe-button" type="button" value="취소하기" onclick="goBack()" />
+						</td>
+					</tr>
+					<tr>
+						<td class="table-bottom"></td>
+					</tr>	
+				</table>
+			</form>
 		</div>
 	</section>
-	<div th:replace="~{footer :: footer}"></div>
+<div th:replace="~{footer :: footer}"></div>
 </body>
-<script th:src="@{/js/mk/build.js}"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script type="text/javascript">
+function goBack() {
+	window.history.back();
+}
+
+function readURL(input) {
+	if (input.files && input.files[0]) {
+		var reader = new FileReader();
+		reader.onload = function(e) {
+			$('#reciMainPicImg').attr('src', e.target.result);
+		}
+		reader.readAsDataURL(input.files[0]);
+	}
+}
+
+$("#reciMainPic").change(function() {
+	readURL(this);
+});
+
+function readURL2(input) {
+	if (input.files && input.files[0]) {
+		var reader = new FileReader();
+		reader.onload = function(e) {
+		$('#uploadPic').attr('src', e.target.result);
+		}
+		reader.readAsDataURL(input.files[0]);
+		}
+	}
+
+$("#orderPic").change(function() {
+	readURL2(this);
+});
+</script>
+<script th:src="@{/js/mk/build.js}"></script>
+<script th:src="@{/js/mk/recipeEnroll.js}"></script>		
 <script th:src="@{/js/vendor/jquery-2.2.4.min.js}"></script>
 <script th:src="@{/js/popper.min.js}"></script>
 <script th:src="@{/js/vendor/bootstrap.min.js}"></script>

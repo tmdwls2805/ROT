@@ -9,6 +9,11 @@ import org.apache.ibatis.annotations.Mapper;
 @Mapper
 public interface RecipeRepository {
 	
+	public int deleteRecipe(Recipe r);	
+	public int updateRecipe(Recipe r);
+	public int updateRecipeOrder(RecipeOrder ro);
+	public int updateMaterial(Material m);
+	public int updateMaterial2(Material2 m2);
 	public int addRecipe(Recipe r);
 	public int addRecipeOrder(RecipeOrder ro);
 	public int addMaterial(Material m);
@@ -19,7 +24,7 @@ public interface RecipeRepository {
 	public int getRecipeCount();
 	public List<Recipe> getRecipeUser(String reciId);
 	public int getRecipeUserCount(String reciId);
-	
 	public List<Material> getMaterial(int reciInputNum);
-	public List<Material2> getMaterial2(int reciInputNum);		
+	public List<Material2> getMaterial2(int reciInputNum);
+
 }
